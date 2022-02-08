@@ -3,7 +3,8 @@
     <img src="@/assets/images/map.png"
          class="bg"
          alt="">
-    <h1 class=" wow  animate__animated animate__fadeInUp" data-wow-duration="1s">ROADMAP</h1>
+    <h1 class=" wow  animate__animated animate__fadeInUp"
+        data-wow-duration="1s">ROADMAP</h1>
     <div class="route"></div>
     <div class="phase1">
       <div class="tips tips_1">
@@ -99,22 +100,20 @@
   </div>
 </template> 
 <script>
-import { WOW } from "wowjs";
+import { WOW } from 'wowjs'
 export default {
-  name:'section2',
+  name: 'section2',
   data() {
-    return {
-      
-    }
+    return {}
   },
-  
-   mounted() {
+
+  mounted() {
     var options = {
       //默认为true
-      live: true
-    };
-    new WOW(options).init();
-  }
+      live: true,
+    }
+    new WOW(options).init()
+  },
 }
 </script>
 <style lang="less" scoped>
@@ -132,12 +131,13 @@ export default {
   width: 217 / @p;
   height: 84 / @p;
   display: flex;
-  .circle{
+  .circle {
     width: 60 / @p;
     height: 60 / @p;
   }
   img {
-   width: 100%;
+    width: 100%;
+    vertical-align: text-top;
   }
   .title {
     font-family: Alibaba PuHuiTi;
@@ -153,14 +153,14 @@ export default {
     }
   }
 }
-.space{
+.space {
   position: absolute;
   top: 10%;
-  right:-6%;
-  width: 510/@p;
-  height: 345/@p;
+  right: -6%;
+  width: 510 / @p;
+  height: 345 / @p;
   background: url(~@/assets/images/space.png) center no-repeat;
-  background-size: cover
+  background-size: cover;
 }
 // .rocket{
 //   position: absolute;
@@ -174,59 +174,59 @@ export default {
 // }
 .phase1_content {
   position: absolute;
-  top: 750/@p;
-  left: 200/@p;
-  padding: 10/@p; 
-  width: 350/@p;
-  height: 210/@p;
+  top: 750 / @p;
+  left: 200 / @p;
+  padding: 10 / @p;
+  width: 350 / @p;
+  height: 210 / @p;
   display: none;
 }
 .phase2_content {
   position: absolute;
-  top: 820/@p;
-  left: 1000/@p;
-  width: 602/@p;
-  height: 210/@p;
-  padding: 27/@p;
+  top: 820 / @p;
+  left: 1000 / @p;
+  width: 602 / @p;
+  height: 210 / @p;
+  padding: 27 / @p;
   display: none;
 }
 .phase3_content {
   position: absolute;
-  top: 320/@p;
-  right: 10/@p;
-  width: 350/@p;
-  height: 320/@p;
-  padding: 10/@p;
-  display: none
+  top: 320 / @p;
+  right: 10 / @p;
+  width: 350 / @p;
+  height: 320 / @p;
+  padding: 10 / @p;
+  display: none;
 }
 .phase4_content {
   position: absolute;
-  top: 90/@p;
-  right: 620/@p;
-  width: 600/@p;
-  height: 200/@p;
-  padding: 10/@p;
-  line-height: 35/@p !important;
-  display: none
+  top: 90 / @p;
+  right: 620 / @p;
+  width: 600 / @p;
+  height: 200 / @p;
+  padding: 10 / @p;
+  line-height: 35 / @p !important;
+  display: none;
 }
 .phase5_content {
   position: absolute;
-  top: 202/@p;
-  left: 20/@p;
-  width: 400/@p;
-  height: 450/@p;
-  padding: 10/@p;
+  top: 202 / @p;
+  left: 20 / @p;
+  width: 400 / @p;
+  height: 450 / @p;
+  padding: 10 / @p;
   display: none;
 }
 .content {
   background: #ffffff;
   opacity: 0.6;
-  border-radius: 30/@p;
-  font-size: 20/@p;
+  border-radius: 30 / @p;
+  font-size: 20 / @p;
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
   color: #3d4a84;
-  line-height: 45/@p;
+  line-height: 45 / @p;
 }
 .tips_1 {
   position: absolute;
@@ -235,23 +235,23 @@ export default {
 }
 .tips_2 {
   position: absolute;
-  top: 120/@p;
-  left: 350/@p;
+  top: 120 / @p;
+  left: 350 / @p;
 }
 .tips_3 {
   position: absolute;
-  top: -65/@p;
-  left: 40/@p;
+  top: -65 / @p;
+  left: 40 / @p;
 }
 .tips_4 {
   position: absolute;
-  top: 162/@p;
-  left: 260/@p;
+  top: 162 / @p;
+  left: 260 / @p;
 }
 .tips_5 {
   position: absolute;
-  top: -53/@p;
-  left: 30/@p;
+  top: -53 / @p;
+  left: 30 / @p;
 }
 .bg {
   margin-top: 150 / @p;
@@ -293,7 +293,6 @@ h1 {
   background: url(~@/assets/images/phase2.png) center no-repeat;
   background-size: cover;
   transition: all 1s;
-
 }
 .phase3 {
   position: absolute;
@@ -304,7 +303,6 @@ h1 {
   background: url(~@/assets/images/phase3.png) center no-repeat;
   background-size: cover;
   transition: all 1s;
-
 }
 .phase4 {
   position: absolute;
@@ -315,7 +313,6 @@ h1 {
   background: url(~@/assets/images/phase4.png) center no-repeat;
   background-size: cover;
   transition: all 1s;
-  
 }
 .phase5 {
   position: absolute;
@@ -326,39 +323,36 @@ h1 {
   background: url(~@/assets/images/phase5.png) center no-repeat;
   background-size: cover;
   transition: all 1s;
-
 }
-.phase1:hover,.phase2:hover,
-.phase3:hover,.phase4:hover,
-.phase5:hover
-{
- transform: translateY(10px);
-
+.phase1:hover,
+.phase2:hover,
+.phase3:hover,
+.phase4:hover,
+.phase5:hover {
+  transform: translateY(10px);
 }
-.phase1:hover ~  .phase1_content,
-.phase2:hover ~  .phase2_content,
-.phase3:hover ~  .phase3_content,
-.phase4:hover ~  .phase4_content,
-.phase5:hover ~  .phase5_content
-
-{ 
+.phase1:hover ~ .phase1_content,
+.phase2:hover ~ .phase2_content,
+.phase3:hover ~ .phase3_content,
+.phase4:hover ~ .phase4_content,
+.phase5:hover ~ .phase5_content {
   display: block;
- }
-@keyframes scaleDraw{
-   0%{
-        transform: scale(1);  /*开始为原始大小*/
-    }
-    25%{
-        transform: scale(1.3); /*放大1.1倍*/
-    }
-    50%{
-        transform: scale(1);
-    }
-    75%{
-        transform: scale(1.3);
-    }
 }
-.circle{
-  animation:scaleDraw 3s ease-in-out infinite;
+@keyframes scaleDraw {
+  0% {
+    transform: scale(1); /*开始为原始大小*/
+  }
+  25% {
+    transform: scale(1.3); /*放大1.1倍*/
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.3);
+  }
+}
+.circle {
+  animation: scaleDraw 3s ease-in-out infinite;
 }
 </style>

@@ -5,8 +5,7 @@
     <section1></section1>
     <section2></section2>
     <section3></section3>
-    
-      
+
     <!-- <full-page :options="options">
       <div class="section">
         <div class="box1">
@@ -24,7 +23,6 @@
         </div>
       </div>
     </full-page>  -->
-        
 
     <!-- <v-footer></v-footer> -->
   </div>

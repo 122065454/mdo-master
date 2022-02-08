@@ -3,7 +3,8 @@
     <div class="logo">
       <img src="@/assets/images/LOGO.png"
            alt="">
-      <p>METADAOS WORLD</p>
+      <p class=" wow  animate__animated animate__flipInX "
+         data-wow-duration="1s">METADAOS WORLD</p>
     </div>
     <div class="menu">
       <ul>
@@ -21,19 +22,26 @@
   </header>
 </template>
 <script>
-export default {
-  name:'header',
-  methods: {
-   async connectWallect(){
-        if (typeof window.ethereum !== 'undefined') {
-        let addr=await ethereum.request({ method: 'eth_requestAccounts' });//授权连接钱包
-        console.log('address:',addr[0]);
-    }else{
-        // alert('未安装钱包插件！');
-    }
+import { WOW } from 'wowjs'
 
-  }
-}
+export default {
+  name: 'header',
+  methods: {
+    async connectWallect() {
+      if (typeof window.ethereum !== 'undefined') {
+        let addr = await ethereum.request({ method: 'eth_requestAccounts' })
+        console.log('address:', addr[0])
+      } else {
+      }
+    },
+  },
+  mounted() {
+    var options = {
+      //默认为true
+      live: false,
+    }
+    new WOW(options).init()
+  },
 }
 </script>
 <style lang="less" scoped>
