@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <!-- 头部 -->
     <v-header></v-header>
     <section1></section1>
@@ -71,4 +71,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.main {
+  scroll-behavior: smooth;
+}
 </style>
