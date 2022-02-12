@@ -1,9 +1,12 @@
 <template>
   <div class="main">
     <div class="content">
-      <h1 class=" wow  animate__animated animate__fadeInUp" data-wow-duration="1s">Partners & Investors</h1>
-      <h2 class=" wow  animate__animated animate__fadeInUp" data-wow-duration="2s">We are proud to have these amazing funds and people by our side as we build out HowlCity Network.</h2>
-      <div class="partner wow  animate__animated animate__fadeInUp" data-wow-duration="2s">
+      <h1 class=" wow  animate__animated animate__fadeInUp"
+          data-wow-duration="1s">Partners & Investors</h1>
+      <h2 class=" wow  animate__animated animate__fadeInUp"
+          data-wow-duration="2s">We are proud to have these amazing funds and people by our side as we build out HowlCity Network.</h2>
+      <div class="partner wow  animate__animated animate__fadeInUp"
+           data-wow-duration="2s">
         <img src="@/assets/images/partner.png"
              alt="">
       </div>
@@ -13,34 +16,36 @@
 </template>
 <script>
 import footer from '../components/footer.vue'
-import { WOW } from "wowjs";
+import { WOW } from 'wowjs'
 
 export default {
   name: 'section3',
   components: {
     'v-footer': footer,
   },
-     mounted() {
+  mounted() {
     var options = {
       //默认为true
-      live: true
-    };
-    new WOW(options).init();
-  }
+      live: true,
+    }
+    new WOW(options).init()
+  },
 }
 </script>
 <style lang="less" scoped>
 @p: 100rem;
 .main {
   width: 100%;
-  // height: 100vh;
+  height: 1104 / @p;
   background: url(~@/assets/images/bg3.png) center no-repeat;
   background-size: cover;
   // overflow: hidden;
 }
 .content {
-  margin: 119 / @p auto 80 / @p;
+  margin: 300 / @p auto 80 / @p;
   text-align: center;
+  width: 1361 / @p;
+  // overflow: hidden;
 }
 h1 {
   font-size: 40 / @p;

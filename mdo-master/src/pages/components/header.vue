@@ -48,13 +48,14 @@ export default {
 @p: 100rem;
 header {
   width: 100%;
-  height: 54 / @p;
+  height: 100 / @p;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  margin-top: 50 / @p;
+  // margin-top: 50 / @p;
   z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
 }
 .logo {
   display: flex;
@@ -71,7 +72,7 @@ header {
     font-size: 34 / @p;
     font-family: Alibaba PuHuiTi;
     font-weight: bold;
-    color: #182c82;
+    color: #fefefe;
     line-height: 24 / @p;
   }
 }
@@ -92,6 +93,7 @@ header {
   li {
     margin-left: 30 / @p;
     cursor: pointer;
+    color: #07a7ee;
   }
   img {
     width: 22 / @p;

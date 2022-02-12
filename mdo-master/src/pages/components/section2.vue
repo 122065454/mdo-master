@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <img src="@/assets/images/map.png"
+    <img src="@/assets/images/bg2.png"
          class="bg"
          alt="">
     <h1 class=" wow  animate__animated animate__fadeInUp"
@@ -125,7 +125,7 @@ export default {
   // background-size: cover;
   // overflow: hidden;
   position: relative;
-  background: linear-gradient(10deg, #4ecdfb 0%, #1698e9 30%, #0a76e1 100%);
+  // background: linear-gradient(10deg, #4ecdfb 0%, #1698e9 30%, #0a76e1 100%);
 }
 .tips {
   width: 217 / @p;
@@ -174,7 +174,7 @@ export default {
 // }
 .phase1_content {
   position: absolute;
-  top: 750 / @p;
+  top: 900 / @p;
   left: 200 / @p;
   padding: 10 / @p;
   width: 350 / @p;
@@ -183,7 +183,7 @@ export default {
 }
 .phase2_content {
   position: absolute;
-  top: 820 / @p;
+  top: 980 / @p;
   left: 1000 / @p;
   width: 602 / @p;
   height: 210 / @p;
@@ -192,7 +192,7 @@ export default {
 }
 .phase3_content {
   position: absolute;
-  top: 320 / @p;
+  top: 420 / @p;
   right: 10 / @p;
   width: 350 / @p;
   height: 320 / @p;
@@ -201,7 +201,7 @@ export default {
 }
 .phase4_content {
   position: absolute;
-  top: 90 / @p;
+  top: 190 / @p;
   right: 620 / @p;
   width: 600 / @p;
   height: 200 / @p;
@@ -211,7 +211,7 @@ export default {
 }
 .phase5_content {
   position: absolute;
-  top: 202 / @p;
+  top: 302 / @p;
   left: 20 / @p;
   width: 400 / @p;
   height: 450 / @p;
@@ -236,7 +236,7 @@ export default {
 .tips_2 {
   position: absolute;
   top: 120 / @p;
-  left: 350 / @p;
+  left: 290 / @p;
 }
 .tips_3 {
   position: absolute;
@@ -254,7 +254,7 @@ export default {
   left: 30 / @p;
 }
 .bg {
-  margin-top: 150 / @p;
+  // margin-top: 150 / @p;
 }
 h1 {
   font-size: 56 / @p;
@@ -267,59 +267,68 @@ h1 {
 }
 .route {
   position: absolute;
-  top: 25%;
-  left: 24%;
-  width: 956 / @p;
-  height: 513 / @p;
+  top: 40%;
+  left: 33%;
+  width: 856 / @p;
+  height: 512 / @p;
   background: url(~@/assets/images/route.png) center no-repeat;
   background-size: cover;
 }
 .phase1 {
+  animation: scaleDraw2 3s ease-in-out infinite;
+
   position: absolute;
-  top: 54%;
-  left: 28%;
+  top: 63%;
+  left: 26%;
   width: 327 / @p;
-  height: 298 / @p;
+  height: 322 / @p;
   background: url(~@/assets/images/phase.png) center no-repeat;
   background-size: cover;
   transition: all 1s;
 }
 .phase2 {
+  animation: scaleDraw2 3s ease-in-out infinite;
   position: absolute;
-  top: 51%;
+  top: 68%;
   left: 53%;
-  width: 327 / @p;
-  height: 298 / @p;
+  width: 300 / @p;
+  height: 252 / @p;
   background: url(~@/assets/images/phase2.png) center no-repeat;
   background-size: cover;
   transition: all 1s;
 }
 .phase3 {
   position: absolute;
-  top: 19%;
+  animation: scaleDraw2 3s ease-in-out infinite;
+
+  top: 30%;
   left: 65%;
-  width: 327 / @p;
-  height: 298 / @p;
+  width: 308 / @p;
+  height: 258 / @p;
   background: url(~@/assets/images/phase3.png) center no-repeat;
   background-size: cover;
   transition: all 1s;
 }
 .phase4 {
   position: absolute;
-  top: 27%;
+  animation: scaleDraw2 3s ease-in-out infinite;
+
+  top: 37%;
   left: 42%;
-  width: 327 / @p;
-  height: 298 / @p;
+  width: 284 / @p;
+  height: 308 / @p;
   background: url(~@/assets/images/phase4.png) center no-repeat;
   background-size: cover;
   transition: all 1s;
 }
 .phase5 {
   position: absolute;
-  top: 19%;
+  animation: scaleDraw2 3s ease-in-out infinite;
+
+  top: 29%;
   left: 23%;
-  width: 327 / @p;
-  height: 298 / @p;
+  width: 337 / @p;
+  height: 254 / @p;
   background: url(~@/assets/images/phase5.png) center no-repeat;
   background-size: cover;
   transition: all 1s;
@@ -350,6 +359,20 @@ h1 {
   }
   75% {
     transform: scale(1.3);
+  }
+}
+@keyframes scaleDraw2 {
+  0% {
+    transform: scale(1); /*开始为原始大小*/
+  }
+  25% {
+    transform: scale(1.05); /*放大1.1倍*/
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
   }
 }
 .circle {

@@ -2,36 +2,47 @@
 
   <div class="main">
     <div class="content">
-      <h1 class=" wow  animate__animated animate__zoomInDown " data-wow-duration="1s">MetaDaos World</h1>
-      <h2 class=" wow  animate__animated animate__backInDown" data-wow-duration="2s"> The first place where you can buy and sell items with your cryptocurrency</h2>
-      <div class="buttons  wow  animate__animated animate__bounceInLeft" data-wow-duration="3s">
+      <h1 class=" wow  animate__animated animate__zoomInDown "
+          data-wow-duration="1s">MetaDaos World</h1>
+      <h2 class=" wow  animate__animated animate__backInDown"
+          data-wow-duration="2s"> The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide
+      </h2>
+      <div class="buttons  wow  animate__animated animate__bounceInLeft"
+           data-wow-duration="3s">
         <div class="button_1">
-          <a href="https://app.gitbook.com/s/mlIj6Clqca34joALWnkx/" target="_blank" rel="noopener noreferrer">
-          <span> Whitepaper</span>
-          <img src="@/assets/images/icon-white.png"
-               alt="">
+          <a href="https://app.gitbook.com/s/mlIj6Clqca34joALWnkx/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <span> Whitepaper</span>
+            <!-- <img src="@/assets/images/icon-white.png"
+                 alt=""> -->
           </a>
         </div>
         <div class="button_2">
           <span> Enter Metaverse</span>
-          <img src="~@/assets/images/icon-income.png"
-               alt="">
+          <!-- <img src="~@/assets/images/icon-income.png"
+               alt=""> -->
         </div>
       </div>
     </div>
+    <contact class="wow  animate__animated animate__zoomInDown"></contact>
   </div>
 </template>
 <script>
-import { WOW } from "wowjs";
+import { WOW } from 'wowjs'
+import contact from './contact.vue'
 export default {
-  name:'section1',
-    mounted() {
+  name: 'section1',
+  components: {
+    contact,
+  },
+  mounted() {
     var options = {
       //默认为true
-      live: false
-    };
-    new WOW(options).init();
-  }
+      live: false,
+    }
+    new WOW(options).init()
+  },
 }
 </script>
 
@@ -45,24 +56,25 @@ export default {
   background-size: cover;
   overflow: hidden;
 }
-a{
+a {
   color: #fff;
 }
 .content {
-  width: 650 / @p;
+  width: 978 / @p;
   margin: 359 / @p auto;
+  text-align: center;
 }
 h1 {
   font-size: 76 / @p;
   font-family: Cabin;
   font-weight: 600;
-  color: #182c82;
+  color: #fefefe;
 }
 h2 {
   font-size: 32 / @p;
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
-  color: #2f4b80;
+  color: #dde3ef;
   line-height: 51 / @p;
 }
 .buttons {
@@ -71,18 +83,25 @@ h2 {
   font-weight: 400;
   margin-top: 70 / @p;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+
   .button_1,
   .button_2 {
     display: flex;
     align-items: center;
-    border-radius: 28 / @p;
-    height: 56 / @p;
+    justify-content: center;
+    border-radius: 40 / @p;
+    height: 80 / @p;
+    font-size: 36 / @p;
+    font-family: Alibaba PuHuiTi;
+    font-weight: 400;
+    color: #02071b;
   }
   .button_1 {
-    color: #ffffff;
-    background: linear-gradient(152deg, #07a7ee 0%, #0550dc 100%);
-    padding: 13 / @p 20 / @p;
+    width: 320 / @p;
+    height: 80 / @p;
+    background: #ffc000;
+
     img {
       width: 20 / @p;
       height: 20 / @p;
@@ -90,10 +109,11 @@ h2 {
     }
   }
   .button_2 {
+    width: 360 / @p;
+    height: 80 / @p;
     background: #ffffff;
     opacity: 0.7;
-    padding: 14 / @p 21 / @p;
-    color: #182c82;
+
     img {
       width: 16 / @p;
       height: 16 / @p;

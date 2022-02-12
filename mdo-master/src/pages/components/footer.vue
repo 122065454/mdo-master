@@ -3,14 +3,14 @@
     <div class="content">
       <div class="logo">
         <div class="logo_top">
-          <img src="@/assets/images/logo_footer.png"
+          <img src="@/assets/images/LOGO.png"
                class="img1"
                alt="">
           <img src="@/assets/images/logoname.png"
                class="img2"
                alt="">
           <div class="logo_bottom">
-            The first place where you can buy and <br>sell items with your cryptocurren
+            The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide
           </div>
         </div>
       </div>
@@ -59,6 +59,7 @@
              alt="">
       </a>
     </div>
+
   </footer>
 </template>
 <script>
@@ -108,7 +109,8 @@ export default {
 footer {
   width: 100%;
   height: 475 / @p;
-  background: linear-gradient(10deg, #4ecdfb 0%, #1698e9 30%, #0a76e1 100%);
+  background: url(~@/assets/images/footer.png) center no-repeat;
+  background-size: cover;
 }
 .content {
   width: 1241 / @p;
@@ -122,6 +124,7 @@ footer {
   width: 275 / @p;
   height: 132 / @p;
   margin-right: 118 / @p;
+  line-height: 10 / @p;
   .img1 {
     width: 88 / @p;
     height: 77 / @p;
