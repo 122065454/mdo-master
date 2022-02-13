@@ -1,6 +1,14 @@
 <template>
 
   <div class="main">
+    <!-- <video controls  src="@/assets/images/bg.webm" type="video/webm" width="500px" height="300px"  loop="loop" autoplay="autoplay"> -->
+            
+                <video  autoplay="autoplay" loop="loop" muted="muted">
+                           <source src="@/assets/images/bg.webm" type="video/webm"/>
+               </video>      
+            
+      
+      
     <div class="content">
       <h1 class=" wow  animate__animated animate__zoomInDown "
           data-wow-duration="1s">MetaDaos World</h1>
@@ -55,11 +63,24 @@ export default {
   background: url(~@/assets/images/bg.png) center no-repeat;
   background-size: cover;
   overflow: hidden;
+  position: relative;
+}
+video{
+    width: 100%;
+    min-height: 100%; //不会因视频尺寸造成页面需要滚动
+    width: auto;
+    height: auto; //尺寸保持原视频大小
+    z-index: 100; //z轴定位，小于0即可
+    -webkit-filter: grayscale(20%);//添加灰度蒙版，如果设定为100%则视频显示为黑白
 }
 a {
   color: #fff;
 }
 .content {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   width: 978 / @p;
   margin: 359 / @p auto;
   text-align: center;
@@ -68,13 +89,13 @@ h1 {
   font-size: 76 / @p;
   font-family: Cabin;
   font-weight: 600;
-  color: #fefefe;
+  color: #3f0e0e;
 }
 h2 {
   font-size: 32 / @p;
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
-  color: #dde3ef;
+  color: #3f0e0e;
   line-height: 51 / @p;
 }
 .buttons {
@@ -96,6 +117,7 @@ h2 {
     font-family: Alibaba PuHuiTi;
     font-weight: 400;
     color: #02071b;
+    cursor: pointer;
   }
   .button_1 {
     width: 320 / @p;

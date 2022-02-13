@@ -84,11 +84,13 @@ header {
   ul {
     width: 100%;
     display: flex;
+    position: relative;
   }
   li:first-child {
     display: flex;
     align-items: center;
   }
+
 
   li {
     margin-left: 30 / @p;

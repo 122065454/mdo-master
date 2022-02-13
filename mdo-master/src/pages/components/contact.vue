@@ -62,5 +62,10 @@ export default {
     margin-top: 10px;
     margin: 23 / @p auto;
   }
+  a:hover{
+    // transform: translateX(10px);
+    transform: scale(1.1);
+    transition: all 0.5;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <!-- 头部 -->
-    <v-header></v-header>
+    <!-- <v-header></v-header> -->
     <section1></section1>
     <section2></section2>
     <section3></section3>

@@ -156,6 +156,10 @@ ol {
     color: #ffffff;
   }
 }
+li:not(:first-child):hover{
+  transform: translateX(10px);
+  transition:  all 0.5s;
+}
 ol li:first-child {
   font-size: 20 / @p;
   font-weight: 500;
@@ -184,6 +188,7 @@ ol li:first-child {
     text-align: center;
     line-height: 45 / @p;
     margin-top: 10 / @p;
+    cursor: pointer;
   }
 }
 // .input{

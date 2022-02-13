@@ -6,7 +6,7 @@
     <h1 class=" wow  animate__animated animate__fadeInUp"
         data-wow-duration="1s">ROADMAP</h1>
     <div class="route"></div>
-    <div class="phase1">
+    <div class="phase1 wow  animate__animated animate__backInLeft"  data-wow-duration="1s">
       <div class="tips tips_1">
         <div class="circle">
           <img src="@/assets/images/circle.svg"
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="phase2">
+    <div class="phase2 wow  animate__animated animate__backInLeft" data-wow-duration="1.1s">
       <div class="tips tips_2">
         <div class="circle">
           <img src="@/assets/images/circle.svg"
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="phase3">
+    <div class="phase3 wow  animate__animated animate__backInLeft" data-wow-duration="1.2s">
       <div class="tips tips_3">
         <div class="circle">
           <img src="@/assets/images/circle.svg"
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div class="phase4">
+    <div class="phase4 wow  animate__animated animate__backInLeft" data-wow-duration="1.3s">
       <div class="tips tips_4">
         <div class="circle">
           <img src="@/assets/images/circle.svg"
@@ -54,7 +54,7 @@
         </div>
       </div>
     </div>
-    <div class="phase5">
+    <div class="phase5 wow  animate__animated animate__backInLeft" data-wow-duration="1.4s">
       <div class="tips tips_5">
         <div class="circle">
           <img src="@/assets/images/circle.svg"
@@ -275,7 +275,7 @@ h1 {
   background-size: cover;
 }
 .phase1 {
-  animation: scaleDraw2 3s ease-in-out infinite;
+  // animation: scaleDraw2 3s ease-in-out infinite;
 
   position: absolute;
   top: 63%;
@@ -287,7 +287,7 @@ h1 {
   transition: all 1s;
 }
 .phase2 {
-  animation: scaleDraw2 3s ease-in-out infinite;
+  // animation: scaleDraw2 3s ease-in-out infinite;
   position: absolute;
   top: 68%;
   left: 53%;
@@ -299,7 +299,7 @@ h1 {
 }
 .phase3 {
   position: absolute;
-  animation: scaleDraw2 3s ease-in-out infinite;
+  // animation: scaleDraw2 3s ease-in-out infinite;
 
   top: 30%;
   left: 65%;
@@ -311,7 +311,7 @@ h1 {
 }
 .phase4 {
   position: absolute;
-  animation: scaleDraw2 3s ease-in-out infinite;
+  // animation: scaleDraw2 3s ease-in-out infinite;
 
   top: 37%;
   left: 42%;
@@ -323,7 +323,7 @@ h1 {
 }
 .phase5 {
   position: absolute;
-  animation: scaleDraw2 3s ease-in-out infinite;
+  // animation: scaleDraw2 3s ease-in-out infinite;
 
   top: 29%;
   left: 23%;

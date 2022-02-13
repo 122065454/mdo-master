@@ -3,17 +3,22 @@
     <!-- <img alt="Vue logo"
          src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+    <v-header></v-header>
     <router-view></router-view>
+    <v-footer></v-footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import header from '@/pages/components/header.vue'
+import footer from '@/pages/components/footer.vue'
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
+   components: {
+   
+    'v-header': header,
+    'v-footer': footer,
   },
 }
 </script>
