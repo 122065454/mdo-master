@@ -3,9 +3,9 @@
   <div class="main">
     <!-- <video controls  src="@/assets/images/bg.webm" type="video/webm" width="500px" height="300px"  loop="loop" autoplay="autoplay"> -->
             
-                <video  autoplay="autoplay" loop="loop" muted="muted">
+                <!-- <video  autoplay="autoplay" loop="loop" muted="muted">
                            <source src="@/assets/images/bg.webm" type="video/webm"/>
-               </video>      
+               </video>       -->
             
       
       
@@ -89,13 +89,13 @@ h1 {
   font-size: 76 / @p;
   font-family: Cabin;
   font-weight: 600;
-  color: #3f0e0e;
+  color: #FEFEFE;
 }
 h2 {
   font-size: 32 / @p;
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
-  color: #3f0e0e;
+  color: #CAD1DE;
   line-height: 51 / @p;
 }
 .buttons {
