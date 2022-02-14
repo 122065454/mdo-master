@@ -188,7 +188,7 @@ export default {
 }
 .phase2_content {
   position: absolute;
-  top: 1050 / @p;
+  bottom: -80 / @p;
   left: 1000 / @p;
   width: 602 / @p;
   height: 210 / @p;

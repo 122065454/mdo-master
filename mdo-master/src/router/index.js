@@ -3,19 +3,18 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 const routes = [
- 
   {
     path: '/',
     component: home,
   },
 ]
 const router = new VueRouter({
-  mode:'history',
+  mode: 'history',
   routes,
 })
 // 全局后置钩子
 router.afterEach((to, from) => {
-  document.title = to.meta.title || 'MDO'
+  document.title = to.meta.title || 'MetaDaos'
 })
 
 export default router
