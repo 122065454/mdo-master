@@ -86,12 +86,18 @@ export default {
         },
       ],
       infomationList: [
-        { name: 'Doc', herf: '' },
+        {
+          name: 'Doc',
+          herf: 'https://app.gitbook.com/s/mlIj6Clqca34joALWnkx/',
+        },
         {
           name: 'Whitepaper',
           herf: 'https://app.gitbook.com/s/mlIj6Clqca34joALWnkx/',
         },
-        { name: 'Tokenomics', herf: '' },
+        {
+          name: 'Tokenomics',
+          herf: 'https://app.gitbook.com/s/mlIj6Clqca34joALWnkx/',
+        },
         { name: 'Contact us', herf: '' },
       ],
       communityList: [

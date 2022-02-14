@@ -4,7 +4,7 @@
       <h1 class=" wow  animate__animated animate__fadeInUp"
           data-wow-duration="1s">Partners & Investors</h1>
       <h2 class=" wow  animate__animated animate__fadeInUp"
-          data-wow-duration="2s">We are proud to have these amazing funds and people by our side as we build out HowlCity Network.</h2>
+          data-wow-duration="2s">We are proud to have these amazing funds and people by our side as we build Metadaos World Network.</h2>
       <div class="partner wow  animate__animated animate__fadeInUp"
            data-wow-duration="2s">
         <img src="@/assets/images/partner.png"
