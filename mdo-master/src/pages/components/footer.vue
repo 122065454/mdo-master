@@ -108,14 +108,14 @@ export default {
 @p: 100rem;
 footer {
   width: 100%;
-  height: 475 / @p;
+  height: 375 / @p;
   background: url(~@/assets/images/footer.png) center no-repeat;
   background-size: cover;
 }
 .content {
   width: 1241 / @p;
   margin: auto;
-  padding-top: 114 / @p;
+  padding-top: 70 / @p;
   display: flex;
   // overflow: hidden;
 }
@@ -156,9 +156,13 @@ ol {
     color: #ffffff;
   }
 }
-li:not(:first-child):hover{
+a:hover {
+  transform: translateY(-10px);
+  transition: all 1;
+}
+li:not(:first-child):hover {
   transform: translateX(10px);
-  transition:  all 0.5s;
+  transition: all 0.5s;
 }
 ol li:first-child {
   font-size: 20 / @p;
@@ -196,7 +200,7 @@ ol li:first-child {
 //   margin-bottom: 10/@p;
 // }
 .sociality {
-  width: 213 / @p;
+  width: 266 / @p;
   height: 48 / @p;
   display: flex;
   margin: 30 / @p auto;

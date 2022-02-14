@@ -6,7 +6,8 @@
     <h1 class=" wow  animate__animated animate__fadeInUp"
         data-wow-duration="1s">ROADMAP</h1>
     <div class="route"></div>
-    <div class="phase1 wow  animate__animated animate__backInLeft"  data-wow-duration="1s">
+    <div class="phase1 wow  animate__animated animate__backInLeft"
+         data-wow-duration="1s">
       <div class="tips tips_1">
         <div class="circle">
           <img src="@/assets/images/circle.svg"
@@ -18,7 +19,8 @@
         </div>
       </div>
     </div>
-    <div class="phase2 wow  animate__animated animate__backInLeft" data-wow-duration="1.1s">
+    <div class="phase2 wow  animate__animated animate__backInLeft"
+         data-wow-duration="1.1s">
       <div class="tips tips_2">
         <div class="circle">
           <img src="@/assets/images/circle.svg"
@@ -30,7 +32,8 @@
         </div>
       </div>
     </div>
-    <div class="phase3 wow  animate__animated animate__backInLeft" data-wow-duration="1.2s">
+    <div class="phase3 wow  animate__animated animate__backInLeft"
+         data-wow-duration="1.2s">
       <div class="tips tips_3">
         <div class="circle">
           <img src="@/assets/images/circle.svg"
@@ -42,7 +45,8 @@
         </div>
       </div>
     </div>
-    <div class="phase4 wow  animate__animated animate__backInLeft" data-wow-duration="1.3s">
+    <div class="phase4 wow  animate__animated animate__backInLeft"
+         data-wow-duration="1.3s">
       <div class="tips tips_4">
         <div class="circle">
           <img src="@/assets/images/circle.svg"
@@ -54,7 +58,8 @@
         </div>
       </div>
     </div>
-    <div class="phase5 wow  animate__animated animate__backInLeft" data-wow-duration="1.4s">
+    <div class="phase5 wow  animate__animated animate__backInLeft"
+         data-wow-duration="1.4s">
       <div class="tips tips_5">
         <div class="circle">
           <img src="@/assets/images/circle.svg"
@@ -183,7 +188,7 @@ export default {
 }
 .phase2_content {
   position: absolute;
-  top: 980 / @p;
+  top: 1050 / @p;
   left: 1000 / @p;
   width: 602 / @p;
   height: 210 / @p;
