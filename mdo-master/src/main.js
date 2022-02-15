@@ -6,6 +6,7 @@ import animate from 'animate.css'
 import Vue from 'vue'
 import VueFullpage from 'vue-fullpage.js'
 import App from './App.vue'
+import '@/assets/css/font.less'
 Vue.use(animate)
 Vue.use(VueFullpage)
 Vue.mixin(mixin)

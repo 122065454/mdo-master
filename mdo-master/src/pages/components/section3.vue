@@ -8,6 +8,10 @@
       <div class="partner wow  animate__animated animate__fadeInUp"
            data-wow-duration="2s">
         <img src="@/assets/images/partner.png"
+             v-if="isPC"
+             alt="">
+        <img src="@/assets/images/partner.png"
+             v-if="!isPC"
              alt="">
       </div>
     </div>
@@ -66,6 +70,21 @@ h2 {
   margin: auto;
   img {
     width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .main {
+    width: 100%;
+    // height: 837 / @p;
+    background: url(~@/assets/images/h5/bg3.png) center no-repeat;
+    background-size: cover;
+    // overflow: hidden;
+  }
+  .content {
+    // margin: 300 / @p auto 80 / @p;
+    text-align: center;
+    width: 100%;
+    // overflow: hidden;
   }
 }
 </style>

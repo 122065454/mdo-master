@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header v-if="isPC">
     <div class="logo">
       <img src="@/assets/images/LOGO.png"
            alt="">
@@ -18,7 +18,17 @@
         </li>
       </ul>
     </div>
-
+  </header>
+  <header v-else>
+    <div class="logo_h5">
+      <img src="@/assets/images/h5/logo.png"
+           alt="">
+      <span>Simeta</span>
+    </div>
+    <div class="logo_right">
+      <img src="@/assets/images/h5/icon.png"
+           alt="">
+    </div>
   </header>
 </template>
 <script>
@@ -91,7 +101,6 @@ header {
     align-items: center;
   }
 
-
   li {
     margin-left: 30 / @p;
     cursor: pointer;
@@ -101,6 +110,42 @@ header {
     width: 22 / @p;
     height: 22 / @p;
     margin-right: 6 / @p;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    width: 100%;
+    height: 120 / @p;
+    position: fixed;
+    // margin-top: 50 / @p;
+    padding: 23 / @p 61 / @p 23 / @p 59 / @p;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo_h5 {
+    display: flex;
+    align-items: center;
+    img {
+      width: 66 / @p;
+      height: 74 / @p;
+    }
+    span {
+      font-size: 40 / @p;
+      font-family: Alibaba PuHuiTi;
+      font-weight: bold;
+      color: #fefefe;
+      margin-left: 21 / @p;
+    }
+  }
+  .logo_right {
+    width: 28 / @p;
+    height: 26 / @p;
+    img {
+      width: 100%;
+    }
   }
 }
 </style>

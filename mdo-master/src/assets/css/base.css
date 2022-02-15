@@ -41,7 +41,7 @@ ol, ul, dl, li, dt, dd {
 img {
   width: 100%;
   border: 0;
-  vertical-align: middle
+  /* vertical-align: middle */
 }
 
 a img {

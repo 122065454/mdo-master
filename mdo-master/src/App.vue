@@ -5,18 +5,16 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <v-header></v-header>
     <router-view></router-view>
-    <v-footer></v-footer>
+    <!-- <v-footer></v-footer> -->
   </div>
 </template>
 
 <script>
-
 import header from '@/pages/components/header.vue'
 import footer from '@/pages/components/footer.vue'
 export default {
   name: 'App',
-   components: {
-   
+  components: {
     'v-header': header,
     'v-footer': footer,
   },

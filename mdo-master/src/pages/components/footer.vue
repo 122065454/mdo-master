@@ -88,7 +88,7 @@ export default {
       infomationList: [
         {
           name: 'Doc',
-          herf: 'https://app.gitbook.com/s/mlIj6Clqca34joALWnkx/',
+          herf: 'https://app.gitbook.com/o/cbFzgz9W4lqTqpOBnQ0Q/s/mlIj6Clqca34joALWnkx/',
         },
         {
           name: 'Whitepaper',
@@ -96,9 +96,12 @@ export default {
         },
         {
           name: 'Tokenomics',
-          herf: 'https://app.gitbook.com/s/mlIj6Clqca34joALWnkx/',
+          herf: ' https://app.gitbook.com/o/cbFzgz9W4lqTqpOBnQ0Q/s/mlIj6Clqca34joALWnkx/whitepaper/our-tokenomics',
         },
-        { name: 'Contact us', herf: '' },
+        {
+          name: 'Contact us',
+          herf: 'https://app.gitbook.com/o/cbFzgz9W4lqTqpOBnQ0Q/s/mlIj6Clqca34joALWnkx/contact-us',
+        },
       ],
       communityList: [
         { name: 'Twitter', herf: 'https://twitter.com/Metadaos_world' },

@@ -1,6 +1,11 @@
 <template>
   <div class="main">
     <img src="@/assets/images/bg2.png"
+         v-if="isPC"
+         class="bg"
+         alt="">
+    <img src="@/assets/images/h5/bg2.png"
+         v-if="!isPC"
          class="bg"
          alt="">
     <h1 class=" wow  animate__animated animate__fadeInUp"
@@ -88,7 +93,7 @@
     </div>
     <div class="content phase3_content">Merchants Invitation and optimization
       Marketing by IDOs & List the utility tokens on Uniswap.
-      Invite merchants to list their products on MetaDaos.
+      Invite merchants to list their products on Simeta.
       System optimization & officially launches.
     </div>
     <div class="content phase4_content">Metaverse development include land NFT, customization of characters, pet system, land and pet NFT marketplace, NFT farming system, etc.
@@ -97,8 +102,8 @@
       Marketing by listing land and pet NFT via INO.
     </div>
     <div class="content phase5_content">
-      Achievement of MetaDaos World
-      Combine Crypto E-mall and metaverse to realize a MetaDaos World where users can shop on an emerging immersive digital land with other users around the world.
+      Achievement of Simeta
+      Combine Crypto E-mall and metaverse to realize a Simeta where users can shop on an emerging immersive digital land with other users around the world.
       Promote for merchants to complete sales of $100 million.
       Optimization of the whole system and invite more merchants
     </div>
@@ -123,6 +128,7 @@ export default {
 </script>
 <style lang="less" scoped>
 @p: 100rem;
+
 .main {
   width: 100%;
   height: 100vh;
@@ -382,5 +388,36 @@ h1 {
 }
 .circle {
   animation: scaleDraw 3s ease-in-out infinite;
+}
+
+@media screen and (max-width: 700px) {
+  .route {
+    background: url(~@/assets/images/h5/route.png) center no-repeat;
+    background-size: cover;
+    width: 407 / @p;
+    height: 1252 / @p;
+    top: 300 / @p;
+    left: 100 / @p;
+  }
+  .phase1 {
+    top: 110%;
+    left: 4%;
+  }
+  .phase2 {
+    top: 80%;
+    left: 29%;
+  }
+  .phase3 {
+    top: 55%;
+    left: 0%;
+  }
+  .phase4 {
+    top: 41%;
+    left: 42%;
+  }
+  .phase5 {
+    top: 10%;
+    left: 2%;
+  }
 }
 </style>
