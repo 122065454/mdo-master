@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer v-if='isPC'>
     <div class="content">
       <div class="logo">
         <div class="logo_top">
@@ -61,6 +61,11 @@
     </div>
 
   </footer>
+   <footer v-else>
+     <div class="title">
+       <img src="@/assest/images/h5/logo.png" alt="">
+     </div>
+   </footer>
 </template>
 <script>
 export default {
@@ -232,4 +237,12 @@ input {
 
   // margin-top: -50 / @p;
 }
+ @media screen and (max-width: 700px){
+   footer{
+     width: 100%;
+     padding:74px 59px;
+     background: linear-gradient(25deg, #3886E6 0%, #650DAB 100%);
+   }
+ }
+
 </style>

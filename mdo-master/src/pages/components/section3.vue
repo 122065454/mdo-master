@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="content">
+    <div class="content"  v-if="isPC">
       <h1 class=" wow  animate__animated animate__fadeInUp"
           data-wow-duration="1s">Partners & Investors</h1>
       <h2 class=" wow  animate__animated animate__fadeInUp"
@@ -8,10 +8,18 @@
       <div class="partner wow  animate__animated animate__fadeInUp"
            data-wow-duration="2s">
         <img src="@/assets/images/partner.png"
-             v-if="isPC"
              alt="">
-        <img src="@/assets/images/partner.png"
-             v-if="!isPC"
+       
+      </div>
+    </div>
+    <div class="h5_content" v-if="!isPC">
+             <h1 class=" wow  animate__animated animate__fadeInUp"
+          data-wow-duration="1s">Partners & Investors</h1>
+      <h2 class=" wow  animate__animated animate__fadeInUp"
+          data-wow-duration="2s">We are proud to have these amazing funds and people by our side as we build Metadaos World Network.</h2>
+      <div class="partner wow  animate__animated animate__fadeInUp"
+           data-wow-duration="2s">
+        <img src="@/assets/images/h5/partners.png"
              alt="">
       </div>
     </div>
@@ -80,11 +88,24 @@ h2 {
     background-size: cover;
     // overflow: hidden;
   }
-  .content {
+  .h5_content {
     // margin: 300 / @p auto 80 / @p;
     text-align: center;
     width: 100%;
+     margin-top: 471/@p;
     // overflow: hidden;
+  }
+  .partner {
+  width: 538 / @p;
+  height: 1238 / @p;
+  margin: auto;
+ 
+  img {
+    width: 100%;
+  }
+}
+  img{
+    
   }
 }
 </style>
