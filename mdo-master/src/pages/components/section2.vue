@@ -257,6 +257,7 @@ h1 {
 }
 .phase3_content {
   position: absolute;
+  z-index: 999;
   top: 420 / @p;
   right: 10 / @p;
   width: 350 / @p;

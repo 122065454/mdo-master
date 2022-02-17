@@ -42,7 +42,7 @@ export default {
 @p: 100rem;
 .sociality {
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   top: 554 / @p;
   right: 0;
   width: 86 / @p;
