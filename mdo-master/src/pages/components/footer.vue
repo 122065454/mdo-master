@@ -104,7 +104,7 @@
       <h2>stay in touch with latest updates with Simeta</h2>
       <input type="text"
              placeholder="Your Email"
-             v-model="mail"
+             v-model="email"
              name=""
              id="">
       <input type="text"
@@ -128,24 +128,26 @@
   </footer>
 </template>
 <script>
+import { Notify } from 'vant'
+
 export default {
   name: 'footer',
   data() {
     return {
-      mail: '',
+      email: '',
       name: '',
       socialist: [
         {
           imgUrl: require('@/assets/images/twiter.png'),
-          herf: 'https://twitter.com/Metadaos_world',
+          herf: 'https://twitter.com/simeta_io',
         },
         {
           imgUrl: require('@/assets/images/tg.png'),
-          herf: 'https://t.me/MetadaosEn',
+          herf: 'https://t.me/SimetaOfficial',
         },
         {
           imgUrl: require('@/assets/images/discord.png'),
-          herf: 'https://discord.gg/5MFdTsNxtr',
+          herf: 'https://t.me/SimetaOfficial',
         },
         {
           imgUrl: require('@/assets/images/faceBook.png'),
@@ -155,7 +157,7 @@ export default {
       infomationList: [
         {
           name: 'Doc',
-          herf: 'https://app.gitbook.com/o/cbFzgz9W4lqTqpOBnQ0Q/s/mlIj6Clqca34joALWnkx/',
+          herf: 'https://metadaosworld.gitbook.io/copy-of-metadaos-world/',
         },
         {
           name: 'Whitepaper',
@@ -180,19 +182,30 @@ export default {
   },
   methods: {
     sumbit() {
-      this.$axios
-        .get('http://120.25.156.192:8080/commit', {
-          params: {
-            name: this.name,
-            email: this.mail,
-          },
-        })
-        .then(function (response) {
-          console.log(response)
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
+      if (this.email && this.name) {
+        this.$axios
+          .get('/api/commit', {
+            params: {
+              email: this.email,
+              name: this.name,
+            },
+          })
+          .then(function (response) {
+            if (response.data.code == 0) {
+              Notify({ type: 'success', message: 'Submitted successfully' })
+            } else {
+              Notify({ type: 'danger', message: 'Submission Failed' })
+            }
+
+            console.log(response)
+          })
+          .catch(function (error) {
+            Notify({ type: 'danger', message: 'Submission Failed' })
+
+            console.log(error)
+          })
+      } else {
+      }
     },
   },
 }

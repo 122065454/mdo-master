@@ -248,7 +248,7 @@ h1 {
 }
 .phase2_content {
   position: absolute;
-  bottom: 10 / @p;
+  bottom: 180 / @p;
   left: 1000 / @p;
   width: 602 / @p;
   height: 210 / @p;
@@ -347,7 +347,7 @@ h1 {
   // animation: scaleDraw2 3s ease-in-out infinite;
   position: absolute;
   top: 684 / @p;
-  left: 1039 / @p;
+  left: 1020 / @p;
   width: 300 / @p;
   height: 252 / @p;
   background: url(~@/assets/images/phase2.png) center no-repeat;
@@ -383,7 +383,7 @@ h1 {
   // animation: scaleDraw2 3s ease-in-out infinite;
 
   top: 316 / @p;
-  left: 343 / @p;
+  left: 383 / @p;
   width: 337 / @p;
   height: 254 / @p;
   background: url(~@/assets/images/phase5.png) center no-repeat;
