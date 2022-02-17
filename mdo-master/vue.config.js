@@ -39,7 +39,7 @@ module.exports = {
     proxy: {
       //配置跨域
       '/api': {
-        target: 'http://120.25.156.192:8080/', //这里后台的地址模拟的;
+        target: 'http://54.67.81.90:8080/', //这里后台的地址模拟的;
 
         changOrigin: true, //允许跨域
         pathRewrite: {

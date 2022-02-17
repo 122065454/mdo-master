@@ -129,7 +129,7 @@
 </template>
 <script>
 import { Notify } from 'vant'
-
+import md5 from 'md5'
 export default {
   name: 'footer',
   data() {
@@ -161,7 +161,7 @@ export default {
         },
         {
           name: 'Whitepaper',
-          herf: 'https://app.gitbook.com/s/mlIj6Clqca34joALWnkx/',
+          herf: 'http://54.67.81.90/Litepaper_Simeta.pdf',
         },
         {
           name: 'Tokenomics',
@@ -188,6 +188,9 @@ export default {
             params: {
               email: this.email,
               name: this.name,
+              sign: md5(
+                'a=MetaDao123456&email=' + this.email + '&name=' + this.name
+              ),
             },
           })
           .then(function (response) {

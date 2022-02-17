@@ -17,7 +17,7 @@
       <div class="buttons  wow  animate__animated animate__bounceInLeft"
            data-wow-duration="3s">
         <div class="button_1">
-          <a href="https://app.gitbook.com/s/mlIj6Clqca34joALWnkx/"
+          <a href="https://metadaosworld.gitbook.io/simeta/"
              target="_blank"
              rel="noopener noreferrer">
             <span> Whitepaper</span>
@@ -41,7 +41,7 @@
       <div class="buttons  wow  animate__animated animate__bounceInLeft"
            data-wow-duration="3s">
         <div class="button_1">
-          <a href="https://app.gitbook.com/s/mlIj6Clqca34joALWnkx/"
+          <a href="https://metadaosworld.gitbook.io/simeta/"
              target="_blank"
              rel="noopener noreferrer">
             <span> Whitepaper</span>

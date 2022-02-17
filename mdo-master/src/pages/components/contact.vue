@@ -18,15 +18,15 @@ export default {
       socialist: [
         {
           imgUrl: require('@/assets/images/twiter.png'),
-          herf: 'https://twitter.com/Metadaos_world',
+          herf: 'https://twitter.com/simeta_io',
         },
         {
           imgUrl: require('@/assets/images/tg.png'),
-          herf: 'https://t.me/MetadaosEn',
+          herf: 'https://t.me/SimetaOfficial',
         },
         {
           imgUrl: require('@/assets/images/discord.png'),
-          herf: 'https://discord.gg/5MFdTsNxtr',
+          herf: 'https://t.me/SimetaOfficial',
         },
         {
           imgUrl: require('@/assets/images/faceBook.png'),
@@ -62,7 +62,7 @@ export default {
     margin-top: 10px;
     margin: 23 / @p auto;
   }
-  a:hover{
+  a:hover {
     // transform: translateX(10px);
     transform: scale(1.1);
     transition: all 0.5;
