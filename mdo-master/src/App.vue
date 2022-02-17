@@ -1,11 +1,12 @@
 <template>
-  <div id="app">
+  <div id="app"
+       ontouchstart>
     <!-- <img alt="Vue logo"
          src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <v-header></v-header>
     <router-view></router-view>
-    <!-- <v-footer></v-footer> -->
+    <v-footer></v-footer>
   </div>
 </template>
 

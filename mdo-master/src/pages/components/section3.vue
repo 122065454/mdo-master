@@ -1,6 +1,7 @@
 <template>
   <div class="main">
-    <div class="content"  v-if="isPC">
+    <div class="content"
+         v-if="isPC">
       <h1 class=" wow  animate__animated animate__fadeInUp"
           data-wow-duration="1s">Partners & Investors</h1>
       <h2 class=" wow  animate__animated animate__fadeInUp"
@@ -9,11 +10,12 @@
            data-wow-duration="2s">
         <img src="@/assets/images/partner.png"
              alt="">
-       
+
       </div>
     </div>
-    <div class="h5_content" v-if="!isPC">
-             <h1 class=" wow  animate__animated animate__fadeInUp"
+    <div class="h5_content"
+         v-if="!isPC">
+      <h1 class=" wow  animate__animated animate__fadeInUp"
           data-wow-duration="1s">Partners & Investors</h1>
       <h2 class=" wow  animate__animated animate__fadeInUp"
           data-wow-duration="2s">We are proud to have these amazing funds and people by our side as we build Metadaos World Network.</h2>
@@ -48,13 +50,13 @@ export default {
 @p: 100rem;
 .main {
   width: 100%;
-  height: 837 / @p;
+  height: 937 / @p;
   background: url(~@/assets/images/bg3.png) center no-repeat;
   background-size: cover;
   // overflow: hidden;
 }
 .content {
-  margin: 300 / @p auto 80 / @p;
+  margin: 100 / @p auto 80 / @p;
   text-align: center;
   width: 1361 / @p;
   // overflow: hidden;
@@ -83,7 +85,7 @@ h2 {
 @media screen and (max-width: 700px) {
   .main {
     width: 100%;
-    // height: 837 / @p;
+    height: 1600 / @p;
     background: url(~@/assets/images/h5/bg3.png) center no-repeat;
     background-size: cover;
     // overflow: hidden;
@@ -92,20 +94,19 @@ h2 {
     // margin: 300 / @p auto 80 / @p;
     text-align: center;
     width: 100%;
-     margin-top: 471/@p;
+    margin-top: 671 / @p;
     // overflow: hidden;
   }
   .partner {
-  width: 538 / @p;
-  height: 1238 / @p;
-  margin: auto;
- 
-  img {
-    width: 100%;
+    width: 538 / @p;
+    height: 1238 / @p;
+    margin: auto;
+
+    img {
+      width: 100%;
+    }
   }
-}
-  img{
-    
+  img {
   }
 }
 </style>

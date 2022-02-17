@@ -167,7 +167,7 @@ h2 {
   .main {
     background: url(~@/assets/images/h5/BG.png) center no-repeat;
     background-size: cover;
-    padding: 0 65 / @p;
+    padding: 297 / @p 65 / @p 0 65 / @p;
   }
   .content_h5 {
     text-align: center;
@@ -175,6 +175,8 @@ h2 {
   .buttons {
     font-size: 36 / @p;
     flex-direction: column;
+    text-align: center;
+    align-items: center;
     .button_1 {
       width: 360 / @p;
       margin-bottom: 40 / @p;

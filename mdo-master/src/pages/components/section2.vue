@@ -9,7 +9,9 @@
          class="bg"
          alt="">
     <h1 class=" wow  animate__animated animate__fadeInUp"
+        v-if="isPC"
         data-wow-duration="1s">ROADMAP</h1>
+    <h1 v-if="!isPC">ROADMAP</h1>
     <div class="route"></div>
     <div class="phase1 wow  animate__animated animate__backInLeft"
          data-wow-duration="1s">
@@ -80,12 +82,12 @@
     </div> -->
     <div class="rocket"></div>
     <!-- content -->
-    <div class="content phase1_content">Feasibility Analysis
-      Market research and feasibility analysis
-      Team formation
-      Business model design and simulation
+    <div :class="['content', item.sclass]"
+         v-for="(item,index) in contentList"
+         :key="index">
+      {{item.content}}
     </div>
-    <div class="content phase2_content">Crypto E-mall development
+    <!-- <div class="content phase2_content">Crypto E-mall development
       Website & Crypto E-mall development
       Seed & Private round sale,
       Social media accounts registration and marketing.
@@ -101,12 +103,11 @@
       List the utility tokens on CEX.
       Marketing by listing land and pet NFT via INO.
     </div>
-    <div class="content phase5_content">
-      Achievement of Simeta
+    <div class="content phase5_content"> Achievement of Simeta
       Combine Crypto E-mall and metaverse to realize a Simeta where users can shop on an emerging immersive digital land with other users around the world.
       Promote for merchants to complete sales of $100 million.
       Optimization of the whole system and invite more merchants
-    </div>
+    </div> -->
   </div>
 </template> 
 <script>
@@ -114,7 +115,35 @@ import { WOW } from 'wowjs'
 export default {
   name: 'section2',
   data() {
-    return {}
+    return {
+      contentList: [
+        {
+          content:
+            'Feasibility Analysis Market research and feasibility analysis Team formation Business model design and simulation',
+          sclass: 'phase1_content',
+        },
+        {
+          content:
+            'Crypto E-mall development Website & Crypto E-mall development Seed & Private round sale,Social media accounts registration and marketing.Issuance of utility tokens.',
+          sclass: 'phase2_content',
+        },
+        {
+          content:
+            'Merchants Invitation and optimization Marketing by IDOs & List the utility tokens on Uniswap.Invite merchants to list their products on Simeta.System optimization & officially launches.',
+          sclass: 'phase3_content',
+        },
+        {
+          content:
+            'Metaverse development include land NFT, customization of characters, pet system, land and pet NFT marketplace, NFT farming system, etc.Promote for merchants to complete sales of $20 million.List the utility tokens on CEX.Marketing by listing land and pet NFT via INO.',
+          sclass: 'phase4_content',
+        },
+        {
+          content:
+            'Achievement of Simeta Combine Crypto E-mall and metaverse to realize a Simeta where users can shop on an emerging immersive digital land with other users around the world.Promote for merchants to complete sales of $100 million.Optimization of the whole system and invite more merchants',
+          sclass: 'phase5_content',
+        },
+      ],
+    }
   },
 
   mounted() {
@@ -128,10 +157,26 @@ export default {
 </script>
 <style lang="less" scoped>
 @p: 100rem;
+@media screen and (min-width: 700px) {
+  .phase1:hover,
+  .phase2:hover,
+  .phase3:hover,
+  .phase4:hover,
+  .phase5:hover {
+    transform: translateY(10px);
+  }
+}
 
+.phase1:hover ~ .phase1_content,
+.phase2:hover ~ .phase2_content,
+.phase3:hover ~ .phase3_content,
+.phase4:hover ~ .phase4_content,
+.phase5:hover ~ .phase5_content {
+  display: block;
+}
 .main {
   width: 100%;
-  height: 100vh;
+  height: 1336 / @p;
   // background: url(~@/assets/images/map.png) center no-repeat;
   // background-size: cover;
   // overflow: hidden;
@@ -173,6 +218,15 @@ export default {
   background: url(~@/assets/images/space.png) center no-repeat;
   background-size: cover;
 }
+h1 {
+  font-size: 56 / @p;
+  font-family: Cabin;
+  font-weight: 600;
+  color: #ffffff;
+  position: absolute;
+  top: 10%;
+  left: 42%;
+}
 // .rocket{
 //   position: absolute;
 //   left: 0;
@@ -194,7 +248,7 @@ export default {
 }
 .phase2_content {
   position: absolute;
-  bottom: -80 / @p;
+  bottom: 10 / @p;
   left: 1000 / @p;
   width: 602 / @p;
   height: 210 / @p;
@@ -225,7 +279,7 @@ export default {
   top: 302 / @p;
   left: 20 / @p;
   width: 400 / @p;
-  height: 450 / @p;
+  height: 400 / @p;
   padding: 10 / @p;
   display: none;
 }
@@ -267,19 +321,11 @@ export default {
 .bg {
   // margin-top: 150 / @p;
 }
-h1 {
-  font-size: 56 / @p;
-  font-family: Cabin;
-  font-weight: 600;
-  color: #ffffff;
-  position: absolute;
-  top: 10%;
-  left: 42%;
-}
+
 .route {
   position: absolute;
-  top: 40%;
-  left: 33%;
+  top: 405 / @p;
+  left: 635 / @p;
   width: 856 / @p;
   height: 512 / @p;
   background: url(~@/assets/images/route.png) center no-repeat;
@@ -289,8 +335,8 @@ h1 {
   // animation: scaleDraw2 3s ease-in-out infinite;
 
   position: absolute;
-  top: 63%;
-  left: 26%;
+  top: 669 / @p;
+  left: 488 / @p;
   width: 327 / @p;
   height: 322 / @p;
   background: url(~@/assets/images/phase.png) center no-repeat;
@@ -300,8 +346,8 @@ h1 {
 .phase2 {
   // animation: scaleDraw2 3s ease-in-out infinite;
   position: absolute;
-  top: 68%;
-  left: 53%;
+  top: 684 / @p;
+  left: 1039 / @p;
   width: 300 / @p;
   height: 252 / @p;
   background: url(~@/assets/images/phase2.png) center no-repeat;
@@ -312,8 +358,8 @@ h1 {
   position: absolute;
   // animation: scaleDraw2 3s ease-in-out infinite;
 
-  top: 30%;
-  left: 65%;
+  top: 260 / @p;
+  left: 1236 / @p;
   width: 308 / @p;
   height: 258 / @p;
   background: url(~@/assets/images/phase3.png) center no-repeat;
@@ -324,8 +370,8 @@ h1 {
   position: absolute;
   // animation: scaleDraw2 3s ease-in-out infinite;
 
-  top: 37%;
-  left: 42%;
+  top: 400 / @p;
+  left: 810 / @p;
   width: 284 / @p;
   height: 308 / @p;
   background: url(~@/assets/images/phase4.png) center no-repeat;
@@ -336,28 +382,15 @@ h1 {
   position: absolute;
   // animation: scaleDraw2 3s ease-in-out infinite;
 
-  top: 29%;
-  left: 23%;
+  top: 316 / @p;
+  left: 343 / @p;
   width: 337 / @p;
   height: 254 / @p;
   background: url(~@/assets/images/phase5.png) center no-repeat;
   background-size: cover;
   transition: all 1s;
 }
-.phase1:hover,
-.phase2:hover,
-.phase3:hover,
-.phase4:hover,
-.phase5:hover {
-  transform: translateY(10px);
-}
-.phase1:hover ~ .phase1_content,
-.phase2:hover ~ .phase2_content,
-.phase3:hover ~ .phase3_content,
-.phase4:hover ~ .phase4_content,
-.phase5:hover ~ .phase5_content {
-  display: block;
-}
+
 @keyframes scaleDraw {
   0% {
     transform: scale(1); /*开始为原始大小*/
@@ -396,28 +429,77 @@ h1 {
     background-size: cover;
     width: 407 / @p;
     height: 1252 / @p;
-    top: 300 / @p;
-    left: 100 / @p;
+    top: 372 / @p;
+    left: 160 / @p;
+  }
+  h1 {
+    top: 90 / @p;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .tips_4 {
+    position: absolute;
+    top: 272 / @p;
+    left: 50 / @p;
+  }
+  .tips_2 {
+    position: absolute;
+    top: 252 / @p;
+    left: 50 / @p;
   }
   .phase1 {
-    top: 110%;
-    left: 4%;
+    top: 1520 / @p;
+    left: 50 / @p;
   }
   .phase2 {
-    top: 80%;
-    left: 29%;
+    top: 1150 / @p;
+    left: 400 / @p;
   }
   .phase3 {
-    top: 55%;
+    top: 882 / @p;
     left: 0%;
   }
   .phase4 {
-    top: 41%;
-    left: 42%;
+    top: 637 / @p;
+    left: 420 / @p;
   }
   .phase5 {
-    top: 10%;
-    left: 2%;
+    top: 233 / @p;
+    left: 47 / @p;
+  }
+  .phase5_content {
+    top: 180 / @p;
+    left: 20 / @p;
+    background-color: #fff;
+    opacity: 1;
+  }
+  .phase4_content {
+    top: 670 / @p;
+    left: 60 / @p;
+    height: 250 / @p;
+    background-color: #fff;
+    opacity: 1;
+  }
+  .phase3_content {
+    top: 670 / @p;
+    left: 60 / @p;
+    height: 400 / @p;
+    background-color: #fff;
+    opacity: 1;
+  }
+  .phase2_content {
+    top: 1200 / @p;
+    left: 60 / @p;
+    height: 230 / @p;
+    background-color: #fff;
+    opacity: 1;
+  }
+  .phase1_content {
+    top: 1600 / @p;
+    left: 320 / @p;
+    height: 250 / @p;
+    background-color: #fff;
+    opacity: 1;
   }
 }
 </style>

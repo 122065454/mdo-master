@@ -3,10 +3,10 @@
     <div class="content">
       <div class="logo">
         <div class="logo_top">
-          <img src="@/assets/images/LOGO.png"
+          <img src="@/assets/images/h5/logo.png"
                class="img1"
                alt="">
-          <img src="@/assets/images/logoname.png"
+          <img src="@/assets/images/h5/Simeta.png"
                class="img2"
                alt="">
           <div class="logo_bottom">
@@ -41,11 +41,14 @@
         <p>Subscribe to our newsletter: stay in touch with latest updates with MetaDaos World</p>
         <div class="input">
           <input type="text"
+                 v-model="email"
                  placeholder="Your Email">
           <input type="text"
+                 v-model="name"
                  placeholder="Your Name">
         </div>
-        <div class="button">Subscribe</div>
+        <div class="button"
+             @click="sumbit">Subscribe</div>
       </div>
 
     </div>
@@ -61,17 +64,76 @@
     </div>
 
   </footer>
-   <footer v-else>
-     <div class="title">
-       <img src="@/assest/images/h5/logo.png" alt="">
-     </div>
-   </footer>
+  <footer v-else>
+    <div class="title">
+      <img src="@/assets/images/h5/logo.png"
+           class="footer_logo"
+           alt="">
+      <img src="@/assets/images/h5/Simeta.png"
+           class="simeta"
+           alt="">
+    </div>
+    <div class="introduce">
+      The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide
+    </div>
+    <div class="h5_contact">
+      <ol>
+        <li>infomation </li>
+        <li v-for="(item,index) in infomationList"
+            :key="index">
+          <a :href="item.herf"
+             target="_blank"
+             rel="noopener noreferrer">{{item.name}}</a>
+        </li>
+      </ol>
+      <ol>
+        <li>Community </li>
+        <li v-for="(item,index) in communityList"
+            :key='index'>
+          <a :href="item.herf"
+             target="_blank"
+             rel="noopener noreferrer">{{item.name}}</a>
+        </li>
+        <!-- <li> Telegram </li>
+          <li>Discord</li>
+          <li>Meta</li> -->
+      </ol>
+    </div>
+    <div class="h5_input">
+      <h1>Subscribe to our newsletter: </h1>
+      <h2>stay in touch with latest updates with Simeta</h2>
+      <input type="text"
+             placeholder="Your Email"
+             v-model="mail"
+             name=""
+             id="">
+      <input type="text"
+             name=""
+             v-model="name"
+             placeholder="Your Name"
+             id="">
+      <div class="h5_button"
+           @click="sumbit">Subscribe</div>
+    </div>
+    <div class="h5_sociality">
+      <a v-for="(item,index) in socialist"
+         :key="index"
+         :href="item.herf"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img :src="item.imgUrl"
+             alt="">
+      </a>
+    </div>
+  </footer>
 </template>
 <script>
 export default {
   name: 'footer',
   data() {
     return {
+      mail: '',
+      name: '',
       socialist: [
         {
           imgUrl: require('@/assets/images/twiter.png'),
@@ -116,16 +178,49 @@ export default {
       ],
     }
   },
+  methods: {
+    sumbit() {
+      this.$axios
+        .get('http://120.25.156.192:8080/commit', {
+          params: {
+            name: this.name,
+            email: this.mail,
+          },
+        })
+        .then(function (response) {
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+    },
+  },
 }
 </script>
 <style lang="less" scoped>
 @p: 100rem;
-footer {
-  width: 100%;
-  height: 375 / @p;
-  background: url(~@/assets/images/footer.png) center no-repeat;
-  background-size: cover;
+@media screen and (min-width: 700px) {
+  footer {
+    width: 100%;
+    height: 375 / @p;
+    background: url(~@/assets/images/footer.png) center no-repeat;
+    background-size: cover;
+  }
+  input {
+    width: 240 / @p;
+    height: 46 / @p;
+    border: 2 / @p solid #ffffff;
+    border-radius: 10 / @p;
+    font-size: 16 / @p;
+  }
+  .input {
+    display: flex;
+    justify-content: space-between;
+
+    // margin-top: -50 / @p;
+  }
 }
+
 .content {
   width: 1241 / @p;
   margin: auto;
@@ -140,13 +235,14 @@ footer {
   margin-right: 118 / @p;
   line-height: 10 / @p;
   .img1 {
-    width: 88 / @p;
-    height: 77 / @p;
+    width: 66 / @p;
+    height: 74 / @p;
   }
   .img2 {
-    width: 160 / @p;
-    height: 65 / @p;
+    width: 112 / @p;
+    height: 29 / @p;
     margin-left: 20 / @p;
+    margin-bottom: 24 / @p;
   }
 }
 .logo_bottom {
@@ -225,24 +321,87 @@ ol li:first-child {
     vertical-align: text-top;
   }
 }
-input {
-  width: 240 / @p;
-  height: 46 / @p;
-  border: 2 / @p solid #ffffff;
-  border-radius: 10 / @p;
-}
-.input {
-  display: flex;
-  justify-content: space-between;
 
-  // margin-top: -50 / @p;
+@media screen and (max-width: 700px) {
+  footer {
+    width: 100%;
+    padding: 74 / @p 59 / @p;
+    background: linear-gradient(25deg, #3886e6 0%, #650dab 100%);
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30 / @p;
+  }
+  .footer_logo {
+    width: 82 / @p;
+    height: 92 / @p;
+    margin-right: 23 / @p;
+  }
+  .simeta {
+    width: 125 / @p;
+    height: 32 / @p;
+  }
+  .introduce {
+    font-size: 28 / @p;
+    word-break: break-all;
+    font-family: Alibaba PuHuiTi;
+    font-weight: 400;
+    color: #dbcfec;
+    line-height: 36 / @p;
+    margin-bottom: 60 / @p;
+  }
+  .h5_contact {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100 / @p;
+  }
+  ol {
+    font-size: 28 / @p;
+  }
+  .h5_input {
+    h1 {
+      font-size: 36 / @p;
+      font-family: Alibaba PuHuiTi;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 26 / @p;
+      margin-bottom: 28 / @p;
+    }
+    h2 {
+      font-size: 28 / @p;
+      font-family: Alibaba PuHuiTi;
+      font-weight: 400;
+      color: #dbcfec;
+      line-height: 36 / @p;
+    }
+    input {
+      border: 2 / @p solid #ffffff;
+      border-radius: 10 / @p;
+      height: 88 / @p;
+      width: 100%;
+      font-size: 10px;
+    }
+    .h5_button {
+      height: 88 / @p;
+      line-height: 88 / @p;
+      margin-top: 80 / @p;
+      text-align: center;
+      background: #0c84e4;
+      border: 2 / @p solid #ffffff;
+      border-radius: 10 / @p;
+      font-size: 32 / @p;
+      font-family: Alibaba PuHuiTi;
+      font-weight: 400;
+      color: #fefefe;
+    }
+  }
+  .h5_sociality {
+    width: 100%;
+    height: 88 / @p;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100 / @p;
+  }
 }
- @media screen and (max-width: 700px){
-   footer{
-     width: 100%;
-     padding:74px 59px;
-     background: linear-gradient(25deg, #3886E6 0%, #650DAB 100%);
-   }
- }
-
 </style>

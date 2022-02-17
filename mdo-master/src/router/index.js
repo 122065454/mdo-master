@@ -14,7 +14,7 @@ const router = new VueRouter({
 })
 // 全局后置钩子
 router.afterEach((to, from) => {
-  document.title = to.meta.title || 'MetaDaos'
+  document.title = to.meta.title || 'Simeta'
 })
 
 export default router
