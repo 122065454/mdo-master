@@ -38,7 +38,7 @@
         </ol>
       </div>
       <div class="mail">
-        <p>Subscribe to our newsletter: stay in touch with latest updates with MetaDaos World</p>
+        <p>Subscribe to our newsletter: stay in touch with latest updates with Simeta</p>
         <div class="input">
           <input type="text"
                  v-model="email"
@@ -184,14 +184,12 @@ export default {
     sumbit() {
       if (this.email && this.name) {
         this.$axios
-          .get('/api/commit', {
-            params: {
-              email: this.email,
-              name: this.name,
-              sign: md5(
-                'a=MetaDao123456&email=' + this.email + '&name=' + this.name
-              ),
-            },
+          .post('/api/commit', {
+            email: this.email,
+            name: this.name,
+            sign: md5(
+              'a=MetaDao123456&email=' + this.email + '&name=' + this.name
+            ),
           })
           .then(function (response) {
             if (response.data.code == 0) {
@@ -228,6 +226,7 @@ export default {
     border: 2 / @p solid #ffffff;
     border-radius: 10 / @p;
     font-size: 16 / @p;
+    padding-left: 20 / @p;
   }
   .input {
     display: flex;
@@ -309,7 +308,7 @@ ol li:first-child {
     width: 147 / @p;
     height: 45 / @p;
     background: #0c84e4;
-    border: 2 / @p solid #ffffff;
+    // border: 2 / @p solid #ffffff;
     border-radius: 10 / @p;
     font-size: 16 / @p;
     font-family: Alibaba PuHuiTi;
@@ -397,6 +396,7 @@ ol li:first-child {
       height: 88 / @p;
       width: 100%;
       font-size: 10px;
+      padding-left: 25 / @p;
     }
     .h5_button {
       height: 88 / @p;
@@ -404,7 +404,7 @@ ol li:first-child {
       margin-top: 80 / @p;
       text-align: center;
       background: #0c84e4;
-      border: 2 / @p solid #ffffff;
+
       border-radius: 10 / @p;
       font-size: 32 / @p;
       font-family: Alibaba PuHuiTi;

@@ -10,8 +10,8 @@
          alt="">
     <h1 class=" wow  animate__animated animate__fadeInUp"
         v-if="isPC"
-        data-wow-duration="1s">ROADMAP</h1>
-    <h1 v-if="!isPC">ROADMAP</h1>
+        data-wow-duration="1s">Roadmap</h1>
+    <h1 v-if="!isPC">Roadmap</h1>
     <div class="route"></div>
     <div class="phase1 wow  animate__animated animate__backInLeft"
          data-wow-duration="1s">
@@ -449,56 +449,57 @@ h1 {
     left: 50 / @p;
   }
   .phase1 {
-    top: 1520 / @p;
-    left: 50 / @p;
+    top: 233 / @p;
+    left: 47 / @p;
   }
   .phase2 {
-    top: 1150 / @p;
-    left: 400 / @p;
+    top: 580 / @p;
+    left: 420 / @p;
   }
   .phase3 {
     top: 882 / @p;
     left: 0%;
   }
   .phase4 {
-    top: 637 / @p;
-    left: 420 / @p;
+    top: 1180 / @p;
+    left: 400 / @p;
   }
   .phase5 {
-    top: 233 / @p;
-    left: 47 / @p;
+    top: 1520 / @p;
+    left: 50 / @p;
   }
   .phase5_content {
-    top: 180 / @p;
-    left: 20 / @p;
+    top: 1600 / @p;
+    left: 320 / @p;
+    height: 500 / @p;
     background-color: #fff;
     opacity: 1;
   }
   .phase4_content {
-    top: 670 / @p;
-    left: 60 / @p;
-    height: 250 / @p;
-    background-color: #fff;
-    opacity: 1;
-  }
-  .phase3_content {
-    top: 670 / @p;
-    left: 60 / @p;
-    height: 400 / @p;
-    background-color: #fff;
-    opacity: 1;
-  }
-  .phase2_content {
     top: 1200 / @p;
     left: 60 / @p;
     height: 230 / @p;
     background-color: #fff;
     opacity: 1;
   }
-  .phase1_content {
-    top: 1600 / @p;
-    left: 320 / @p;
+  .phase3_content {
+    top: 670 / @p;
+    left: 60 / @p;
+    height: 350 / @p;
+    background-color: #fff;
+    opacity: 1;
+  }
+  .phase2_content {
+    top: 670 / @p;
+    left: 60 / @p;
     height: 250 / @p;
+    background-color: #fff;
+    opacity: 1;
+  }
+  .phase1_content {
+    top: 180 / @p;
+    left: 20 / @p;
+    height: 240 / @p;
     background-color: #fff;
     opacity: 1;
   }
