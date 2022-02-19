@@ -132,7 +132,7 @@ h2 {
     align-items: center;
     justify-content: center;
     border-radius: 40 / @p;
-    height: 80 / @p;
+    height: 60 / @p;
     font-size: 36 / @p;
     font-family: Alibaba PuHuiTi;
     font-weight: 400;

@@ -250,7 +250,7 @@ export default {
   margin-right: 118 / @p;
   line-height: 10 / @p;
   .img1 {
-    width: 66 / @p;
+    width: 80 / @p;
     height: 74 / @p;
   }
   .img2 {

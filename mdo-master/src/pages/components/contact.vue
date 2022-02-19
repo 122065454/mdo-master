@@ -43,24 +43,24 @@ export default {
 .sociality {
   position: fixed;
   z-index: 99;
-  top: 554 / @p;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0;
-  width: 86 / @p;
-  height: 335 / @p;
+  width: 50 / @p;
+  height: 170 / @p;
   background: #6600ff;
-  // padding-bottom: 20px;
-
+  padding-top: 15 / @p;
   border-radius: 20 / @p 0 / @p 0 / @p 20 / @p;
   img {
     width: 100%;
-    vertical-align: super;
+    vertical-align: text-top;
   }
   a {
     display: block;
-    width: 46 / @p;
-    height: 46 / @p;
+    width: 23 / @p;
+    height: 23 / @p;
     margin-top: 10px;
-    margin: 23 / @p auto;
+    margin: 10 / @p auto;
   }
   a:hover {
     // transform: translateX(10px);

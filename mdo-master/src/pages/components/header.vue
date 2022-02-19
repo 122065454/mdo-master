@@ -4,6 +4,12 @@
       <ul>
         <li>
           <span>About</span>
+          <div>
+
+          </div>
+        </li>
+        <li>
+          <span>Merchant</span>
         </li>
         <li>
           <span>DeBank</span>
@@ -11,11 +17,8 @@
         <li>
           <span>Land</span>
         </li>
-        <li>
-          <span>Merchant</span>
-        </li>
-
       </ul>
+
     </div>
     <div class="logo">
       <img src="@/assets/images/h5/logo.png"
