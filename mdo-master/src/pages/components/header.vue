@@ -1,5 +1,22 @@
 <template>
   <header v-if="isPC">
+    <div class="menu_left">
+      <ul>
+        <li>
+          <span>About</span>
+        </li>
+        <li>
+          <span>DeBank</span>
+        </li>
+        <li>
+          <span>Land</span>
+        </li>
+        <li>
+          <span>Merchant</span>
+        </li>
+
+      </ul>
+    </div>
     <div class="logo">
       <img src="@/assets/images/h5/logo.png"
            alt="">
@@ -33,6 +50,10 @@
     <van-popup v-model="show"
                position="left"
                :style="{ height: '100%',width:'60%' }">
+      <van-icon name="cross"
+                @click="close"
+                class="icon"
+                size="30" />
       <ul>
         <li>
           <!-- <img src="@/assets/images/shopping.png"
@@ -41,6 +62,18 @@
         </li>
         <li @click="connectWallect">
           WALLET
+        </li>
+        <li>
+          <span>About</span>
+        </li>
+        <li>
+          <span>DeBank</span>
+        </li>
+        <li>
+          <span>Land</span>
+        </li>
+        <li>
+          <span>Merchant</span>
         </li>
       </ul>
     </van-popup>
@@ -67,6 +100,9 @@ export default {
     diagleShow() {
       this.show = !this.show
     },
+    close() {
+      this.show = false
+    },
   },
   mounted() {
     var options = {
@@ -82,13 +118,14 @@ export default {
 @media screen and (min-width: 700px) {
   header {
     width: 100%;
-    height: 100 / @p;
+    height: 80 / @p;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     position: fixed;
     // margin-top: 50 / @p;
     z-index: 100;
+
     background: rgba(0, 0, 0, 0.6);
   }
 }
@@ -96,10 +133,10 @@ export default {
 .logo {
   display: flex;
   align-items: center;
-  margin-left: 283 / @p;
+  // margin-left: 283 / @p;
   img {
-    width: 66 / @p;
-    height: 74 / @p;
+    width: 60 / @p;
+    height: 54 / @p;
   }
   p {
     margin-left: 33 / @p;
@@ -112,11 +149,37 @@ export default {
     line-height: 24 / @p;
   }
 }
+.menu_left {
+  font-size: 20 / @p;
+  font-family: Alibaba PuHuiTi;
+  font-weight: bold;
+  color: #fefefe;
+  // margin-left: 100px;
+  ul {
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+  li {
+    margin-left: 30 / @p;
+    cursor: not-allowed;
+    color: #cdc2c2;
+    position: relative;
+  }
+
+  li:hover::after {
+    content: 'SOON';
+    position: absolute;
+    top: 20 / @p;
+    left: 10 / @p;
+    font-size: 12 / @p;
+  }
+}
 .menu {
   font-size: 20 / @p;
   font-family: Alibaba PuHuiTi;
   font-weight: 500;
-  margin-right: 285 / @p;
+  // margin-right: 285 / @p;
   ul {
     width: 100%;
     display: flex;
@@ -130,6 +193,9 @@ export default {
   li {
     margin-left: 30 / @p;
     cursor: pointer;
+    color: #fefefe;
+  }
+  li:hover {
     color: #07a7ee;
   }
   img {
@@ -142,6 +208,11 @@ export default {
 @media screen and (max-width: 700px) {
   /deep/.van-popup {
     background-color: #342b2b;
+  }
+  .icon {
+    float: right;
+    color: #dbbbbb;
+    margin-top: 10 / @p;
   }
   header {
     width: 100%;
@@ -160,7 +231,7 @@ export default {
     display: flex;
     align-items: center;
     img {
-      width: 66 / @p;
+      width: 80 / @p;
       height: 74 / @p;
     }
     span {
@@ -180,13 +251,16 @@ export default {
       margin-top: 20 / @p;
     }
   }
+  ul {
+    margin-top: 100 / @p;
+  }
   li {
     height: 60 / @p;
     padding-left: 20px;
     line-height: 60 / @p;
     font-size: 20 / @p;
     font-family: Alibaba PuHuiTi;
-    border-bottom: 1px solid #dbd1cc;
+
     color: #dbbbbb;
     img {
       width: 25 / @p;

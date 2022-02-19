@@ -98,7 +98,7 @@ a {
 }
 .content {
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 978 / @p;
@@ -167,7 +167,8 @@ h2 {
   .main {
     background: url(~@/assets/images/h5/BG.png) center no-repeat;
     background-size: cover;
-    padding: 297 / @p 65 / @p 0 65 / @p;
+    height: 80%;
+    padding: 200 / @p 65 / @p 70 / @p 65 / @p;
   }
   .content_h5 {
     text-align: center;

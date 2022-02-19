@@ -288,7 +288,7 @@ h1 {
   background: #ffffff;
   opacity: 0.6;
   border-radius: 30 / @p;
-  font-size: 20 / @p;
+  font-size: 19 / @p;
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
   color: #3d4a84;
@@ -425,6 +425,9 @@ h1 {
 }
 
 @media screen and (max-width: 700px) {
+  .main {
+    margin-top: -1px;
+  }
   .route {
     background: url(~@/assets/images/h5/route.png) center no-repeat;
     background-size: cover;

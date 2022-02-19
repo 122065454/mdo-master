@@ -5,13 +5,14 @@ import mixin from '@/mixin/index.js'
 import router from '@/router'
 import animate from 'animate.css'
 import axios from 'axios'
-import { Notify, Popup } from 'vant'
+import { Icon, Notify, Popup } from 'vant'
 import 'vant/lib/index.css'
 import Vue from 'vue'
 import VueFullpage from 'vue-fullpage.js'
 import App from './App.vue'
 Vue.prototype.$axios = axios
 
+Vue.use(Icon)
 // 全局注册
 Vue.use(Notify)
 Vue.use(Popup)

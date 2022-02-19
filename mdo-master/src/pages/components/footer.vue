@@ -350,7 +350,7 @@ ol li:first-child {
   }
   .footer_logo {
     width: 82 / @p;
-    height: 92 / @p;
+    height: 80 / @p;
     margin-right: 23 / @p;
   }
   .simeta {
