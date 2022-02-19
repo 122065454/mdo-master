@@ -243,7 +243,7 @@ h1 {
   left: 200 / @p;
   padding: 10 / @p;
   width: 350 / @p;
-  height: 210 / @p;
+  height: 200 / @p;
   display: none;
 }
 .phase2_content {
@@ -251,7 +251,7 @@ h1 {
   bottom: 180 / @p;
   left: 1000 / @p;
   width: 602 / @p;
-  height: 210 / @p;
+  height: 200 / @p;
   padding: 27 / @p;
   display: none;
 }
@@ -261,7 +261,7 @@ h1 {
   top: 420 / @p;
   right: 10 / @p;
   width: 350 / @p;
-  height: 320 / @p;
+  height: 280 / @p;
   padding: 10 / @p;
   display: none;
 }
@@ -280,7 +280,7 @@ h1 {
   top: 302 / @p;
   left: 20 / @p;
   width: 400 / @p;
-  height: 400 / @p;
+  height: 350 / @p;
   padding: 10 / @p;
   display: none;
 }
@@ -292,7 +292,7 @@ h1 {
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
   color: #3d4a84;
-  line-height: 45 / @p;
+  line-height: 40 / @p;
 }
 .tips_1 {
   position: absolute;
@@ -472,28 +472,28 @@ h1 {
     left: 50 / @p;
   }
   .phase5_content {
-    top: 1600 / @p;
-    left: 320 / @p;
+    top: 1300 / @p;
+    left: 350 / @p;
     height: 500 / @p;
     background-color: #fff;
     opacity: 1;
   }
   .phase4_content {
-    top: 1200 / @p;
+    top: 950 / @p;
     left: 60 / @p;
     height: 230 / @p;
     background-color: #fff;
     opacity: 1;
   }
   .phase3_content {
-    top: 670 / @p;
+    top: 470 / @p;
     left: 60 / @p;
     height: 350 / @p;
     background-color: #fff;
     opacity: 1;
   }
   .phase2_content {
-    top: 670 / @p;
+    top: 350 / @p;
     left: 60 / @p;
     height: 250 / @p;
     background-color: #fff;
@@ -501,7 +501,7 @@ h1 {
   }
   .phase1_content {
     top: 180 / @p;
-    left: 20 / @p;
+    left: 370 / @p;
     height: 240 / @p;
     background-color: #fff;
     opacity: 1;

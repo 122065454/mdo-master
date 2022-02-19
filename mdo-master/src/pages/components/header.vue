@@ -258,15 +258,17 @@ export default {
     height: 60 / @p;
     padding-left: 20px;
     line-height: 60 / @p;
-    font-size: 20 / @p;
+    font-size: 30 / @p;
     font-family: Alibaba PuHuiTi;
-
-    color: #dbbbbb;
+    color: #fefefe;
     img {
       width: 25 / @p;
       height: 25 / @p;
       margin-left: 10px;
     }
+  }
+  li:nth-child(n + 3) {
+    color: #746969;
   }
 }
 </style>
