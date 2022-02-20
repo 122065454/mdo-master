@@ -78,7 +78,7 @@
     </div>
     <div class="h5_contact">
       <ol>
-        <li>infomation </li>
+        <li>Infomation </li>
         <li v-for="(item,index) in infomationList"
             :key="index">
           <a :href="item.herf"
@@ -100,8 +100,8 @@
       </ol>
     </div>
     <div class="h5_input">
-      <h1>Subscribe to our newsletter: </h1>
-      <h2>stay in touch with latest updates with Simeta</h2>
+      <h1>Subscribe to our newsletter, stay in touch </h1>
+      <h2> with latest updates with Simeta</h2>
       <input type="text"
              placeholder="Your Email"
              v-model="email"
@@ -374,37 +374,43 @@ ol li:first-child {
   ol {
     font-size: 28 / @p;
   }
+  ol li:first-child {
+  font-size: 30 / @p;
+  font-weight: 500;
+  margin-bottom: 26 / @p;
+}
   .h5_input {
     h1 {
-      font-size: 36 / @p;
+      font-size: 28 / @p;
       font-family: Alibaba PuHuiTi;
       font-weight: 400;
       color: #ffffff;
       line-height: 26 / @p;
-      margin-bottom: 28 / @p;
+      margin-bottom: 5 / @p;
     }
     h2 {
-      font-size: 28 / @p;
+      font-size: 28/ @p;
       font-family: Alibaba PuHuiTi;
       font-weight: 400;
-      color: #dbcfec;
-      line-height: 36 / @p;
+      color: #ffffff;
+      line-height: 40 / @p;
     }
     input {
       border: 2 / @p solid #ffffff;
       border-radius: 10 / @p;
       height: 88 / @p;
       width: 100%;
-      font-size: 10px;
+      font-size: 16px;
       padding-left: 25 / @p;
     }
     .h5_button {
       height: 88 / @p;
       line-height: 88 / @p;
-      margin-top: 80 / @p;
       text-align: center;
       background: #0c84e4;
-
+      width: 40%;
+      margin: auto;
+      margin-top: 80 / @p;
       border-radius: 10 / @p;
       font-size: 32 / @p;
       font-family: Alibaba PuHuiTi;
@@ -413,11 +419,12 @@ ol li:first-child {
     }
   }
   .h5_sociality {
-    width: 100%;
+    width: 70%;
     height: 88 / @p;
+    margin: auto;
     display: flex;
     justify-content: space-between;
-    margin-top: 100 / @p;
+    margin-top: 50 / @p;
   }
 }
 </style>

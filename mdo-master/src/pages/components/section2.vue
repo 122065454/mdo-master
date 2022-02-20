@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main" >
     <img src="@/assets/images/bg2.png"
          v-if="isPC"
          class="bg"
@@ -22,7 +22,7 @@
         </div>
         <div class="title">
           <p>Phase 1</p>
-          <p>Q4 2021</p>
+          <p>Q1 2022</p>
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="title">
           <p>Phase 2</p>
-          <p>Q1 2022</p>
+          <p>Q2 2022</p>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
         </div>
         <div class="title">
           <p>Phase 3</p>
-          <p>Q2 2022</p>
+          <p>Q3 2022</p>
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@
         </div>
         <div class="title">
           <p>Phase 4</p>
-          <p>Q3 2022</p>
+          <p>Q4 2022</p>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
         </div>
         <div class="title">
           <p>Phase 5</p>
-          <p>Q1-Q4 2022</p>
+          <p>Q1-Q4 2023</p>
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@
     <div :class="['content', item.sclass]"
          v-for="(item,index) in contentList"
          :key="index">
-      {{item.content}}
+     <div v-html="item.content"></div>
     </div>
     <!-- <div class="content phase2_content">Crypto E-mall development
       Website & Crypto E-mall development
@@ -119,23 +119,23 @@ export default {
       contentList: [
         {
           content:
-            '1）Market research, feasibility analysis & team formation; 2）Business model design and simulation；3）Whitepaper and website establish;4) Issuance of utility tokens.5) Seed & Private round sale;',
+            '1）Market research, feasibility analysis & team formation;<br> 2）Business model design and simulation；<br>3）Whitepaper and website establish;<br>4) Issuance of utility tokens.<br>5) Seed & Private round sale;',
           sclass: 'phase1_content',
         },
         {
-          content:'1) Land system & Crypto eCommerce platform development; 2) Social media accounts registration and marketing; 3) Issuance of utility tokens.4）Invite the first batch of sellers5) Launch SMT token on different launchpads & IDO platform',
+          content:'1) Land system & Crypto eCommerce platform development;<br> 2) Social media accounts registration and marketing; <br>3) Issuance of utility tokens.<br>4）Invite the first batch of sellers <br>5) Launch SMT token on different launchpads & IDO platform',
           sclass: 'phase2_content',
         },
         {
-          content:'1) Optimization of Land system & Crypto eCommerce System 2) Invite the second batch of sellers & achieve a 20 million USDT turnover on the crypto eCommerce platform ',
+          content:'1) Optimization of Land system & Crypto eCommerce System<br> 2) Invite the second batch of sellers & achieve a 20 million USDT turnover on the crypto eCommerce platform ',
           sclass: 'phase3_content',
         },
         {
-          content:'1) Simeta metaverse development includes land NFT, customization of characters, pet system, land and pet NFT marketplace, NFT farming system, etc; 2) Promote for merchants to complete sales of $200 million; 3) List the utility tokens on CEX; 4) Marketing by listing land and pet NFT via INO. ',
+          content:'1) Simeta metaverse development includes land NFT, customization of characters, pet system, land and pet NFT marketplace, NFT farming system, etc; <br>2) Promote for merchants to complete sales of $200 million;<br> 3) List the utility tokens on CEX;<br> 4) Marketing by listing land and pet NFT via INO. ',
           sclass: 'phase4_content',
         },
         {
-          content:'1) Combine Crypto eCommerce platform and Simeta metaverse to complete Simeta, a metaverse eCommerce platform where users can shop on an emerging immersive digital environment with other users around the world; 2)Optimization of the whole system and invite more merchants;3) Invite more merchants & promote for merchants to complete sales of $2 billion; ',
+          content:'1) Combine Crypto eCommerce platform and Simeta metaverse to complete Simeta, a metaverse eCommerce platform where users can shop on an emerging immersive digital environment with other users around the world;<br> 2)Optimization of the whole system and invite more merchants;<br>3) Invite more merchants & promote for merchants to complete sales of $2 billion; ',
           sclass: 'phase5_content',
         },
       ],
@@ -238,16 +238,16 @@ h1 {
   top: 900 / @p;
   left: 200 / @p;
   padding: 10 / @p;
-  width: 350 / @p;
-  height: 300 / @p;
+  width: 370 / @p;
+  height: 320 / @p;
   display: none;
 }
 .phase2_content {
   position: absolute;
   bottom: 180 / @p;
   left: 1000 / @p;
-  width: 602 / @p;
-  height: 240 / @p;
+  width: 619 / @p;
+  height: 260 / @p;
   padding: 27 / @p;
   display: none;
 }
@@ -288,6 +288,7 @@ h1 {
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
   color: #3d4a84;
+  word-break: break-all;
   line-height: 40 / @p;
 }
 .tips_1 {

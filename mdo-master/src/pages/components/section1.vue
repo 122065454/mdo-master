@@ -96,38 +96,67 @@ video {
 a {
   color: #fff;
 }
+@media screen and (min-width: 700px){
+ .content{
+    transform: skewX(-5deg)
+  
+ }
+ h1{
+    transform: skewX(5deg)
+   
+ }
+ h2{
+    transform: skewX(5deg)
+
+ }
+ .buttons{
+    transform: skewX(5deg)
+
+ }
+}
 .content {
   position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 978 / @p;
-  margin: 359 / @p auto;
+  top: 309/@p;
+  left: 631/@p;
+  border: 2px solid #fff;
+ 
+  width: 40%;
+  // height: 500px;
+  margin:  auto;
   text-align: center;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(24, 22, 22, 0.6);
+   transform-origin: 0 0;
+    // background: rgba(29, 21, 22, 0.5);
     padding: 50/@p 20/@p;
 
 }
 h1 {
-  font-size: 76 / @p;
+
+  font-size: 70 / @p;
   font-family: Cabin;
   font-weight: 600;
   color: #fefefe;
+
 }
 h2 {
-  font-size: 32 / @p;
+  font-size: 24 / @p;
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
   color: #cad1de;
   line-height: 51 / @p;
+    // transform: skewX(5deg)
+
 }
 .buttons {
+  
   font-size: 20 / @p;
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
-  margin-top: 70 / @p;
+  margin-top: 50 / @p;
   display: flex;
   justify-content: space-evenly;
+    // transform: skewX(5deg);
+
 
   .button_1,
   .button_2 {
@@ -135,16 +164,16 @@ h2 {
     align-items: center;
     justify-content: center;
     border-radius: 40 / @p;
-    height: 60 / @p;
-    font-size: 36 / @p;
+    // height: 60 / @p;
+    font-size: 22 / @p;
     font-family: Alibaba PuHuiTi;
     font-weight: 400;
     color: #02071b;
     cursor: pointer;
   }
   .button_1 {
-    width: 320 / @p;
-    height: 80 / @p;
+    width: 200 / @p;
+    height: 60 / @p;
     background: #ffc000;
 
     img {
@@ -154,8 +183,8 @@ h2 {
     }
   }
   .button_2 {
-    width: 360 / @p;
-    height: 80 / @p;
+    width: 200 / @p;
+    height: 60 / @p;
     background: #ffffff;
     opacity: 0.7;
 
@@ -182,9 +211,17 @@ h2 {
     text-align: center;
     align-items: center;
     .button_1 {
-      width: 360 / @p;
+      width: 200 / @p;
       margin-bottom: 40 / @p;
     }
+       .button_2 {
+      width: 200 / @p;
+      // margin-bottom: 40 / @p;
+    }
+  }
+
+  h2{
+    font-size: 26/@p;
   }
 }
 </style>

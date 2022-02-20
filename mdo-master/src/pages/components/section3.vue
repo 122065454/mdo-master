@@ -62,7 +62,7 @@ export default {
   // overflow: hidden;
 }
 h1 {
-  font-size: 40 / @p;
+  font-size: 56 / @p;
   font-family: Cabin;
   font-weight: 600;
   color: #0c84e4;
@@ -89,6 +89,10 @@ h2 {
     background: url(~@/assets/images/h5/bg3.png) center no-repeat;
     background-size: cover;
     // overflow: hidden;
+  }
+  h2{
+  margin: 34 / @p 25/@p 60 / @p 25/@p;
+
   }
   .h5_content {
     // margin: 300 / @p auto 80 / @p;

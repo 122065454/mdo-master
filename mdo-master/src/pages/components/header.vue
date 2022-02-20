@@ -2,8 +2,8 @@
   <header v-if="isPC">
     <div class="menu_left">
       <ul>
-        <li @mouseover='subMenuShow' >
-            <span>about</span>
+        <li @mouseover='subMenuShow'>
+            <span>About</span>
              <ol class="sbumenu" v-show="subshow" @mouseout='subMenuOut' >
                <li> 
                <a href="https://simeta.gitbook.io/about/whitepaper/our-team" target="_blank" rel="noopener noreferrer">Team</a>
@@ -270,8 +270,11 @@ export default {
   }
   li {
     margin-left: 30 / @p;
-    color: #cdc2c2;
+    // color: #cdc2c2;
     position: relative;
+  }
+  li:nth-child(n+3){
+    color: #cdc2c2;
   }
   .noshow{
     cursor: not-allowed;
