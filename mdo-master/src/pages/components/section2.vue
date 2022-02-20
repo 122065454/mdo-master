@@ -74,7 +74,7 @@
         </div>
         <div class="title">
           <p>Phase 5</p>
-          <p>Q4 2022</p>
+          <p>Q1-Q4 2022</p>
         </div>
       </div>
     </div>
@@ -119,27 +119,23 @@ export default {
       contentList: [
         {
           content:
-            'Feasibility Analysis Market research and feasibility analysis Team formation Business model design and simulation',
+            '1）Market research, feasibility analysis & team formation; 2）Business model design and simulation；3）Whitepaper and website establish;4) Issuance of utility tokens.5) Seed & Private round sale;',
           sclass: 'phase1_content',
         },
         {
-          content:
-            'Crypto E-mall development Website & Crypto E-mall development Seed & Private round sale,Social media accounts registration and marketing.Issuance of utility tokens.',
+          content:'1) Land system & Crypto eCommerce platform development; 2) Social media accounts registration and marketing; 3) Issuance of utility tokens.4）Invite the first batch of sellers5) Launch SMT token on different launchpads & IDO platform',
           sclass: 'phase2_content',
         },
         {
-          content:
-            'Merchants Invitation and optimization Marketing by IDOs & List the utility tokens on Uniswap.Invite merchants to list their products on Simeta.System optimization & officially launches.',
+          content:'1) Optimization of Land system & Crypto eCommerce System 2) Invite the second batch of sellers & achieve a 20 million USDT turnover on the crypto eCommerce platform ',
           sclass: 'phase3_content',
         },
         {
-          content:
-            'Metaverse development include land NFT, customization of characters, pet system, land and pet NFT marketplace, NFT farming system, etc.Promote for merchants to complete sales of $20 million.List the utility tokens on CEX.Marketing by listing land and pet NFT via INO.',
+          content:'1) Simeta metaverse development includes land NFT, customization of characters, pet system, land and pet NFT marketplace, NFT farming system, etc; 2) Promote for merchants to complete sales of $200 million; 3) List the utility tokens on CEX; 4) Marketing by listing land and pet NFT via INO. ',
           sclass: 'phase4_content',
         },
         {
-          content:
-            'Achievement of Simeta Combine Crypto E-mall and metaverse to realize a Simeta where users can shop on an emerging immersive digital land with other users around the world.Promote for merchants to complete sales of $100 million.Optimization of the whole system and invite more merchants',
+          content:'1) Combine Crypto eCommerce platform and Simeta metaverse to complete Simeta, a metaverse eCommerce platform where users can shop on an emerging immersive digital environment with other users around the world; 2)Optimization of the whole system and invite more merchants;3) Invite more merchants & promote for merchants to complete sales of $2 billion; ',
           sclass: 'phase5_content',
         },
       ],
@@ -243,7 +239,7 @@ h1 {
   left: 200 / @p;
   padding: 10 / @p;
   width: 350 / @p;
-  height: 200 / @p;
+  height: 300 / @p;
   display: none;
 }
 .phase2_content {
@@ -251,7 +247,7 @@ h1 {
   bottom: 180 / @p;
   left: 1000 / @p;
   width: 602 / @p;
-  height: 200 / @p;
+  height: 240 / @p;
   padding: 27 / @p;
   display: none;
 }
@@ -261,7 +257,7 @@ h1 {
   top: 420 / @p;
   right: 10 / @p;
   width: 350 / @p;
-  height: 280 / @p;
+  height: 250 / @p;
   padding: 10 / @p;
   display: none;
 }
@@ -270,7 +266,7 @@ h1 {
   top: 190 / @p;
   right: 620 / @p;
   width: 600 / @p;
-  height: 200 / @p;
+  height: 220 / @p;
   padding: 10 / @p;
   line-height: 35 / @p !important;
   display: none;
@@ -280,7 +276,7 @@ h1 {
   top: 302 / @p;
   left: 20 / @p;
   width: 400 / @p;
-  height: 350 / @p;
+  height: 420 / @p;
   padding: 10 / @p;
   display: none;
 }
@@ -474,7 +470,7 @@ h1 {
   .phase5_content {
     top: 1300 / @p;
     left: 350 / @p;
-    height: 500 / @p;
+    height: 450 / @p;
     background-color: #fff;
     opacity: 1;
   }
@@ -486,9 +482,9 @@ h1 {
     opacity: 1;
   }
   .phase3_content {
-    top: 470 / @p;
+    top: 530 / @p;
     left: 60 / @p;
-    height: 350 / @p;
+    height: 250 / @p;
     background-color: #fff;
     opacity: 1;
   }
@@ -502,7 +498,7 @@ h1 {
   .phase1_content {
     top: 180 / @p;
     left: 370 / @p;
-    height: 240 / @p;
+    height: 290 / @p;
     background-color: #fff;
     opacity: 1;
   }

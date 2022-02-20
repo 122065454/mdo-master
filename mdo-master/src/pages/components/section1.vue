@@ -104,6 +104,9 @@ a {
   width: 978 / @p;
   margin: 359 / @p auto;
   text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 50/@p 20/@p;
+
 }
 h1 {
   font-size: 76 / @p;
