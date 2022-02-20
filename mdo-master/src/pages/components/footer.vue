@@ -265,7 +265,7 @@ export default {
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
   color: #ffffff;
-  line-height: 22 / @p;
+  line-height: 26 / @p;
   margin-top: 18 / @p;
 }
 .contrat {
@@ -280,6 +280,9 @@ ol {
   a {
     color: #ffffff;
   }
+}
+li{
+  margin-bottom: 7/@p;
 }
 a:hover {
   transform: translateY(-10px);
@@ -316,7 +319,7 @@ ol li:first-child {
     color: #fefefe;
     text-align: center;
     line-height: 45 / @p;
-    margin-top: 10 / @p;
+    margin-top: 20 / @p;
     cursor: pointer;
   }
 }
