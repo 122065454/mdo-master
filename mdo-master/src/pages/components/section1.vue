@@ -160,7 +160,7 @@ h1 {
 }
 h2 {
   font-size: 24 / @p;
-  font-family: Alibaba PuHuiTi;
+  font-family: Montserrat-Regular;
   font-weight: 400;
   color: #cad1de;
   line-height: 51 / @p;
@@ -168,7 +168,7 @@ h2 {
 }
 .buttons {
   font-size: 20 / @p;
-  font-family: Alibaba PuHuiTi;
+  font-family: Montserrat-Regular;
   font-weight: 400;
   margin-top: 50 / @p;
   display: flex;
@@ -184,7 +184,7 @@ h2 {
     border-radius: 40 / @p;
     // height: 60 / @p;
     font-size: 22 / @p;
-    font-family: Alibaba PuHuiTi;
+    font-family: Montserrat-Regular;
     font-weight: 400;
     line-height: 60 / @p;
     color: #02071b;
