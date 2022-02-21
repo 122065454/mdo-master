@@ -16,7 +16,7 @@
       </div>
       <div class="contrat">
         <ol>
-          <li>infomation </li>
+          <li>Infomation </li>
           <li v-for="(item,index) in infomationList"
               :key="index">
             <a :href="item.herf"
@@ -281,8 +281,8 @@ ol {
     color: #ffffff;
   }
 }
-li{
-  margin-bottom: 7/@p;
+li {
+  margin-bottom: 7 / @p;
 }
 a:hover {
   transform: translateY(-10px);
@@ -378,10 +378,10 @@ ol li:first-child {
     font-size: 28 / @p;
   }
   ol li:first-child {
-  font-size: 30 / @p;
-  font-weight: 500;
-  margin-bottom: 26 / @p;
-}
+    font-size: 30 / @p;
+    font-weight: 500;
+    margin-bottom: 26 / @p;
+  }
   .h5_input {
     h1 {
       font-size: 28 / @p;
@@ -392,7 +392,7 @@ ol li:first-child {
       margin-bottom: 5 / @p;
     }
     h2 {
-      font-size: 28/ @p;
+      font-size: 28 / @p;
       font-family: Alibaba PuHuiTi;
       font-weight: 400;
       color: #ffffff;

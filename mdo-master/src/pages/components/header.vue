@@ -3,26 +3,36 @@
     <div class="menu_left">
       <ul>
         <li @mouseover='subMenuShow'>
-            <span>About</span>
-             <ol class="sbumenu" v-show="subshow" @mouseout='subMenuOut' >
-               <li> 
-               <a href="https://simeta.gitbook.io/about/whitepaper/our-team" target="_blank" rel="noopener noreferrer">Team</a>
-                 </li>
-               <li>
-               <a href="https://simeta.gitbook.io/about/whitepaper/our-roadmap" target="_blank" rel="noopener noreferrer">Roadmap</a>
-                 </li>
-             </ol>
+          <span>About</span>
+          <ol class="sbumenu"
+              v-show="subshow"
+              @mouseout='subMenuOut'>
+            <li>
+              <a href="https://simeta.gitbook.io/about/whitepaper/our-team"
+                 target="_blank"
+                 rel="noopener noreferrer">Team</a>
+            </li>
+            <li>
+              <a href="https://simeta.gitbook.io/about/whitepaper/our-roadmap"
+                 target="_blank"
+                 rel="noopener noreferrer">Roadmap</a>
+            </li>
+          </ol>
         </li>
-         <li @mouseover='subMenuShow2' >
-            <span>Merchant</span>
-             <ol class="sbumenu2" v-show="subshow2" @mouseout='subMenuOut2' >
-               <li> 
-               <a href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db" target="_blank" rel="noopener noreferrer">Seller Application</a>
-                 </li>
-               <li>
-                 Seller Center
-               </li>
-             </ol>
+        <li @mouseover='subMenuShow2'>
+          <span>Merchant</span>
+          <ol class="sbumenu2"
+              v-show="subshow2"
+              @mouseout='subMenuOut2'>
+            <li>
+              <a href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db"
+                 target="_blank"
+                 rel="noopener noreferrer">Seller Application</a>
+            </li>
+            <li class="noneshow">
+              Seller Center
+            </li>
+          </ol>
         </li>
         <li class="noshow">
           <span>DeBank</span>
@@ -80,16 +90,22 @@
           WALLET
         </li>
         <li>
-        <a href="https://simeta.gitbook.io/about/whitepaper/our-team" target="_blank" rel="noopener noreferrer">Team</a>
+          <a href="https://simeta.gitbook.io/about/whitepaper/our-team"
+             target="_blank"
+             rel="noopener noreferrer">Team</a>
 
         </li>
-          <li>
-            <a href="https://simeta.gitbook.io/about/whitepaper/our-roadmap" target="_blank" rel="noopener noreferrer">Roadmap</a>
-          
+        <li>
+          <a href="https://simeta.gitbook.io/about/whitepaper/our-roadmap"
+             target="_blank"
+             rel="noopener noreferrer">Roadmap</a>
+
         </li>
-           <li>
-            <a href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db" target="_blank" rel="noopener noreferrer">Seller Application</a>
-          
+        <li>
+          <a href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db"
+             target="_blank"
+             rel="noopener noreferrer">Seller Application</a>
+
         </li>
         <li>
           <span>Seller Center</span>
@@ -100,7 +116,7 @@
         <li>
           <span>Land</span>
         </li>
-        
+
       </ul>
     </van-popup>
   </header>
@@ -113,9 +129,9 @@ export default {
   data() {
     return {
       show: false,
-      subshow:false,
-      subshow2:false,
-       activeNames: ['1'],
+      subshow: false,
+      subshow2: false,
+      activeNames: ['1'],
     }
   },
   methods: {
@@ -129,19 +145,19 @@ export default {
     diagleShow() {
       this.show = !this.show
     },
-    subMenuShow(){
-      this.subshow=true
-      this.subshow2=false
+    subMenuShow() {
+      this.subshow = true
+      this.subshow2 = false
     },
-    subMenuOut(){
-      this.subshow=false
+    subMenuOut() {
+      this.subshow = false
     },
-       subMenuShow2(){
-      this.subshow2=true
-      this.subshow=false
+    subMenuShow2() {
+      this.subshow2 = true
+      this.subshow = false
     },
-    subMenuOut2(){
-      this.subshow2=false
+    subMenuOut2() {
+      this.subshow2 = false
     },
     close() {
       this.show = false
@@ -171,13 +187,16 @@ export default {
 
     background: rgba(0, 0, 0, 0.6);
   }
+  .noneshow {
+    color: #cdc2c2;
+  }
 }
-.sbumenu{
-  width: 100/@p;
-  height: 100/@p;
-  font-size: 16/@p;
+.sbumenu {
+  width: 100 / @p;
+  height: 100 / @p;
+  font-size: 16 / @p;
   position: absolute;
-    background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
 
   // opacity: 0.6;
   border-radius: 5 / @p;
@@ -185,29 +204,28 @@ export default {
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
   text-align: center;
-  top: 50/@p;
-  left: -20/@p;
-    // background: rgba(0, 0, 0, 0.6);
-  
-  li{
-    margin-left:unset !important;
+  top: 50 / @p;
+  left: -20 / @p;
+  // background: rgba(0, 0, 0, 0.6);
+
+  li {
+    margin-left: unset !important;
     margin-top: 10px;
   }
-  a:hover{
+  a:hover {
     color: #07a7ee;
   }
-   a{
+  a {
     // color: #07a7ee;
-  color: #fefefe;
-  
+    color: #fefefe;
   }
 }
-.sbumenu2{
-  width: 200/@p;
-  height: 100/@p;
-  font-size: 16/@p;
+.sbumenu2 {
+  width: 200 / @p;
+  height: 100 / @p;
+  font-size: 16 / @p;
   position: absolute;
-    background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
   //  background: #ffffff;
   // opacity: 0.6;
   border-radius: 5 / @p;
@@ -215,27 +233,25 @@ export default {
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
   text-align: center;
-  top: 50/@p;
-  left: -50/@p;
-  li{
-    margin-left:unset !important;
+  top: 50 / @p;
+  left: -50 / @p;
+  li {
+    margin-left: unset !important;
     margin-top: 10px;
   }
-  li:last-child:hover::after{
-      content: 'SOON';
+  li:last-child:hover::after {
+    content: 'SOON';
     position: absolute;
     top: 20 / @p;
     left: 60 / @p;
     font-size: 12 / @p;
   }
-   a{
-      color: #fff;
-  
+  a {
+    color: #fff;
   }
-   a:hover{
+  a:hover {
     color: #07a7ee;
   }
- 
 }
 .logo {
   display: flex;
@@ -266,22 +282,21 @@ export default {
     width: 100%;
     display: flex;
     position: relative;
-    align-items: center; 
+    align-items: center;
   }
   li {
     margin-left: 30 / @p;
     // color: #cdc2c2;
     position: relative;
   }
-  li:nth-child(n+3){
+  li:nth-child(n + 3) {
     color: #cdc2c2;
   }
-  .noshow{
+  .noshow {
     cursor: not-allowed;
-   
   }
 
-  li:nth-child(n+3):hover::after {
+  li:nth-child(n + 3):hover::after {
     content: 'SOON';
     position: absolute;
     top: 20 / @p;
@@ -323,8 +338,7 @@ export default {
   /deep/.van-popup {
     background-color: #342b2b;
   }
-  /deep/ .van-cell{
-
+  /deep/ .van-cell {
     background-color: #342b2b;
   }
   .icon {
@@ -379,10 +393,10 @@ export default {
     font-size: 30 / @p;
     font-family: Alibaba PuHuiTi;
     color: #fefefe;
-    a{
-        font-family: Alibaba PuHuiTi;
-    color: #fefefe;
-    font-size: 30 / @p;
+    a {
+      font-family: Alibaba PuHuiTi;
+      color: #fefefe;
+      font-size: 30 / @p;
     }
     img {
       width: 25 / @p;

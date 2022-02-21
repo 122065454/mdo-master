@@ -1,5 +1,5 @@
 <template>
-  <div class="main" >
+  <div class="main">
     <img src="@/assets/images/bg2.png"
          v-if="isPC"
          class="bg"
@@ -85,7 +85,7 @@
     <div :class="['content', item.sclass]"
          v-for="(item,index) in contentList"
          :key="index">
-     <div v-html="item.content"></div>
+      <div v-html="item.content"></div>
     </div>
     <!-- <div class="content phase2_content">Crypto E-mall development
       Website & Crypto E-mall development
@@ -123,19 +123,23 @@ export default {
           sclass: 'phase1_content',
         },
         {
-          content:'1) Land system & Crypto eCommerce platform development;<br> 2) Social media accounts registration and marketing; <br>3) Issuance of utility tokens.<br>4）Invite the first batch of sellers <br>5) Launch SMT token on different launchpads & IDO platform',
+          content:
+            '1) Land system & Crypto eCommerce platform development;<br> 2) Social media accounts registration and marketing; <br>3) Issuance of utility tokens.<br>4）Invite the first batch of sellers <br>5) Launch SMT token on different launchpads & IDO platform',
           sclass: 'phase2_content',
         },
         {
-          content:'1) Optimization of Land system & Crypto eCommerce System<br> 2) Invite the second batch of sellers & achieve a 20 million USDT turnover on the crypto eCommerce platform ',
+          content:
+            '1) Optimization of Land system & Crypto eCommerce System<br> 2) Invite the second batch of sellers & achieve a 20 million USDT turnover on the crypto eCommerce platform ',
           sclass: 'phase3_content',
         },
         {
-          content:'1) Simeta metaverse development includes land NFT, customization of characters, pet system, land and pet NFT marketplace, NFT farming system, etc; <br>2) Promote for merchants to complete sales of $200 million;<br> 3) List the utility tokens on CEX;<br> 4) Marketing by listing land and pet NFT via INO. ',
+          content:
+            '1) Simeta metaverse development includes land NFT, customization of characters, pet system, land and pet NFT marketplace, NFT farming system, etc; <br>2) Promote for merchants to complete sales of $200 million;<br> 3) List the utility tokens on CEX;<br> 4) Marketing by listing land and pet NFT via INO. ',
           sclass: 'phase4_content',
         },
         {
-          content:'1) Combine Crypto eCommerce platform and Simeta metaverse to complete Simeta, a metaverse eCommerce platform where users can shop on an emerging immersive digital environment with other users around the world;<br> 2)Optimization of the whole system and invite more merchants;<br>3) Invite more merchants & promote for merchants to complete sales of $2 billion; ',
+          content:
+            '1) Combine Crypto eCommerce platform and Simeta metaverse to complete Simeta, a metaverse eCommerce platform where users can shop on an emerging immersive digital environment with other users around the world;<br> 2)Optimization of the whole system and invite more merchants;<br>3) Invite more merchants & promote for merchants to complete sales of $2 billion; ',
           sclass: 'phase5_content',
         },
       ],
@@ -255,7 +259,7 @@ h1 {
   position: absolute;
   z-index: 999;
   top: 420 / @p;
-  right: 10 / @p;
+  right: 40 / @p;
   width: 350 / @p;
   height: 250 / @p;
   padding: 10 / @p;
@@ -469,37 +473,39 @@ h1 {
     left: 50 / @p;
   }
   .phase5_content {
-    top: 1300 / @p;
+    top: 1400 / @p;
     left: 350 / @p;
-    height: 450 / @p;
+    height: 500 / @p;
     background-color: #fff;
     opacity: 1;
   }
   .phase4_content {
-    top: 950 / @p;
-    left: 60 / @p;
-    height: 230 / @p;
+    top: 1100 / @p;
+    left: 30 / @p;
+    width: 400 / @p;
+    height: 400 / @p;
     background-color: #fff;
     opacity: 1;
   }
   .phase3_content {
-    top: 530 / @p;
-    left: 60 / @p;
-    height: 250 / @p;
+    top: 830 / @p;
+    left: 300 / @p;
+    height: 300 / @p;
     background-color: #fff;
     opacity: 1;
   }
   .phase2_content {
-    top: 350 / @p;
+    width: 350 / @p;
+    top: 450 / @p;
     left: 60 / @p;
-    height: 250 / @p;
+    height: 550 / @p;
     background-color: #fff;
     opacity: 1;
   }
   .phase1_content {
     top: 180 / @p;
     left: 370 / @p;
-    height: 290 / @p;
+    height: 330 / @p;
     background-color: #fff;
     opacity: 1;
   }
