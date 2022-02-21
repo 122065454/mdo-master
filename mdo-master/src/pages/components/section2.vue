@@ -475,7 +475,7 @@ h1 {
   .phase5_content {
     top: 1400 / @p;
     left: 350 / @p;
-    height: 450 / @p;
+    height: 430 / @p;
     background-color: #fff;
     opacity: 1;
   }
@@ -483,14 +483,14 @@ h1 {
     top: 1100 / @p;
     left: 30 / @p;
     width: 400 / @p;
-    height: 400 / @p;
+    height: 380 / @p;
     background-color: #fff;
     opacity: 1;
   }
   .phase3_content {
     top: 830 / @p;
     left: 300 / @p;
-    height: 300 / @p;
+    height: 280 / @p;
     background-color: #fff;
     opacity: 1;
   }
