@@ -157,19 +157,19 @@ export default {
       infomationList: [
         {
           name: 'Doc',
-          herf: 'https://metadaosworld.gitbook.io/copy-of-metadaos-world/',
+          herf: 'https://simeta.gitbook.io/about/',
         },
         {
           name: 'Whitepaper',
-          herf: 'http://54.67.81.90/Litepaper_Simeta.pdf',
+          herf: 'http://simeta.io/whitepaper.pdf',
         },
         {
           name: 'Tokenomics',
-          herf: ' https://app.gitbook.com/o/cbFzgz9W4lqTqpOBnQ0Q/s/mlIj6Clqca34joALWnkx/whitepaper/our-tokenomics',
+          herf: 'https://simeta.gitbook.io/about/whitepaper/our-tokenomics',
         },
         {
           name: 'Contact us',
-          herf: 'https://app.gitbook.com/o/cbFzgz9W4lqTqpOBnQ0Q/s/mlIj6Clqca34joALWnkx/contact-us',
+          herf: 'https://simeta.gitbook.io/about/contact-us',
         },
       ],
       communityList: [
