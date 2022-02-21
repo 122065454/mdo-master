@@ -69,7 +69,7 @@ h1 {
 }
 h2 {
   font-size: 24 / @p;
-  font-family: Montserrat-Regular;
+  font-family: Alibaba PuHuiTi;
   font-weight: 400;
   color: #0c84e4;
   margin: 34 / @p 0 60 / @p 0;
@@ -90,8 +90,9 @@ h2 {
     background-size: cover;
     // overflow: hidden;
   }
-  h2 {
-    margin: 34 / @p 25 / @p 60 / @p 25 / @p;
+  h2{
+  margin: 34 / @p 25/@p 60 / @p 25/@p;
+
   }
   .h5_content {
     // margin: 300 / @p auto 80 / @p;
