@@ -196,7 +196,7 @@ export default {
     vertical-align: text-top;
   }
   .title {
-    font-family: Alibaba PuHuiTi;
+    font-family: Montserrat-Regular;
     & p:first-child {
       font-size: 40 / @p;
       font-weight: 500;
@@ -243,15 +243,15 @@ h1 {
   left: 200 / @p;
   padding: 10 / @p;
   width: 370 / @p;
-  height: 320 / @p;
+  height: 340 / @p;
   display: none;
 }
 .phase2_content {
   position: absolute;
-  bottom: 180 / @p;
+  bottom: 130 / @p;
   left: 1000 / @p;
   width: 619 / @p;
-  height: 260 / @p;
+  height: 300 / @p;
   padding: 27 / @p;
   display: none;
 }
@@ -289,7 +289,7 @@ h1 {
   opacity: 0.6;
   border-radius: 30 / @p;
   font-size: 19 / @p;
-  font-family: Alibaba PuHuiTi;
+  font-family: Montserrat-Regular;
   font-weight: 400;
   color: #3d4a84;
   word-break: break-all;
