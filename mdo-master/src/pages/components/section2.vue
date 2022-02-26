@@ -240,7 +240,7 @@ h1 {
 .phase1_content {
   position: absolute;
   top: 900 / @p;
-  left: 200 / @p;
+  left: 180 / @p;
   padding: 10 / @p;
   width: 370 / @p;
   height: 340 / @p;
