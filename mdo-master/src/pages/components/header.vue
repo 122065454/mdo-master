@@ -201,7 +201,7 @@ export default {
   // opacity: 0.6;
   border-radius: 5 / @p;
   font-size: 19 / @p;
-  font-family: Montserrat-Regular;
+  font-family: AlibabaPuHuiTi;
   font-weight: 400;
   text-align: center;
   top: 50 / @p;
@@ -230,7 +230,7 @@ export default {
   // opacity: 0.6;
   border-radius: 5 / @p;
   font-size: 19 / @p;
-  font-family: Montserrat-Regular;
+  font-family: AlibabaPuHuiTi;
   font-weight: 400;
   text-align: center;
   top: 50 / @p;
@@ -266,7 +266,7 @@ export default {
     width: 350 / @p;
     height: 24 / @p;
     font-size: 34 / @p;
-    font-family: Montserrat-Regular;
+    font-family: AlibabaPuHuiTi;
     font-weight: bold;
     color: #fefefe;
     line-height: 24 / @p;
@@ -274,7 +274,7 @@ export default {
 }
 .menu_left {
   font-size: 20 / @p;
-  font-family: Montserrat-Regular;
+  font-family: AlibabaPuHuiTi;
   font-weight: bold;
   color: #fefefe;
   // margin-left: 100px;
@@ -306,7 +306,7 @@ export default {
 }
 .menu {
   font-size: 20 / @p;
-  font-family: Montserrat-Regular;
+  font-family: AlibabaPuHuiTi;
   font-weight: 500;
   // margin-right: 285 / @p;
   ul {
@@ -368,7 +368,7 @@ export default {
     }
     span {
       font-size: 40 / @p;
-      font-family: Montserrat-Regular;
+      font-family: AlibabaPuHuiTi;
       font-weight: bold;
       color: #fefefe;
       margin-left: 21 / @p;
@@ -391,10 +391,10 @@ export default {
     padding-left: 20px;
     line-height: 60 / @p;
     font-size: 30 / @p;
-    font-family: Montserrat-Regular;
+    font-family: AlibabaPuHuiTi;
     color: #fefefe;
     a {
-      font-family: Montserrat-Regular;
+      font-family: AlibabaPuHuiTi;
       color: #fefefe;
       font-size: 30 / @p;
     }

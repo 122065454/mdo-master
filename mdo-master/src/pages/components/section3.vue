@@ -69,7 +69,7 @@ h1 {
 }
 h2 {
   font-size: 24 / @p;
-  font-family: Montserrat-Regular;
+  font-family: AlibabaPuHuiTi;
   font-weight: 400;
   color: #0c84e4;
   margin: 34 / @p 0 60 / @p 0;
