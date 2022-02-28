@@ -161,7 +161,7 @@ export default {
         },
         {
           name: 'Whitepaper',
-          herf: 'https://simeta.io/whitepaper.pdf',
+          herf: 'https://www.simeta.io/whitepaper.pdf',
         },
         {
           name: 'Tokenomics',

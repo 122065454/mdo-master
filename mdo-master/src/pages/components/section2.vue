@@ -243,7 +243,7 @@ h1 {
   left: 180 / @p;
   padding: 10 / @p;
   width: 370 / @p;
-  height: 310 / @p;
+  height: 300 / @p;
   display: none;
 }
 .phase2_content {
@@ -251,8 +251,8 @@ h1 {
   bottom: 130 / @p;
   left: 1000 / @p;
   width: 619 / @p;
-  height: 260 / @p;
-  padding: 27 / @p;
+  height: 230 / @p;
+  padding: 10 / @p;
   display: none;
 }
 .phase3_content {
@@ -261,7 +261,7 @@ h1 {
   top: 420 / @p;
   right: 40 / @p;
   width: 350 / @p;
-  height: 250 / @p;
+  height: 230 / @p;
   padding: 10 / @p;
   display: none;
 }
@@ -307,7 +307,7 @@ h1 {
 }
 .tips_3 {
   position: absolute;
-  top: -65 / @p;
+  top: -75 / @p;
   left: 40 / @p;
 }
 .tips_4 {
