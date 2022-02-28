@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import header from '@/pages/components/header.vue'
-import footer from '@/pages/components/footer.vue'
+import vheader from '@/pages/components/header.vue'
+import vfooter from '@/pages/components/footer.vue'
 export default {
   name: 'App',
   components: {
-    'v-header': header,
-    'v-footer': footer,
+    'v-header': vheader,
+    'v-footer': vfooter,
   },
 }
 </script>

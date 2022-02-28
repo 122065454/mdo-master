@@ -29,14 +29,14 @@
   </div>
 </template>
 <script>
-import footer from '../components/footer.vue'
+// import footer from '../components/footer.vue'
 import { WOW } from 'wowjs'
 
 export default {
   name: 'section3',
-  components: {
-    'v-footer': footer,
-  },
+  // components: {
+  //   'v-footer': footer,
+  // },
   mounted() {
     var options = {
       //默认为true

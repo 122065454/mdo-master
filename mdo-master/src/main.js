@@ -10,8 +10,8 @@ import { Icon, Notify, Popup } from 'vant'
 import 'vant/lib/index.css'
 // import 'element-ui/lib/theme-chalk/index.css';
 import Vue from 'vue'
-import VueFullpage from 'vue-fullpage.js'
 import App from './App.vue'
+
 Vue.prototype.$axios = axios
 
 Vue.use(Icon)
@@ -19,7 +19,7 @@ Vue.use(Icon)
 Vue.use(Notify)
 Vue.use(Popup)
 Vue.use(animate)
-Vue.use(VueFullpage)
+
 Vue.mixin(mixin)
 // Vue.use(Menu)
 // Vue.use(Submenu)

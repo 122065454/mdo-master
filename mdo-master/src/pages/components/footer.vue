@@ -131,7 +131,7 @@
 import { Notify } from 'vant'
 import md5 from 'md5'
 export default {
-  name: 'footer',
+  name: 'footers',
   data() {
     return {
       email: '',

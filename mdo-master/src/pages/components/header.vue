@@ -51,6 +51,9 @@
     </div>
     <div class="menu">
       <ul>
+        <li @click="$router.push('/presale')">
+          <span>Presale</span>
+        </li>
         <li>
           <img src="@/assets/images/shopping.png"
                alt="">
@@ -125,7 +128,7 @@
 import { WOW } from 'wowjs'
 
 export default {
-  name: 'header',
+  name: 'headers',
   data() {
     return {
       show: false,
@@ -323,6 +326,8 @@ export default {
     margin-left: 30 / @p;
     cursor: pointer;
     color: #fefefe;
+    display: flex;
+    align-items: center;
   }
   li:hover {
     color: #07a7ee;
