@@ -51,9 +51,9 @@
     </div>
     <div class="menu">
       <ul>
-        <li @click="$router.push('/presale')">
+        <!-- <li @click="$router.push('/presale')">
           <span>Presale</span>
-        </li>
+        </li> -->
         <li>
           <img src="@/assets/images/shopping.png"
                alt="">
