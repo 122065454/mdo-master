@@ -26,7 +26,7 @@ export default {
         },
         {
           imgUrl: require('@/assets/images/discord.png'),
-          herf: 'https://t.me/SimetaOfficial',
+          herf: 'https://discord.gg/5MFdTsNxtr',
         },
         {
           imgUrl: require('@/assets/images/faceBook.png'),

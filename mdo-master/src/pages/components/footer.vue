@@ -147,11 +147,11 @@ export default {
         },
         {
           imgUrl: require('@/assets/images/discord.png'),
-          herf: 'https://t.me/SimetaOfficial',
+          herf: 'https://discord.gg/5MFdTsNxtr',
         },
         {
           imgUrl: require('@/assets/images/faceBook.png'),
-          herf: 'https://discord.gg/5MFdTsNxtr',
+          herf: '',
         },
       ],
       infomationList: [
@@ -173,8 +173,8 @@ export default {
         },
       ],
       communityList: [
-        { name: 'Twitter', herf: 'https://twitter.com/Metadaos_world' },
-        { name: 'Telegram', herf: 'https://t.me/MetadaosEn' },
+        { name: 'Twitter', herf: 'https://twitter.com/simeta_io' },
+        { name: 'Telegram', herf: 'https://t.me/SimetaOfficial' },
         { name: 'Discord', herf: 'https://discord.gg/5MFdTsNxtr' },
         { name: 'Meta', herf: '' },
       ],
