@@ -60,7 +60,7 @@
           <span>Checkout</span>
         </li>
         <li @click="connectWallect">
-          <span>WALLET</span>
+          <span>Wallet</span>
         </li>
       </ul>
     </div>
@@ -90,7 +90,7 @@
           Checkout
         </li>
         <li @click="connectWallect">
-          WALLET
+          Wallet
         </li>
         <li>
           <a href="https://simeta.gitbook.io/about/whitepaper/our-team"

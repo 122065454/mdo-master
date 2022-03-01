@@ -87,27 +87,7 @@
          :key="index">
       <div v-html="item.content"></div>
     </div>
-    <!-- <div class="content phase2_content">Crypto E-mall development
-      Website & Crypto E-mall development
-      Seed & Private round sale,
-      Social media accounts registration and marketing.
-      Issuance of utility tokens.
-    </div>
-    <div class="content phase3_content">Merchants Invitation and optimization
-      Marketing by IDOs & List the utility tokens on Uniswap.
-      Invite merchants to list their products on Simeta.
-      System optimization & officially launches.
-    </div>
-    <div class="content phase4_content">Metaverse development include land NFT, customization of characters, pet system, land and pet NFT marketplace, NFT farming system, etc.
-      Promote for merchants to complete sales of $20 million.
-      List the utility tokens on CEX.
-      Marketing by listing land and pet NFT via INO.
-    </div>
-    <div class="content phase5_content"> Achievement of Simeta
-      Combine Crypto E-mall and metaverse to realize a Simeta where users can shop on an emerging immersive digital land with other users around the world.
-      Promote for merchants to complete sales of $100 million.
-      Optimization of the whole system and invite more merchants
-    </div> -->
+
   </div>
 </template> 
 <script>
@@ -119,12 +99,12 @@ export default {
       contentList: [
         {
           content:
-            '1）Market research, feasibility analysis & team formation;<br> 2）Business model design and simulation；<br>3）Whitepaper and website establish;<br>4) Issuance of utility tokens.<br>5) Seed & Private round sale;',
+            '1）Market research, feasibility analysis & team formation;<br> 2) Business model design and simulation；<br>3) Whitepaper and website establish;<br>4) Issuance of utility tokens.<br>5) Seed & Private round sale;',
           sclass: 'phase1_content',
         },
         {
           content:
-            '1) Land system & Crypto eCommerce platform development;<br> 2) Social media accounts registration and marketing; <br>3) Issuance of utility tokens.<br>4）Invite the first batch of sellers <br>5) Launch SMT token on different launchpads & IDO platform',
+            '1) Land system & Crypto eCommerce platform development;<br> 2) Social media accounts registration and marketing; <br>3) Issuance of utility tokens.<br>4) Invite the first batch of sellers <br>5) Launch SMT token on different launchpads & IDO platform',
           sclass: 'phase2_content',
         },
         {
@@ -240,10 +220,10 @@ h1 {
 .phase1_content {
   position: absolute;
   top: 900 / @p;
-  left: 180 / @p;
+  left: 120 / @p;
   padding: 10 / @p;
-  width: 370 / @p;
-  height: 300 / @p;
+  width: 430 / @p;
+  height: 270 / @p;
   display: none;
 }
 .phase2_content {
@@ -261,7 +241,7 @@ h1 {
   top: 420 / @p;
   right: 40 / @p;
   width: 350 / @p;
-  height: 230 / @p;
+  height: 260 / @p;
   padding: 10 / @p;
   display: none;
 }
@@ -292,8 +272,11 @@ h1 {
   font-family: AlibabaPuHuiTi;
   font-weight: 400;
   color: #3d4a84;
-  word-break: break-all;
+  word-break: keep-all;
   line-height: 40 / @p;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 .tips_1 {
   position: absolute;
@@ -428,6 +411,9 @@ h1 {
 @media screen and (max-width: 700px) {
   .main {
     margin-top: -1px;
+  }
+  .content {
+    word-break: break-all;
   }
   .route {
     background: url(~@/assets/images/h5/route.png) center no-repeat;

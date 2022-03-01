@@ -1,5 +1,5 @@
 import '@/assets/css/base.css'
-import '@/assets/css/font.less'
+// import '@/assets/css/font.less'
 import '@/assets/js/set_root.js'
 import mixin from '@/mixin/index.js'
 import router from '@/router'
