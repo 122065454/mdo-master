@@ -4,11 +4,10 @@ import '@/assets/js/set_root.js'
 import mixin from '@/mixin/index.js'
 import router from '@/router'
 import animate from 'animate.css'
+import { Progress } from 'ant-design-vue'
 import axios from 'axios'
 import { Icon, Notify, Popup } from 'vant'
-// import { Menu,Submenu ,MenuItem} from 'element-ui';
 import 'vant/lib/index.css'
-// import 'element-ui/lib/theme-chalk/index.css';
 import Vue from 'vue'
 import App from './App.vue'
 
@@ -21,6 +20,8 @@ Vue.use(Popup)
 Vue.use(animate)
 
 Vue.mixin(mixin)
+
+Vue.component(Progress.name, Progress)
 // Vue.use(Menu)
 // Vue.use(Submenu)
 // Vue.use(MenuItem)

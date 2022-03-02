@@ -10,51 +10,80 @@
           <li>
             Binance Smart Chian
           </li>
-          <li>
-            WhilteList AppLication
-          </li>
-        </ul>
-      </div>
-      <div class="introduce">
-        Coindash Token Poll Coindash Token Poll Coindash Token Poll Coindash Token Poll
-      </div>
-      <div class="time">
-        <div class="card__item-value new-item-value ">
 
-          <span>23</span>:<span>23</span>:<span>23</span>:<span>23</span>
+        </ul>
+        <div class="AppLication_btn">
+          WhilteList AppLication
         </div>
       </div>
-      <div class="total_number">
-        <ul>
-          <li>
-            <h3>Pool supply</h3>
-            <h2>100000</h2>
-          </li>
-          <li>
-            <h3>Rate</h3>
-            <h2>100000</h2>
-          </li>
-          <li>
-            <h3>Cliamabel</h3>
-            <h2>100000</h2>
-          </li>
-        </ul>
-      </div>
-      <div class="trade">
-        <div class="trade_content">
-          <span>Amount</span>
-          <input type="text">
-          <div class="button">
-            Purchase Now
+      <div class="introduce_time">
+        <div class="introduce">
+          Coindash Token Poll Coindash Token Poll Coindash Token Poll Coindash Token Poll
+        </div>
+        <div class="time">
+          <div class="card__item-value new-item-value ">
+
+            <span>23</span>:<span>23</span>:<span>23</span>:<span>23</span>
+          </div>
+        </div>
+        <div class="total_number">
+          <ul>
+            <li>
+              <h3>Pool supply</h3>
+              <h2>100000</h2>
+            </li>
+            <li>
+              <h3>Rate</h3>
+              <h2>1 $SMT=0.014 BUSD</h2>
+            </li>
+            <li>
+              <h3>Cliamabel</h3>
+              <h2>100000</h2>
+            </li>
+          </ul>
+          <div class="total_number_bottom">
+            <ul>
+              <li>Pre-order Start Time: TBA</li>
+              <li>WhiteList Status:Whiltelisted</li>
+            </ul>
+          </div>
+          <div class="progress">
+            <span>$0</span>
+            <a-progress :stroke-color="{
+        '0%': '#a670e2',
+        '100%': '#74e2c7',
+      }"
+                        status="active"
+                        :showInfo=false
+                        :strokeWidth='50'
+                        :percent="50" />
+            <span>$5M</span>
+          </div>
+          <div class="trade">
+            <div class="trade_content">
+              <span>Amount</span>
+              <input type="text">
+              <div class="button">
+                Purchase Now
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
     </section>
     <section class="scenarios w">
       <h1>scenarios</h1>
       <div class="content">
+
         <div class="content1">
           <p>STAKING</p>
+          <ul>
+            <li> <i></i> hahahahahahahahahha</li>
+            <li> <i></i> hahahahahahahahahha</li>
+            <li> <i></i> hahahahahahahahahha</li>
+            <li> <i></i> hahahahahahahahahha</li>
+          </ul>
         </div>
         <div class="content2">
           <p>STAKING</p>
@@ -65,17 +94,26 @@
       </div>
     </section>
     <!-- 扇形图 -->
-    <section class="chart">
-
-    </section>
+    <charts></charts>
+    <!-- <section class="chart w">
+      <div class="chart_left"></div>
+      <div class="chart_right"></div>
+    </section> -->
   </div>
 </template>
-
+<script>
+import charts from './chart.vue'
+export default {
+  name: 'presale',
+  components: {
+    charts,
+  },
+}
+</script>
 <style lang="less" scoped>
 .main {
   background: #22284a;
   overflow: hidden;
-  height: 100vh;
 }
 .w {
   width: 1300px;
@@ -84,27 +122,62 @@
 .token_sale {
   margin-top: 100px;
   text-align: center;
+  // color: #ffffff;
+  // padding: 28px 28px;
+  // background: rgba(94, 149, 232, 0.1);
+  // font-family: DM Sans;
+  // border-radius: 12px;
+  // margin-bottom: 40px;
+
   h1 {
     font-weight: 700;
     font-size: 60px;
     line-height: 73px;
+    margin-bottom: 30px;
     // color: #fff;
   }
 }
-
+.AppLication_btn {
+  width: 200px;
+  height: 42px;
+  background-color: rgb(114, 243, 75);
+  border-radius: 60px;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  margin: 10px auto;
+}
 .tokenList {
+  margin-bottom: 30px;
   ul {
     display: flex;
-    font-size: 30px;
+    font-size: 25px;
     justify-content: center;
   }
   li {
-    border-right: 1px solid red;
     padding: 0 20px;
   }
+  li:first-child {
+    border-right: 1px solid #44454b;
+  }
+}
+.introduce_time {
+  color: #ffffff;
+  padding: 28px 28px;
+  background: rgba(94, 149, 232, 0.1);
+  font-family: DM Sans;
+  border-radius: 12px;
+  margin-bottom: 40px;
 }
 .introduce {
   font-size: 40px;
+  margin-bottom: 30px;
+}
+.time {
+  margin-bottom: 30px;
 }
 .card__item-value {
   color: #48587b;
@@ -135,36 +208,66 @@
   }
 }
 .total_number {
+  margin-bottom: 30px;
+  // color: #ffffff;
+  // padding: 28px 28px;
+  // background: rgba(94, 149, 232, 0.1);
+  // font-family: DM Sans;
+  // border-radius: 12px;
+  // margin-bottom: 40px;
   ul {
     display: flex;
     justify-content: space-around;
   }
   h3 {
-    font-size: 40px;
+    font-size: 23px;
   }
   h2 {
+    font-size: 40px;
+  }
+}
+.progress {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  width: 1150px;
+  span {
     font-size: 30px;
+    margin: 0 20px;
+  }
+}
+.total_number_bottom {
+  margin-top: 20px;
+  ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  li {
+    font-size: 23px;
   }
 }
 .trade {
   text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
   .trade_content {
     display: flex;
     align-items: center;
     justify-content: center;
     span {
       font-size: 40px;
+      margin-right: 20px;
     }
     input {
       height: 50px;
       background: transparent;
-
       font-size: 14px;
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 600;
       line-height: 20px;
       border-radius: 20px;
-      padding-right: 10px;
+      padding-left: 10px;
+      margin-right: 20px;
     }
     .button {
       width: 200px;
@@ -183,31 +286,53 @@
 }
 .scenarios {
   text-align: center;
+  color: #ffffff;
+  padding: 28px 28px;
+  background: rgba(94, 149, 232, 0.1);
+  font-family: DM Sans;
+  border-radius: 12px;
+  margin-bottom: 40px;
   h1 {
     font-weight: 700;
     font-size: 60px;
     line-height: 73px;
+    margin-bottom: 30px;
   }
   .content {
     display: flex;
-
-    color: #ffffff;
-    padding: 28px 28px;
-    background: #303035;
-    font-family: DM Sans;
-    border-radius: 12px;
-    margin-bottom: 12px;
+    i {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff;
+      margin-right: 10px;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
     .content1,
     .content2,
     .content3 {
       flex: 1;
       margin: 10px;
       border-radius: 10px;
-      background-color: red;
       height: 300px;
+      padding: 20px;
       p {
         font-size: 20px;
+        margin-bottom: 20px;
       }
+    }
+    .content1,
+    .content3 {
+      background-color: #509d7b;
+    }
+    .content2 {
+      background: #4a4a4a;
     }
   }
 }
