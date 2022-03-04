@@ -14,11 +14,18 @@
           Coindash Token Poll Coindash Token Poll Coindash Token Poll Coindash
           Token Poll
         </div>
-        <div class="time">
+        <div class="time" v-if="isPC">
           <div class="card__item-value new-item-value">
             <span>2</span><span>3</span>:<span>3</span><span>3</span>:<span
               >2</span
             ><span>3</span>:<span>3</span><span>3</span>
+          </div>
+        </div>
+        <!-- h5 time -->
+        <div class="time_h5" v-if="!isPC">
+          <div class="card__item-value new-item-value">
+            <span>23</span>:<span>33</span>:<span
+              >23</span>:<span>33</span>
           </div>
         </div>
         <div class="total_number">
@@ -347,6 +354,9 @@ export default {
       margin-bottom: 30 / @p;
     }
   }
+  .introduce_time{
+    padding: 10px
+  }
   .tokenList {
     margin-bottom: 50/@p;
     ul {
@@ -364,6 +374,110 @@ export default {
   .introduce {
   font-size: 26/@p;
   margin-bottom: 30px;
+  
+}
+.time_h5{
+margin-bottom: 30px;
+.card__item-value {
+  color: #48587b;
+  font-size: 24px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+.new-item-value {
+  margin-bottom: 8px;
+  span {
+    background-color: #333881;
+    color: white;
+    border-radius: 4px;
+    /* padding: 0 2px; */
+    font-size: 20px;
+    margin: 0 5px;
+    display: inline-block;
+    text-align: center;
+    padding-right: 1px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  strong {
+    padding-right: 5px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+}
+.total_number{
+   h3 {
+    font-size: 25/@p;
+    color: #be5e9c;
+  }
+  h2 {
+    font-size: 30/@p;
+    color: #fff;
+  }
+}
+.total_number_bottom{
+    li {
+    font-size: 20/@p;
+    color: #be5e9c;
+  }
+}
+.progress {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  width: 100%;
+  span {
+    font-size: 20/@p;
+    margin: 0 0px;
+   
+  }
+}
+.trade {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  .trade_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-size: 40px;
+      margin-right: 20px;
+      color: #be5e9c;
+    }
+    input {
+      height: 50px;
+      background: transparent;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 600;
+      line-height: 20px;
+      border-radius: 20px;
+      padding-left: 10px;
+      margin-right: 20px;
+    }
+    .button {
+      width: 200px;
+      height: 50px;
+      background: linear-gradient(to right, #f36bc0 0%, #d640ab 100%);
+      border-radius: 60px;
+
+      border: none;
+      cursor: pointer;
+      // padding: 10px;
+      font-size: 16px;
+      line-height: 50px;
+      font-weight: 500;
+    }
+  }
+}
+.scenarios {
+  .content{
+    flex-direction: column;
+  }
 }
 }
 </style>
