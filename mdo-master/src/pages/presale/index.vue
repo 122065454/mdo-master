@@ -1,29 +1,24 @@
 <template>
-  <div class="main  ">
-    <section class="token_sale w ">
+  <div class="main">
+    <section class="token_sale w">
       <h1>$SMT Token Sale</h1>
       <div class="tokenList">
         <ul>
-          <li>
-            BUSD
-          </li>
-          <li>
-            Binance Smart Chian
-          </li>
-
+          <li>BUSD</li>
+          <li>Binance Smart Chian</li>
         </ul>
-        <div class="AppLication_btn">
-          WhilteList AppLication
-        </div>
+        <div class="AppLication_btn">WhilteList AppLication</div>
       </div>
       <div class="introduce_time">
         <div class="introduce">
-          Coindash Token Poll Coindash Token Poll Coindash Token Poll Coindash Token Poll
+          Coindash Token Poll Coindash Token Poll Coindash Token Poll Coindash
+          Token Poll
         </div>
         <div class="time">
-          <div class="card__item-value new-item-value ">
-
-            <span>23</span>:<span>23</span>:<span>23</span>:<span>23</span>
+          <div class="card__item-value new-item-value">
+            <span>2</span><span>3</span>:<span>3</span><span>3</span>:<span
+              >2</span
+            ><span>3</span>:<span>3</span><span>3</span>
           </div>
         </div>
         <div class="total_number">
@@ -49,40 +44,38 @@
           </div>
           <div class="progress">
             <span>$0</span>
-            <a-progress :stroke-color="{
-        '0%': '#a670e2',
-        '100%': '#74e2c7',
-      }"
-                        status="active"
-                        :showInfo=false
-                        :strokeWidth='50'
-                        :percent="50" />
+            <a-progress
+              :stroke-color="{
+                '0%': '#a670e2',
+                '100%': '#74e2c7',
+              }"
+              status="active"
+              :showInfo="false"
+              :strokeWidth="50"
+              :percent="50"
+            />
             <span>$5M</span>
           </div>
           <div class="trade">
             <div class="trade_content">
-              <span>Amount</span>
-              <input type="text">
-              <div class="button">
-                Purchase Now
-              </div>
+              <span>Amount:</span>
+              <input type="text" />
+              <div class="button">Purchase Now</div>
             </div>
           </div>
         </div>
       </div>
-
     </section>
     <section class="scenarios w">
       <h1>scenarios</h1>
       <div class="content">
-
         <div class="content1">
           <p>STAKING</p>
           <ul>
-            <li> <i></i> hahahahahahahahahha</li>
-            <li> <i></i> hahahahahahahahahha</li>
-            <li> <i></i> hahahahahahahahahha</li>
-            <li> <i></i> hahahahahahahahahha</li>
+            <li><i></i> hahahahahahahahahha</li>
+            <li><i></i> hahahahahahahahahha</li>
+            <li><i></i> hahahahahahahahahha</li>
+            <li><i></i> hahahahahahahahahha</li>
           </ul>
         </div>
         <div class="content2">
@@ -102,13 +95,13 @@
   </div>
 </template>
 <script>
-import charts from './chart.vue'
+import charts from "./chart.vue";
 export default {
-  name: 'presale',
+  name: "presale",
   components: {
     charts,
   },
-}
+};
 </script>
 <style lang="less" scoped>
 .main {
@@ -122,19 +115,13 @@ export default {
 .token_sale {
   margin-top: 100px;
   text-align: center;
-  // color: #ffffff;
-  // padding: 28px 28px;
-  // background: rgba(94, 149, 232, 0.1);
-  // font-family: DM Sans;
-  // border-radius: 12px;
-  // margin-bottom: 40px;
 
   h1 {
     font-weight: 700;
     font-size: 60px;
     line-height: 73px;
     margin-bottom: 30px;
-    // color: #fff;
+    color: #faf6f6d9;
   }
 }
 .AppLication_btn {
@@ -149,6 +136,7 @@ export default {
   line-height: 24px;
   font-weight: 500;
   margin: 10px auto;
+  cursor: pointer;
 }
 .tokenList {
   margin-bottom: 30px;
@@ -188,18 +176,18 @@ export default {
 .new-item-value {
   margin-bottom: 8px;
   span {
-    background-color: #000;
+    background-color: #333881;
     color: white;
     border-radius: 4px;
     /* padding: 0 2px; */
-    font-size: 26px;
-
+    font-size: 50px;
+    margin: 0 5px;
     display: inline-block;
     text-align: center;
     padding-right: 1px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
   }
   strong {
     padding-right: 5px;
@@ -219,11 +207,15 @@ export default {
     display: flex;
     justify-content: space-around;
   }
+  li {
+  }
   h3 {
     font-size: 23px;
+    color: #be5e9c;
   }
   h2 {
     font-size: 40px;
+    color: #fff;
   }
 }
 .progress {
@@ -244,6 +236,7 @@ export default {
   }
   li {
     font-size: 23px;
+    color: #be5e9c;
   }
 }
 .trade {
@@ -257,6 +250,7 @@ export default {
     span {
       font-size: 40px;
       margin-right: 20px;
+      color: #be5e9c;
     }
     input {
       height: 50px;
@@ -271,15 +265,15 @@ export default {
     }
     .button {
       width: 200px;
-      height: 42px;
-      background-color: rgb(114, 243, 75);
+      height: 50px;
+      background: linear-gradient(to right, #f36bc0 0%, #d640ab 100%);
       border-radius: 60px;
-      color: rgb(0, 0, 0);
-      border: none;
 
-      padding: 10px;
+      border: none;
+      cursor: pointer;
+      // padding: 10px;
       font-size: 16px;
-      line-height: 24px;
+      line-height: 50px;
       font-weight: 500;
     }
   }
@@ -296,6 +290,7 @@ export default {
     font-weight: 700;
     font-size: 60px;
     line-height: 73px;
+    color: #ffffff;
     margin-bottom: 30px;
   }
   .content {
@@ -335,5 +330,40 @@ export default {
       background: #4a4a4a;
     }
   }
+}
+
+// h5
+@media screen and (max-width: 700px) {
+  @p: 100rem;
+  .w {
+    width: 90%;
+    margin: auto;
+  }
+  .token_sale {
+    margin-top: 120 / @p;
+    h1 {
+      font-size: 60 / @p;
+      line-height: 73 / @p;
+      margin-bottom: 30 / @p;
+    }
+  }
+  .tokenList {
+    margin-bottom: 50/@p;
+    ul {
+      display: flex;
+      font-size: 25/@p;
+      justify-content: center;
+    }
+    li {
+      padding: 0 20px;
+    }
+    li:first-child {
+      border-right: 1px solid #44454b;
+    }
+  }
+  .introduce {
+  font-size: 26/@p;
+  margin-bottom: 30px;
+}
 }
 </style>

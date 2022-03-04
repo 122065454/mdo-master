@@ -110,6 +110,9 @@
              rel="noopener noreferrer">Seller Application</a>
 
         </li>
+          <li @click="$router.push('/presale')">
+          <span>Presale</span>
+        </li>
         <li>
           <span>Seller Center</span>
         </li>
@@ -119,6 +122,7 @@
         <li>
           <span>Land</span>
         </li>
+      
 
       </ul>
     </van-popup>
@@ -409,7 +413,7 @@ export default {
       margin-left: 10px;
     }
   }
-  li:nth-child(n + 5) {
+  li:nth-child(n + 7) {
     color: #746969;
   }
 }

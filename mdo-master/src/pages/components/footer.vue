@@ -195,7 +195,8 @@ export default {
             if (response.data.code == 0) {
               Notify({ type: 'success', message: 'Submitted successfully' })
             } else {
-              Notify({ type: 'danger', message: 'Submission Failed' })
+              Notify({ type: 'danger', message: response.data.msg
+               })
             }
 
             console.log(response)
