@@ -86,6 +86,7 @@ export default {
                             fontSize: 12
 
         },
+        
         },
         series: [
           {
@@ -170,5 +171,30 @@ export default {
     );
     display: block;
   }
+}
+// h5
+@media screen and (max-width: 700px) {
+  @p:100rem;
+  .chart{
+    width: 90%;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .chart_show {
+  width:300px;
+  height: 300px;
+}
+.chart_left,
+.chart_right {
+  p {
+    width: 200px;
+    margin: auto;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+
+
 }
 </style>
