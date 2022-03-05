@@ -184,18 +184,19 @@ export default {
     sumbit() {
       if (this.email && this.name) {
         this.$axios
-          .post('/api/commit', {
+          .post('/api/commit', this.$qs.stringify({
             email: this.email,
             name: this.name,
             sign: md5(
               'a=MetaDao123456&email=' + this.email + '&name=' + this.name
             ),
-          })
+          }))
+          
           .then(function (response) {
             if (response.data.code == 0) {
               Notify({ type: 'success', message: 'Submitted successfully' })
             } else {
-              Notify({ type: 'danger', message: 'Submission Failed' })
+              Notify({ type: 'danger', message:response.data.msg})           
             }
 
             console.log(response)

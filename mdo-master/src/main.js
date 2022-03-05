@@ -11,8 +11,9 @@ import 'vant/lib/index.css'
 // import 'element-ui/lib/theme-chalk/index.css';
 import Vue from 'vue'
 import App from './App.vue'
-
+import qs from 'qs'
 Vue.prototype.$axios = axios
+Vue.prototype.$qs = qs
 
 Vue.use(Icon)
 // 全局注册
