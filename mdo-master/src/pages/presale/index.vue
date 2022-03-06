@@ -14,18 +14,39 @@
           Coindash Token Poll Coindash Token Poll Coindash Token Poll Coindash
           Token Poll
         </div>
-        <div class="time" v-if="isPC">
+        <!-- <div class="time" v-if="isPC">
           <div class="card__item-value new-item-value">
-            <span>2</span><span>3</span>:<span>3</span><span>3</span>:<span
-              >2</span
-            ><span>3</span>:<span>3</span><span>3</span>
+            <span>2</span>
+            <span>3</span>
+            :
+            <span>3</span>
+            <span>3</span>
+            :
+            <span>2</span>
+            <span>3</span>
+            :
+            <span>3</span>
+            <span>3</span>
           </div>
-        </div>
+        </div> -->
+
+        <Time
+        v-if="isPC"
+          :type="4"
+          :theme="2"
+          :endDate="1646709257000"
+          :timeUnit="[':', ':', ':']"
+        ></Time>
         <!-- h5 time -->
         <div class="time_h5" v-if="!isPC">
           <div class="card__item-value new-item-value">
-            <span>23</span>:<span>33</span>:<span
-              >23</span>:<span>33</span>
+            <span>23</span>
+            :
+            <span>33</span>
+            :
+            <span>23</span>
+            :
+            <span>33</span>
           </div>
         </div>
         <div class="total_number">
@@ -66,7 +87,7 @@
           <div class="trade">
             <div class="trade_content">
               <span>Amount:</span>
-              <input type="text" />
+              <input oninput="value=value.replace(/[^\d]/g,'')" />
               <div class="button">Purchase Now</div>
             </div>
           </div>
@@ -79,10 +100,22 @@
         <div class="content1">
           <p>STAKING</p>
           <ul>
-            <li><i></i> hahahahahahahahahha</li>
-            <li><i></i> hahahahahahahahahha</li>
-            <li><i></i> hahahahahahahahahha</li>
-            <li><i></i> hahahahahahahahahha</li>
+            <li>
+              <i></i>
+              hahahahahahahahahha
+            </li>
+            <li>
+              <i></i>
+              hahahahahahahahahha
+            </li>
+            <li>
+              <i></i>
+              hahahahahahahahahha
+            </li>
+            <li>
+              <i></i>
+              hahahahahahahahahha
+            </li>
           </ul>
         </div>
         <div class="content2">
@@ -95,20 +128,23 @@
     </section>
     <!-- 扇形图 -->
     <charts></charts>
-    <!-- <section class="chart w">
-      <div class="chart_left"></div>
-      <div class="chart_right"></div>
-    </section> -->
   </div>
 </template>
 <script>
-import charts from "./chart.vue";
+// import FlipDown from 'FlipDown'
+import charts from './chart.vue'
+import Time from './time.vue'
 export default {
-  name: "presale",
+  name: 'presale',
   components: {
     charts,
+    Time,
   },
-};
+  mounted() {},
+  methods: {
+    func() {},
+  },
+}
 </script>
 <style lang="less" scoped>
 .main {
@@ -169,10 +205,10 @@ export default {
 }
 .introduce {
   font-size: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 .time {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 .card__item-value {
   color: #48587b;
@@ -203,7 +239,8 @@ export default {
   }
 }
 .total_number {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
+  margin-top: 60px;
   // color: #ffffff;
   // padding: 28px 28px;
   // background: rgba(94, 149, 232, 0.1);
@@ -236,7 +273,7 @@ export default {
   }
 }
 .total_number_bottom {
-  margin-top: 20px;
+  margin-top: 40px;
   ul {
     display: flex;
     justify-content: space-around;
@@ -354,14 +391,14 @@ export default {
       margin-bottom: 30 / @p;
     }
   }
-  .introduce_time{
-    padding: 10px
+  .introduce_time {
+    padding: 10px;
   }
   .tokenList {
-    margin-bottom: 50/@p;
+    margin-bottom: 50 / @p;
     ul {
       display: flex;
-      font-size: 25/@p;
+      font-size: 25 / @p;
       justify-content: center;
     }
     li {
@@ -372,112 +409,110 @@ export default {
     }
   }
   .introduce {
-  font-size: 26/@p;
-  margin-bottom: 30px;
-  
-}
-.time_h5{
-margin-bottom: 30px;
-.card__item-value {
-  color: #48587b;
-  font-size: 24px;
-  margin-top: 10px;
-  font-weight: 500;
-}
-.new-item-value {
-  margin-bottom: 8px;
-  span {
-    background-color: #333881;
-    color: white;
-    border-radius: 4px;
-    /* padding: 0 2px; */
-    font-size: 20px;
-    margin: 0 5px;
-    display: inline-block;
-    text-align: center;
-    padding-right: 1px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    font-size: 26 / @p;
+    margin-bottom: 30px;
   }
-  strong {
-    padding-right: 5px;
-    font-size: 14px;
-    font-weight: 400;
-  }
-}
-}
-.total_number{
-   h3 {
-    font-size: 25/@p;
-    color: #be5e9c;
-  }
-  h2 {
-    font-size: 30/@p;
-    color: #fff;
-  }
-}
-.total_number_bottom{
-    li {
-    font-size: 20/@p;
-    color: #be5e9c;
-  }
-}
-.progress {
-  display: flex;
-  align-items: center;
-  margin: 20px auto;
-  width: 100%;
-  span {
-    font-size: 20/@p;
-    margin: 0 0px;
-   
-  }
-}
-.trade {
-  text-align: center;
-  margin-bottom: 40px;
-  margin-top: 40px;
-  .trade_content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    span {
-      font-size: 40px;
-      margin-right: 20px;
-      color: #be5e9c;
-    }
-    input {
-      height: 50px;
-      background: transparent;
-      font-size: 14px;
-      font-family: PingFangSC-Regular, PingFang SC;
-      font-weight: 600;
-      line-height: 20px;
-      border-radius: 20px;
-      padding-left: 10px;
-      margin-right: 20px;
-    }
-    .button {
-      width: 200px;
-      height: 50px;
-      background: linear-gradient(to right, #f36bc0 0%, #d640ab 100%);
-      border-radius: 60px;
-
-      border: none;
-      cursor: pointer;
-      // padding: 10px;
-      font-size: 16px;
-      line-height: 50px;
+  .time_h5 {
+    margin-bottom: 30px;
+    .card__item-value {
+      color: #48587b;
+      font-size: 24px;
+      margin-top: 10px;
       font-weight: 500;
     }
+    .new-item-value {
+      margin-bottom: 8px;
+      span {
+        background-color: #333881;
+        color: white;
+        border-radius: 4px;
+        /* padding: 0 2px; */
+        font-size: 20px;
+        margin: 0 5px;
+        display: inline-block;
+        text-align: center;
+        padding-right: 1px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+      }
+      strong {
+        padding-right: 5px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
   }
-}
-.scenarios {
-  .content{
-    flex-direction: column;
+  .total_number {
+    h3 {
+      font-size: 25 / @p;
+      color: #be5e9c;
+    }
+    h2 {
+      font-size: 30 / @p;
+      color: #fff;
+    }
   }
-}
+  .total_number_bottom {
+    li {
+      font-size: 20 / @p;
+      color: #be5e9c;
+    }
+  }
+  .progress {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+    span {
+      font-size: 20 / @p;
+      margin: 0 0px;
+    }
+  }
+  .trade {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    .trade_content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-size: 40px;
+        margin-right: 20px;
+        color: #be5e9c;
+      }
+      input {
+        height: 50px;
+        background: transparent;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 600;
+        line-height: 20px;
+        border-radius: 20px;
+        padding-left: 10px;
+        margin-right: 20px;
+      }
+      .button {
+        width: 200px;
+        height: 50px;
+        background: linear-gradient(to right, #f36bc0 0%, #d640ab 100%);
+        border-radius: 60px;
+
+        border: none;
+        cursor: pointer;
+        // padding: 10px;
+        font-size: 16px;
+        line-height: 50px;
+        font-weight: 500;
+      }
+    }
+  }
+  .scenarios {
+    .content {
+      flex-direction: column;
+    }
+  }
 }
 </style>

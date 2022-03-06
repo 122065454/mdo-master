@@ -10,7 +10,6 @@ import { Icon, Notify, Popup } from 'vant'
 import 'vant/lib/index.css'
 import Vue from 'vue'
 import App from './App.vue'
-
 Vue.prototype.$axios = axios
 
 Vue.use(Icon)
@@ -18,6 +17,7 @@ Vue.use(Icon)
 Vue.use(Notify)
 Vue.use(Popup)
 Vue.use(animate)
+
 
 Vue.mixin(mixin)
 
