@@ -44,8 +44,9 @@ export default {
             center: this.isPC ? ['50%', '50%'] : ['50%', '60%'],
             name: 'Access From',
             type: 'pie',
-            radius: ['40%', '70%'],
+
             avoidLabelOverlap: false,
+            radius: '50%',
             label: {
               show: false,
               position: 'center',
@@ -95,7 +96,7 @@ export default {
             center: this.isPC ? ['50%', '50%'] : ['50%', '60%'],
             name: 'Access From',
             type: 'pie',
-            radius: ['40%', '70%'],
+            radius: '50%',
             avoidLabelOverlap: false,
             label: {
               show: false,
@@ -142,7 +143,7 @@ export default {
 <style lang="less" scoped>
 .chart {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 1300px;
   margin: auto;
   color: #ffffff;

@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <section class="token_sale w">
-      <h1>$SMT Token Sale</h1>
+      <h1>1st Round Presale for $SMT</h1>
       <div class="tokenList">
         <ul>
           <li><img src="https://mdex.co/token-icons/bsc/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
@@ -12,11 +12,11 @@
             Binance Smart Chian</li>
         </ul>
         <div class="AppLication_btn">WhilteList AppLication</div>
+        <h3>WhiteList Status:Whiltelisted</h3>
       </div>
       <div class="introduce_time">
         <div class="introduce">
-          Coindash Token Poll Coindash Token Poll Coindash Token Poll Coindash
-          Token Poll
+          The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto and physical worlds with cryptocurrencies worldwide
         </div>
         <!-- <div class="time" v-if="isPC">
           <div class="card__item-value new-item-value">
@@ -67,12 +67,12 @@
               <h2>100000</h2>
             </li>
           </ul>
-          <div class="total_number_bottom">
+          <!-- <div class="total_number_bottom">
             <ul>
-              <li>Pre-order Start Time: TBA</li>
+
               <li>WhiteList Status:Whiltelisted</li>
             </ul>
-          </div>
+          </div> -->
           <div class="progress">
             <span>$0</span>
             <a-progress :stroke-color="{
@@ -111,31 +111,48 @@
       <h1>scenarios</h1>
       <div class="content">
         <div class="content1">
-          <p>STAKING</p>
+          <p>Services and products</p>
           <ul>
             <li>
-              <i></i>
-              hahahahahahahahahha
+              1. Pay advertising campaigns with $SMT only
             </li>
             <li>
-              <i></i>
-              hahahahahahahahahha
+              2. Buy special discount items with $SMT
             </li>
             <li>
-              <i></i>
-              hahahahahahahahahha
-            </li>
-            <li>
-              <i></i>
-              hahahahahahahahahha
+              3. Join DAO by community voting for $SMT holders
+
             </li>
           </ul>
         </div>
         <div class="content2">
-          <p>STAKING</p>
+          <p>Land and associate NFT</p>
+          <ul>
+            <li>
+              1. Buy land NFT with $SMT
+            </li>
+            <li>
+              2. Buy rare accessories (including pets) for their avatars with $SMT
+            </li>
+            <li>
+              3. Pay for tickets for selected scenes in Simeta metaverse
+            </li>
+          </ul>
         </div>
         <div class="content3">
-          <p>STAKING</p>
+          <p>Farming</p>
+          <ul>
+            <li>
+              1. 2% out of 5% service fees will be rewarded to $SMT holders by farming
+            </li>
+            <li>
+              2. Stake $SMT to mine other well-known tokens that collaborate with Simeta
+
+            </li>
+            <li>
+              3. Deposit $SMT in our DeBank to get various interest
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -164,6 +181,7 @@ export default {
 .main {
   background: #22284a;
   overflow: hidden;
+  font-family: AlibabaPuHuiTi;
 }
 .w {
   width: 1300px;
@@ -179,6 +197,9 @@ export default {
     line-height: 73px;
     margin-bottom: 30px;
     color: #faf6f6d9;
+  }
+  h3 {
+    color: #fff;
   }
 }
 .AppLication_btn {
@@ -344,7 +365,6 @@ export default {
   }
 }
 .scenarios {
-  text-align: center;
   color: #ffffff;
   padding: 28px 28px;
   background: rgba(94, 149, 232, 0.1);
@@ -357,6 +377,7 @@ export default {
     line-height: 73px;
     color: #ffffff;
     margin-bottom: 30px;
+    text-align: center;
   }
   .content {
     display: flex;
@@ -369,10 +390,10 @@ export default {
       margin-right: 10px;
     }
     li {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      font-size: 18px;
     }
     .content1,
     .content2,
@@ -383,8 +404,10 @@ export default {
       height: 300px;
       padding: 20px;
       p {
-        font-size: 20px;
+        font-size: 30px;
         margin-bottom: 20px;
+        text-align: center;
+        font-weight: 700;
       }
     }
     .content1,
@@ -505,6 +528,61 @@ export default {
       margin: 0 0px;
     }
   }
+  .scenarios {
+    color: #ffffff;
+    padding: 28px 28px;
+    background: rgba(94, 149, 232, 0.1);
+    font-family: DM Sans;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    h1 {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 43px;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .content {
+      display: flex;
+      i {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #fff;
+        margin-right: 10px;
+      }
+      li {
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        font-size: 12px;
+      }
+      .content1,
+      .content2,
+      .content3 {
+        flex: 1;
+        margin: 10px;
+        border-radius: 10px;
+        height: 300px;
+        padding: 20px;
+        p {
+          font-size: 14px;
+          margin-bottom: 20px;
+          text-align: center;
+          font-weight: 700;
+        }
+      }
+      .content1,
+      .content3 {
+        background-color: #509d7b;
+      }
+      .content2 {
+        background: #4a4a4a;
+      }
+    }
+  }
   .trade {
     text-align: center;
     margin-bottom: 40px;
@@ -521,7 +599,7 @@ export default {
       }
       input {
         height: 30px;
-        background: transparent;
+        background: #fff;
         font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 600;
@@ -530,6 +608,7 @@ export default {
         padding-left: 10px;
         margin-right: 20px;
         width: 100px;
+        color: black;
       }
       .button {
         width: 100px;
