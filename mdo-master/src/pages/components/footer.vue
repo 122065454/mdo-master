@@ -195,8 +195,7 @@ export default {
             if (response.data.code == 0) {
               Notify({ type: 'success', message: 'Submitted successfully' })
             } else {
-              Notify({ type: 'danger', message: response.data.msg
-               })
+              Notify({ type: 'danger', message: response.data.msg })
             }
 
             console.log(response)
@@ -406,6 +405,7 @@ ol li:first-child {
       width: 100%;
       font-size: 16px;
       padding-left: 25 / @p;
+      margin: 10px 0 10px 0;
     }
     .h5_button {
       height: 88 / @p;

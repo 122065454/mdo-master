@@ -4,8 +4,12 @@
       <h1>$SMT Token Sale</h1>
       <div class="tokenList">
         <ul>
-          <li>BUSD</li>
-          <li>Binance Smart Chian</li>
+          <li><img src="https://mdex.co/token-icons/bsc/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
+                 alt="">
+            BUSD</li>
+          <li><img src="@/assets/images/svg/BSC.svg"
+                 alt="">
+            Binance Smart Chian</li>
         </ul>
         <div class="AppLication_btn">WhilteList AppLication</div>
       </div>
@@ -30,15 +34,14 @@
           </div>
         </div> -->
 
-        <Time
-        v-if="isPC"
-          :type="4"
-          :theme="2"
-          :endDate="1646709257000"
-          :timeUnit="[':', ':', ':']"
-        ></Time>
+        <Time v-if="isPC"
+              :type="4"
+              :theme="2"
+              :endDate="1646709257000"
+              :timeUnit="[':', ':', ':']"></Time>
         <!-- h5 time -->
-        <div class="time_h5" v-if="!isPC">
+        <div class="time_h5"
+             v-if="!isPC">
           <div class="card__item-value new-item-value">
             <span>23</span>
             :
@@ -72,28 +75,38 @@
           </div>
           <div class="progress">
             <span>$0</span>
-            <a-progress
-              :stroke-color="{
+            <a-progress :stroke-color="{
                 '0%': '#a670e2',
                 '100%': '#74e2c7',
               }"
-              status="active"
-              :showInfo="false"
-              :strokeWidth="50"
-              :percent="50"
-            />
+                        status="active"
+                        :showInfo="false"
+                        :strokeWidth="isPC?50:30"
+                        :percent="50" />
             <span>$5M</span>
           </div>
-          <div class="trade">
+          <div class="trade"
+               v-if="isPC">
             <div class="trade_content">
               <span>Amount:</span>
               <input oninput="value=value.replace(/[^\d]/g,'')" />
               <div class="button">Purchase Now</div>
             </div>
           </div>
+          <div class="trade"
+               v-if="!isPC">
+            <div class="trade_content">
+              <span>Amount:</span>
+              <input oninput="value=value.replace(/[^\d]/g,'')" />
+              <div class="button">Purchase Now</div>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </section>
+
     <section class="scenarios w">
       <h1>scenarios</h1>
       <div class="content">
@@ -125,8 +138,9 @@
           <p>STAKING</p>
         </div>
       </div>
+
     </section>
-    <!-- 扇形图 -->
+
     <charts></charts>
   </div>
 </template>
@@ -190,9 +204,15 @@ export default {
   }
   li {
     padding: 0 20px;
+    color: #fff;
   }
   li:first-child {
     border-right: 1px solid #44454b;
+  }
+  img {
+    width: 30px;
+    height: 30px;
+    vertical-align: text-bottom !important;
   }
 }
 .introduce_time {
@@ -274,6 +294,7 @@ export default {
 }
 .total_number_bottom {
   margin-top: 40px;
+
   ul {
     display: flex;
     justify-content: space-around;
@@ -392,7 +413,7 @@ export default {
     }
   }
   .introduce_time {
-    padding: 10px;
+    padding: 20px 10px;
   }
   .tokenList {
     margin-bottom: 50 / @p;
@@ -406,6 +427,11 @@ export default {
     }
     li:first-child {
       border-right: 1px solid #44454b;
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      vertical-align: bottom !important;
     }
   }
   .introduce {
@@ -443,7 +469,16 @@ export default {
       }
     }
   }
+  .AppLication_btn {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    padding: 0;
+    width: 150px;
+  }
   .total_number {
+    margin-top: 30px;
+    margin-bottom: -20px;
     h3 {
       font-size: 25 / @p;
       color: #be5e9c;
@@ -454,6 +489,7 @@ export default {
     }
   }
   .total_number_bottom {
+    margin-top: 5px;
     li {
       font-size: 20 / @p;
       color: #be5e9c;
@@ -475,16 +511,16 @@ export default {
     margin-top: 40px;
     .trade_content {
       display: flex;
-      flex-direction: column;
+      // flex-direction: column;
       align-items: center;
       justify-content: center;
       span {
-        font-size: 40px;
+        font-size: 16px;
         margin-right: 20px;
         color: #be5e9c;
       }
       input {
-        height: 50px;
+        height: 30px;
         background: transparent;
         font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
@@ -493,18 +529,18 @@ export default {
         border-radius: 20px;
         padding-left: 10px;
         margin-right: 20px;
+        width: 100px;
       }
       .button {
-        width: 200px;
-        height: 50px;
+        width: 100px;
+        height: 30px;
         background: linear-gradient(to right, #f36bc0 0%, #d640ab 100%);
         border-radius: 60px;
-
         border: none;
         cursor: pointer;
         // padding: 10px;
-        font-size: 16px;
-        line-height: 50px;
+        font-size: 12px;
+        line-height: 30px;
         font-weight: 500;
       }
     }

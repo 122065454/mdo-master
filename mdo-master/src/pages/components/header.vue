@@ -43,7 +43,8 @@
       </ul>
 
     </div>
-    <div class="logo">
+    <div class="logo"
+         @click="$router.push('/')">
       <img src="@/assets/images/h5/logo.png"
            alt="">
       <p class=" wow  animate__animated animate__flipInX "
@@ -66,7 +67,8 @@
     </div>
   </header>
   <header v-else>
-    <div class="logo_h5">
+    <div class="logo_h5"
+         @click="$router.push('/')">
       <img src="@/assets/images/h5/logo.png"
            alt="">
       <span>Simeta</span>
@@ -110,7 +112,7 @@
              rel="noopener noreferrer">Seller Application</a>
 
         </li>
-          <li @click="$router.push('/presale')">
+        <li @click="$router.push('/presale')">
           <span>Presale</span>
         </li>
         <li>
@@ -122,7 +124,6 @@
         <li>
           <span>Land</span>
         </li>
-      
 
       </ul>
     </van-popup>
@@ -140,6 +141,11 @@ export default {
       subshow2: false,
       activeNames: ['1'],
     }
+  },
+  watch: {
+    $route() {
+      this.show = false
+    },
   },
   methods: {
     async connectWallect() {
