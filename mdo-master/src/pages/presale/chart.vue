@@ -147,7 +147,7 @@ export default {
   width: 1300px;
   margin: auto;
   color: #ffffff;
-  padding: 28px 28px;
+  padding: 28px 28px 0;
   background: rgba(94, 149, 232, 0.1);
   font-family: DM Sans;
   border-radius: 12px;

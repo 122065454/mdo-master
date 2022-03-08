@@ -4,7 +4,7 @@ import '@/assets/js/set_root.js'
 import mixin from '@/mixin/index.js'
 import router from '@/router'
 import animate from 'animate.css'
-import { Progress } from 'ant-design-vue'
+import { Progress, Collapse } from 'ant-design-vue'
 import axios from 'axios'
 import { Icon, Notify, Popup } from 'vant'
 import 'vant/lib/index.css'
@@ -16,8 +16,8 @@ Vue.use(Icon)
 // 全局注册
 Vue.use(Notify)
 Vue.use(Popup)
+Vue.use(Collapse)
 Vue.use(animate)
-
 
 Vue.mixin(mixin)
 

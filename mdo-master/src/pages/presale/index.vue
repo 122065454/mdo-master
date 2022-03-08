@@ -33,11 +33,11 @@
             <span>3</span>
           </div>
         </div> -->
-
+        <p class="end">Ending in</p>
         <Time v-if="isPC"
               :type="4"
               :theme="2"
-              :endDate="1646709257000"
+              :endDate="1656709257000"
               :timeUnit="[':', ':', ':']"></Time>
         <!-- h5 time -->
         <div class="time_h5"
@@ -202,6 +202,11 @@ export default {
     color: #fff;
   }
 }
+.end {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: red;
+}
 .AppLication_btn {
   width: 200px;
   height: 42px;
@@ -246,7 +251,7 @@ export default {
 }
 .introduce {
   font-size: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 .time {
   margin-bottom: 60px;
