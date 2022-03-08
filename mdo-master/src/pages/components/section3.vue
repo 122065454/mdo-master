@@ -85,7 +85,7 @@ h2 {
 @media screen and (max-width: 700px) {
   .main {
     width: 100%;
-    height: 1600 / @p;
+    height: 1000 / @p;
     background: url(~@/assets/images/h5/bg3.png) center no-repeat;
     background-size: cover;
     // overflow: hidden;
