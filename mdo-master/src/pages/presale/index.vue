@@ -348,6 +348,7 @@ export default {
       border-radius: 20px;
       padding-left: 10px;
       margin-right: 20px;
+      border: 1px solid #d99393;
     }
     .button {
       width: 200px;
