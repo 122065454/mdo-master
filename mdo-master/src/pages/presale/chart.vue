@@ -2,7 +2,7 @@
   <div>
     <section class="chart w">
       <div class="chart_left">
-        <p>Token Distribution</p>
+        <p>Private Sale Fund Usage</p>
         <div class="chart_show"
              ref="chartLeft"></div>
       </div>
@@ -32,16 +32,20 @@ export default {
         },
         legend: {
           top: '5%',
-          left: 'center',
+          left: this.isPC ? 'center' : '10%',
           textStyle: {
             //图例文字的样式
             color: '#fff',
             fontSize: 12,
           },
         },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b} : {c}% ',
+        },
         series: [
           {
-            center: this.isPC ? ['50%', '50%'] : ['50%', '60%'],
+            center: this.isPC ? ['50%', '50%'] : ['40%', '60%'],
             name: 'Access From',
             type: 'pie',
 
@@ -51,6 +55,7 @@ export default {
               show: false,
               position: 'center',
             },
+
             emphasis: {
               label: {
                 // show: true,
@@ -62,11 +67,9 @@ export default {
               show: false,
             },
             data: [
-              { value: 1048, name: 'Search Engine' },
-              { value: 735, name: 'Direct' },
-              { value: 580, name: 'Email' },
-              { value: 484, name: 'Union Ads' },
-              { value: 300, name: 'Video Ads' },
+              { value: '43', name: 'Marketing & Cummunity' },
+              { value: '33', name: 'Operation & Development' },
+              { value: '24', name: 'Liquidity & Exchanges ' },
             ],
           },
         ],
@@ -84,16 +87,20 @@ export default {
           // right: "0%", //图例距离左的距离
           // y: "center", //图例上下居中
           top: '5%',
-          left: 'center',
+          left: this.isPC ? 'center' : '0%',
           textStyle: {
             //图例文字的样式
             color: '#fff',
             fontSize: 12,
           },
         },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b} : {c} ({d}%)',
+        },
         series: [
           {
-            center: this.isPC ? ['50%', '50%'] : ['50%', '60%'],
+            center: this.isPC ? ['50%', '50%'] : ['40%', '75%'],
             name: 'Access From',
             type: 'pie',
             radius: '50%',
@@ -114,21 +121,49 @@ export default {
             },
             data: [
               {
-                value: 1048,
-                name: 'Search Engine',
+                value: '60000000',
+                name: 'Strategic Partner',
                 itemStyle: { color: '#77ffcf' },
               },
-              { value: 735, name: 'Direct', itemStyle: { color: '#fae373' } },
-              { value: 580, name: 'Email', itemStyle: { color: '#f29c5f' } },
               {
-                value: 484,
-                name: 'Union Ads',
+                value: '100000000',
+                name: 'Seed Round ',
+                itemStyle: { color: '#fae373' },
+              },
+              {
+                value: 200000000,
+                name: 'Private Round',
+                itemStyle: { color: '#f29c5f' },
+              },
+              {
+                value: 120000000,
+                name: 'Public Round ',
                 itemStyle: { color: '#fd65ae' },
               },
               {
-                value: 300,
-                name: 'Video Ads',
+                value: 320000000,
+                name: 'Development Team ',
                 itemStyle: { color: '#8c53fc' },
+              },
+              {
+                value: 200000000,
+                name: 'Marketing ',
+              },
+              {
+                value: 500000000,
+                name: 'User Incentives ',
+              },
+              {
+                value: '140000000',
+                name: 'Liquidity  ',
+              },
+              {
+                value: 300000000,
+                name: 'Reserve   ',
+              },
+              {
+                value: 60000000,
+                name: 'Advisors    ',
               },
             ],
           },
@@ -144,29 +179,32 @@ export default {
 .chart {
   display: flex;
   justify-content: space-evenly;
-  width: 1300px;
-  margin: auto;
-  color: #ffffff;
-  padding: 28px 28px 0;
-  background: rgba(94, 149, 232, 0.1);
-  font-family: DM Sans;
-  border-radius: 12px;
-  margin-bottom: 40px;
+  margin-top: 40px;
+  // width: 1300px;
+  // margin: auto;
+  // color: #ffffff;
+  // padding: 28px 28px 0;
+  // background: rgba(94, 149, 232, 0.1);
+  // font-family: DM Sans;
+  // border-radius: 12px;
+  // margin-bottom: 40px;
 }
 .chart_show {
   width: 500px;
   height: 500px;
 }
+
 .chart_left,
 .chart_right {
   p {
     width: 200px;
     margin: auto;
     font-size: 20px;
+    text-align: center;
   }
   p::after {
     content: '';
-    width: 180px;
+    width: 186px;
     height: 2px;
     background: linear-gradient(
       to right,
@@ -174,6 +212,18 @@ export default {
       rgb(116, 226, 199) 100%
     );
     display: block;
+  }
+}
+.chart_left {
+  p {
+    width: 234px;
+    margin: auto;
+    font-size: 20px;
+  }
+  p::after {
+    content: '';
+    width: 230px;
+    height: 2px;
   }
 }
 // h5
@@ -196,6 +246,11 @@ export default {
       margin: auto;
       font-size: 20px;
       margin-bottom: 10px;
+    }
+  }
+  .chart_left {
+    p {
+      width: 234px;
     }
   }
 }

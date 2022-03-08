@@ -155,14 +155,15 @@
           </ul>
         </div>
       </div>
-
+      <charts></charts>
     </section>
 
-    <charts></charts>
+    <faq></faq>
   </div>
 </template>
 <script>
 // import FlipDown from 'FlipDown'
+import faq from './faq.vue'
 import charts from './chart.vue'
 import Time from './time.vue'
 export default {
@@ -170,6 +171,7 @@ export default {
   components: {
     charts,
     Time,
+    faq,
   },
   mounted() {},
   methods: {
