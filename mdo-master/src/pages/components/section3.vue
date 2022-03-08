@@ -50,7 +50,7 @@ export default {
 @p: 100rem;
 .main {
   width: 100%;
-  height: 937 / @p;
+  height: 837 / @p;
   background: url(~@/assets/images/bg3.png) center no-repeat;
   background-size: cover;
   // overflow: hidden;
