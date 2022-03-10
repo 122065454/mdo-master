@@ -26,7 +26,7 @@ export default {
         },
         {
           imgUrl: require('@/assets/images/discord.png'),
-          herf: 'https://discord.gg/5MFdTsNxtr',
+          herf: 'https://discord.gg/b58T5CP8Ky',
         },
         {
           imgUrl: require('@/assets/images/faceBook.png'),
