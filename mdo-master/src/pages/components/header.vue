@@ -209,7 +209,7 @@ export default {
   height: 100 / @p;
   font-size: 16 / @p;
   position: absolute;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
 
   // opacity: 0.6;
   border-radius: 5 / @p;
