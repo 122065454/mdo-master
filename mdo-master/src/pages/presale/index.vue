@@ -56,7 +56,7 @@
           <ul>
             <li>
               <h3>Pool supply</h3>
-              <h2>100000</h2>
+              <h2>100,000</h2>
             </li>
             <li>
               <h3>Rate</h3>
@@ -64,7 +64,7 @@
             </li>
             <li>
               <h3>Cliamabel</h3>
-              <h2>100000</h2>
+              <h2>100,000</h2>
             </li>
           </ul>
           <!-- <div class="total_number_bottom">
@@ -158,7 +158,7 @@
       <charts></charts>
     </section>
 
-    <faq></faq>
+    <faq v-if="isPC"></faq>
   </div>
 </template>
 <script>

@@ -12,6 +12,10 @@ const routes = [
     path: '/preSale',
     component: preSale,
   },
+  {
+    path: '*',
+    component: home,
+  },
 ]
 const router = new VueRouter({
   mode: 'history',
