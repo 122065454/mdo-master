@@ -175,7 +175,7 @@ export default {
       communityList: [
         { name: 'Twitter', herf: 'https://twitter.com/simeta_io' },
         { name: 'Telegram', herf: 'https://t.me/SimetaOfficial' },
-        { name: 'Discord', herf: 'https://discord.gg/5MFdTsNxtr' },
+        { name: 'Discord', herf: 'https://discord.gg/b58T5CP8Ky' },
         { name: 'Meta', herf: '' },
       ],
     }
