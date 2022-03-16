@@ -332,6 +332,30 @@ export default {
     }
   }
 }
-</style>
+@media screen and (max-width: 700px) {
+  @p:100rem;
+  .vue-countdown-component{
+      &.theme2 {
+    .time-box {
+        min-width:60 /@p;
+      & + .time-box {
+        margin-left: 1px;
+      }
+    }
+  }
+  .time-box{
+    height:60/@p;
+    font-size: 30/@p;
+    line-height: 60/@p;
+  }
+  .time-unit{
+    font-size: 40/@p;
+    line-height: 50/@p;
+    padding:0 0;
+  }
+  
+  }
+}
 
 </style>
+

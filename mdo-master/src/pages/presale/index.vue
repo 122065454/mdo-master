@@ -34,13 +34,13 @@
           </div>
         </div> -->
         <p class="end">Ending in</p>
-        <Time v-if="isPC"
+        <Time 
               :type="4"
               :theme="2"
-              :endDate="1656709257000"
+              :endDate="1356709257000"
               :timeUnit="[':', ':', ':']"></Time>
         <!-- h5 time -->
-        <div class="time_h5"
+        <!-- <div class="time_h5"
              v-if="!isPC">
           <div class="card__item-value new-item-value">
             <span>23</span>
@@ -51,7 +51,7 @@
             :
             <span>33</span>
           </div>
-        </div>
+        </div> -->
         <div class="total_number">
           <ul>
             <li>
@@ -198,7 +198,7 @@ export default {
     font-size: 60px;
     line-height: 73px;
     margin-bottom: 30px;
-    color: #faf6f6d9;
+    color: #627ff1;
   }
   h3 {
     color: #fff;
@@ -348,7 +348,7 @@ export default {
     input {
       height: 50px;
       background: transparent;
-      font-size: 14px;
+      font-size: 24px;
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 600;
       line-height: 20px;
@@ -412,7 +412,7 @@ export default {
       height: 300px;
       padding: 20px;
       p {
-        font-size: 30px;
+        font-size: 29px;
         margin-bottom: 20px;
         text-align: center;
         font-weight: 700;
