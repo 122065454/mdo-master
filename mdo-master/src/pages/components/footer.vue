@@ -147,7 +147,7 @@ export default {
         },
         {
           imgUrl: require('@/assets/images/discord.png'),
-          herf: 'https://discord.gg/5MFdTsNxtr',
+          herf: 'https://discord.gg/b58T5CP8Ky',
         },
         {
           imgUrl: require('@/assets/images/faceBook.png'),
@@ -410,6 +410,7 @@ ol li:first-child {
       width: 100%;
       font-size: 16px;
       padding-left: 25 / @p;
+      margin: 10px 0 10px 0;
     }
     .h5_button {
       height: 88 / @p;

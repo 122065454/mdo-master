@@ -30,20 +30,26 @@ module.exports = {
         .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
     }
   },
-//   configureWebpack:{
-//     module:{
-//       rules:[
-//       {
-//       test:/\.(woff2?|eot|ttf|otf)(\?.*)$/,
-//       loader:'url-loader',
-//       options:{
-//       limit: 10000,
-//       name: assetsPath('fonrs/[name].[hash:7].[ext]')
-//       }
-//       }
-//       ]
-//   },
-// },
+  css: {
+    requireModuleExtension: true,
+    loaderOptions: {
+      less: {
+        lessOptions: {
+          javascriptEnabled: true,
+        },
+      },
+    },
+  },
+  // configureWebpack: {
+  //   css: {
+  //     requireModuleExtension: true,
+  //     loaderOptions: {
+  //       less: {
+  //         javascriptEnabled: true,
+  //       },
+  //     },
+  //   },
+  // },
   devServer: {
     open: true,
     host: '0.0.0.0',

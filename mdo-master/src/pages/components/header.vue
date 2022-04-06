@@ -43,7 +43,8 @@
       </ul>
 
     </div>
-    <div class="logo">
+    <div class="logo"
+         @click="$router.push('/')">
       <img src="@/assets/images/h5/logo.png"
            alt="">
       <p class=" wow  animate__animated animate__flipInX "
@@ -51,9 +52,9 @@
     </div>
     <div class="menu">
       <ul>
-        <!-- <li @click="$router.push('/presale')">
+        <li @click="$router.push('/presale')">
           <span>Presale</span>
-        </li> -->
+        </li>
         <li>
           <img src="@/assets/images/shopping.png"
                alt="">
@@ -66,7 +67,8 @@
     </div>
   </header>
   <header v-else>
-    <div class="logo_h5">
+    <div class="logo_h5"
+         @click="$router.push('/')">
       <img src="@/assets/images/h5/logo.png"
            alt="">
       <span>Simeta</span>
@@ -110,6 +112,9 @@
              rel="noopener noreferrer">Seller Application</a>
 
         </li>
+        <li @click="$router.push('/presale')">
+          <span>Presale</span>
+        </li>
         <li>
           <span>Seller Center</span>
         </li>
@@ -136,6 +141,11 @@ export default {
       subshow2: false,
       activeNames: ['1'],
     }
+  },
+  watch: {
+    $route() {
+      this.show = false
+    },
   },
   methods: {
     async connectWallect() {
@@ -199,7 +209,7 @@ export default {
   height: 100 / @p;
   font-size: 16 / @p;
   position: absolute;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
 
   // opacity: 0.6;
   border-radius: 5 / @p;
@@ -409,7 +419,7 @@ export default {
       margin-left: 10px;
     }
   }
-  li:nth-child(n + 5) {
+  li:nth-child(n + 7) {
     color: #746969;
   }
 }
