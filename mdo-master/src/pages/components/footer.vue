@@ -3,12 +3,8 @@
     <div class="content">
       <div class="logo">
         <div class="logo_top">
-          <img src="@/assets/images/h5/logo.png"
-               class="img1"
-               alt="">
-          <img src="@/assets/images/h5/Simeta.png"
-               class="img2"
-               alt="">
+          <img src="@/assets/images/h5/logo.png" class="img1" alt="">
+          <img src="@/assets/images/h5/Simeta.png" class="img2" alt="">
           <div class="logo_bottom">
             The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide
           </div>
@@ -17,20 +13,14 @@
       <div class="contrat">
         <ol>
           <li>Infomation </li>
-          <li v-for="(item,index) in infomationList"
-              :key="index">
-            <a :href="item.herf"
-               target="_blank"
-               rel="noopener noreferrer">{{item.name}}</a>
+          <li v-for="(item,index) in infomationList" :key="index">
+            <a :href="item.herf" target="_blank" rel="noopener noreferrer">{{item.name}}</a>
           </li>
         </ol>
         <ol>
           <li>Community </li>
-          <li v-for="(item,index) in communityList"
-              :key='index'>
-            <a :href="item.herf"
-               target="_blank"
-               rel="noopener noreferrer">{{item.name}}</a>
+          <li v-for="(item,index) in communityList" :key='index'>
+            <a :href="item.herf" target="_blank" rel="noopener noreferrer">{{item.name}}</a>
           </li>
           <!-- <li> Telegram </li>
           <li>Discord</li>
@@ -40,38 +30,24 @@
       <div class="mail">
         <p>Subscribe to our newsletter: stay in touch with latest updates with Simeta</p>
         <div class="input">
-          <input type="text"
-                 v-model="email"
-                 placeholder="Your Email">
-          <input type="text"
-                 v-model="name"
-                 placeholder="Your Name">
+          <input type="text" v-model="email" placeholder="Your Email">
+          <input type="text" v-model="name" placeholder="Your Name">
         </div>
-        <div class="button"
-             @click="sumbit">Subscribe</div>
+        <div class="button" @click="sumbit">Subscribe</div>
       </div>
 
     </div>
     <div class="sociality">
-      <a v-for="(item,index) in socialist"
-         :key="index"
-         :href="item.herf"
-         target="_blank"
-         rel="noopener noreferrer">
-        <img :src="item.imgUrl"
-             alt="">
+      <a v-for="(item,index) in socialist" :key="index" :href="item.herf" target="_blank" rel="noopener noreferrer">
+        <img :src="item.imgUrl" alt="">
       </a>
     </div>
 
   </footer>
   <footer v-else>
     <div class="title">
-      <img src="@/assets/images/h5/logo.png"
-           class="footer_logo"
-           alt="">
-      <img src="@/assets/images/h5/Simeta.png"
-           class="simeta"
-           alt="">
+      <img src="@/assets/images/h5/logo.png" class="footer_logo" alt="">
+      <img src="@/assets/images/h5/Simeta.png" class="simeta" alt="">
     </div>
     <div class="introduce">
       The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide
@@ -79,20 +55,14 @@
     <div class="h5_contact">
       <ol>
         <li>Infomation </li>
-        <li v-for="(item,index) in infomationList"
-            :key="index">
-          <a :href="item.herf"
-             target="_blank"
-             rel="noopener noreferrer">{{item.name}}</a>
+        <li v-for="(item,index) in infomationList" :key="index">
+          <a :href="item.herf" target="_blank" rel="noopener noreferrer">{{item.name}}</a>
         </li>
       </ol>
       <ol>
         <li>Community </li>
-        <li v-for="(item,index) in communityList"
-            :key='index'>
-          <a :href="item.herf"
-             target="_blank"
-             rel="noopener noreferrer">{{item.name}}</a>
+        <li v-for="(item,index) in communityList" :key='index'>
+          <a :href="item.herf" target="_blank" rel="noopener noreferrer">{{item.name}}</a>
         </li>
         <!-- <li> Telegram </li>
           <li>Discord</li>
@@ -102,27 +72,13 @@
     <div class="h5_input">
       <h1>Subscribe to our newsletter, stay in touch </h1>
       <h2> with latest updates with Simeta</h2>
-      <input type="text"
-             placeholder="Your Email"
-             v-model="email"
-             name=""
-             id="">
-      <input type="text"
-             name=""
-             v-model="name"
-             placeholder="Your Name"
-             id="">
-      <div class="h5_button"
-           @click="sumbit">Subscribe</div>
+      <input type="text" placeholder="Your Email" v-model="email" name="" id="">
+      <input type="text" name="" v-model="name" placeholder="Your Name" id="">
+      <div class="h5_button" @click="sumbit">Subscribe</div>
     </div>
     <div class="h5_sociality">
-      <a v-for="(item,index) in socialist"
-         :key="index"
-         :href="item.herf"
-         target="_blank"
-         rel="noopener noreferrer">
-        <img :src="item.imgUrl"
-             alt="">
+      <a v-for="(item,index) in socialist" :key="index" :href="item.herf" target="_blank" rel="noopener noreferrer">
+        <img :src="item.imgUrl" alt="">
       </a>
     </div>
   </footer>
@@ -151,7 +107,7 @@ export default {
         },
         {
           imgUrl: require('@/assets/images/faceBook.png'),
-          herf: '',
+          herf: 'https://www.facebook.com/Simeta-105637975451314',
         },
       ],
       infomationList: [

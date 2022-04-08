@@ -1,12 +1,7 @@
 <template>
   <div class="sociality ">
-    <a v-for="(item,index) in socialist"
-       :key="index"
-       :href="item.herf"
-       target="_blank"
-       rel="noopener noreferrer">
-      <img :src="item.imgUrl"
-           alt="">
+    <a v-for="(item,index) in socialist" :key="index" :href="item.herf" target="_blank" rel="noopener noreferrer">
+      <img :src="item.imgUrl" alt="">
     </a>
   </div>
 
@@ -30,7 +25,7 @@ export default {
         },
         {
           imgUrl: require('@/assets/images/faceBook.png'),
-          herf: 'https://discord.gg/5MFdTsNxtr',
+          herf: 'https://www.facebook.com/Simeta-105637975451314',
         },
       ],
     }

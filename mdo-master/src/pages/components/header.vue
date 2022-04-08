@@ -4,30 +4,20 @@
       <ul>
         <li @mouseover='subMenuShow'>
           <span>About</span>
-          <ol class="sbumenu"
-              v-show="subshow"
-              @mouseout='subMenuOut'>
+          <ol class="sbumenu" v-show="subshow" @mouseout='subMenuOut'>
             <li>
-              <a href="https://simeta.gitbook.io/about/whitepaper/our-team"
-                 target="_blank"
-                 rel="noopener noreferrer">Team</a>
+              <a href="https://simeta.gitbook.io/about/whitepaper/our-team" target="_blank" rel="noopener noreferrer">Team</a>
             </li>
             <li>
-              <a href="https://simeta.gitbook.io/about/whitepaper/our-roadmap"
-                 target="_blank"
-                 rel="noopener noreferrer">Roadmap</a>
+              <a href="https://simeta.gitbook.io/about/whitepaper/our-roadmap" target="_blank" rel="noopener noreferrer">Roadmap</a>
             </li>
           </ol>
         </li>
         <li @mouseover='subMenuShow2'>
           <span>Merchant</span>
-          <ol class="sbumenu2"
-              v-show="subshow2"
-              @mouseout='subMenuOut2'>
+          <ol class="sbumenu2" v-show="subshow2" @mouseout='subMenuOut2'>
             <li>
-              <a href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db"
-                 target="_blank"
-                 rel="noopener noreferrer">Seller Application</a>
+              <a href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db" target="_blank" rel="noopener noreferrer">Seller Application</a>
             </li>
             <li class="noneshow">
               Seller Center
@@ -43,21 +33,17 @@
       </ul>
 
     </div>
-    <div class="logo"
-         @click="$router.push('/')">
-      <img src="@/assets/images/h5/logo.png"
-           alt="">
-      <p class=" wow  animate__animated animate__flipInX "
-         data-wow-duration="1s">Simeta</p>
+    <div class="logo" @click="$router.push('/')">
+      <img src="@/assets/images/h5/logo.png" alt="">
+      <p class=" wow  animate__animated animate__flipInX " data-wow-duration="1s">Simeta</p>
     </div>
     <div class="menu">
       <ul>
-        <li @click="$router.push('/presale')">
+        <!-- <li @click="$router.push('/presale')">
           <span>Presale</span>
-        </li>
+        </li> -->
         <li>
-          <img src="@/assets/images/shopping.png"
-               alt="">
+          <img src="@/assets/images/shopping.png" alt="">
           <span>Checkout</span>
         </li>
         <li @click="connectWallect">
@@ -67,24 +53,15 @@
     </div>
   </header>
   <header v-else>
-    <div class="logo_h5"
-         @click="$router.push('/')">
-      <img src="@/assets/images/h5/logo.png"
-           alt="">
+    <div class="logo_h5" @click="$router.push('/')">
+      <img src="@/assets/images/h5/logo.png" alt="">
       <span>Simeta</span>
     </div>
-    <div class="logo_right"
-         @click="diagleShow">
-      <img src="@/assets/images/h5/icon.png"
-           alt="">
+    <div class="logo_right" @click="diagleShow">
+      <img src="@/assets/images/h5/icon.png" alt="">
     </div>
-    <van-popup v-model="show"
-               position="left"
-               :style="{ height: '100%',width:'60%' }">
-      <van-icon name="cross"
-                @click="close"
-                class="icon"
-                size="30" />
+    <van-popup v-model="show" position="left" :style="{ height: '100%',width:'60%' }">
+      <van-icon name="cross" @click="close" class="icon" size="30" />
       <ul>
         <li>
           <!-- <img src="@/assets/images/shopping.png"
@@ -95,26 +72,20 @@
           Wallet
         </li>
         <li>
-          <a href="https://simeta.gitbook.io/about/whitepaper/our-team"
-             target="_blank"
-             rel="noopener noreferrer">Team</a>
+          <a href="https://simeta.gitbook.io/about/whitepaper/our-team" target="_blank" rel="noopener noreferrer">Team</a>
 
         </li>
         <li>
-          <a href="https://simeta.gitbook.io/about/whitepaper/our-roadmap"
-             target="_blank"
-             rel="noopener noreferrer">Roadmap</a>
+          <a href="https://simeta.gitbook.io/about/whitepaper/our-roadmap" target="_blank" rel="noopener noreferrer">Roadmap</a>
 
         </li>
         <li>
-          <a href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db"
-             target="_blank"
-             rel="noopener noreferrer">Seller Application</a>
+          <a href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db" target="_blank" rel="noopener noreferrer">Seller Application</a>
 
         </li>
-        <li @click="$router.push('/presale')">
+        <!-- <li @click="$router.push('/presale')">
           <span>Presale</span>
-        </li>
+        </li> -->
         <li>
           <span>Seller Center</span>
         </li>
