@@ -3,117 +3,121 @@
     <section class="chart w">
       <div class="chart_left">
         <p>Private Sale Fund Usage</p>
-        <div class="chart_show"
-             ref="chartLeft"></div>
+        <div
+          class="chart_show"
+          ref="chartLeft"
+        ></div>
       </div>
       <div class="chart_right">
         <p>Allocation of funds</p>
-        <div class="chart_show"
-             ref="chartRight"></div>
+        <div
+          class="chart_show"
+          ref="chartRight"
+        ></div>
       </div>
     </section>
   </div>
 </template>
 <script>
-import * as echarts from 'echarts'
+import * as echarts from "echarts";
 export default {
-  name: 'chart',
+  name: "chart",
   mounted() {
-    this.initEachartsLeft()
-    this.initEachartsRight()
+    this.initEachartsLeft();
+    this.initEachartsRight();
   },
 
   methods: {
     initEachartsLeft() {
-      let myChart = echarts.init(this.$refs.chartLeft)
+      let myChart = echarts.init(this.$refs.chartLeft);
       var option = {
         tooltip: {
-          trigger: 'item',
+          trigger: "item",
         },
         legend: {
-          top: '5%',
-          left: this.isPC ? 'center' : '10%',
+          top: "5%",
+          left: this.isPC ? "center" : "10%",
           textStyle: {
             //图例文字的样式
-            color: '#fff',
+            color: "#fff",
             fontSize: 12,
           },
         },
         tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b} : {c}% ',
+          trigger: "item",
+          formatter: "{a} <br/>{b} : {c}% ",
         },
         series: [
           {
-            center: this.isPC ? ['50%', '50%'] : ['40%', '60%'],
-            name: 'Access From',
-            type: 'pie',
+            center: this.isPC ? ["50%", "50%"] : ["40%", "60%"],
+            name: "Access From",
+            type: "pie",
 
             avoidLabelOverlap: false,
-            radius: '50%',
+            radius: "50%",
             label: {
               show: false,
-              position: 'center',
+              position: "center",
             },
 
             emphasis: {
               label: {
                 // show: true,
-                fontSize: '40',
-                fontWeight: 'bold',
+                fontSize: "40",
+                fontWeight: "bold",
               },
             },
             labelLine: {
               show: false,
             },
             data: [
-              { value: '43', name: 'Marketing & Cummunity' },
-              { value: '33', name: 'Operation & Development' },
-              { value: '24', name: 'Liquidity & Exchanges ' },
+              { value: "43", name: "Marketing & Cummunity" },
+              { value: "33", name: "Operation & Development" },
+              { value: "24", name: "Liquidity & Exchanges " },
             ],
           },
         ],
-      }
-      myChart.setOption(option)
+      };
+      myChart.setOption(option);
     },
     initEachartsRight() {
-      let myChart = echarts.init(this.$refs.chartRight)
+      let myChart = echarts.init(this.$refs.chartRight);
       var option = {
         tooltip: {
-          trigger: 'item',
+          trigger: "item",
         },
         legend: {
           // orient: "vertical",
           // right: "0%", //图例距离左的距离
           // y: "center", //图例上下居中
-          top: '5%',
-          left: this.isPC ? 'center' : '0%',
+          top: "5%",
+          left: this.isPC ? "center" : "0%",
           textStyle: {
             //图例文字的样式
-            color: '#fff',
+            color: "#fff",
             fontSize: 12,
           },
         },
         tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b} : {c} ({d}%)',
+          trigger: "item",
+          formatter: "{a} <br/>{b} : {c} ({d}%)",
         },
         series: [
           {
-            center: this.isPC ? ['50%', '50%'] : ['40%', '75%'],
-            name: 'Access From',
-            type: 'pie',
-            radius: '50%',
+            center: this.isPC ? ["50%", "50%"] : ["40%", "75%"],
+            name: "Access From",
+            type: "pie",
+            radius: "50%",
             avoidLabelOverlap: false,
             label: {
               show: false,
-              position: 'center',
+              position: "center",
             },
             emphasis: {
               label: {
                 // show: true,
-                fontSize: '40',
-                fontWeight: 'bold',
+                fontSize: "40",
+                fontWeight: "bold",
               },
             },
             labelLine: {
@@ -121,58 +125,58 @@ export default {
             },
             data: [
               {
-                value: '60000000',
-                name: 'Strategic Partner',
-                itemStyle: { color: '#77ffcf' },
+                value: "60000000",
+                name: "Strategic Partner",
+                itemStyle: { color: "#77ffcf" },
               },
               {
-                value: '100000000',
-                name: 'Seed Round ',
-                itemStyle: { color: '#fae373' },
+                value: "100000000",
+                name: "Seed Round ",
+                itemStyle: { color: "#fae373" },
               },
               {
                 value: 200000000,
-                name: 'Private Round',
-                itemStyle: { color: '#f29c5f' },
+                name: "Private Round",
+                itemStyle: { color: "#f29c5f" },
               },
               {
                 value: 120000000,
-                name: 'Public Round ',
-                itemStyle: { color: '#fd65ae' },
+                name: "Public Round ",
+                itemStyle: { color: "#fd65ae" },
               },
               {
                 value: 320000000,
-                name: 'Development Team ',
-                itemStyle: { color: '#8c53fc' },
+                name: "Development Team ",
+                itemStyle: { color: "#8c53fc" },
               },
               {
                 value: 200000000,
-                name: 'Marketing ',
+                name: "Marketing ",
               },
               {
                 value: 500000000,
-                name: 'User Incentives ',
+                name: "User Incentives ",
               },
               {
-                value: '140000000',
-                name: 'Liquidity  ',
+                value: "140000000",
+                name: "Liquidity  ",
               },
               {
                 value: 300000000,
-                name: 'Reserve   ',
+                name: "Reserve   ",
               },
               {
                 value: 60000000,
-                name: 'Advisors    ',
+                name: "Advisors    ",
               },
             ],
           },
         ],
-      }
-      myChart.setOption(option)
+      };
+      myChart.setOption(option);
     },
   },
-}
+};
 </script>
 
 <style lang="less" scoped>
@@ -201,9 +205,10 @@ export default {
     margin: auto;
     font-size: 20px;
     text-align: center;
+    color: #eece5a;
   }
   p::after {
-    content: '';
+    content: "";
     width: 186px;
     height: 2px;
     background: linear-gradient(
@@ -221,7 +226,7 @@ export default {
     font-size: 20px;
   }
   p::after {
-    content: '';
+    content: "";
     width: 230px;
     height: 2px;
   }

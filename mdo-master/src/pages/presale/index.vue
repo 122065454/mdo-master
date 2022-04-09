@@ -4,11 +4,15 @@
       <h1>1st Round Presale for $SMT</h1>
       <div class="tokenList">
         <ul>
-          <li><img src="https://mdex.co/token-icons/bsc/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
-                 alt="">
+          <li><img
+              src="https://mdex.co/token-icons/bsc/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
+              alt=""
+            >
             BUSD</li>
-          <li><img src="@/assets/images/svg/BSC.svg"
-                 alt="">
+          <li><img
+              src="@/assets/images/bsc.png"
+              alt=""
+            >
             Binance Smart Chian</li>
         </ul>
         <div class="AppLication_btn">WhilteList AppLication</div>
@@ -16,7 +20,7 @@
       </div>
       <div class="introduce_time">
         <div class="introduce">
-          The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto and physical worlds with cryptocurrencies worldwide
+          The first virtual futuristic eCommerce marketplace where users<br> can buy and sell items in both the crypto and physical worlds <br>with cryptocurrencies worldwide
         </div>
         <!-- <div class="time" v-if="isPC">
           <div class="card__item-value new-item-value">
@@ -33,12 +37,13 @@
             <span>3</span>
           </div>
         </div> -->
-        <p class="end">Ending in</p>
-        <Time 
-              :type="4"
-              :theme="2"
-              :endDate="1356709257000"
-              :timeUnit="[':', ':', ':']"></Time>
+        <p class="end">Starting in</p>
+        <Time
+          :type="4"
+          :theme="2"
+          :endDate="1356709257000"
+          :timeUnit="[':', ':', ':']"
+        ></Time>
         <!-- h5 time -->
         <!-- <div class="time_h5"
              v-if="!isPC">
@@ -55,15 +60,33 @@
         <div class="total_number">
           <ul>
             <li>
-              <h3>Pool supply</h3>
+              <h3>
+                <img
+                  src="@/assets/images/椭圆 1.png"
+                  alt=""
+                >
+                Pool supply
+              </h3>
               <h2>100,000</h2>
             </li>
             <li>
-              <h3>Rate</h3>
+              <h3>
+                <img
+                  src="@/assets/images/椭圆 1.png"
+                  alt=""
+                >
+                Rate
+              </h3>
               <h2>1 $SMT=0.014 BUSD</h2>
             </li>
             <li>
-              <h3>Cliamabel</h3>
+              <h3>
+                <img
+                  src="@/assets/images/椭圆 1.png"
+                  alt=""
+                >
+                Cliamabel
+              </h3>
               <h2>100,000</h2>
             </li>
           </ul>
@@ -73,28 +96,34 @@
               <li>WhiteList Status:Whiltelisted</li>
             </ul>
           </div> -->
-          <div class="progress">
+          <!-- <div class="progress">
             <span>$0</span>
-            <a-progress :stroke-color="{
+            <a-progress
+              :stroke-color="{
                 '0%': '#a670e2',
                 '100%': '#74e2c7',
               }"
-                        status="active"
-                        :showInfo="false"
-                        :strokeWidth="isPC?50:30"
-                        :percent="50" />
+              status="active"
+              :showInfo="false"
+              :strokeWidth="isPC?50:30"
+              :percent="50"
+            />
             <span>$5M</span>
-          </div>
-          <div class="trade"
-               v-if="isPC">
+          </div> -->
+          <div
+            class="trade"
+            v-if="isPC"
+          >
             <div class="trade_content">
               <span>Amount:</span>
               <input oninput="value=value.replace(/[^\d]/g,'')" />
               <div class="button">Purchase Now</div>
             </div>
           </div>
-          <div class="trade"
-               v-if="!isPC">
+          <div
+            class="trade"
+            v-if="!isPC"
+          >
             <div class="trade_content">
               <span>Amount:</span>
               <input oninput="value=value.replace(/[^\d]/g,'')" />
@@ -104,6 +133,33 @@
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <section class="Contracts">
+      <div>
+        <span class="label">
+          Contracts:
+        </span>
+        <img
+          class="img1"
+          src="@/assets/images/bsc.png"
+          alt=""
+        >
+        <span>BNB smart Chain（BEP 20）：</span>
+        <span>
+          OxE91c...306399F
+        </span>
+        <img
+          src="@/assets/images/矢量智能对象(3).png"
+          alt=""
+          style="margin-left: 10px;"
+        >
+        <img
+          src="@/assets/images/az9n5-o5l7g.png"
+          alt=""
+          style="margin-left: 10px;"
+        >
       </div>
     </section>
 
@@ -163,11 +219,11 @@
 </template>
 <script>
 // import FlipDown from 'FlipDown'
-import faq from './faq.vue'
-import charts from './chart.vue'
-import Time from './time.vue'
+import faq from "./faq.vue";
+import charts from "./chart.vue";
+import Time from "./time.vue";
 export default {
-  name: 'presale',
+  name: "presale",
   components: {
     charts,
     Time,
@@ -177,11 +233,12 @@ export default {
   methods: {
     func() {},
   },
-}
+};
 </script>
 <style lang="less" scoped>
 .main {
-  background: #22284a;
+  background: url(../../assets/images/bgc.png) no-repeat;
+
   overflow: hidden;
   font-family: AlibabaPuHuiTi;
 }
@@ -198,28 +255,56 @@ export default {
     font-size: 60px;
     line-height: 73px;
     margin-bottom: 30px;
-    color: #627ff1;
+    color: #f5cc3e;
   }
   h3 {
     color: #fff;
+    font-weight: bold;
+  }
+}
+.Contracts {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  .img1 {
+    width: 30px;
+    height: 30px;
+  }
+  img {
+    width: 18px;
+    height: 18px;
+  }
+  .label {
+    color: #f5cc3e;
+    font-size: 20px;
   }
 }
 .end {
   font-size: 30px;
   margin-bottom: 20px;
-  color: red;
+  color: #ffef40;
+  font-family: Franklin Gothic Demi;
+  font-weight: bold;
 }
 .AppLication_btn {
   width: 200px;
-  height: 42px;
-  background-color: rgb(114, 243, 75);
-  border-radius: 60px;
-  color: rgb(0, 0, 0);
-  border: none;
+  // border: none;
+  border: 2px solid #ffef40;
+  background: linear-gradient(180deg, #e8b805 0%, #b85803 100%);
+  box-shadow: 0px 0px 7px 2px rgba(51, 5, 98, 0.8);
+
+  border-radius: 10px;
+  color: #fff;
   padding: 10px;
   font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  // line-height: 42px;
+  font-weight: bold;
+  font-family: FZCuHei-B03T;
   margin: 10px auto;
   cursor: pointer;
 }
@@ -246,14 +331,17 @@ export default {
 .introduce_time {
   color: #ffffff;
   padding: 28px 28px;
-  background: rgba(94, 149, 232, 0.1);
+  background: linear-gradient(0deg, #090909 0%, #26252c 100%);
+  border-image: linear-gradient(0deg, #cb8512, #ffdd40) 3 3;
   font-family: DM Sans;
   border-radius: 12px;
   margin-bottom: 40px;
+  border: 3px solid #ffdd40;
 }
 .introduce {
   font-size: 40px;
   margin-bottom: 30px;
+  font-family: FZCuHei-B03T;
 }
 .time {
   margin-bottom: 60px;
@@ -303,7 +391,15 @@ export default {
   }
   h3 {
     font-size: 23px;
-    color: #be5e9c;
+    color: #fff141;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+    }
   }
   h2 {
     font-size: 40px;
@@ -343,7 +439,7 @@ export default {
     span {
       font-size: 40px;
       margin-right: 20px;
-      color: #be5e9c;
+      color: #fff141;
     }
     input {
       height: 50px;
@@ -355,25 +451,28 @@ export default {
       border-radius: 20px;
       padding-left: 10px;
       margin-right: 20px;
-      border: 1px solid #d99393;
+
+      border: 1px solid #feef40;
     }
     .button {
       width: 200px;
       height: 50px;
-      background: linear-gradient(to right, #f36bc0 0%, #d640ab 100%);
-      border-radius: 60px;
+      // border: none;
+      border: 1px solid #f8e75e;
+      // background: linear-gradient(0deg, #090909 0%, #26252c 100%);
+      background: linear-gradient(0deg, #cb8512 0%, #ffdd40 100%);
+      border-radius: 10px;
 
-      border: none;
       cursor: pointer;
       // padding: 10px;
-      font-size: 16px;
+      font-size: 20px;
       line-height: 50px;
       font-weight: 500;
     }
   }
 }
 .scenarios {
-  color: #ffffff;
+  color: #fff;
   padding: 28px 28px;
   background: rgba(94, 149, 232, 0.1);
   font-family: DM Sans;
@@ -383,7 +482,7 @@ export default {
     font-weight: 700;
     font-size: 60px;
     line-height: 73px;
-    color: #ffffff;
+    color: #f5cc3e;
     margin-bottom: 30px;
     text-align: center;
   }
@@ -401,7 +500,7 @@ export default {
       // display: flex;
       // align-items: center;
       // justify-content: center;
-      font-size: 18px;
+      font-size: 15px;
     }
     .content1,
     .content2,
@@ -412,6 +511,7 @@ export default {
       height: 300px;
       padding: 20px;
       p {
+        color: #fff141;
         font-size: 29px;
         margin-bottom: 20px;
         text-align: center;
@@ -419,11 +519,10 @@ export default {
       }
     }
     .content1,
+    .content2,
     .content3 {
-      background-color: #509d7b;
-    }
-    .content2 {
-      background: #4a4a4a;
+      background: linear-gradient(0deg, #090909 0%, #26252c 100%);
+      border: 1px solid;
     }
   }
 }
@@ -431,6 +530,28 @@ export default {
 // h5
 @media screen and (max-width: 700px) {
   @p: 100rem;
+
+  .Contracts {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    .img1 {
+      width: 30px;
+      height: 30px;
+    }
+    img {
+      width: 18px;
+      height: 18px;
+    }
+    .label {
+      color: #f5cc3e;
+      font-size: 20px;
+    }
+  }
+
   .w {
     width: 90%;
     margin: auto;
