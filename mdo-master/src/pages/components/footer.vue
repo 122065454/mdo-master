@@ -20,8 +20,15 @@
                 src="@/assets/images/矢量智能对象(1).png"
                 alt=""
               >
-              <a-select style="width: 120px;">
-                <a-select-option value="jack">English</a-select-option>
+              <a-select
+                style="width: 120px;"
+                v-model="value1"
+              >
+                <a-select-option
+                  v-for="(item, index) in langList"
+                  :key="index"
+                  :value="item.value"
+                >{{item.label}}</a-select-option>
               </a-select>
             </div>
             <div class="select_item">
@@ -30,8 +37,15 @@
                 src="@/assets/images/1200px-Flag_of_the_United_States_(Pantone).svg.png"
                 alt=""
               >
-              <a-select style="width: 120px;">
-                <a-select-option value="jack">United States</a-select-option>
+              <a-select
+                style="width: 120px;"
+                v-model="value2"
+              >
+                <a-select-option
+                  v-for="(item, index) in addressList"
+                  :key="index"
+                  :value="item.value"
+                >{{item.label}}</a-select-option>
               </a-select>
             </div>
 
@@ -225,6 +239,20 @@ export default {
   name: "footers",
   data() {
     return {
+      value1: "EngList",
+      value2: "United States",
+      langList: [
+        {
+          value: 1,
+          label: "EngLish",
+        },
+      ],
+      addressList: [
+        {
+          value: 1,
+          label: "United States",
+        },
+      ],
       email: "",
       name: "",
       socialist: [
@@ -441,10 +469,11 @@ ol {
 li {
   margin-bottom: 7 / @p;
 }
-a:hover {
-  transform: translateY(-10px);
-  transition: all 1;
-}
+
+// a:hover {
+//   transform: translateY(-10px);
+//   transition: all 1;
+// }
 li:not(:first-child):hover {
   transform: translateX(10px);
   transition: all 0.5s;
