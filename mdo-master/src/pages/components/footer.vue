@@ -14,6 +14,27 @@
             alt=""
           > -->
           <div class="logo_bottom">
+            <div class="select_item">
+              <img
+                style="width: 20px;"
+                src="@/assets/images/矢量智能对象(1).png"
+                alt=""
+              >
+              <a-select style="width: 120px;">
+                <a-select-option value="jack">English</a-select-option>
+              </a-select>
+            </div>
+            <div class="select_item">
+              <img
+                style="width: 20px;"
+                src="@/assets/images/1200px-Flag_of_the_United_States_(Pantone).svg.png"
+                alt=""
+              >
+              <a-select style="width: 120px;">
+                <a-select-option value="jack">United States</a-select-option>
+              </a-select>
+            </div>
+
             <!-- The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide -->
           </div>
         </div>
@@ -197,6 +218,7 @@
   </footer>
 </template>
 <script>
+import { Select } from "ant-design-vue";
 import { Notify } from "vant";
 import md5 from "md5";
 export default {
@@ -359,6 +381,26 @@ export default {
   color: #ffffff;
   line-height: 26 / @p;
   margin-top: 18 / @p;
+  margin-left: 25px;
+  .select_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    img {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+    }
+    /deep/ .ant-select-selection {
+      background-color: transparent;
+    }
+    /deep/ .ant-select-arrow svg {
+      color: #fff;
+    }
+    /deep/ .ant-select-selection-selected-value {
+      color: #fff;
+    }
+  }
 }
 .contrat {
   display: flex;

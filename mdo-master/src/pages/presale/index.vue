@@ -633,7 +633,6 @@ export default {
     margin-bottom: -20px;
     h3 {
       font-size: 25 / @p;
-      color: #be5e9c;
     }
     h2 {
       font-size: 30 / @p;
@@ -644,7 +643,6 @@ export default {
     margin-top: 5px;
     li {
       font-size: 20 / @p;
-      color: #be5e9c;
     }
   }
   .progress {
@@ -724,7 +722,6 @@ export default {
       span {
         font-size: 16px;
         margin-right: 20px;
-        color: #be5e9c;
       }
       input {
         height: 30px;
@@ -742,7 +739,7 @@ export default {
       .button {
         width: 100px;
         height: 30px;
-        background: linear-gradient(to right, #f36bc0 0%, #d640ab 100%);
+        // background: linear-gradient(to right, #f36bc0 0%, #d640ab 100%);
         border-radius: 60px;
         border: none;
         cursor: pointer;

@@ -4,9 +4,17 @@ import '@/assets/js/set_root.js'
 import mixin from '@/mixin/index.js'
 import router from '@/router'
 import animate from 'animate.css'
-import { Progress, Collapse } from 'ant-design-vue'
+import {
+  Progress,
+  Collapse,
+  Select
+} from 'ant-design-vue'
 import axios from 'axios'
-import { Icon, Notify, Popup } from 'vant'
+import {
+  Icon,
+  Notify,
+  Popup
+} from 'vant'
 import 'vant/lib/index.css'
 import Vue from 'vue'
 import App from './App.vue'
@@ -19,8 +27,8 @@ Vue.use(Icon)
 Vue.use(Notify)
 Vue.use(Popup)
 Vue.use(Collapse)
+Vue.use(Select)
 Vue.use(animate)
-
 Vue.mixin(mixin)
 
 Vue.component(Progress.name, Progress)
