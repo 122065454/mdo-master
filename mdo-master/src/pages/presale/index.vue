@@ -41,7 +41,7 @@
         <Time
           :type="4"
           :theme="2"
-          :endDate="1356709257000"
+          :endDate="1650175200000"
           :timeUnit="[':', ':', ':']"
         ></Time>
         <!-- h5 time -->
@@ -77,7 +77,7 @@
                 >
                 Rate
               </h3>
-              <h2>1 $SMT=0.014 BUSD</h2>
+              <h2>1 $SMT=0.014 BNB</h2>
             </li>
             <li>
               <h3>
@@ -148,16 +148,19 @@
         >
         <span>BNB smart Chain（BEP 20）：</span>
         <span>
-          OxE91c...306399F
+          0xa363....F9745f
+          <!-- OxE91c...306399F -->
         </span>
         <img
           src="@/assets/images/矢量智能对象(3).png"
           alt=""
           style="margin-left: 10px;"
+          @click='copy'
         >
         <img
           src="@/assets/images/az9n5-o5l7g.png"
           alt=""
+          @click="addToken"
           style="margin-left: 10px;"
         >
       </div>
@@ -231,7 +234,56 @@ export default {
   },
   mounted() {},
   methods: {
-    func() {},
+    copy() {
+       
+      this.copyToClipboard('0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f').then(() => {
+       this.$message.success('Copy successfully');
+      })
+    
+    },
+    addToken(){
+      // 快捷钱包添加代币
+   
+      const symbol = 'SMT'
+      const addressToken = '0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f'.toLowerCase()
+      const image = 'http://simeta.io/logo.png'
+      ethereum.request({
+        method: 'wallet_watchAsset',
+        params: {
+          type: 'ERC20',
+          options: {
+            address: addressToken,
+            decimals: 18,
+            symbol,
+            image,
+          },
+        },
+      })
+    
+    },
+    copyToClipboard(textToCopy) {
+      // navigator clipboard api needs a secure context (https)
+      if (navigator.clipboard && window.isSecureContext) {
+        // navigator clipboard api method'
+        return navigator.clipboard.writeText(textToCopy)
+      } else {
+        // text area method
+        let textArea = document.createElement('textarea')
+        textArea.value = textToCopy
+        // make the textarea out of viewport
+        textArea.style.position = 'fixed'
+        textArea.style.left = '-999999px'
+        textArea.style.top = '-999999px'
+        document.body.appendChild(textArea)
+        textArea.focus()
+        textArea.select()
+        return new Promise((res, rej) => {
+          // here the magic happens
+          document.execCommand('copy') ? res() : rej()
+          textArea.remove()
+        })
+      }
+    }
   },
 };
 </script>
@@ -289,7 +341,7 @@ export default {
   font-weight: bold;
 }
 .AppLication_btn {
-  width: 200px;
+  width: 210px;
   // border: none;
   border: 2px solid #ffef40;
   background: linear-gradient(180deg, #e8b805 0%, #b85803 100%);

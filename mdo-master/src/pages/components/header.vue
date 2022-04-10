@@ -185,6 +185,9 @@ export default {
   computed:{
   
   },
+  created(){
+    this.connectWallect()
+  },
   watch: {
     $route() {
       this.show = false;
@@ -313,7 +316,7 @@ export default {
 .logo {
   display: flex;
   align-items: center;
-  // margin-left: 283 / @p;
+  padding-left: 200 / @p;
   img {
     width: 60 / @p;
     height: 54 / @p;

@@ -7,7 +7,8 @@ import animate from 'animate.css'
 import {
   Progress,
   Collapse,
-  Select
+  Select,
+  message 
 } from 'ant-design-vue'
 import axios from 'axios'
 import {
@@ -21,6 +22,7 @@ import App from './App.vue'
 import qs from 'qs'
 Vue.prototype.$axios = axios
 Vue.prototype.$qs = qs
+Vue.prototype.$message = message;
 
 Vue.use(Icon)
 // 全局注册

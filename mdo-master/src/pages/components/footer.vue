@@ -95,7 +95,7 @@
           </h2>
           <div class="a_item">
             <a
-              href=""
+              :href="item.herf"
               v-for="(item,index) in communityList"
               :key="index"
             >
@@ -306,9 +306,9 @@ export default {
         },
         {
           icon: require("@/assets/images/图层 13.png"),
-          herf: "https://medium.com/@Simeta",
+          herf: "https://www.facebook.com/Simeta-105637975451314",
         },
-        { icon: require("@/assets/images/矢量智能对象(2).png"), herf: "" },
+        { icon: require("@/assets/images/矢量智能对象(2).png"), herf: "https://medium.com/@Simeta" },
       ],
     };
   },
