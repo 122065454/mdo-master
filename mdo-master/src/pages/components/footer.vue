@@ -88,7 +88,7 @@
           <!-- <li> Telegram </li>
           <li>Discord</li>
           <li>Meta</li> -->
-        <!-- </ol> -->
+       <!-- </ol>  -->
         <div class="Community">
           <h2>
             Community
@@ -295,20 +295,24 @@ export default {
         {
           icon: require("@/assets/images/图层 16.png"),
           herf: "https://twitter.com/simeta_io",
+          name:'twitter'
         },
         {
           icon: require("@/assets/images/图层 15.png"),
           herf: "https://t.me/SimetaOfficial",
+          name:'Telegram'
         },
         {
           icon: require("@/assets/images/图层 14.png"),
           herf: "https://discord.gg/b58T5CP8Ky",
+          name:'discord'
         },
         {
           icon: require("@/assets/images/图层 13.png"),
           herf: "https://www.facebook.com/Simeta-105637975451314",
+          name:'facebook'
         },
-        { icon: require("@/assets/images/矢量智能对象(2).png"), herf: "https://medium.com/@Simeta" },
+        { icon: require("@/assets/images/矢量智能对象(2).png"), herf: "https://medium.com/@Simeta",name:'medium' },
       ],
     };
   },
@@ -562,6 +566,9 @@ ol li:first-child {
     margin-bottom: 100 / @p;
   }
   ol {
+    a{
+      font-size: 28 / @p;
+    }
     font-size: 28 / @p;
   }
   ol li:first-child {
