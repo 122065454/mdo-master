@@ -82,7 +82,7 @@
           @click="connectWallect"
           class="btn_wallect"
         >
-          <span>Connect Wallet</span>
+          <span>{{contract}}</span>
         </li>
       </ul>
     </div>
@@ -179,7 +179,11 @@ export default {
       subshow: false,
       subshow2: false,
       activeNames: ["1"],
+      contract:'Connect Wallet'
     };
+  },
+  computed:{
+  
   },
   watch: {
     $route() {
@@ -191,6 +195,7 @@ export default {
       if (typeof window.ethereum !== "undefined") {
         let addr = await ethereum.request({ method: "eth_requestAccounts" });
         console.log("address:", addr[0]);
+        this.contract=addr[0].slice(0,6)+'...'+addr[0].substring(addr[0].length-6)
       } else {
       }
     },
