@@ -28,24 +28,6 @@ export default {
   },
 
   methods: {
-    getLinearColor(color1, color2, pos) {
-      const p = Object.assign({ x: 0.5, y: 0, x2: 0.5, y2: 1 }, pos);
-      return {
-        type: "linear",
-        ...p,
-        colorStops: [
-          {
-            offset: 0,
-            color: color1,
-          },
-          {
-            offset: 1,
-            color: color2,
-          },
-        ],
-        global: false,
-      };
-    },
     initEachartsLeft() {
       let myChart = echarts.init(this.$refs.chartLeft);
       var option = {
@@ -58,7 +40,7 @@ export default {
           textStyle: {
             //图例文字的样式
             color: "#fff",
-            fontSize: 12,
+            // fontSize: 12,
           },
         },
         tooltip: {
@@ -74,9 +56,10 @@ export default {
             // avoidLabelOverlap: false,
             radius: "50%",
             label: {
+              bleedMargin: 5,
               // show: false,
               normal: {
-                fontSize: "20",
+                // fontSize: "20",
                 show: true,
                 formatter: "{d}%", //自定义显示格式(b:name, c:value, d:百分比)
               },
@@ -168,7 +151,7 @@ export default {
               label: {
                 show: true,
                 fontSize: "40",
-                // fontWeight: "bold",
+                fontWeight: "bold",
               },
             },
             labelLine: {
@@ -182,7 +165,7 @@ export default {
               },
               {
                 value: "100000000",
-                name: "Seed Round ",
+                name: "Seed Round",
                 itemStyle: { color: "#D97706" },
               },
               {
@@ -192,37 +175,37 @@ export default {
               },
               {
                 value: 120000000,
-                name: "Public Round ",
+                name: "Public Round",
                 itemStyle: { color: "#059669" },
               },
               {
                 value: 320000000,
-                name: "Development Team ",
+                name: "Development Team",
                 itemStyle: { color: "#0891B2" },
               },
               {
                 value: 200000000,
-                name: "Marketing ",
+                name: "Marketing",
                 itemStyle: { color: "#2563EB" },
               },
               {
                 value: 500000000,
-                name: "User Incentives ",
+                name: "User Incentives",
                 itemStyle: { color: "#7C3AED" },
               },
               {
                 value: "140000000",
-                name: "Liquidity  ",
+                name: "Liquidity",
                 itemStyle: { color: "#C026D3" },
               },
               {
                 value: 300000000,
-                name: "Reserve   ",
+                name: "Reserve",
                 itemStyle: { color: "#E11D48" },
               },
               {
                 value: 60000000,
-                name: "Advisors    ",
+                name: "Advisors",
                 itemStyle: { color: "#FACC15" },
               },
             ],

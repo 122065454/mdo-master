@@ -8,15 +8,17 @@
               src="https://mdex.co/token-icons/bsc/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
               alt=""
             >
-            BUSD</li>
+            BNB</li>
           <li><img
               src="@/assets/images/bsc.png"
               alt=""
             >
-            Binance Smart Chian</li>
+            Binance Smart Chian</li><br>
+
         </ul>
-        <div class="AppLication_btn">WhilteList AppLication</div>
-        <h3>WhiteList Status:In progress</h3>
+        <p class="time_sj">06:00 (UTC) on Sun 17th April 2022</p>
+        <div class="AppLication_btn">Whitelist AppLication</div>
+        <h3>Whitelist Status:In progress</h3>
       </div>
       <div class="introduce_time">
         <div class="introduce">
@@ -67,7 +69,7 @@
                 >
                 Pool supply
               </h3>
-              <h2>100,000</h2>
+              <h2>5,000,000 $SMT</h2>
             </li>
             <li>
               <h3>
@@ -87,7 +89,7 @@
                 >
                 Cliamabel
               </h3>
-              <h2>100,000</h2>
+              <h2>TBA</h2>
             </li>
           </ul>
           <!-- <div class="total_number_bottom">
@@ -369,6 +371,10 @@ export default {
     display: flex;
     font-size: 25px;
     justify-content: center;
+  }
+  .time_sj {
+    font-size: 25px;
+    color: #fff;
   }
   li {
     padding: 0 20px;
