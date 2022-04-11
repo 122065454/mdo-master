@@ -108,8 +108,8 @@ export default {
         width: 20px;
         height: 20px;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 5px;
+        right: 5px;
         cursor: pointer;
       }
     }
