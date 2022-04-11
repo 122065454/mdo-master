@@ -3,73 +3,69 @@
     <section class="chart w">
       <div class="chart_left">
         <p>Private Sale Fund Usage</p>
-        <div
-          class="chart_show"
-          ref="chartLeft"
-        ></div>
+        <div class="chart_show"
+             ref="chartLeft"></div>
       </div>
       <div class="chart_right">
         <p>Allocation of funds</p>
-        <div
-          class="chart_show"
-          ref="chartRight"
-        ></div>
+        <div class="chart_show"
+             ref="chartRight"></div>
       </div>
     </section>
   </div>
 </template>
 <script>
-import * as echarts from "echarts";
+import * as echarts from 'echarts'
 export default {
-  name: "chart",
+  name: 'chart',
   mounted() {
-    this.initEachartsLeft();
-    this.initEachartsRight();
+    this.initEachartsLeft()
+    this.initEachartsRight()
   },
 
   methods: {
     initEachartsLeft() {
-      let myChart = echarts.init(this.$refs.chartLeft);
+      let myChart = echarts.init(this.$refs.chartLeft)
       var option = {
         tooltip: {
-          trigger: "item",
+          trigger: 'item',
         },
         legend: {
-          top: "5%",
-          left: this.isPC ? "center" : "10%",
+          top: '5%',
+          left: this.isPC ? 'center' : '10%',
           textStyle: {
             //图例文字的样式
-            color: "#fff",
+            color: '#fff',
             // fontSize: 12,
           },
         },
         tooltip: {
-          trigger: "item",
-          formatter: "{a} <br/>{b} : {c}% ",
+          trigger: 'item',
+          formatter: '{a} <br/>{b} : {c}% ',
         },
         series: [
           {
-            center: this.isPC ? ["50%", "50%"] : ["40%", "60%"],
-            name: "Access From",
-            type: "pie",
+            center: this.isPC ? ['50%', '50%'] : ['40%', '60%'],
+            name: 'Access From',
+            type: 'pie',
 
             // avoidLabelOverlap: false,
-            radius: "50%",
+            radius: '50%',
             label: {
               bleedMargin: 5,
               // show: false,
               normal: {
-                fontSize: "20",
+                fontSize: '20',
                 show: true,
-                formatter: "{d}%", //自定义显示格式(b:name, c:value, d:百分比)
+                formatter: '{d}%', //自定义显示格式(b:name, c:value, d:百分比)
               },
             },
 
             emphasis: {
               label: {
                 show: true,
-                fontSize: "20",
-                fontWeight: "bold",
+                fontSize: '20',
+                fontWeight: 'bold',
               },
             },
             labelLine: {
@@ -77,81 +73,81 @@ export default {
             },
             data: [
               {
-                value: "43",
-                name: "Marketing & Cummunity",
+                value: '43',
+                name: 'Marketing & Cummunity',
                 itemStyle: {
                   normal: {
-                    color: "#B91C1C",
+                    color: '#B91C1C',
                   },
                 },
               },
               {
-                value: "33",
-                name: "Operation & Development",
+                value: '33',
+                name: 'Operation & Development',
                 itemStyle: {
                   normal: {
-                    color: "#F97316",
+                    color: '#F97316',
                   },
                 },
               },
               {
-                value: "24",
-                name: "Liquidity & Exchanges ",
+                value: '24',
+                name: 'Liquidity & Exchanges ',
                 itemStyle: {
                   normal: {
-                    color: "#FCD34D",
+                    color: '#FCD34D',
                   },
                 },
               },
             ],
           },
         ],
-      };
-      myChart.setOption(option);
+      }
+      myChart.setOption(option)
     },
     initEachartsRight() {
-      let myChart = echarts.init(this.$refs.chartRight);
+      let myChart = echarts.init(this.$refs.chartRight)
       var option = {
         tooltip: {
-          trigger: "item",
+          trigger: 'item',
         },
         legend: {
           // orient: "vertical",
           // right: "0%", //图例距离左的距离
           // y: "center", //图例上下居中
-          top: "5%",
-          left: this.isPC ? "center" : "0%",
+          top: '5%',
+          left: this.isPC ? 'center' : '0%',
           textStyle: {
             //图例文字的样式
-            color: "#fff",
+            color: '#fff',
             fontSize: 12,
           },
         },
         tooltip: {
-          trigger: "item",
-          formatter: "{a} <br/>{b} : {c} ({d}%)",
+          trigger: 'item',
+          formatter: '{a} <br/>{b} : {c} ({d}%)',
         },
         series: [
           {
-            center: this.isPC ? ["50%", "50%"] : ["40%", "75%"],
-            name: "Access From",
-            type: "pie",
-            radius: "50%",
+            center: this.isPC ? ['50%', '50%'] : ['50%', '75%'],
+            name: 'Access From',
+            type: 'pie',
+            radius: '50%',
             avoidLabelOverlap: false,
             label: {
               // show: false,
               // position: "center",
               normal: {
-                fontSize: "20",
+                fontSize: '20',
                 show: true,
-                formatter: "{d}%", //自定义显示格式(b:name, c:value, d:百分比)
+                formatter: '{d}%', //自定义显示格式(b:name, c:value, d:百分比)
               },
             },
             emphasis: {
               label: {
                 show: true,
-                fontSize: "40",
-                fontWeight: "bold",
+                fontSize: '40',
+                fontWeight: 'bold',
               },
             },
             labelLine: {
@@ -159,63 +155,63 @@ export default {
             },
             data: [
               {
-                value: "60000000",
-                name: "Strategic Partner",
-                itemStyle: { color: "#DC2626" },
+                value: '60000000',
+                name: 'Strategic Partner',
+                itemStyle: { color: '#DC2626' },
               },
               {
-                value: "100000000",
-                name: "Seed Round",
-                itemStyle: { color: "#D97706" },
+                value: '100000000',
+                name: 'Seed Round',
+                itemStyle: { color: '#D97706' },
               },
               {
                 value: 200000000,
-                name: "Private Round",
-                itemStyle: { color: "#65A30D" },
+                name: 'Private Round',
+                itemStyle: { color: '#65A30D' },
               },
               {
                 value: 120000000,
-                name: "Public Round",
-                itemStyle: { color: "#059669" },
+                name: 'Public Round',
+                itemStyle: { color: '#059669' },
               },
               {
                 value: 320000000,
-                name: "Development Team",
-                itemStyle: { color: "#0891B2" },
+                name: 'Development Team',
+                itemStyle: { color: '#0891B2' },
               },
               {
                 value: 200000000,
-                name: "Marketing",
-                itemStyle: { color: "#2563EB" },
+                name: 'Marketing',
+                itemStyle: { color: '#2563EB' },
               },
               {
                 value: 500000000,
-                name: "User Incentives",
-                itemStyle: { color: "#7C3AED" },
+                name: 'User Incentives',
+                itemStyle: { color: '#7C3AED' },
               },
               {
-                value: "140000000",
-                name: "Liquidity",
-                itemStyle: { color: "#C026D3" },
+                value: '140000000',
+                name: 'Liquidity',
+                itemStyle: { color: '#C026D3' },
               },
               {
                 value: 300000000,
-                name: "Reserve",
-                itemStyle: { color: "#E11D48" },
+                name: 'Reserve',
+                itemStyle: { color: '#E11D48' },
               },
               {
                 value: 60000000,
-                name: "Advisors",
-                itemStyle: { color: "#FACC15" },
+                name: 'Advisors',
+                itemStyle: { color: '#FACC15' },
               },
             ],
           },
         ],
-      };
-      myChart.setOption(option);
+      }
+      myChart.setOption(option)
     },
   },
-};
+}
 </script>
 
 <style lang="less" scoped>
@@ -247,7 +243,7 @@ export default {
     color: #eece5a;
   }
   p::after {
-    content: "";
+    content: '';
     width: 186px;
     height: 2px;
     background: linear-gradient(
@@ -265,7 +261,7 @@ export default {
     font-size: 20px;
   }
   p::after {
-    content: "";
+    content: '';
     width: 230px;
     height: 2px;
   }
