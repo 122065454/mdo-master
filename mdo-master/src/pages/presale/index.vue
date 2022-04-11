@@ -232,25 +232,29 @@ export default {
     Time,
     faq,
   },
+  created() {
+    document.querySelector("body").removeAttribute("style");
+  },
   mounted() {},
   methods: {
     copy() {
-       
-      this.copyToClipboard('0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f').then(() => {
-       this.$message.success('Copy successfully');
-      })
-    
+      this.copyToClipboard("0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f").then(
+        () => {
+          this.$message.success("Copy successfully");
+        }
+      );
     },
-    addToken(){
+    addToken() {
       // 快捷钱包添加代币
-   
-      const symbol = 'SMT'
-      const addressToken = '0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f'.toLowerCase()
-      const image = 'http://simeta.io/logo.png'
+
+      const symbol = "SMT";
+      const addressToken =
+        "0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f".toLowerCase();
+      const image = "http://simeta.io/logo.png";
       ethereum.request({
-        method: 'wallet_watchAsset',
+        method: "wallet_watchAsset",
         params: {
-          type: 'ERC20',
+          type: "ERC20",
           options: {
             address: addressToken,
             decimals: 18,
@@ -258,32 +262,31 @@ export default {
             image,
           },
         },
-      })
-    
+      });
     },
     copyToClipboard(textToCopy) {
       // navigator clipboard api needs a secure context (https)
       if (navigator.clipboard && window.isSecureContext) {
         // navigator clipboard api method'
-        return navigator.clipboard.writeText(textToCopy)
+        return navigator.clipboard.writeText(textToCopy);
       } else {
         // text area method
-        let textArea = document.createElement('textarea')
-        textArea.value = textToCopy
+        let textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
         // make the textarea out of viewport
-        textArea.style.position = 'fixed'
-        textArea.style.left = '-999999px'
-        textArea.style.top = '-999999px'
-        document.body.appendChild(textArea)
-        textArea.focus()
-        textArea.select()
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
         return new Promise((res, rej) => {
           // here the magic happens
-          document.execCommand('copy') ? res() : rej()
-          textArea.remove()
-        })
+          document.execCommand("copy") ? res() : rej();
+          textArea.remove();
+        });
       }
-    }
+    },
   },
 };
 </script>

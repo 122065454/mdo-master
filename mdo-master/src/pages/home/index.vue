@@ -10,14 +10,14 @@
         <div>
           <router-link to="/presale">
             <img
-              src="@/assets/images/600.png"
+              src="@/assets/images/active.jpg"
               alt=""
             >
           </router-link>
 
           <img
             class="close"
-            src="@/assets/images/close.png"
+            src="@/assets/images/close1.png"
             alt=""
             @click="delimg"
           >
@@ -102,8 +102,7 @@ export default {
     justify-content: center;
     align-items: center;
     .hidden1 {
-      width: 400px;
-      height: 400px;
+      width: 50%;
       position: relative;
       .close {
         width: 20px;
@@ -112,6 +111,11 @@ export default {
         top: 0;
         right: 0;
         cursor: pointer;
+      }
+    }
+    @media screen and (max-width: 700px) {
+      .hidden1 {
+        width: 80%;
       }
     }
   }
