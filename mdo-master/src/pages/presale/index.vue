@@ -94,9 +94,9 @@
                   src="@/assets/images/椭圆 1.png"
                   alt=""
                 >
-                Cliamabel
+                Claimable
               </h3>
-              <h2>TBA</h2>
+              <h2>Nil</h2>
             </li>
           </ul>
           <!-- <div class="total_number_bottom">
@@ -148,7 +148,7 @@
     <section class="Contracts">
       <div>
         <span class="label">
-          Contracts:
+        $SMT Contracts:
         </span>
         <img
           class="img1"
@@ -346,7 +346,7 @@ export default {
   }
 }
 .end {
-  font-size: 30px;
+  font-size: 41px;
   margin-bottom: 20px;
   color: #ffef40;
   font-family: Franklin Gothic Demi;
@@ -464,7 +464,7 @@ a{
   li {
   }
   h3 {
-    font-size: 23px;
+    font-size: 40px;
     color: #fff141;
     display: flex;
     align-items: center;

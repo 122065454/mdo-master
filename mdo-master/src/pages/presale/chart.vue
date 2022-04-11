@@ -236,15 +236,15 @@ export default {
 .chart_left,
 .chart_right {
   p {
-    width: 200px;
+    width: 265px;
     margin: auto;
-    font-size: 20px;
+    font-size: 29px;
     text-align: center;
     color: #eece5a;
   }
   p::after {
     content: '';
-    width: 186px;
+    width: 265px;
     height: 2px;
     background: linear-gradient(
       to right,
@@ -256,13 +256,13 @@ export default {
 }
 .chart_left {
   p {
-    width: 234px;
+    width: 345px;
     margin: auto;
-    font-size: 20px;
+    font-size: 30px;
   }
   p::after {
     content: '';
-    width: 230px;
+    width: 345px;
     height: 2px;
   }
 }
@@ -285,15 +285,26 @@ export default {
   .chart_left,
   .chart_right {
     p {
-      width: 200px;
+      width: 186px;
       margin: auto;
-      font-size: 20px;
+      font-size: 15px;
       margin-bottom: 10px;
     }
+    p::after {
+    content: '';
+    width: 180px;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      rgb(166, 112, 226) 0%,
+      rgb(116, 226, 199) 100%
+    );
+    display: block;
+  }
   }
   .chart_left {
     p {
-      width: 234px;
+      width: 186px;
     }
   }
 }
