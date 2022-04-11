@@ -18,7 +18,7 @@
         </ul>
         <p class="time_sj">06:00 (UTC) on Sun 17th April 2022</p>
         <div class="AppLication_btn">Whitelist AppLication</div>
-        <h3>Whitelist Status:In progress</h3>
+        <h3>Whitelist Status：In progress</h3>
       </div>
       <div class="introduce_time">
         <div class="introduce">
