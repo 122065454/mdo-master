@@ -59,7 +59,7 @@ export default {
               bleedMargin: 5,
               // show: false,
               normal: {
-                // fontSize: "20",
+                fontSize: "20",
                 show: true,
                 formatter: "{d}%", //自定义显示格式(b:name, c:value, d:百分比)
               },
