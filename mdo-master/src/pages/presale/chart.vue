@@ -28,6 +28,24 @@ export default {
   },
 
   methods: {
+    getLinearColor(color1, color2, pos) {
+      const p = Object.assign({ x: 0.5, y: 0, x2: 0.5, y2: 1 }, pos);
+      return {
+        type: "linear",
+        ...p,
+        colorStops: [
+          {
+            offset: 0,
+            color: color1,
+          },
+          {
+            offset: 1,
+            color: color2,
+          },
+        ],
+        global: false,
+      };
+    },
     initEachartsLeft() {
       let myChart = echarts.init(this.$refs.chartLeft);
       var option = {
@@ -53,27 +71,55 @@ export default {
             name: "Access From",
             type: "pie",
 
-            avoidLabelOverlap: false,
+            // avoidLabelOverlap: false,
             radius: "50%",
             label: {
-              show: false,
-              position: "center",
+              // show: false,
+              normal: {
+                fontSize: "20",
+                show: true,
+                formatter: "{d}%", //自定义显示格式(b:name, c:value, d:百分比)
+              },
             },
 
             emphasis: {
               label: {
-                // show: true,
-                fontSize: "40",
+                show: true,
+                fontSize: "20",
                 fontWeight: "bold",
               },
             },
             labelLine: {
-              show: false,
+              show: true,
             },
             data: [
-              { value: "43", name: "Marketing & Cummunity" },
-              { value: "33", name: "Operation & Development" },
-              { value: "24", name: "Liquidity & Exchanges " },
+              {
+                value: "43",
+                name: "Marketing & Cummunity",
+                itemStyle: {
+                  normal: {
+                    color: "#B91C1C",
+                  },
+                },
+              },
+              {
+                value: "33",
+                name: "Operation & Development",
+                itemStyle: {
+                  normal: {
+                    color: "#F97316",
+                  },
+                },
+              },
+              {
+                value: "24",
+                name: "Liquidity & Exchanges ",
+                itemStyle: {
+                  normal: {
+                    color: "#FCD34D",
+                  },
+                },
+              },
             ],
           },
         ],
@@ -110,18 +156,23 @@ export default {
             radius: "50%",
             avoidLabelOverlap: false,
             label: {
-              show: false,
-              position: "center",
+              // show: false,
+              // position: "center",
+              normal: {
+                fontSize: "20",
+                show: true,
+                formatter: "{d}%", //自定义显示格式(b:name, c:value, d:百分比)
+              },
             },
             emphasis: {
               label: {
-                // show: true,
+                show: true,
                 fontSize: "40",
-                fontWeight: "bold",
+                // fontWeight: "bold",
               },
             },
             labelLine: {
-              show: false,
+              show: true,
             },
             data: [
               {

@@ -16,7 +16,7 @@
             Binance Smart Chian</li>
         </ul>
         <div class="AppLication_btn">WhilteList AppLication</div>
-        <h3>WhiteList Status:Whiltelisted</h3>
+        <h3>WhiteList Status:In progress</h3>
       </div>
       <div class="introduce_time">
         <div class="introduce">
@@ -77,7 +77,7 @@
                 >
                 Rate
               </h3>
-              <h2>1 $SMT=0.014 BNB</h2>
+              <h2>1 BNB = 25,000 $SMT</h2>
             </li>
             <li>
               <h3>
@@ -167,7 +167,7 @@
     </section>
 
     <section class="scenarios w">
-      <h1>scenarios</h1>
+      <h1>Scenarios</h1>
       <div class="content">
         <div class="content1">
           <p>Services and products</p>
@@ -292,8 +292,8 @@ export default {
 </script>
 <style lang="less" scoped>
 .main {
-  background: url(../../assets/images/bgc.png) no-repeat;
-
+  background: url(../../assets/images/bgc.jpg) no-repeat;
+  background-size: cover;
   overflow: hidden;
   font-family: AlibabaPuHuiTi;
 }
@@ -555,7 +555,8 @@ export default {
       // display: flex;
       // align-items: center;
       // justify-content: center;
-      font-size: 15px;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
     .content1,
     .content2,
