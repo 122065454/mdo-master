@@ -178,47 +178,52 @@ export default {
               {
                 value: "60000000",
                 name: "Strategic Partner",
-                itemStyle: { color: "#77ffcf" },
+                itemStyle: { color: "#DC2626" },
               },
               {
                 value: "100000000",
                 name: "Seed Round ",
-                itemStyle: { color: "#fae373" },
+                itemStyle: { color: "#D97706" },
               },
               {
                 value: 200000000,
                 name: "Private Round",
-                itemStyle: { color: "#f29c5f" },
+                itemStyle: { color: "#65A30D" },
               },
               {
                 value: 120000000,
                 name: "Public Round ",
-                itemStyle: { color: "#fd65ae" },
+                itemStyle: { color: "#059669" },
               },
               {
                 value: 320000000,
                 name: "Development Team ",
-                itemStyle: { color: "#8c53fc" },
+                itemStyle: { color: "#0891B2" },
               },
               {
                 value: 200000000,
                 name: "Marketing ",
+                itemStyle: { color: "#2563EB" },
               },
               {
                 value: 500000000,
                 name: "User Incentives ",
+                itemStyle: { color: "#7C3AED" },
               },
               {
                 value: "140000000",
                 name: "Liquidity  ",
+                itemStyle: { color: "#C026D3" },
               },
               {
                 value: 300000000,
                 name: "Reserve   ",
+                itemStyle: { color: "#E11D48" },
               },
               {
                 value: 60000000,
                 name: "Advisors    ",
+                itemStyle: { color: "#FACC15" },
               },
             ],
           },
