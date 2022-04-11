@@ -16,13 +16,20 @@
             Binance Smart Chian</li><br>
 
         </ul>
-        <p class="time_sj">06:00 (UTC) on Sun 17th April 2022</p>
-        <div class="AppLication_btn">Whitelist AppLication</div>
+        <p class="time_sj"><img
+              src="@/assets/images/h5/1.svg"
+              alt=""
+            >08:00 (UTC) <br><img src="@/assets/images/h5/2.svg" alt=""> Sun 17th April 2022</p>
+       
+        <div class="AppLication_btn"> <a href="https://form.jotform.com/221002321766443" target="_blank" rel="noopener noreferrer">Whitelist AppLication</a></div>
         <h3>Whitelist Status：In progress</h3>
       </div>
       <div class="introduce_time">
-        <div class="introduce">
+        <div class="introduce" v-if="isPC">
           The first virtual futuristic eCommerce marketplace where users<br> can buy and sell items in both the crypto and physical worlds <br>with cryptocurrencies worldwide
+        </div>
+        <div class="introduce" v-if="!isPC">
+          The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto and physical worlds with cryptocurrencies worldwide
         </div>
         <!-- <div class="time" v-if="isPC">
           <div class="card__item-value new-item-value">
@@ -43,7 +50,7 @@
         <Time
           :type="4"
           :theme="2"
-          :endDate="1650175200000"
+          :endDate="1650182457000"
           :timeUnit="[':', ':', ':']"
         ></Time>
         <!-- h5 time -->
@@ -345,6 +352,9 @@ export default {
   font-family: Franklin Gothic Demi;
   font-weight: bold;
 }
+a{
+  color: #fff;
+}
 .AppLication_btn {
   width: 210px;
   // border: none;
@@ -375,6 +385,9 @@ export default {
   .time_sj {
     font-size: 25px;
     color: #fff;
+    img{
+      margin-right:5px
+    }
   }
   li {
     padding: 0 20px;
@@ -811,6 +824,10 @@ export default {
         font-weight: 500;
       }
     }
+  }
+   .tokenList .time_sj {
+    font-size: 16px;
+    color: #fff;
   }
   .scenarios {
     .content {

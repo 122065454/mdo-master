@@ -8,7 +8,7 @@
       </div>
       <div class="chart_right">
         <p>Allocation of funds</p>
-        <div class="chart_show"
+        <div class="chart_show h5-chart"
              ref="chartRight"></div>
       </div>
     </section>
@@ -45,7 +45,7 @@ export default {
         },
         series: [
           {
-            center: this.isPC ? ['50%', '50%'] : ['40%', '60%'],
+            center: this.isPC ? ['50%', '50%'] : ['49%', '60%'],
             name: 'Access From',
             type: 'pie',
 
@@ -276,8 +276,11 @@ export default {
     padding: 28px 16px;
   }
   .chart_show {
-    width: 300px;
+    width: 250px;
     height: 300px;
+  }
+  .h5-chart{
+     height: 400px !important;
   }
   .chart_left,
   .chart_right {
