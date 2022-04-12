@@ -4,15 +4,9 @@
       <h1>1st Round Presale for $SMT</h1>
       <div class="tokenList">
         <ul>
-          <li><img
-              src="https://mdex.co/token-icons/bsc/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
-              alt=""
-            >
+          <li><img src="https://mdex.co/token-icons/bsc/0xe9e7cea3dedca5984780bafc599bd69add087d56.png" alt="">
             BNB</li>
-          <li><img
-              src="@/assets/images/bsc.png"
-              alt=""
-            >
+          <li><img src="@/assets/images/bsc.png" alt="">
             Binance Smart Chian</li><br>
 
         </ul>
@@ -40,12 +34,7 @@
           </div>
         </div> -->
         <p class="end">Starting in</p>
-        <Time
-          :type="4"
-          :theme="2"
-          :endDate="1650175200000"
-          :timeUnit="[':', ':', ':']"
-        ></Time>
+        <Time :type="4" :theme="2" :endDate="1650175200000" :timeUnit="[':', ':', ':']"></Time>
         <!-- h5 time -->
         <!-- <div class="time_h5"
              v-if="!isPC">
@@ -63,33 +52,24 @@
           <ul>
             <li>
               <h3>
-                <img
-                  src="@/assets/images/椭圆 1.png"
-                  alt=""
-                >
+                <img src="@/assets/images/椭圆 1.png" alt="">
                 Pool supply
               </h3>
               <h2>5,000,000 $SMT</h2>
             </li>
             <li>
               <h3>
-                <img
-                  src="@/assets/images/椭圆 1.png"
-                  alt=""
-                >
+                <img src="@/assets/images/椭圆 1.png" alt="">
                 Rate
               </h3>
               <h2>1 BNB = 25,000 $SMT</h2>
             </li>
             <li>
               <h3>
-                <img
-                  src="@/assets/images/椭圆 1.png"
-                  alt=""
-                >
-                Cliamabel
+                <img src="@/assets/images/椭圆 1.png" alt="">
+                Claimable
               </h3>
-              <h2>TBA</h2>
+              <h2>Nil</h2>
             </li>
           </ul>
           <!-- <div class="total_number_bottom">
@@ -112,20 +92,14 @@
             />
             <span>$5M</span>
           </div> -->
-          <div
-            class="trade"
-            v-if="isPC"
-          >
+          <div class="trade" v-if="isPC">
             <div class="trade_content">
               <span>Amount:</span>
               <input oninput="value=value.replace(/[^\d]/g,'')" />
               <div class="button">Purchase Now</div>
             </div>
           </div>
-          <div
-            class="trade"
-            v-if="!isPC"
-          >
+          <div class="trade" v-if="!isPC">
             <div class="trade_content">
               <span>Amount:</span>
               <input oninput="value=value.replace(/[^\d]/g,'')" />
@@ -141,30 +115,16 @@
     <section class="Contracts">
       <div>
         <span class="label">
-          Contracts:
+          $SMT Contracts:
         </span>
-        <img
-          class="img1"
-          src="@/assets/images/bsc.png"
-          alt=""
-        >
+        <img class="img1" src="@/assets/images/bsc.png" alt="">
         <span>BNB smart Chain（BEP 20）：</span>
         <span>
           0xa363....F9745f
           <!-- OxE91c...306399F -->
         </span>
-        <img
-          src="@/assets/images/矢量智能对象(3).png"
-          alt=""
-          style="margin-left: 10px;"
-          @click='copy'
-        >
-        <img
-          src="@/assets/images/az9n5-o5l7g.png"
-          alt=""
-          @click="addToken"
-          style="margin-left: 10px;"
-        >
+        <img src="@/assets/images/矢量智能对象(3).png" alt="" style="margin-left: 10px;" @click='copy'>
+        <img src="@/assets/images/az9n5-o5l7g.png" alt="" @click="addToken" style="margin-left: 10px;">
       </div>
     </section>
 
@@ -224,39 +184,39 @@
 </template>
 <script>
 // import FlipDown from 'FlipDown'
-import faq from "./faq.vue";
-import charts from "./chart.vue";
-import Time from "./time.vue";
+import faq from './faq.vue'
+import charts from './chart.vue'
+import Time from './time.vue'
 export default {
-  name: "presale",
+  name: 'presale',
   components: {
     charts,
     Time,
     faq,
   },
   created() {
-    document.querySelector("body").removeAttribute("style");
+    document.querySelector('body').removeAttribute('style')
   },
   mounted() {},
   methods: {
     copy() {
-      this.copyToClipboard("0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f").then(
+      this.copyToClipboard('0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f').then(
         () => {
-          this.$message.success("Copy successfully");
+          this.$message.success('Copy successfully')
         }
-      );
+      )
     },
     addToken() {
       // 快捷钱包添加代币
 
-      const symbol = "SMT";
+      const symbol = 'SMT'
       const addressToken =
-        "0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f".toLowerCase();
-      const image = "http://simeta.io/logo.png";
+        '0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f'.toLowerCase()
+      const image = 'http://simeta.io/logo.png'
       ethereum.request({
-        method: "wallet_watchAsset",
+        method: 'wallet_watchAsset',
         params: {
-          type: "ERC20",
+          type: 'ERC20',
           options: {
             address: addressToken,
             decimals: 18,
@@ -264,33 +224,33 @@ export default {
             image,
           },
         },
-      });
+      })
     },
     copyToClipboard(textToCopy) {
       // navigator clipboard api needs a secure context (https)
       if (navigator.clipboard && window.isSecureContext) {
         // navigator clipboard api method'
-        return navigator.clipboard.writeText(textToCopy);
+        return navigator.clipboard.writeText(textToCopy)
       } else {
         // text area method
-        let textArea = document.createElement("textarea");
-        textArea.value = textToCopy;
+        let textArea = document.createElement('textarea')
+        textArea.value = textToCopy
         // make the textarea out of viewport
-        textArea.style.position = "fixed";
-        textArea.style.left = "-999999px";
-        textArea.style.top = "-999999px";
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
+        textArea.style.position = 'fixed'
+        textArea.style.left = '-999999px'
+        textArea.style.top = '-999999px'
+        document.body.appendChild(textArea)
+        textArea.focus()
+        textArea.select()
         return new Promise((res, rej) => {
           // here the magic happens
-          document.execCommand("copy") ? res() : rej();
-          textArea.remove();
-        });
+          document.execCommand('copy') ? res() : rej()
+          textArea.remove()
+        })
       }
     },
   },
-};
+}
 </script>
 <style lang="less" scoped>
 .main {
