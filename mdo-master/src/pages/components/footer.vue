@@ -88,7 +88,7 @@
           <!-- <li> Telegram </li>
           <li>Discord</li>
           <li>Meta</li> -->
-       <!-- </ol>  -->
+        <!-- </ol>  -->
         <div class="Community">
           <h2>
             Community
@@ -295,24 +295,28 @@ export default {
         {
           icon: require("@/assets/images/图层 16.png"),
           herf: "https://twitter.com/simeta_io",
-          name:'twitter'
+          name: "twitter",
         },
         {
           icon: require("@/assets/images/图层 15.png"),
           herf: "https://t.me/SimetaOfficial",
-          name:'Telegram'
+          name: "Telegram",
         },
         {
           icon: require("@/assets/images/图层 14.png"),
           herf: "https://discord.gg/b58T5CP8Ky",
-          name:'discord'
+          name: "discord",
         },
         {
           icon: require("@/assets/images/图层 13.png"),
           herf: "https://www.facebook.com/Simeta-105637975451314",
-          name:'facebook'
+          name: "facebook",
         },
-        { icon: require("@/assets/images/矢量智能对象(2).png"), herf: "https://medium.com/@Simeta",name:'medium' },
+        {
+          icon: require("@/assets/images/矢量智能对象(2).png"),
+          herf: "https://medium.com/@Simeta",
+          name: "medium",
+        },
       ],
     };
   },
@@ -367,7 +371,7 @@ export default {
     border-radius: 10 / @p;
     padding-left: 20 / @p;
     background-color: transparent;
-    font-family: Times New Roman;
+    // font-family: Times New Roman;
     font-weight: bold;
     color: #fff;
   }
@@ -408,7 +412,7 @@ export default {
 }
 .logo_bottom {
   font-size: 14 / @p;
-  font-family: AlibabaPuHuiTi;
+  // font-family: AlibabaPuHuiTi;
   font-weight: 400;
   color: #ffffff;
   line-height: 26 / @p;
@@ -459,7 +463,7 @@ export default {
   }
 }
 ol {
-  font-family: AlibabaPuHuiTi;
+  // font-family: AlibabaPuHuiTi;
   font-weight: bold;
   color: #ffffff;
   font-size: 16 / @p;
@@ -491,7 +495,7 @@ ol li:first-child {
   width: 485 / @p;
   p {
     font-size: 20 / @p;
-    font-family: AlibabaPuHuiTi;
+    // font-family: AlibabaPuHuiTi;
     font-weight: 500;
     color: #ffffff;
     line-height: 26 / @p;
@@ -505,7 +509,7 @@ ol li:first-child {
     // border: 2 / @p solid #ffffff;
     border-radius: 10 / @p;
     font-size: 20 / @p;
-    font-family: Times New Roman;
+    // font-family: Times New Roman;
     font-weight: 300;
     color: #fefefe;
     text-align: center;
@@ -554,7 +558,7 @@ ol li:first-child {
   .introduce {
     font-size: 28 / @p;
     word-break: break-all;
-    font-family: AlibabaPuHuiTi;
+    // font-family: AlibabaPuHuiTi;
     font-weight: 400;
     color: #dbcfec;
     line-height: 36 / @p;
@@ -566,7 +570,7 @@ ol li:first-child {
     margin-bottom: 100 / @p;
   }
   ol {
-    a{
+    a {
       font-size: 28 / @p;
     }
     font-size: 28 / @p;
@@ -580,7 +584,7 @@ ol li:first-child {
   .h5_input {
     h1 {
       font-size: 28 / @p;
-      font-family: AlibabaPuHuiTi;
+      // font-family: AlibabaPuHuiTi;
       font-weight: 400;
       color: #ffffff;
       line-height: 26 / @p;
@@ -588,7 +592,7 @@ ol li:first-child {
     }
     h2 {
       font-size: 28 / @p;
-      font-family: AlibabaPuHuiTi;
+      // font-family: AlibabaPuHuiTi;
       font-weight: 400;
       color: #ffffff;
       line-height: 40 / @p;
@@ -612,7 +616,7 @@ ol li:first-child {
       margin-top: 80 / @p;
       border-radius: 10 / @p;
       font-size: 32 / @p;
-      font-family: AlibabaPuHuiTi;
+      // font-family: AlibabaPuHuiTi;
       font-weight: 400;
       color: #fefefe;
     }

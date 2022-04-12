@@ -123,7 +123,7 @@ export default {
   padding: 28px 28px;
   border: 2px solid #f5cc3e;
   background: linear-gradient(0deg, #090909 0%, #26252c 100%);
-  font-family: DM Sans;
+  // font-family: DM Sans;
   border-radius: 12px;
   margin-bottom: 100px;
   .img_one {

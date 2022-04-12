@@ -7,87 +7,117 @@
                            <source src="@/assets/images/bg.webm" type="video/webm"/>
                </video>       -->
 
-    <div class="content"
-         v-if="isPC">
-      <h1 class=" wow  animate__animated animate__zoomInDown "
-          data-wow-duration="1s">Simeta</h1>
-      <h2 class=" wow  animate__animated animate__backInDown"
-          data-wow-duration="2s"> The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide
+    <div
+      class="content"
+      v-if="isPC"
+    >
+      <h1
+        class=" wow  animate__animated animate__zoomInDown "
+        data-wow-duration="1s"
+      >Simeta</h1>
+      <h2
+        class=" wow  animate__animated animate__backInDown"
+        data-wow-duration="2s"
+      > The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide
       </h2>
-      <div class="buttons  wow  animate__animated animate__bounceInLeft"
-           data-wow-duration="3s">
+      <div
+        class="buttons  wow  animate__animated animate__bounceInLeft"
+        data-wow-duration="3s"
+      >
         <div class="button_1">
-          <a href="https://metadaosworld.gitbook.io/simeta/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            href="https://metadaosworld.gitbook.io/simeta/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span> Whitepaper</span>
           </a>
         </div>
-        <div class="button_2"
-             @click="Metaverse">
+        <div
+          class="button_2"
+          @click="Metaverse"
+        >
           <span class="Metaverse"> Enter Metaverse</span>
-          <div class="soon"
-               v-show="soonShow">SOON</div>
+          <div
+            class="soon"
+            v-show="soonShow"
+          >SOON</div>
         </div>
       </div>
     </div>
 
     <!-- h5 -->
 
-    <div class="content_h5"
-         v-if="!isPC">
-      <h1 class=" wow  animate__animated animate__zoomInDown "
-          data-wow-duration="1s">Simeta</h1>
-      <h2 class=" wow  animate__animated animate__backInDown"
-          data-wow-duration="2s"> The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide
+    <div
+      class="content_h5"
+      v-if="!isPC"
+    >
+      <h1
+        class=" wow  animate__animated animate__zoomInDown "
+        data-wow-duration="1s"
+      >Simeta</h1>
+      <h2
+        class=" wow  animate__animated animate__backInDown"
+        data-wow-duration="2s"
+      > The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide
       </h2>
-      <div class="buttons  wow  animate__animated animate__bounceInLeft"
-           data-wow-duration="3s">
+      <div
+        class="buttons  wow  animate__animated animate__bounceInLeft"
+        data-wow-duration="3s"
+      >
         <div class="button_1">
-          <a href="https://metadaosworld.gitbook.io/simeta/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            href="https://metadaosworld.gitbook.io/simeta/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span> Whitepaper</span>
           </a>
         </div>
-        <div class="button_2"
-             @click="Metaverse">
+        <div
+          class="button_2"
+          @click="Metaverse"
+        >
           <span class="Metaverse"> Enter Metaverse</span>
-          <div class="soon"
-               v-show="soonShow">SOON</div>
+          <div
+            class="soon"
+            v-show="soonShow"
+          >SOON</div>
         </div>
       </div>
     </div>
-    <contact class="wow  animate__animated animate__zoomInDown"
-             v-if="isPC"></contact>
+    <contact
+      class="wow  animate__animated animate__zoomInDown"
+      v-if="isPC"
+    ></contact>
   </div>
 </template>
 <script>
-import { WOW } from 'wowjs'
-import contact from './contact.vue'
+import { WOW } from "wowjs";
+import contact from "./contact.vue";
 export default {
-  name: 'section1',
+  name: "section1",
   components: {
     contact,
   },
   data() {
     return {
       soonShow: false,
-    }
+    };
   },
   mounted() {
     var options = {
       //默认为true
       live: false,
-    }
-    new WOW(options).init()
+    };
+    new WOW(options).init();
   },
   methods: {
     Metaverse() {
-      this.soonShow = !this.soonShow
+      this.soonShow = !this.soonShow;
     },
   },
-}
+};
 </script>
 
 <style lang="less" scoped>
@@ -154,13 +184,13 @@ a {
 
 h1 {
   font-size: 70 / @p;
-  font-family: Cabin;
+  // font-family: Cabin;
   font-weight: 600;
   color: #fefefe;
 }
 h2 {
   font-size: 24 / @p;
-  font-family: AlibabaPuHuiTi;
+  // font-family: AlibabaPuHuiTi;
   font-weight: 400;
   color: #cad1de;
   line-height: 51 / @p;
@@ -168,7 +198,7 @@ h2 {
 }
 .buttons {
   font-size: 20 / @p;
-  font-family: AlibabaPuHuiTi;
+  // font-family: AlibabaPuHuiTi;
   font-weight: 400;
   margin-top: 50 / @p;
   display: flex;
@@ -184,7 +214,7 @@ h2 {
     border-radius: 40 / @p;
     // height: 60 / @p;
     font-size: 22 / @p;
-    font-family: AlibabaPuHuiTi;
+    // font-family: AlibabaPuHuiTi;
     font-weight: 400;
     line-height: 60 / @p;
     color: #02071b;

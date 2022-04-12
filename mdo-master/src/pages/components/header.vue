@@ -179,14 +179,12 @@ export default {
       subshow: false,
       subshow2: false,
       activeNames: ["1"],
-      contract:'Connect Wallet'
+      contract: "Connect Wallet",
     };
   },
-  computed:{
-  
-  },
-  created(){
-    this.connectWallect()
+  computed: {},
+  created() {
+    this.connectWallect();
   },
   watch: {
     $route() {
@@ -198,7 +196,8 @@ export default {
       if (typeof window.ethereum !== "undefined") {
         let addr = await ethereum.request({ method: "eth_requestAccounts" });
         console.log("address:", addr[0]);
-        this.contract=addr[0].slice(0,6)+'...'+addr[0].substring(addr[0].length-6)
+        this.contract =
+          addr[0].slice(0, 6) + "..." + addr[0].substring(addr[0].length - 6);
       } else {
       }
     },
@@ -261,7 +260,7 @@ export default {
   // opacity: 0.6;
   border-radius: 5 / @p;
   font-size: 19 / @p;
-  font-family: AlibabaPuHuiTi;
+  // font-family: AlibabaPuHuiTi;
   font-weight: 400;
   text-align: center;
   top: 50 / @p;
@@ -290,7 +289,7 @@ export default {
   // opacity: 0.6;
   border-radius: 5 / @p;
   font-size: 19 / @p;
-  font-family: AlibabaPuHuiTi;
+  // font-family: AlibabaPuHuiTi;
   font-weight: 400;
   text-align: center;
   top: 50 / @p;
@@ -326,7 +325,7 @@ export default {
     width: 350 / @p;
     height: 24 / @p;
     font-size: 34 / @p;
-    font-family: AlibabaPuHuiTi;
+    // font-family: AlibabaPuHuiTi;
     font-weight: bold;
     color: #fefefe;
     line-height: 24 / @p;
@@ -334,7 +333,7 @@ export default {
 }
 .menu_left {
   font-size: 20 / @p;
-  font-family: AlibabaPuHuiTi;
+  // font-family: AlibabaPuHuiTi;
   font-weight: bold;
   color: #fefefe;
   // margin-left: 100px;
@@ -366,7 +365,7 @@ export default {
 }
 .menu {
   font-size: 20 / @p;
-  font-family: AlibabaPuHuiTi;
+  // font-family: AlibabaPuHuiTi;
   font-weight: 500;
   // margin-right: 285 / @p;
   ul {
@@ -438,7 +437,7 @@ export default {
     }
     span {
       font-size: 40 / @p;
-      font-family: AlibabaPuHuiTi;
+      // font-family: AlibabaPuHuiTi;
       font-weight: bold;
       color: #fefefe;
       margin-left: 21 / @p;
@@ -461,10 +460,10 @@ export default {
     padding-left: 20px;
     line-height: 60 / @p;
     font-size: 30 / @p;
-    font-family: AlibabaPuHuiTi;
+    // font-family: AlibabaPuHuiTi;
     color: #fefefe;
     a {
-      font-family: AlibabaPuHuiTi;
+      // font-family: AlibabaPuHuiTi;
       color: #fefefe;
       font-size: 30 / @p;
     }

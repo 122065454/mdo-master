@@ -1,24 +1,34 @@
 <template>
   <div class="main">
-    <img src="@/assets/images/bg2.png"
-         v-if="isPC"
-         class="bg"
-         alt="">
-    <img src="@/assets/images/h5/bg2.png"
-         v-if="!isPC"
-         class="bg"
-         alt="">
-    <h1 class=" wow  animate__animated animate__fadeInUp"
-        v-if="isPC"
-        data-wow-duration="1s">Roadmap</h1>
+    <img
+      src="@/assets/images/bg2.png"
+      v-if="isPC"
+      class="bg"
+      alt=""
+    >
+    <img
+      src="@/assets/images/h5/bg2.png"
+      v-if="!isPC"
+      class="bg"
+      alt=""
+    >
+    <h1
+      class=" wow  animate__animated animate__fadeInUp"
+      v-if="isPC"
+      data-wow-duration="1s"
+    >Roadmap</h1>
     <h1 v-if="!isPC">Roadmap</h1>
     <div class="route"></div>
-    <div class="phase1 wow  animate__animated animate__backInLeft"
-         data-wow-duration="1s">
+    <div
+      class="phase1 wow  animate__animated animate__backInLeft"
+      data-wow-duration="1s"
+    >
       <div class="tips tips_1">
         <div class="circle">
-          <img src="@/assets/images/circle.svg"
-               alt="">
+          <img
+            src="@/assets/images/circle.svg"
+            alt=""
+          >
         </div>
         <div class="title">
           <p>Phase 1</p>
@@ -26,12 +36,16 @@
         </div>
       </div>
     </div>
-    <div class="phase2 wow  animate__animated animate__backInLeft"
-         data-wow-duration="1.1s">
+    <div
+      class="phase2 wow  animate__animated animate__backInLeft"
+      data-wow-duration="1.1s"
+    >
       <div class="tips tips_2">
         <div class="circle">
-          <img src="@/assets/images/circle.svg"
-               alt="">
+          <img
+            src="@/assets/images/circle.svg"
+            alt=""
+          >
         </div>
         <div class="title">
           <p>Phase 2</p>
@@ -39,12 +53,16 @@
         </div>
       </div>
     </div>
-    <div class="phase3 wow  animate__animated animate__backInLeft"
-         data-wow-duration="1.2s">
+    <div
+      class="phase3 wow  animate__animated animate__backInLeft"
+      data-wow-duration="1.2s"
+    >
       <div class="tips tips_3">
         <div class="circle">
-          <img src="@/assets/images/circle.svg"
-               alt="">
+          <img
+            src="@/assets/images/circle.svg"
+            alt=""
+          >
         </div>
         <div class="title">
           <p>Phase 3</p>
@@ -52,12 +70,16 @@
         </div>
       </div>
     </div>
-    <div class="phase4 wow  animate__animated animate__backInLeft"
-         data-wow-duration="1.3s">
+    <div
+      class="phase4 wow  animate__animated animate__backInLeft"
+      data-wow-duration="1.3s"
+    >
       <div class="tips tips_4">
         <div class="circle">
-          <img src="@/assets/images/circle.svg"
-               alt="">
+          <img
+            src="@/assets/images/circle.svg"
+            alt=""
+          >
         </div>
         <div class="title">
           <p>Phase 4</p>
@@ -65,12 +87,16 @@
         </div>
       </div>
     </div>
-    <div class="phase5 wow  animate__animated animate__backInLeft"
-         data-wow-duration="1.4s">
+    <div
+      class="phase5 wow  animate__animated animate__backInLeft"
+      data-wow-duration="1.4s"
+    >
       <div class="tips tips_5">
         <div class="circle">
-          <img src="@/assets/images/circle.svg"
-               alt="">
+          <img
+            src="@/assets/images/circle.svg"
+            alt=""
+          >
         </div>
         <div class="title">
           <p>Phase 5</p>
@@ -82,58 +108,60 @@
     </div> -->
     <div class="rocket"></div>
     <!-- content -->
-    <div :class="['content', item.sclass]"
-         v-for="(item,index) in contentList"
-         :key="index">
+    <div
+      :class="['content', item.sclass]"
+      v-for="(item,index) in contentList"
+      :key="index"
+    >
       <div v-html="item.content"></div>
     </div>
 
   </div>
 </template> 
 <script>
-import { WOW } from 'wowjs'
+import { WOW } from "wowjs";
 export default {
-  name: 'section2',
+  name: "section2",
   data() {
     return {
       contentList: [
         {
           content:
-            '1）Market research, feasibility analysis & team formation;<br> 2) Business model design and simulation；<br>3) Whitepaper and website establish;<br>4) Issuance of utility tokens.<br>5) Seed & Private round sale;',
-          sclass: 'phase1_content',
+            "1）Market research, feasibility analysis & team formation;<br> 2) Business model design and simulation；<br>3) Whitepaper and website establish;<br>4) Issuance of utility tokens.<br>5) Seed & Private round sale;",
+          sclass: "phase1_content",
         },
         {
           content:
-            '1) Land system & Crypto eCommerce platform development;<br> 2) Social media accounts registration and marketing; <br>3) Issuance of utility tokens.<br>4) Invite the first batch of sellers <br>5) Launch SMT token on different launchpads & IDO platform',
-          sclass: 'phase2_content',
+            "1) Land system & Crypto eCommerce platform development;<br> 2) Social media accounts registration and marketing; <br>3) Issuance of utility tokens.<br>4) Invite the first batch of sellers <br>5) Launch SMT token on different launchpads & IDO platform",
+          sclass: "phase2_content",
         },
         {
           content:
-            '1) Optimization of Land system & Crypto eCommerce System<br> 2) Invite the second batch of sellers & achieve a 20 million USDT turnover on the crypto eCommerce platform ',
-          sclass: 'phase3_content',
+            "1) Optimization of Land system & Crypto eCommerce System<br> 2) Invite the second batch of sellers & achieve a 20 million USDT turnover on the crypto eCommerce platform ",
+          sclass: "phase3_content",
         },
         {
           content:
-            '1) Simeta metaverse development includes land NFT, customization of characters, pet system, land and pet NFT marketplace, NFT farming system, etc; <br>2) Promote for merchants to complete sales of $200 million;<br> 3) List the utility tokens on CEX;<br> 4) Marketing by listing land and pet NFT via INO. ',
-          sclass: 'phase4_content',
+            "1) Simeta metaverse development includes land NFT, customization of characters, pet system, land and pet NFT marketplace, NFT farming system, etc; <br>2) Promote for merchants to complete sales of $200 million;<br> 3) List the utility tokens on CEX;<br> 4) Marketing by listing land and pet NFT via INO. ",
+          sclass: "phase4_content",
         },
         {
           content:
-            '1) Combine Crypto eCommerce platform and Simeta metaverse to complete Simeta, a metaverse eCommerce platform where users can shop on an emerging immersive digital environment with other users around the world;<br> 2)Optimization of the whole system and invite more merchants;<br>3) Invite more merchants & promote for merchants to complete sales of $2 billion; ',
-          sclass: 'phase5_content',
+            "1) Combine Crypto eCommerce platform and Simeta metaverse to complete Simeta, a metaverse eCommerce platform where users can shop on an emerging immersive digital environment with other users around the world;<br> 2)Optimization of the whole system and invite more merchants;<br>3) Invite more merchants & promote for merchants to complete sales of $2 billion; ",
+          sclass: "phase5_content",
         },
       ],
-    }
+    };
   },
 
   mounted() {
     var options = {
       //默认为true
       live: true,
-    }
-    new WOW(options).init()
+    };
+    new WOW(options).init();
   },
-}
+};
 </script>
 <style lang="less" scoped>
 @p: 100rem;
@@ -176,7 +204,7 @@ export default {
     vertical-align: text-top;
   }
   .title {
-    font-family: AlibabaPuHuiTi;
+    // font-family: AlibabaPuHuiTi;
     & p:first-child {
       font-size: 40 / @p;
       font-weight: 500;
@@ -200,7 +228,7 @@ export default {
 }
 h1 {
   font-size: 56 / @p;
-  font-family: Cabin;
+  // font-family: Cabin;
   font-weight: 600;
   color: #ffffff;
   position: absolute;
@@ -269,7 +297,7 @@ h1 {
   opacity: 0.6;
   border-radius: 30 / @p;
   font-size: 19 / @p;
-  font-family: AlibabaPuHuiTi;
+  // font-family: AlibabaPuHuiTi;
   font-weight: 400;
   color: #3d4a84;
   word-break: keep-all;

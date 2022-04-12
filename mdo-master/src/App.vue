@@ -1,6 +1,8 @@
 <template>
-  <div id="app"
-       ontouchstart>
+  <div
+    id="app"
+    ontouchstart
+  >
     <!-- <img alt="Vue logo"
          src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
@@ -11,19 +13,19 @@
 </template>
 
 <script>
-import vheader from '@/pages/components/header.vue'
-import vfooter from '@/pages/components/footer.vue'
+import vheader from "@/pages/components/header.vue";
+import vfooter from "@/pages/components/footer.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    'v-header': vheader,
-    'v-footer': vfooter,
+    "v-header": vheader,
+    "v-footer": vfooter,
   },
-}
+};
 </script>
 
 <style>
-@import '~@/assets/css/font.less';
+@import "~@/assets/css/font.less";
 
 #app {
   /* font-family: Avenir, Helvetica, Arial, sans-serif; */

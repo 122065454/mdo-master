@@ -4,24 +4,43 @@
       <h1>1st Round Presale for $SMT</h1>
       <div class="tokenList">
         <ul>
-          <li><img src="@/assets/images/bnb.png" style="margin-right:5px">BNB</li>
-          <li><img src="@/assets/images/bsc.png" alt="">
+          <li><img
+              src="@/assets/images/bnb.png"
+              style="margin-right:5px"
+            >BNB</li>
+          <li><img
+              src="@/assets/images/bsc.png"
+              alt=""
+            >
             Binance Smart Chian</li><br>
 
         </ul>
         <p class="time_sj"><img
-              src="@/assets/images/h5/1.svg"
-              alt=""
-            >08:00 (UTC) <br><img src="@/assets/images/h5/2.svg" alt=""> Sun 17th April 2022</p>
-       
-        <div class="AppLication_btn"> <a href="https://form.jotform.com/221002321766443" target="_blank" rel="noopener noreferrer">Whitelist AppLication</a></div>
+            src="@/assets/images/h5/1.svg"
+            alt=""
+          >08:00 (UTC) <br><img
+            src="@/assets/images/h5/2.svg"
+            alt=""
+          > Sun 17th April 2022</p>
+
+        <div class="AppLication_btn"> <a
+            href="https://form.jotform.com/221002321766443"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Whitelist AppLication</a></div>
         <h3>Whitelist Status：In progress</h3>
       </div>
       <div class="introduce_time">
-        <div class="introduce" v-if="isPC">
+        <div
+          class="introduce"
+          v-if="isPC"
+        >
           The first virtual futuristic eCommerce marketplace where users<br> can buy and sell items in both the crypto and physical worlds <br>with cryptocurrencies worldwide
         </div>
-        <div class="introduce" v-if="!isPC">
+        <div
+          class="introduce"
+          v-if="!isPC"
+        >
           The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto and physical worlds with cryptocurrencies worldwide
         </div>
         <!-- <div class="time" v-if="isPC">
@@ -40,7 +59,12 @@
           </div>
         </div> -->
         <p class="end">Starting in</p>
-        <Time :type="4" :theme="2" :endDate="1650182400000" :timeUnit="[':', ':', ':']"></Time>
+        <Time
+          :type="4"
+          :theme="2"
+          :endDate="1650182400000"
+          :timeUnit="[':', ':', ':']"
+        ></Time>
         <!-- h5 time -->
         <!-- <div class="time_h5"
              v-if="!isPC">
@@ -58,21 +82,30 @@
           <ul>
             <li>
               <h3>
-                <img src="@/assets/images/椭圆 1.png" alt="">
+                <img
+                  src="@/assets/images/椭圆 1.png"
+                  alt=""
+                >
                 Pool supply
               </h3>
               <h2>4,000,000 $SMT</h2>
             </li>
             <li>
               <h3>
-                <img src="@/assets/images/椭圆 1.png" alt="">
+                <img
+                  src="@/assets/images/椭圆 1.png"
+                  alt=""
+                >
                 Rate
               </h3>
               <h2>1 BNB = 20,000 $SMT</h2>
             </li>
             <li>
               <h3>
-                <img src="@/assets/images/椭圆 1.png" alt="">
+                <img
+                  src="@/assets/images/椭圆 1.png"
+                  alt=""
+                >
                 Claimable
               </h3>
               <h2>Nil</h2>
@@ -98,14 +131,20 @@
             />
             <span>$5M</span>
           </div> -->
-          <div class="trade" v-if="isPC">
+          <div
+            class="trade"
+            v-if="isPC"
+          >
             <div class="trade_content">
               <span>Amount:</span>
               <input oninput="value=value.replace(/[^\d]/g,'')" />
               <div class="button">Purchase Now</div>
             </div>
           </div>
-          <div class="trade" v-if="!isPC">
+          <div
+            class="trade"
+            v-if="!isPC"
+          >
             <div class="trade_content">
               <span>Amount:</span>
               <input oninput="value=value.replace(/[^\d]/g,'')" />
@@ -123,14 +162,28 @@
         <span class="label">
           $SMT Contracts:
         </span>
-        <img class="img1" src="@/assets/images/bsc.png" alt="">
+        <img
+          class="img1"
+          src="@/assets/images/bsc.png"
+          alt=""
+        >
         <span>BNB smart Chain（BEP 20）：</span>
         <span>
           0xa363....F9745f
           <!-- OxE91c...306399F -->
         </span>
-        <img src="@/assets/images/矢量智能对象(3).png" alt="" style="margin-left: 10px;" @click='copy'>
-        <img src="@/assets/images/az9n5-o5l7g.png" alt="" @click="addToken" style="margin-left: 10px;">
+        <img
+          src="@/assets/images/矢量智能对象(3).png"
+          alt=""
+          style="margin-left: 10px;"
+          @click='copy'
+        >
+        <img
+          src="@/assets/images/az9n5-o5l7g.png"
+          alt=""
+          @click="addToken"
+          style="margin-left: 10px;"
+        >
       </div>
     </section>
 
@@ -190,39 +243,39 @@
 </template>
 <script>
 // import FlipDown from 'FlipDown'
-import faq from './faq.vue'
-import charts from './chart.vue'
-import Time from './time.vue'
+import faq from "./faq.vue";
+import charts from "./chart.vue";
+import Time from "./time.vue";
 export default {
-  name: 'presale',
+  name: "presale",
   components: {
     charts,
     Time,
     faq,
   },
   created() {
-    document.querySelector('body').removeAttribute('style')
+    document.querySelector("body").removeAttribute("style");
   },
   mounted() {},
   methods: {
     copy() {
-      this.copyToClipboard('0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f').then(
+      this.copyToClipboard("0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f").then(
         () => {
-          this.$message.success('Copy successfully')
+          this.$message.success("Copy successfully");
         }
-      )
+      );
     },
     addToken() {
       // 快捷钱包添加代币
 
-      const symbol = 'SMT'
+      const symbol = "SMT";
       const addressToken =
-        '0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f'.toLowerCase()
-      const image = 'http://simeta.io/logo.png'
+        "0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f".toLowerCase();
+      const image = "http://simeta.io/logo.png";
       ethereum.request({
-        method: 'wallet_watchAsset',
+        method: "wallet_watchAsset",
         params: {
-          type: 'ERC20',
+          type: "ERC20",
           options: {
             address: addressToken,
             decimals: 18,
@@ -230,40 +283,40 @@ export default {
             image,
           },
         },
-      })
+      });
     },
     copyToClipboard(textToCopy) {
       // navigator clipboard api needs a secure context (https)
       if (navigator.clipboard && window.isSecureContext) {
         // navigator clipboard api method'
-        return navigator.clipboard.writeText(textToCopy)
+        return navigator.clipboard.writeText(textToCopy);
       } else {
         // text area method
-        let textArea = document.createElement('textarea')
-        textArea.value = textToCopy
+        let textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
         // make the textarea out of viewport
-        textArea.style.position = 'fixed'
-        textArea.style.left = '-999999px'
-        textArea.style.top = '-999999px'
-        document.body.appendChild(textArea)
-        textArea.focus()
-        textArea.select()
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
         return new Promise((res, rej) => {
           // here the magic happens
-          document.execCommand('copy') ? res() : rej()
-          textArea.remove()
-        })
+          document.execCommand("copy") ? res() : rej();
+          textArea.remove();
+        });
       }
     },
   },
-}
+};
 </script>
 <style lang="less" scoped>
 .main {
   background: url(../../assets/images/bgc.jpg) no-repeat;
   background-size: cover;
   overflow: hidden;
-  font-family: AlibabaPuHuiTi;
+  // font-family: AlibabaPuHuiTi;
 }
 .w {
   width: 1300px;
@@ -308,10 +361,10 @@ export default {
   font-size: 41px;
   margin-bottom: 20px;
   color: #ffef40;
-  font-family: Franklin Gothic Demi;
+  // font-family: Franklin Gothic Demi;
   font-weight: bold;
 }
-a{
+a {
   color: #fff;
 }
 .AppLication_btn {
@@ -330,7 +383,7 @@ a{
   align-content: center;
   // line-height: 42px;
   font-weight: bold;
-  font-family: FZCuHei-B03T;
+  // font-family: FZCuHei-B03T;
   margin: 10px auto;
   cursor: pointer;
 }
@@ -344,8 +397,8 @@ a{
   .time_sj {
     font-size: 25px;
     color: #fff;
-    img{
-      margin-right:5px
+    img {
+      margin-right: 5px;
     }
   }
   li {
@@ -366,7 +419,7 @@ a{
   padding: 28px 28px;
   background: linear-gradient(0deg, #090909 0%, #26252c 100%);
   border-image: linear-gradient(0deg, #cb8512, #ffdd40) 3 3;
-  font-family: DM Sans;
+  // font-family: DM Sans;
   border-radius: 12px;
   margin-bottom: 40px;
   border: 3px solid #ffdd40;
@@ -374,7 +427,7 @@ a{
 .introduce {
   font-size: 40px;
   margin-bottom: 30px;
-  font-family: FZCuHei-B03T;
+  // font-family: FZCuHei-B03T;
 }
 .time {
   margin-bottom: 60px;
@@ -478,7 +531,7 @@ a{
       height: 50px;
       background: transparent;
       font-size: 24px;
-      font-family: PingFangSC-Regular, PingFang SC;
+      // font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 600;
       line-height: 20px;
       border-radius: 20px;
@@ -508,7 +561,7 @@ a{
   color: #fff;
   padding: 28px 28px;
   background: rgba(94, 149, 232, 0.1);
-  font-family: DM Sans;
+  // font-family: DM Sans;
   border-radius: 12px;
   margin-bottom: 40px;
   h1 {
@@ -693,7 +746,7 @@ a{
     color: #ffffff;
     padding: 28px 28px;
     background: rgba(94, 149, 232, 0.1);
-    font-family: DM Sans;
+    // font-family: DM Sans;
     border-radius: 12px;
     margin-bottom: 40px;
     h1 {
@@ -761,7 +814,7 @@ a{
         height: 30px;
         background: #fff;
         font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
+        // font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 600;
         line-height: 20px;
         border-radius: 20px;
@@ -784,7 +837,7 @@ a{
       }
     }
   }
-   .tokenList .time_sj {
+  .tokenList .time_sj {
     font-size: 16px;
     color: #fff;
   }
