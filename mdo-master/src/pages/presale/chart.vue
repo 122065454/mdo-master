@@ -45,7 +45,7 @@ export default {
         },
         series: [
           {
-            center: this.isPC ? ['50%', '50%'] : ['49%', '60%'],
+            center: this.isPC ? ['50%', '60%'] : ['49%', '60%'],
             name: 'Access From',
             type: 'pie',
 
@@ -129,7 +129,7 @@ export default {
         },
         series: [
           {
-            center: this.isPC ? ['50%', '50%'] : ['50%', '75%'],
+            center: this.isPC ? ['50%', '60%'] : ['50%', '75%'],
             name: 'Access From',
             type: 'pie',
             radius: '50%',

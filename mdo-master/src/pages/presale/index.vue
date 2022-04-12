@@ -4,8 +4,7 @@
       <h1>1st Round Presale for $SMT</h1>
       <div class="tokenList">
         <ul>
-          <li><img src="https://mdex.co/token-icons/bsc/0xe9e7cea3dedca5984780bafc599bd69add087d56.png" alt="">
-            BNB</li>
+          <li><img src="@/assets/images/bnb.png" style="margin-right:5px">BNB</li>
           <li><img src="@/assets/images/bsc.png" alt="">
             Binance Smart Chian</li><br>
 
@@ -41,7 +40,7 @@
           </div>
         </div> -->
         <p class="end">Starting in</p>
-        <Time :type="4" :theme="2" :endDate="1650175200000" :timeUnit="[':', ':', ':']"></Time>
+        <Time :type="4" :theme="2" :endDate="1650182400000" :timeUnit="[':', ':', ':']"></Time>
         <!-- h5 time -->
         <!-- <div class="time_h5"
              v-if="!isPC">
@@ -62,14 +61,14 @@
                 <img src="@/assets/images/椭圆 1.png" alt="">
                 Pool supply
               </h3>
-              <h2>5,000,000 $SMT</h2>
+              <h2>4,000,000 $SMT</h2>
             </li>
             <li>
               <h3>
                 <img src="@/assets/images/椭圆 1.png" alt="">
                 Rate
               </h3>
-              <h2>1 BNB = 25,000 $SMT</h2>
+              <h2>1 BNB = 20,000 $SMT</h2>
             </li>
             <li>
               <h3>
