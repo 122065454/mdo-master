@@ -73,7 +73,7 @@
         </li>
         <li>
           <img
-            src="@/assets/images/矢量智能对象(4).png"
+            src="@/assets/images/icon4.png"
             alt=""
           >
           <span>Checkout</span>

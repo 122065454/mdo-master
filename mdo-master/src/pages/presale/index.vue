@@ -27,7 +27,7 @@
             href="https://form.jotform.com/221002321766443"
             target="_blank"
             rel="noopener noreferrer"
-          >Whitelist AppLication</a></div>
+          >Whitelist Application</a></div>
         <h3>Whitelist Status：In progress</h3>
       </div>
       <div class="introduce_time">
@@ -83,7 +83,7 @@
             <li>
               <h3>
                 <img
-                  src="@/assets/images/椭圆 1.png"
+                  src="@/assets/images/yuan.png"
                   alt=""
                 >
                 Pool supply
@@ -93,7 +93,7 @@
             <li>
               <h3>
                 <img
-                  src="@/assets/images/椭圆 1.png"
+                  src="@/assets/images/yuan.png"
                   alt=""
                 >
                 Rate
@@ -103,12 +103,12 @@
             <li>
               <h3>
                 <img
-                  src="@/assets/images/椭圆 1.png"
+                  src="@/assets/images/yuan.png"
                   alt=""
                 >
                 Claimable
               </h3>
-              <h2>Nil</h2>
+              <h2>0</h2>
             </li>
           </ul>
           <!-- <div class="total_number_bottom">
@@ -137,7 +137,10 @@
           >
             <div class="trade_content">
               <span>Amount:</span>
-              <input oninput="value=value.replace(/[^\d]/g,'')" />
+              <input
+                oninput="value=value.replace(/[^\d]/g,'')"
+                placeholder="BNB amount"
+              />
               <div class="button">Purchase Now</div>
             </div>
           </div>
@@ -173,7 +176,7 @@
           <!-- OxE91c...306399F -->
         </span>
         <img
-          src="@/assets/images/矢量智能对象(3).png"
+          src="@/assets/images/icon3.png"
           alt=""
           style="margin-left: 10px;"
           @click='copy'

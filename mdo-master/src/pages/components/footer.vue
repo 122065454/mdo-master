@@ -4,7 +4,7 @@
       <div class="logo">
         <div class="logo_top">
           <img
-            src="@/assets/images/矢量智能对象 拷贝.png"
+            src="@/assets/images/logo1.png"
             class="img1"
             alt=""
           >
@@ -17,7 +17,7 @@
             <div class="select_item">
               <img
                 style="width: 20px;"
-                src="@/assets/images/矢量智能对象(1).png"
+                src="@/assets/images/icon1.png"
                 alt=""
               >
               <a-select
@@ -293,27 +293,27 @@ export default {
       ],
       communityList: [
         {
-          icon: require("@/assets/images/图层 16.png"),
+          icon: require("@/assets/images/icon16.png"),
           herf: "https://twitter.com/simeta_io",
           name: "twitter",
         },
         {
-          icon: require("@/assets/images/图层 15.png"),
+          icon: require("@/assets/images/icon15.png"),
           herf: "https://t.me/SimetaOfficial",
           name: "Telegram",
         },
         {
-          icon: require("@/assets/images/图层 14.png"),
+          icon: require("@/assets/images/icon14.png"),
           herf: "https://discord.gg/b58T5CP8Ky",
           name: "discord",
         },
         {
-          icon: require("@/assets/images/图层 13.png"),
+          icon: require("@/assets/images/icon13.png"),
           herf: "https://www.facebook.com/Simeta-105637975451314",
           name: "facebook",
         },
         {
-          icon: require("@/assets/images/矢量智能对象(2).png"),
+          icon: require("@/assets/images/icon2.png"),
           herf: "https://medium.com/@Simeta",
           name: "medium",
         },
@@ -349,7 +349,6 @@ export default {
 
             console.log(error);
           });
-      } else {
       }
     },
   },
@@ -361,7 +360,7 @@ export default {
   footer {
     width: 100%;
     height: 375 / @p;
-    background: url("~@/assets/images/矩形 2.png") center no-repeat;
+    background: url("../../assets/images/bgc2.png") center no-repeat;
     background-size: cover;
   }
   input {
