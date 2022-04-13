@@ -316,7 +316,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .main {
-  background: url(../../assets/images/bgc.jpg) no-repeat;
+  background: url(../../assets/images/bgc.png) no-repeat;
   background-size: cover;
   overflow: hidden;
   // font-family: AlibabaPuHuiTi;
