@@ -74,6 +74,9 @@ export default {
   beforeCreate() {
     document.querySelector("body").setAttribute("style", "overflow: hidden;");
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   methods: {
     delimg() {
       document.querySelector("body").removeAttribute("style");
