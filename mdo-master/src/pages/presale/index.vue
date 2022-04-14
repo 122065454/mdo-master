@@ -27,8 +27,8 @@
             href="https://form.jotform.com/221002321766443"
             target="_blank"
             rel="noopener noreferrer"
-          >Whitelist Application</a></div>
-        <h3>Whitelist Status：In progress</h3>
+          >Bonus Application</a></div>
+        <h3 style="font-size: 18px;">Bonus Application: 08:00 on 12th Apr to 08:00 on 16th Apr 2022 (UTC)</h3>
       </div>
       <div class="introduce_time">
         <div
@@ -380,7 +380,7 @@ a {
   border-radius: 10px;
   color: #fff;
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-content: center;
