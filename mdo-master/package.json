@@ -24,6 +24,7 @@
     "vue-flip-down": "^3.0.0",
     "vue-fullpage.js": "^0.1.7",
     "vue-router": "^3.5.3",
+    "web3": "^1.7.3",
     "webpack-dev-server": "^4.7.4",
     "wowjs": "^1.1.3"
   },

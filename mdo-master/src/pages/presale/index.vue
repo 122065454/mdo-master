@@ -4,43 +4,21 @@
       <h1>1st Round Presale for $SMT</h1>
       <div class="tokenList">
         <ul>
-          <li><img
-              src="@/assets/images/bnb.png"
-              style="margin-right:5px"
-            >BNB</li>
-          <li><img
-              src="@/assets/images/bsc.png"
-              alt=""
-            >
+          <li><img src="@/assets/images/bnb.png" style="margin-right:5px">BNB</li>
+          <li><img src="@/assets/images/bsc.png" alt="">
             Binance Smart Chian</li><br>
 
         </ul>
-        <p class="time_sj"><img
-            src="@/assets/images/h5/1.svg"
-            alt=""
-          >08:00 (UTC) <br><img
-            src="@/assets/images/h5/2.svg"
-            alt=""
-          > Sun 17th April 2022</p>
+        <p class="time_sj"><img src="@/assets/images/h5/1.svg" alt="">08:00 (UTC) <br><img src="@/assets/images/h5/2.svg" alt=""> Sun 17th April 2022</p>
 
-        <div class="AppLication_btn"> <a
-            href="https://form.jotform.com/221002321766443"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Bonus Application</a></div>
+        <div class="AppLication_btn"> <a href="https://form.jotform.com/221002321766443" target="_blank" rel="noopener noreferrer">Bonus Application</a></div>
         <h3 style="font-size: 18px;">Bonus Application: 08:00 on 12th Apr to 08:00 on 16th Apr 2022 (UTC)</h3>
       </div>
       <div class="introduce_time">
-        <div
-          class="introduce"
-          v-if="isPC"
-        >
+        <div class="introduce" v-if="isPC">
           The first virtual futuristic eCommerce marketplace where users<br> can buy and sell items in both the crypto and physical worlds <br>with cryptocurrencies worldwide
         </div>
-        <div
-          class="introduce"
-          v-if="!isPC"
-        >
+        <div class="introduce" v-if="!isPC">
           The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto and physical worlds with cryptocurrencies worldwide
         </div>
         <!-- <div class="time" v-if="isPC">
@@ -59,12 +37,7 @@
           </div>
         </div> -->
         <p class="end">Starting in</p>
-        <Time
-          :type="4"
-          :theme="2"
-          :endDate="1650182400000"
-          :timeUnit="[':', ':', ':']"
-        ></Time>
+        <Time :type="4" :theme="2" :endDate="1650182400000" :timeUnit="[':', ':', ':']" @timeUp='timeUp'></Time>
         <!-- h5 time -->
         <!-- <div class="time_h5"
              v-if="!isPC">
@@ -82,30 +55,21 @@
           <ul>
             <li>
               <h3>
-                <img
-                  src="@/assets/images/yuan.png"
-                  alt=""
-                >
+                <img src="@/assets/images/yuan.png" alt="">
                 Pool supply
               </h3>
               <h2>4,000,000 $SMT</h2>
             </li>
             <li>
               <h3>
-                <img
-                  src="@/assets/images/yuan.png"
-                  alt=""
-                >
+                <img src="@/assets/images/yuan.png" alt="">
                 Rate
               </h3>
               <h2>1 BNB = 20,000 $SMT</h2>
             </li>
             <li>
               <h3>
-                <img
-                  src="@/assets/images/yuan.png"
-                  alt=""
-                >
+                <img src="@/assets/images/yuan.png" alt="">
                 Claimable
               </h3>
               <h2>0</h2>
@@ -131,23 +95,14 @@
             />
             <span>$5M</span>
           </div> -->
-          <div
-            class="trade"
-            v-if="isPC"
-          >
+          <div class="trade" v-if="isPC">
             <div class="trade_content">
               <span>Amount:</span>
-              <input
-                oninput="value=value.replace(/[^\d]/g,'')"
-                placeholder="BNB amount"
-              />
+              <input oninput="value = value.replace(/[^\d]/g, '');if(value>20) value=20" v-model="amount" placeholder="BNB amount" />
               <div class="button">Purchase Now</div>
             </div>
           </div>
-          <div
-            class="trade"
-            v-if="!isPC"
-          >
+          <div class="trade" v-if="!isPC">
             <div class="trade_content">
               <span>Amount:</span>
               <input oninput="value=value.replace(/[^\d]/g,'')" />
@@ -165,28 +120,14 @@
         <span class="label">
           $SMT Contracts:
         </span>
-        <img
-          class="img1"
-          src="@/assets/images/bsc.png"
-          alt=""
-        >
+        <img class="img1" src="@/assets/images/bsc.png" alt="">
         <span>BNB smart Chain（BEP 20）：</span>
         <span>
           0xa363....F9745f
           <!-- OxE91c...306399F -->
         </span>
-        <img
-          src="@/assets/images/icon3.png"
-          alt=""
-          style="margin-left: 10px;"
-          @click='copy'
-        >
-        <img
-          src="@/assets/images/az9n5-o5l7g.png"
-          alt=""
-          @click="addToken"
-          style="margin-left: 10px;"
-        >
+        <img src="@/assets/images/icon3.png" alt="" style="margin-left: 10px;" @click='copy'>
+        <img src="@/assets/images/az9n5-o5l7g.png" alt="" @click="addToken" style="margin-left: 10px;">
       </div>
     </section>
 
@@ -246,39 +187,46 @@
 </template>
 <script>
 // import FlipDown from 'FlipDown'
-import faq from "./faq.vue";
-import charts from "./chart.vue";
-import Time from "./time.vue";
+import faq from './faq.vue'
+import charts from './chart.vue'
+import Time from './time.vue'
 export default {
-  name: "presale",
+  name: 'presale',
   components: {
     charts,
     Time,
     faq,
   },
+  data() {
+    return {
+      amount: '',
+    }
+  },
   created() {
-    document.querySelector("body").removeAttribute("style");
+    document.querySelector('body').removeAttribute('style')
   },
   mounted() {},
   methods: {
+    input() {},
+    timeUp() {},
     copy() {
-      this.copyToClipboard("0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f").then(
+      this.copyToClipboard('0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f').then(
         () => {
-          this.$message.success("Copy successfully");
+          this.$message.success('Copy successfully')
         }
-      );
+      )
     },
     addToken() {
       // 快捷钱包添加代币
 
-      const symbol = "SMT";
+      const symbol = 'SMT'
       const addressToken =
-        "0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f".toLowerCase();
-      const image = "http://simeta.io/logo.png";
+        '0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f'.toLowerCase()
+      const image = 'http://simeta.io/logo.png'
       ethereum.request({
-        method: "wallet_watchAsset",
+        method: 'wallet_watchAsset',
         params: {
-          type: "ERC20",
+          type: 'ERC20',
           options: {
             address: addressToken,
             decimals: 18,
@@ -286,33 +234,33 @@ export default {
             image,
           },
         },
-      });
+      })
     },
     copyToClipboard(textToCopy) {
       // navigator clipboard api needs a secure context (https)
       if (navigator.clipboard && window.isSecureContext) {
         // navigator clipboard api method'
-        return navigator.clipboard.writeText(textToCopy);
+        return navigator.clipboard.writeText(textToCopy)
       } else {
         // text area method
-        let textArea = document.createElement("textarea");
-        textArea.value = textToCopy;
+        let textArea = document.createElement('textarea')
+        textArea.value = textToCopy
         // make the textarea out of viewport
-        textArea.style.position = "fixed";
-        textArea.style.left = "-999999px";
-        textArea.style.top = "-999999px";
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
+        textArea.style.position = 'fixed'
+        textArea.style.left = '-999999px'
+        textArea.style.top = '-999999px'
+        document.body.appendChild(textArea)
+        textArea.focus()
+        textArea.select()
         return new Promise((res, rej) => {
           // here the magic happens
-          document.execCommand("copy") ? res() : rej();
-          textArea.remove();
-        });
+          document.execCommand('copy') ? res() : rej()
+          textArea.remove()
+        })
       }
     },
   },
-};
+}
 </script>
 <style lang="less" scoped>
 .main {
