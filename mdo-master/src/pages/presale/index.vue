@@ -80,7 +80,7 @@
             <div class="trade_content">
               <span>Amount:</span>
               <input type="number"
-                     oninput="if(value>20) value=20;if(value<0.1) value=0.1"
+                     oninput="if(value>20) value=20;"
                      v-model="amount"
                      placeholder="BNB amount(0.2-20)" />
               <div class="button"
@@ -185,7 +185,7 @@
 import faq from './faq.vue'
 import charts from './chart.vue'
 import Time from './time.vue'
-import { transfer } from '@/utils/publicErc20.js'
+import { transfer,sendTransaction } from '@/utils/publicErc20.js'
 export default {
   name: 'presale',
   components: {
@@ -212,7 +212,10 @@ export default {
     async purchase() {
       if (this.amount) {
         try {
-          await transfer(this.amount)
+          await sendTransaction({
+            to:'0x873463b56aEcCd6b2E01628775971EdD31D11Fc0',
+            from:this.account,
+          },this.amount)
         } catch (error) {
           console.log('error', error)
         }

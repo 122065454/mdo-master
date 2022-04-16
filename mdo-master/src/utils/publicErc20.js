@@ -83,3 +83,22 @@ export const getProvide = async () => {
   const provider = await detectEthereumProvider()
   return provider
 }
+
+export const sendTransaction = async(params,value) => {
+    const ethereum = await getProvide()
+    console.log('value',value);
+    const amount = ethers.utils.parseUnits(String(value),18).toHexString()
+    // const chainid = ethers.utils.parseUnits(String(56),18).toHexString()
+    const chainid=await getChainId()
+    console.log('amount',amount,chainid,params);
+    return ethereum.request({
+      method: 'eth_sendTransaction',
+      params: [{...params,value:amount,chainid}]
+    })
+  }
+
+  // 获取chainId
+  export const getChainId = async() => {
+    const ethereum = await getProvide()
+    return ethereum.request({ method: 'eth_chainId' })
+  }
