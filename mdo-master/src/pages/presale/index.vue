@@ -93,7 +93,7 @@
                   >
                 </a-tooltip>
               </h3>
-              <h2>{{(amount*20000).toFixed(2)}}
+              <h2>{{Number(amount*20000)+amount_extra(amount)}}
 
               </h2>
             </li>
@@ -106,6 +106,7 @@
             <div class="trade_content">
               <span>Amount:</span>
               <input
+                class="no-arrow"
                 type="number"
                 @input="amountValue(amount)"
                 v-model="amount"
@@ -124,6 +125,7 @@
             <div class="trade_content">
               <span>Amount:</span>
               <input
+              class="no-arrow"
                 type="number"
                 @input="amountValue(amount)"
                 v-model="amount"
@@ -246,12 +248,32 @@ export default {
       console.log("this.$store.state.account", this.$store.state.account);
       return this.$store.state.account;
     },
+      // 额外奖励数量
+    amount_extra(){
+      return (val)=>{
+      if(val==0){
+        return 0 
+      }
+      else if(0.2<Number(val)<=2){
+        return 1600
+      }else if(2<Number(val)<=5){
+        return 2400
+      }else if(5<Number(val)<=10){
+        return 3200
+      }else if(10<Number(val)<=20){
+        return 4000
+      }
+      }
+   
+    },
+ 
   },
   created() {
     document.querySelector("body").removeAttribute("style");
   },
   mounted() {},
   methods: {
+     
     NumberCheck(num) {
       var str = num;
       var len1 = str.substr(0, 1);
@@ -361,6 +383,10 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+.no-arrow::-webkit-outer-spin-button,
+.no-arrow::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 .main {
   background: url(../../assets/images/bgc.png) no-repeat;
   background-size: cover;
