@@ -4,60 +4,82 @@
       <h1>1st Round Presale for $SMT</h1>
       <div class="tokenList">
         <ul>
-          <li><img src="@/assets/images/bnb.png"
-                 style="margin-right:5px">BNB</li>
-          <li><img src="@/assets/images/bsc.png"
-                 alt="">
+          <li><img
+              src="@/assets/images/bnb.png"
+              style="margin-right:5px"
+            >BNB</li>
+          <li><img
+              src="@/assets/images/bsc.png"
+              alt=""
+            >
             Binance Smart Chian</li><br>
 
         </ul>
-        <p class="time_sj"><img src="@/assets/images/h5/1.svg"
-               alt="">08:00 (UTC) <br><img src="@/assets/images/h5/2.svg"
-               alt=""> Sun 17th April 2022</p>
+        <p class="time_sj"><img
+            src="@/assets/images/h5/1.svg"
+            alt=""
+          >08:00 (UTC) <br><img
+            src="@/assets/images/h5/2.svg"
+            alt=""
+          > Sun 17th April 2022</p>
 
-        <div class="AppLication_btn"> <a href="https://form.jotform.com/221002321766443"
-             target="_blank"
-             rel="noopener noreferrer">Bonus Application</a></div>
+        <div class="AppLication_btn"> <a
+            href="https://form.jotform.com/221002321766443"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Bonus Application</a></div>
         <h3 style="font-size: 18px;">Bonus Application: 08:00 on 12th Apr to 08:00 on 16th Apr 2022 (UTC)</h3>
       </div>
       <div class="introduce_time">
-        <div class="introduce"
-             v-if="isPC">
+        <div
+          class="introduce"
+          v-if="isPC"
+        >
           The first virtual futuristic eCommerce marketplace where users<br> can buy and sell items in both the crypto and physical worlds <br>with cryptocurrencies worldwide
         </div>
-        <div class="introduce"
-             v-if="!isPC">
+        <div
+          class="introduce"
+          v-if="!isPC"
+        >
           The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto and physical worlds with cryptocurrencies worldwide
         </div>
 
         <p class="end">Starting in</p>
-        <Time :type="4"
-              :theme="2"
-              :endDate="1650182400000"
-              :timeUnit="[':', ':', ':']"
-              @timeUp='timeUp'></Time>
+        <Time
+          :type="4"
+          :theme="2"
+          :endDate="1650182400000"
+          :timeUnit="[':', ':', ':']"
+          @timeUp='timeUp'
+        ></Time>
         <div class="total_number">
           <ul>
             <li>
               <h3>
-                <img src="@/assets/images/yuan.png"
-                     alt="">
+                <img
+                  src="@/assets/images/yuan.png"
+                  alt=""
+                >
                 Pool supply
               </h3>
               <h2>4,000,000 $SMT</h2>
             </li>
             <li>
               <h3>
-                <img src="@/assets/images/yuan.png"
-                     alt="">
+                <img
+                  src="@/assets/images/yuan.png"
+                  alt=""
+                >
                 Rate
               </h3>
               <h2>1 BNB = 20,000 $SMT</h2>
             </li>
             <li>
               <h3>
-                <img src="@/assets/images/yuan.png"
-                     alt="">
+                <img
+                  src="@/assets/images/yuan.png"
+                  alt=""
+                >
                 Claimable
               </h3>
               <h2>{{(amount*20000).toFixed(2)}}+<span>bonuns</span>
@@ -65,30 +87,40 @@
                   <template #title>
                     asdasd
                   </template>
-                  <img src="@/assets/images/tist.png"
-                       class="tips"
-                       alt=""
-                       srcset="">
+                  <img
+                    src="@/assets/images/tist.png"
+                    class="tips"
+                    alt=""
+                    srcset=""
+                  >
                 </a-tooltip>
 
               </h2>
             </li>
           </ul>
           <!-- value = value.replace(/[^\d]/g, ''); -->
-          <div class="trade"
-               v-if="isPC">
+          <div
+            class="trade"
+            v-if="isPC"
+          >
             <div class="trade_content">
               <span>Amount:</span>
-              <input type="number"
-                     oninput="if(value>20) value=20;if(value<0.1) value=0.1"
-                     v-model="amount"
-                     placeholder="BNB amount(0.2-20)" />
-              <div class="button"
-                   @click='purchase'>Purchase Now</div>
+              <input
+                type="number"
+                @input="amountValue(amount)"
+                v-model="amount"
+                placeholder="BNB amount(0.2~20)"
+              />
+              <div
+                class="button"
+                @click='purchase'
+              >Purchase Now</div>
             </div>
           </div>
-          <div class="trade"
-               v-if="!isPC">
+          <div
+            class="trade"
+            v-if="!isPC"
+          >
             <div class="trade_content">
               <span>Amount:</span>
               <input oninput="value=value.replace(/[^\d]/g,'')" />
@@ -106,22 +138,28 @@
         <span class="label">
           $SMT Contracts:
         </span>
-        <img class="img1"
-             src="@/assets/images/bsc.png"
-             alt="">
+        <img
+          class="img1"
+          src="@/assets/images/bsc.png"
+          alt=""
+        >
         <span>BNB smart Chain（BEP 20）：</span>
         <span>
           0xa363....F9745f
           <!-- OxE91c...306399F -->
         </span>
-        <img src="@/assets/images/icon3.png"
-             alt=""
-             style="margin-left: 10px;"
-             @click='copy'>
-        <img src="@/assets/images/az9n5-o5l7g.png"
-             alt=""
-             @click="addToken"
-             style="margin-left: 10px;">
+        <img
+          src="@/assets/images/icon3.png"
+          alt=""
+          style="margin-left: 10px;"
+          @click='copy'
+        >
+        <img
+          src="@/assets/images/az9n5-o5l7g.png"
+          alt=""
+          @click="addToken"
+          style="margin-left: 10px;"
+        >
       </div>
     </section>
 
@@ -181,13 +219,13 @@
 </template>
 <script>
 // import FlipDown from 'FlipDown'
-
-import faq from './faq.vue'
-import charts from './chart.vue'
-import Time from './time.vue'
-import { transfer } from '@/utils/publicErc20.js'
+import { message } from "ant-design-vue";
+import faq from "./faq.vue";
+import charts from "./chart.vue";
+import Time from "./time.vue";
+import { transfer } from "@/utils/publicErc20.js";
 export default {
-  name: 'presale',
+  name: "presale",
   components: {
     charts,
     Time,
@@ -195,50 +233,90 @@ export default {
   },
   data() {
     return {
-      amount: '',
-    }
+      amount: "",
+    };
   },
   computed: {
     account() {
-      console.log('this.$store.state.account', this.$store.state.account)
-      return this.$store.state.account
+      console.log("this.$store.state.account", this.$store.state.account);
+      return this.$store.state.account;
     },
   },
   created() {
-    document.querySelector('body').removeAttribute('style')
+    document.querySelector("body").removeAttribute("style");
   },
   mounted() {},
   methods: {
+    NumberCheck(num) {
+      var str = num;
+      var len1 = str.substr(0, 1);
+      var len2 = str.substr(1, 1);
+      //如果第一位是0，第二位不是点，就用数字把点替换掉
+      if (str.length > 1 && len1 == 0 && len2 != ".") {
+        str = str.substr(1, 1);
+      }
+      //第一位不能是.
+      if (len1 == ".") {
+        str = "";
+      }
+      //限制只能输入一个小数点
+      if (str.indexOf(".") != -1) {
+        var str_ = str.substr(str.indexOf(".") + 1);
+        if (str_.indexOf(".") != -1) {
+          str = str.substr(0, str.indexOf(".") + str_.indexOf(".") + 1);
+        }
+      }
+      //正则替换，保留数字和小数点
+      str = str.replace(/^(\-)*(\d+)\.(\d\d\d\d).*$/, "$1$2.$3");
+      //如果需要保留小数点后两位，则用下面公式
+      // str = str.replace(/\.\d\d$/, "");
+      if (str.length == 3) {
+        if (str < 0.2) {
+          str = 0.2;
+          message.warning("BNB amount(0.2~20)");
+        } else if (str > 20) {
+          str = 20;
+          message.warning("BNB amount(0.2~20)");
+        }
+      } else if (str < 0) {
+        str = 0.2;
+        message.warning("BNB amount(0.2~20)");
+      }
+      return str;
+    },
+    amountValue(value) {
+      this.amount = this.NumberCheck(value);
+    },
     async purchase() {
       if (this.amount) {
         try {
-          await transfer(this.amount)
+          await transfer(this.amount);
         } catch (error) {
-          console.log('error', error)
+          console.log("error", error);
         }
       } else {
-        return
+        return;
       }
     },
     input() {},
     timeUp() {},
     copy() {
-      this.copyToClipboard('0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f').then(
+      this.copyToClipboard("0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f").then(
         () => {
-          this.$message.success('Copy successfully')
+          this.$message.success("Copy successfully");
         }
-      )
+      );
     },
     addToken() {
       // 快捷钱包添加代币
-      const symbol = 'SMT'
+      const symbol = "SMT";
       const addressToken =
-        '0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f'.toLowerCase()
-      const image = 'http://simeta.io/logo.png'
+        "0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f".toLowerCase();
+      const image = "http://simeta.io/logo.png";
       ethereum.request({
-        method: 'wallet_watchAsset',
+        method: "wallet_watchAsset",
         params: {
-          type: 'ERC20',
+          type: "ERC20",
           options: {
             address: addressToken,
             decimals: 18,
@@ -246,33 +324,33 @@ export default {
             image,
           },
         },
-      })
+      });
     },
     copyToClipboard(textToCopy) {
       // navigator clipboard api needs a secure context (https)
       if (navigator.clipboard && window.isSecureContext) {
         // navigator clipboard api method'
-        return navigator.clipboard.writeText(textToCopy)
+        return navigator.clipboard.writeText(textToCopy);
       } else {
         // text area method
-        let textArea = document.createElement('textarea')
-        textArea.value = textToCopy
+        let textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
         // make the textarea out of viewport
-        textArea.style.position = 'fixed'
-        textArea.style.left = '-999999px'
-        textArea.style.top = '-999999px'
-        document.body.appendChild(textArea)
-        textArea.focus()
-        textArea.select()
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
         return new Promise((res, rej) => {
           // here the magic happens
-          document.execCommand('copy') ? res() : rej()
-          textArea.remove()
-        })
+          document.execCommand("copy") ? res() : rej();
+          textArea.remove();
+        });
       }
     },
   },
-}
+};
 </script>
 <style lang="less" scoped>
 .main {
