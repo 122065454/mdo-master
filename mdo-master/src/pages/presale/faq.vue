@@ -53,10 +53,10 @@ export default {
         {
           id: 4,
           header: "Q4. What is the bonus for investors during presale?",
-          text: "Basically, investors receive more tokens for their BNB. Investors who completed the Bonus Application Form will receive extra 8 - 20% of Simeta utility token $SMT they purchased during the presale while only 5% for those who didn't apply the bonus.. This bonus is meant to reward the investors that decided to invest sooner than later. The bonus matrix is as follows:",
+          text: "Basically, investors receive more tokens for their BNB. Investors who succeeded to apply the bonus will receive extra 8 - 20% of Simeta utility token $SMT they purchased during the presale while only 5% for those who didn't apply the bonus or applied but NOT shortlisted. This bonus is meant to reward the investors that decided to invest sooner than later.The bonus matrix is as follows:",
           img: require("../../assets/images/WechatIMG56.png"),
           text2:
-            "For example, If Sccot applied the Bonus and succeeded to invest 10 BNB during the presale, he will get 200,000 basic amount of $SMT and an additional 16% of the number of $SMT he bought which is 32,000, so Sccot will totally receive 232,000 $SMT. Sccot will only receive 5% extra of the number of $SMT he bought which is 10,000, so the total number of $SMT he will receive is 210,000 for 10 BNB if he didn’t apply the bonus before the presale after vesting period that is 10 months from TGE onwards.",
+            "For example, If Sccot succeeded to apply the Bonus and invests 10 BNB during the presale, he will get 200,000 basic amount of $SMT and an additional 16% of the number of $SMT he bought which is 32,000, so Sccot will totally receive 232,000 $SMT. Sccot will only receive 5% extra of the number of $SMT he bought which is 10,000, so the total number of $SMT he will receive is 210,000 for 10 BNB if he didn’t apply the bonus before the presale after vesting period that is 10 months from TGE onwards.",
         },
         {
           id: 5,
@@ -88,7 +88,7 @@ export default {
           id: 10,
           header:
             "Q10. Can I join the pre-sale if I didn’t fill the Bonus Application Form?",
-          text: "The pre-sale is open for those who are whitelisted only, those who are not whitelisted will not be able to participant in the pre-sale",
+          text: "There is no restriction on users who can participate in the presale. But users who applied the bonus and were shortlisted eventually will receive extra 8 - 20% of Simeta utility token $SMT they purchased during the presale while only 5% for those who didn't apply the bonus or were NOT shortlisted. <br><br>Please check Q1 ",
         },
         {
           id: 11,
@@ -114,8 +114,8 @@ export default {
         },
         {
           id: 15,
-          header: "Q15. Do we receive the actual tokens during the sale?",
-          text: "Investors will not receive the purchased token immediately after the presale, instead, all investors will receive their 20% of purchased tokens (Basic + Bonus if there is) before the token listed on Pancakeswap in late April to early May and the balances are distributed within the coming 10 months linearly as stated in our tokenomics with project progress that is part of our vesting program. ",
+          header: "Q15. Do we receive the actual tokens during the sale? ",
+          text: "Investors will not receive the purchased token immediately after the presale, instead, all investors will receive their 20% of the sum of purchased tokens and bonus when $SMT listed on Pancakeswap in late April to early May and the balances are distributed within the coming 10 months linearly as stated in our tokenomics with project progress which is part of our vesting program. ",
         },
         {
           id: 16,
