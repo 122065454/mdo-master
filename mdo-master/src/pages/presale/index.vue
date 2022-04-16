@@ -4,105 +4,91 @@
       <h1>1st Round Presale for $SMT</h1>
       <div class="tokenList">
         <ul>
-          <li><img src="@/assets/images/bnb.png" style="margin-right:5px">BNB</li>
-          <li><img src="@/assets/images/bsc.png" alt="">
+          <li><img src="@/assets/images/bnb.png"
+                 style="margin-right:5px">BNB</li>
+          <li><img src="@/assets/images/bsc.png"
+                 alt="">
             Binance Smart Chian</li><br>
 
         </ul>
-        <p class="time_sj"><img src="@/assets/images/h5/1.svg" alt="">08:00 (UTC) <br><img src="@/assets/images/h5/2.svg" alt=""> Sun 17th April 2022</p>
+        <p class="time_sj"><img src="@/assets/images/h5/1.svg"
+               alt="">08:00 (UTC) <br><img src="@/assets/images/h5/2.svg"
+               alt=""> Sun 17th April 2022</p>
 
-        <div class="AppLication_btn"> <a href="https://form.jotform.com/221002321766443" target="_blank" rel="noopener noreferrer">Bonus Application</a></div>
+        <div class="AppLication_btn"> <a href="https://form.jotform.com/221002321766443"
+             target="_blank"
+             rel="noopener noreferrer">Bonus Application</a></div>
         <h3 style="font-size: 18px;">Bonus Application: 08:00 on 12th Apr to 08:00 on 16th Apr 2022 (UTC)</h3>
       </div>
       <div class="introduce_time">
-        <div class="introduce" v-if="isPC">
+        <div class="introduce"
+             v-if="isPC">
           The first virtual futuristic eCommerce marketplace where users<br> can buy and sell items in both the crypto and physical worlds <br>with cryptocurrencies worldwide
         </div>
-        <div class="introduce" v-if="!isPC">
+        <div class="introduce"
+             v-if="!isPC">
           The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto and physical worlds with cryptocurrencies worldwide
         </div>
-        <!-- <div class="time" v-if="isPC">
-          <div class="card__item-value new-item-value">
-            <span>2</span>
-            <span>3</span>
-            :
-            <span>3</span>
-            <span>3</span>
-            :
-            <span>2</span>
-            <span>3</span>
-            :
-            <span>3</span>
-            <span>3</span>
-          </div>
-        </div> -->
+
         <p class="end">Starting in</p>
-        <Time :type="4" :theme="2" :endDate="1650182400000" :timeUnit="[':', ':', ':']" @timeUp='timeUp'></Time>
-        <!-- h5 time -->
-        <!-- <div class="time_h5"
-             v-if="!isPC">
-          <div class="card__item-value new-item-value">
-            <span>23</span>
-            :
-            <span>33</span>
-            :
-            <span>23</span>
-            :
-            <span>33</span>
-          </div>
-        </div> -->
+        <Time :type="4"
+              :theme="2"
+              :endDate="1650182400000"
+              :timeUnit="[':', ':', ':']"
+              @timeUp='timeUp'></Time>
         <div class="total_number">
           <ul>
             <li>
               <h3>
-                <img src="@/assets/images/yuan.png" alt="">
+                <img src="@/assets/images/yuan.png"
+                     alt="">
                 Pool supply
               </h3>
               <h2>4,000,000 $SMT</h2>
             </li>
             <li>
               <h3>
-                <img src="@/assets/images/yuan.png" alt="">
+                <img src="@/assets/images/yuan.png"
+                     alt="">
                 Rate
               </h3>
               <h2>1 BNB = 20,000 $SMT</h2>
             </li>
             <li>
               <h3>
-                <img src="@/assets/images/yuan.png" alt="">
+                <img src="@/assets/images/yuan.png"
+                     alt="">
                 Claimable
               </h3>
-              <h2>0</h2>
+              <h2>{{(amount*20000).toFixed(2)}}+<span>bonuns</span>
+                <a-tooltip>
+                  <template #title>
+                    asdasd
+                  </template>
+                  <img src="@/assets/images/tist.png"
+                       class="tips"
+                       alt=""
+                       srcset="">
+                </a-tooltip>
+
+              </h2>
             </li>
           </ul>
-          <!-- <div class="total_number_bottom">
-            <ul>
-
-              <li>WhiteList Status:Whiltelisted</li>
-            </ul>
-          </div> -->
-          <!-- <div class="progress">
-            <span>$0</span>
-            <a-progress
-              :stroke-color="{
-                '0%': '#a670e2',
-                '100%': '#74e2c7',
-              }"
-              status="active"
-              :showInfo="false"
-              :strokeWidth="isPC?50:30"
-              :percent="50"
-            />
-            <span>$5M</span>
-          </div> -->
-          <div class="trade" v-if="isPC">
+          <!-- value = value.replace(/[^\d]/g, ''); -->
+          <div class="trade"
+               v-if="isPC">
             <div class="trade_content">
               <span>Amount:</span>
-              <input oninput="value = value.replace(/[^\d]/g, '');if(value>20) value=20" v-model="amount" placeholder="BNB amount" />
-              <div class="button">Purchase Now</div>
+              <input type="number"
+                     oninput="if(value>20) value=20;if(value<0.1) value=0.1"
+                     v-model="amount"
+                     placeholder="BNB amount(0.2-20)" />
+              <div class="button"
+                   @click='purchase'>Purchase Now</div>
             </div>
           </div>
-          <div class="trade" v-if="!isPC">
+          <div class="trade"
+               v-if="!isPC">
             <div class="trade_content">
               <span>Amount:</span>
               <input oninput="value=value.replace(/[^\d]/g,'')" />
@@ -120,14 +106,22 @@
         <span class="label">
           $SMT Contracts:
         </span>
-        <img class="img1" src="@/assets/images/bsc.png" alt="">
+        <img class="img1"
+             src="@/assets/images/bsc.png"
+             alt="">
         <span>BNB smart Chain（BEP 20）：</span>
         <span>
           0xa363....F9745f
           <!-- OxE91c...306399F -->
         </span>
-        <img src="@/assets/images/icon3.png" alt="" style="margin-left: 10px;" @click='copy'>
-        <img src="@/assets/images/az9n5-o5l7g.png" alt="" @click="addToken" style="margin-left: 10px;">
+        <img src="@/assets/images/icon3.png"
+             alt=""
+             style="margin-left: 10px;"
+             @click='copy'>
+        <img src="@/assets/images/az9n5-o5l7g.png"
+             alt=""
+             @click="addToken"
+             style="margin-left: 10px;">
       </div>
     </section>
 
@@ -187,9 +181,11 @@
 </template>
 <script>
 // import FlipDown from 'FlipDown'
+
 import faq from './faq.vue'
 import charts from './chart.vue'
 import Time from './time.vue'
+import { transfer } from '@/utils/publicErc20.js'
 export default {
   name: 'presale',
   components: {
@@ -202,11 +198,28 @@ export default {
       amount: '',
     }
   },
+  computed: {
+    account() {
+      console.log('this.$store.state.account', this.$store.state.account)
+      return this.$store.state.account
+    },
+  },
   created() {
     document.querySelector('body').removeAttribute('style')
   },
   mounted() {},
   methods: {
+    async purchase() {
+      if (this.amount) {
+        try {
+          await transfer(this.amount)
+        } catch (error) {
+          console.log('error', error)
+        }
+      } else {
+        return
+      }
+    },
     input() {},
     timeUp() {},
     copy() {
@@ -218,7 +231,6 @@ export default {
     },
     addToken() {
       // 快捷钱包添加代币
-
       const symbol = 'SMT'
       const addressToken =
         '0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f'.toLowerCase()
@@ -268,6 +280,11 @@ export default {
   background-size: cover;
   overflow: hidden;
   // font-family: AlibabaPuHuiTi;
+}
+.tips {
+  width: 15px;
+  height: 15px;
+  vertical-align: text-top;
 }
 .w {
   width: 1300px;

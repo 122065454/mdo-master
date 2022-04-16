@@ -3,26 +3,18 @@ import '@/assets/css/base.css'
 import '@/assets/js/set_root.js'
 import mixin from '@/mixin/index.js'
 import router from '@/router'
+import store from '@/store'
 import animate from 'animate.css'
-import {
-  Progress,
-  Collapse,
-  Select,
-  message 
-} from 'ant-design-vue'
+import { Collapse, message, Progress, Select, Tooltip } from 'ant-design-vue'
 import axios from 'axios'
-import {
-  Icon,
-  Notify,
-  Popup
-} from 'vant'
+import qs from 'qs'
+import { Icon, Notify, Popup } from 'vant'
 import 'vant/lib/index.css'
 import Vue from 'vue'
 import App from './App.vue'
-import qs from 'qs'
 Vue.prototype.$axios = axios
 Vue.prototype.$qs = qs
-Vue.prototype.$message = message;
+Vue.prototype.$message = message
 
 Vue.use(Icon)
 // 全局注册
@@ -30,6 +22,7 @@ Vue.use(Notify)
 Vue.use(Popup)
 Vue.use(Collapse)
 Vue.use(Select)
+Vue.use(Tooltip)
 Vue.use(animate)
 Vue.mixin(mixin)
 
@@ -44,4 +37,5 @@ Vue.config.productionTip = false
 new Vue({
   render: (h) => h(App),
   router,
+  store,
 }).$mount('#app')
