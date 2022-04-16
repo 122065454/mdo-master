@@ -80,12 +80,10 @@
                   src="@/assets/images/yuan.png"
                   alt=""
                 >
-                Claimable
-              </h3>
-              <h2>{{(amount*20000).toFixed(2)}}+<span>bonuns</span>
+                To be credited
                 <a-tooltip>
                   <template #title>
-                    asdasd
+                    All investors will receive their 20% of the sum of purchased tokens and bonus when $SMT listed on Pancakeswap in late April to early May and the balances are distributed within the coming 10 months linearly as stated in our tokenomics with project progress which is part of our vesting program.
                   </template>
                   <img
                     src="@/assets/images/tist.png"
@@ -94,6 +92,8 @@
                     srcset=""
                   >
                 </a-tooltip>
+              </h3>
+              <h2>{{(amount*20000).toFixed(2)}}
 
               </h2>
             </li>
@@ -123,7 +123,12 @@
           >
             <div class="trade_content">
               <span>Amount:</span>
-              <input oninput="value=value.replace(/[^\d]/g,'')" />
+              <input
+                type="number"
+                @input="amountValue(amount)"
+                v-model="amount"
+                placeholder="BNB amount(0.2~20)"
+              />
               <div class="button">Purchase Now</div>
             </div>
 
@@ -360,6 +365,7 @@ export default {
   // font-family: AlibabaPuHuiTi;
 }
 .tips {
+  margin-bottom: 35px;
   width: 15px;
   height: 15px;
   vertical-align: text-top;
@@ -858,8 +864,8 @@ a {
       }
       input {
         height: 30px;
-        background: #fff;
-        font-size: 14px;
+        // background: #fff;
+        font-size: 8px;
         // font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 600;
         line-height: 20px;
@@ -867,7 +873,7 @@ a {
         padding-left: 10px;
         margin-right: 20px;
         width: 100px;
-        color: black;
+        color: #fff;
       }
       .button {
         width: 100px;
