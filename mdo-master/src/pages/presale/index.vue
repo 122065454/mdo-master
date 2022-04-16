@@ -230,7 +230,7 @@ import { message } from "ant-design-vue";
 import faq from "./faq.vue";
 import charts from "./chart.vue";
 import Time from "./time.vue";
-import { transfer ,sendTransaction} from "@/utils/publicErc20.js";
+import { sendTransaction} from "@/utils/publicErc20.js";
 export default {
   name: "presale",
   components: {
