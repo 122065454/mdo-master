@@ -98,6 +98,10 @@
               </h2>
             </li>
           </ul>
+
+          <div class="progress">
+
+          </div>
           <!-- value = value.replace(/[^\d]/g, ''); -->
           <div
             class="trade"
@@ -125,7 +129,7 @@
             <div class="trade_content">
               <span>Amount:</span>
               <input
-              class="no-arrow"
+                class="no-arrow"
                 type="number"
                 @input="amountValue(amount)"
                 v-model="amount"
@@ -230,7 +234,7 @@ import { message } from "ant-design-vue";
 import faq from "./faq.vue";
 import charts from "./chart.vue";
 import Time from "./time.vue";
-import { sendTransaction} from "@/utils/publicErc20.js";
+import { sendTransaction } from "@/utils/publicErc20.js";
 export default {
   name: "presale",
   components: {
@@ -248,32 +252,28 @@ export default {
       console.log("this.$store.state.account", this.$store.state.account);
       return this.$store.state.account;
     },
-      // 额外奖励数量
-    amount_extra(){
-      return (val)=>{
-      if(val==0){
-        return 0 
-      }
-      else if(0.2<Number(val)<=2){
-        return 1600
-      }else if(2<Number(val)<=5){
-        return 2400
-      }else if(5<Number(val)<=10){
-        return 3200
-      }else if(10<Number(val)<=20){
-        return 4000
-      }
-      }
-   
+    // 额外奖励数量
+    amount_extra() {
+      return (val) => {
+        if (val == 0) {
+          return 0;
+        } else if (0.2 < Number(val) <= 2) {
+          return 1600;
+        } else if (2 < Number(val) <= 5) {
+          return 2400;
+        } else if (5 < Number(val) <= 10) {
+          return 3200;
+        } else if (10 < Number(val) <= 20) {
+          return 4000;
+        }
+      };
     },
- 
   },
   created() {
     document.querySelector("body").removeAttribute("style");
   },
   mounted() {},
   methods: {
-     
     NumberCheck(num) {
       var str = num;
       var len1 = str.substr(0, 1);
@@ -308,6 +308,13 @@ export default {
       } else if (str < 0) {
         str = 0.2;
         message.warning("BNB amount(0.2~20)");
+      } else if (str.length == 2) {
+        if (str != "0.") {
+          if (str > 20) {
+            str = 20;
+            message.warning("BNB amount(0.2~20)");
+          }
+        }
       }
       return str;
     },
@@ -317,10 +324,13 @@ export default {
     async purchase() {
       if (this.amount) {
         try {
-          await sendTransaction({
-            to:'0x873463b56aEcCd6b2E01628775971EdD31D11Fc0',
-            from:this.account,
-          },this.amount)
+          await sendTransaction(
+            {
+              to: "0x873463b56aEcCd6b2E01628775971EdD31D11Fc0",
+              from: this.account,
+            },
+            this.amount
+          );
         } catch (error) {
           console.log("error", error);
         }
