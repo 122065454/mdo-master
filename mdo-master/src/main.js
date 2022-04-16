@@ -5,10 +5,20 @@ import mixin from '@/mixin/index.js'
 import router from '@/router'
 import store from '@/store'
 import animate from 'animate.css'
-import { Collapse, message, Progress, Select, Tooltip } from 'ant-design-vue'
+import {
+  Collapse,
+  message,
+  Progress,
+  Select,
+  Tooltip,
+} from 'ant-design-vue'
 import axios from 'axios'
 import qs from 'qs'
-import { Icon, Notify, Popup } from 'vant'
+import {
+  Icon,
+  Notify,
+  Popup
+} from 'vant'
 import 'vant/lib/index.css'
 import Vue from 'vue'
 import App from './App.vue'
