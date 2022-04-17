@@ -57,7 +57,7 @@
           @timeUp='timeUp'
         ></Time>
          <div class="progress">
-            <span>Available:20</span>
+            <span>Available:{{total}}</span>
             <a-progress
               :stroke-color="{
                 '0%': '#a670e2',
@@ -267,7 +267,8 @@ export default {
       extra:'',
       bnbToal:0,
       isend:false,
-      percent:50
+      percent:50,
+      total:0
     };
   },
   computed: {
@@ -293,9 +294,9 @@ export default {
   },
   mounted() {},
   methods: {
-        amount_extra(val) {
-        // console.log('Number(val)',Number(val));
-       if (0.2 < Number(val) <= 2) {
+      amount_extra(val) {
+        console.log('Number(val)',Number(val));
+        if (0.2 < Number(val) <= 2) {
            return 1600;
         } else if (2 < Number(val) <= 5) {
            return 2400;
@@ -304,18 +305,19 @@ export default {
         } else if (10 < Number(val) <= 20) {
           return 4000;
         }
-      
     },
       // 总销售BNB数量
        getTotalBnb(){
-        this.$axios.get('/total/get').then(res=>{
-        //  this.percent= res.total/2
+        this.$axios.get('api/total/get').then(res=>{
+         this.percent= res.data.total/2
+         this.total=res.data.total
+         console.log('res',res);
         })
 
         }, 
       // 获取购买记录
        getBuyList(){
-        this.$axios.post('/address/commit', this.$qs.stringify({
+        this.$axios.post('api/address/commit', this.$qs.stringify({
               address: this.account,
               amount: this.amount,
               sign: md5(
