@@ -23,12 +23,12 @@
             alt=""
           > Sun 17th April 2022</p>
 
-        <div class="AppLication_btn"> <a
+        <!-- <div class="AppLication_btn"> <a
             href="https://form.jotform.com/221002321766443"
             target="_blank"
             rel="noopener noreferrer"
-          >Bonus Application</a></div>
-        <h3 style="font-size: 18px;">Bonus Application: 08:00 on 12th Apr to 08:00 on 16th Apr 2022 (UTC)</h3>
+          >Bonus Application</a></div> -->
+        <!-- <h3 style="font-size: 18px;">Bonus Application: 08:00 on 12th Apr to 08:00 on 16th Apr 2022 (UTC)</h3> -->
       </div>
       <div class="introduce_time">
         <div
@@ -44,11 +44,14 @@
           The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto and physical worlds with cryptocurrencies worldwide
         </div>
 
-        <p class="end">Starting in</p>
+        <p class="end" v-if="!isend">Starting in</p>
+        <p class="end" v-else>Presale is in progress</p>
+        1650156000
+        <!-- 1650182400000 -->
         <Time
           :type="4"
           :theme="2"
-          :endDate="1650182400000"
+          :endDate="1650156000000"
           :timeUnit="[':', ':', ':']"
           @timeUp='timeUp'
         ></Time>
@@ -93,7 +96,7 @@
                   >
                 </a-tooltip>
               </h3>
-              <h2>{{Number(amount*20000)+amount_extra(amount)}}
+              <h2>{{Number(amount*20000)+extra}}
 
               </h2>
             </li>
@@ -245,6 +248,9 @@ export default {
   data() {
     return {
       amount: "",
+      extra:'',
+      bnbToal:0,
+      isend:false
     };
   },
   computed: {
@@ -253,27 +259,55 @@ export default {
       return this.$store.state.account;
     },
     // 额外奖励数量
-    amount_extra() {
-      return (val) => {
-        if (val == 0) {
-          return 0;
-        } else if (0.2 < Number(val) <= 2) {
-          return 1600;
-        } else if (2 < Number(val) <= 5) {
-          return 2400;
+ 
+  },
+  watch:{
+    amount(){
+      this.amount_extra()
+    }
+
+  }, 
+  created() {
+   this.getTotalBnb()
+    document.querySelector("body").removeAttribute("style");
+    
+    // timeid= setInterval(()=>{
+    
+    //  this.getTotalBnb()
+    // },8000)
+  },
+  mounted() {},
+  methods: {
+      // 总销售BNB数量
+       getTotalBnb(){
+        this.$axios.get('/total/get').then(res=>{
+
+        })
+
+        }, 
+      // 获取购买记录
+       getBuyList(){
+        this.$axios.post('/address/commit', this.$qs.stringify({
+              address: this.account,
+              amount: this.amount,
+              sign: md5(
+                "a=MetaDao123456&address=" + this.address + "&amount=" + this.amount
+              ),
+            }))
+       },
+       amount_extra() {
+        // console.log('Number(val)',Number(val));
+       if (0.2 < Number(this.amount) <= 2) {
+           this.extra=1600;
+        } else if (2 < Number(this.amount) <= 5) {
+           this.extra=2400;
         } else if (5 < Number(val) <= 10) {
           return 3200;
         } else if (10 < Number(val) <= 20) {
           return 4000;
         }
-      };
+      
     },
-  },
-  created() {
-    document.querySelector("body").removeAttribute("style");
-  },
-  mounted() {},
-  methods: {
     NumberCheck(num) {
       var str = num;
       var len1 = str.substr(0, 1);
@@ -316,6 +350,8 @@ export default {
           }
         }
       }
+      this.amount_extra(str)
+      console.log('extra',this.extra);
       return str;
     },
     amountValue(value) {
@@ -331,15 +367,21 @@ export default {
             },
             this.amount
           );
+          this.getBuyList()
+          this.$message.success("purchase successfully");
         } catch (error) {
           console.log("error", error);
+          this.$message.error("Failed purchase");
+
         }
       } else {
         return;
       }
     },
     input() {},
-    timeUp() {},
+    timeUp() {
+      this.isend=true
+    },
     copy() {
       this.copyToClipboard("0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f").then(
         () => {

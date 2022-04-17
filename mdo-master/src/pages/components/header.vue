@@ -144,6 +144,11 @@ export default {
       contract: 'Connect Wallet',
     }
   },
+  watch:{
+   contract(){
+      // this.$store.commit('changeAccount', )
+   }
+  },
   computed: {},
   created() {
     const { ethereum } = window
