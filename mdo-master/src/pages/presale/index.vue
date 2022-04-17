@@ -103,7 +103,8 @@
           </ul>
 
           <div class="progress">
-
+            Available:&nbsp;
+            <a-progress :percent="30" />
           </div>
           <!-- value = value.replace(/[^\d]/g, ''); -->
           <div
@@ -629,7 +630,7 @@ a {
   display: flex;
   align-items: center;
   margin: 20px auto;
-  width: 1150px;
+  width: 500px;
   span {
     font-size: 30px;
     margin: 0 20px;
