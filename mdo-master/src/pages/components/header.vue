@@ -142,12 +142,14 @@ export default {
       subshow2: false,
       activeNames: ['1'],
       contract: 'Connect Wallet',
+      account:''
     }
   },
   watch:{
-   contract(){
-      // this.$store.commit('changeAccount', )
-   }
+  //  contract(){
+  //    alert('s')
+  //     this.$store.commit('changeAccount', this.account)
+  //  }
   },
   computed: {},
   created() {
@@ -159,7 +161,9 @@ export default {
           accounts[0].slice(0, 6) +
           '...' +
           accounts[0].substring(accounts[0].length - 6)
+        window.sessionStorage.setItem('account',accounts[0])
         this.$store.commit('changeAccount', accounts[0])
+        this.account=accounts[0]
       })
     }
   },
@@ -174,6 +178,8 @@ export default {
         let addr = await ethereum.request({ method: 'eth_requestAccounts' })
         console.log('address:', addr[0])
         this.$store.commit('changeAccount', addr[0])
+        this.account=addr[0]
+        window.sessionStorage.setItem('account',addr[0])
 
         this.contract =
           addr[0].slice(0, 6) + '...' + addr[0].substring(addr[0].length - 6)

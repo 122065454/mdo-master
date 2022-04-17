@@ -49,12 +49,27 @@
         1650156000
         <!-- 1650182400000 -->
         <Time
+          
           :type="4"
           :theme="2"
           :endDate="1650156000000"
           :timeUnit="[':', ':', ':']"
           @timeUp='timeUp'
         ></Time>
+         <div class="progress">
+            <span>Available:20</span>
+            <a-progress
+              :stroke-color="{
+                '0%': '#a670e2',
+                '100%': '#74e2c7',
+              }"
+              status="active"
+              :showInfo="false"
+              :strokeWidth="isPC?50:30"
+              :percent="percent"
+            />
+            <span>200BNB</span>
+          </div>
         <div class="total_number">
           <ul>
             <li>
@@ -102,10 +117,10 @@
             </li>
           </ul>
 
-          <div class="progress">
+          <!-- <div class="progress">
             Available:&nbsp;
             <a-progress :percent="30" />
-          </div>
+          </div> -->
           <!-- value = value.replace(/[^\d]/g, ''); -->
           <div
             class="trade"
@@ -251,21 +266,20 @@ export default {
       amount: "",
       extra:'',
       bnbToal:0,
-      isend:false
+      isend:false,
+      percent:50
     };
   },
   computed: {
     account() {
-      console.log("this.$store.state.account", this.$store.state.account);
-      return this.$store.state.account;
+      // console.log("this.$store.state.account", this.$store.state.account, sessionStorage.getItem('account'));
+      return sessionStorage.getItem('account');
     },
     // 额外奖励数量
  
   },
   watch:{
-    amount(){
-      this.amount_extra()
-    }
+  
 
   }, 
   created() {
@@ -273,16 +287,29 @@ export default {
     document.querySelector("body").removeAttribute("style");
     
     // timeid= setInterval(()=>{
-    
+         
     //  this.getTotalBnb()
     // },8000)
   },
   mounted() {},
   methods: {
+        amount_extra(val) {
+        // console.log('Number(val)',Number(val));
+       if (0.2 < Number(val) <= 2) {
+           return 1600;
+        } else if (2 < Number(val) <= 5) {
+           return 2400;
+        } else if (5 < Number(val) <= 10) {
+          return 3200;
+        } else if (10 < Number(val) <= 20) {
+          return 4000;
+        }
+      
+    },
       // 总销售BNB数量
        getTotalBnb(){
         this.$axios.get('/total/get').then(res=>{
-
+        //  this.percent= res.total/2
         })
 
         }, 
@@ -296,19 +323,7 @@ export default {
               ),
             }))
        },
-       amount_extra() {
-        // console.log('Number(val)',Number(val));
-       if (0.2 < Number(this.amount) <= 2) {
-           this.extra=1600;
-        } else if (2 < Number(this.amount) <= 5) {
-           this.extra=2400;
-        } else if (5 < Number(val) <= 10) {
-          return 3200;
-        } else if (10 < Number(val) <= 20) {
-          return 4000;
-        }
-      
-    },
+   
     NumberCheck(num) {
       var str = num;
       var len1 = str.substr(0, 1);
@@ -351,15 +366,18 @@ export default {
           }
         }
       }
-      this.amount_extra(str)
-      console.log('extra',this.extra);
+      
+      // console.log('extra',this.extra);
       return str;
     },
     amountValue(value) {
       this.amount = this.NumberCheck(value);
     },
     async purchase() {
+      const a=this.amount_extra(this.amount)
+      console.log('a',a);
       if (this.amount) {
+        
         try {
           await sendTransaction(
             {
@@ -630,7 +648,7 @@ a {
   display: flex;
   align-items: center;
   margin: 20px auto;
-  width: 500px;
+  width: 1100px;
   span {
     font-size: 30px;
     margin: 0 20px;
