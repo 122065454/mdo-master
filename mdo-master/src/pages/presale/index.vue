@@ -165,7 +165,7 @@
                 v-model="amount"
                 placeholder="BNB amount(0.2~20)"
               />
-              <div :class="['button ',isend?'isdisabel':'']">Purchase Now</div>
+              <div :class="['button']" @click='purchase'>Purchase Now</div>
             </div>
 
           </div>
