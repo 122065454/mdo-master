@@ -44,12 +44,17 @@
           The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto and physical worlds with cryptocurrencies worldwide
         </div>
 
-        <p class="end" v-if="!isend">Starting in</p>
-        <p class="end" v-else>Presale is in progress</p>
+        <p
+          class="end"
+          v-if="!isend"
+        >Starting in</p>
+        <p
+          class="end"
+          v-else
+        >Presale is in progress</p>
         1650156000
         <!-- 1650182400000 -->
         <Time
-          
           :type="4"
           :theme="2"
           :endDate="1650156000000"
@@ -63,13 +68,13 @@
                 '0%': '#a670e2',
                 '100%': '#74e2c7',
               }"
-              status="active"
-              :showInfo="false"
-              :strokeWidth="isPC?50:30"
-              :percent="percent"
-            />
-            <span>200BNB</span>
-          </div>
+            status="active"
+            :showInfo="false"
+            :strokeWidth="isPC?50:30"
+            :percent="percent"
+          />
+          <span>200BNB</span>
+        </div>
         <div class="total_number">
           <ul>
             <li>
@@ -274,47 +279,49 @@ export default {
   computed: {
     account() {
       // console.log("this.$store.state.account", this.$store.state.account, sessionStorage.getItem('account'));
-      return sessionStorage.getItem('account');
+      return sessionStorage.getItem("account");
     },
     // 额外奖励数量
- 
   },
-  watch:{
-  
-
-  }, 
+  watch: {},
   created() {
-   this.getTotalBnb()
+    this.getTotalBnb();
     document.querySelector("body").removeAttribute("style");
-    
+
     // timeid= setInterval(()=>{
-         
+
     //  this.getTotalBnb()
     // },8000)
   },
   mounted() {},
   methods: {
-      amount_extra(val) {
-        console.log('Number(val)',Number(val));
-        if (0.2 < Number(val) <= 2) {
-           return 1600;
-        } else if (2 < Number(val) <= 5) {
-           return 2400;
-        } else if (5 < Number(val) <= 10) {
-          return 3200;
-        } else if (10 < Number(val) <= 20) {
-          return 4000;
-        }
-    },
+
       // 总销售BNB数量
        getTotalBnb(){
         this.$axios.get('api/total/get').then(res=>{
          this.percent= res.data.total/2
          this.total=res.data.total
          console.log('res',res);
-        })
+        })},
+        
+      
+    amount_extra(val) {
+      let num = Number(val);
+      // console.log('Number(val)',Number(val));
+      if (num > 0.2 && num <= 2) {
+        return 1600;
+      } else if (num > 2 && num <= 5) {
+        return 2400;
+      } else if (num > 5 && num <= 10) {
+        return 3200;
+      } else if (num > 10 && num <= 20) {
+        return 4000;
+      }
+    },
+   
 
-        }, 
+
+         
       // 获取购买记录
        getBuyList(){
         this.$axios.post('api/address/commit', this.$qs.stringify({
@@ -368,7 +375,7 @@ export default {
           }
         }
       }
-      
+
       // console.log('extra',this.extra);
       return str;
     },
@@ -376,10 +383,8 @@ export default {
       this.amount = this.NumberCheck(value);
     },
     async purchase() {
-      const a=this.amount_extra(this.amount)
-      console.log('a',a);
+      // const a = this.amount_extra(this.amount);
       if (this.amount) {
-        
         try {
           await sendTransaction(
             {
@@ -388,12 +393,11 @@ export default {
             },
             this.amount
           );
-          this.getBuyList()
+          this.getBuyList();
           this.$message.success("purchase successfully");
         } catch (error) {
           console.log("error", error);
           this.$message.error("Failed purchase");
-
         }
       } else {
         return;
@@ -401,7 +405,7 @@ export default {
     },
     input() {},
     timeUp() {
-      this.isend=true
+      this.isend = true;
     },
     copy() {
       this.copyToClipboard("0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f").then(
