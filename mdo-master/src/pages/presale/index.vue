@@ -23,12 +23,15 @@
             alt=""
           > Sun 17th April 2022</p>
 
-        <!-- <div class="AppLication_btn"> <a
+        <div class="AppLication_btn" > 
+          <!-- <a
             href="https://form.jotform.com/221002321766443"
             target="_blank"
             rel="noopener noreferrer"
-          >Bonus Application</a></div> -->
-        <!-- <h3 style="font-size: 18px;">Bonus Application: 08:00 on 12th Apr to 08:00 on 16th Apr 2022 (UTC)</h3> -->
+          ></a> -->
+          Bonus Application
+          </div>
+         <h3 style="font-size: 18px;">Bonus Application: 08:00 on 12th Apr to 08:00 on 16th Apr 2022 (UTC)</h3> 
       </div>
       <div class="introduce_time">
         <div
@@ -52,17 +55,17 @@
           class="end"
           v-else
         >Presale is in progress</p>
-        1650156000
+        
         <!-- 1650182400000 -->
         <Time
           :type="4"
           :theme="2"
-          :endDate="1650156000000"
+          :endDate="1650182400000"
           :timeUnit="[':', ':', ':']"
           @timeUp='timeUp'
         ></Time>
-         <div class="progress">
-            <span>Available:{{total}}</span>
+         <!-- <div class="progress">
+            <span>Available:{{200-total}}</span>
             <a-progress
               :stroke-color="{
                 '0%': '#a670e2',
@@ -74,6 +77,9 @@
             :percent="percent"
           />
           <span>200BNB</span>
+        </div> -->
+        <div class="availabel">
+          <span>Available: {{200-total}} / 200</span>
         </div>
         <div class="total_number">
           <ul>
@@ -116,7 +122,7 @@
                   >
                 </a-tooltip>
               </h3>
-              <h2>{{Number(amount*20000)+extra}}
+              <h2>{{isCanCliam}} $SMT
 
               </h2>
             </li>
@@ -141,7 +147,7 @@
                 placeholder="BNB amount(0.2~20)"
               />
               <div
-                class="button"
+                :class="['button ',isend?'':'isdisabel']"
                 @click='purchase'
               >Purchase Now</div>
             </div>
@@ -159,7 +165,7 @@
                 v-model="amount"
                 placeholder="BNB amount(0.2~20)"
               />
-              <div class="button">Purchase Now</div>
+              <div :class="['button ',isend?'isdisabel':'']">Purchase Now</div>
             </div>
 
           </div>
@@ -258,6 +264,7 @@ import { message } from "ant-design-vue";
 import faq from "./faq.vue";
 import charts from "./chart.vue";
 import Time from "./time.vue";
+import md5 from 'md5'
 import { sendTransaction } from "@/utils/publicErc20.js";
 export default {
   name: "presale",
@@ -273,7 +280,8 @@ export default {
       bnbToal:0,
       isend:false,
       percent:50,
-      total:0
+      total:0,
+      isCanCliam:0
     };
   },
   computed: {
@@ -283,39 +291,47 @@ export default {
     },
     // 额外奖励数量
   },
-  watch: {},
+  watch: {
+    account(){
+      this.getTotalBnb()
+    }
+  },
   created() {
     this.getTotalBnb();
     document.querySelector("body").removeAttribute("style");
 
-    // timeid= setInterval(()=>{
+   var timeid= setInterval(()=>{
 
-    //  this.getTotalBnb()
-    // },8000)
+     this.getTotalBnb()
+    },8000)
   },
-  mounted() {},
+  mounted() {
+  //  console.log('dasd',md5('a=MetaDao123456&address=0x0883245d96e9c56f56a69c52a0ad70edff1eb2bb&amount=1&userBalance=21600')); 
+  },
   methods: {
 
       // 总销售BNB数量
        getTotalBnb(){
-        this.$axios.get('api/total/get').then(res=>{
+        this.$axios.get(`api/total/get?address=${this.account}&time=${Date.now()}`).then(res=>{
          this.percent= res.data.total/2
          this.total=res.data.total
+         this.isCanCliam=res.data.userBalance??0
          console.log('res',res);
+
         })},
         
       
     amount_extra(val) {
       let num = Number(val);
       // console.log('Number(val)',Number(val));
-      if (num > 0.2 && num <= 2) {
-        return 1600;
+      if (num >= 0.2 && num <= 2) {
+        return Number(1600*this.amount)+Number(this.amount*20000);
       } else if (num > 2 && num <= 5) {
-        return 2400;
+        return Number(2400*this.amount)+Number(this.amount*20000);
       } else if (num > 5 && num <= 10) {
-        return 3200;
+        return Number(3200*this.amount)+Number(this.amount*20000);
       } else if (num > 10 && num <= 20) {
-        return 4000;
+        return Number(4000*this.amount)+Number(this.amount*20000);
       }
     },
    
@@ -327,11 +343,13 @@ export default {
         this.$axios.post('api/address/commit', this.$qs.stringify({
               address: this.account,
               amount: this.amount,
+              userBalance:this.amount_extra(this.amount),
               sign: md5(
-                "a=MetaDao123456&address=" + this.address + "&amount=" + this.amount
+                "a=MetaDao123456&address=" + this.account +"&amount=" +this.amount+'&userBalance='+this.amount_extra(this.amount)
               ),
             }))
        },
+   
    
     NumberCheck(num) {
       var str = num;
@@ -383,17 +401,21 @@ export default {
       this.amount = this.NumberCheck(value);
     },
     async purchase() {
-      // const a = this.amount_extra(this.amount);
+      const a = this.amount_extra(this.amount);
+      console.log('a',a);
+
       if (this.amount) {
         try {
+          // 0x6eBC2a017306216e5a4DB1dE6Ae2D408189bE704
           await sendTransaction(
             {
-              to: "0x873463b56aEcCd6b2E01628775971EdD31D11Fc0",
+              to: "0x6eBC2a017306216e5a4DB1dE6Ae2D408189bE704",
               from: this.account,
             },
             this.amount
           );
           this.getBuyList();
+
           this.$message.success("purchase successfully");
         } catch (error) {
           console.log("error", error);
@@ -464,6 +486,11 @@ export default {
 .no-arrow::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+.isdisabel{
+  background: #b9b2bbde !important ;
+  cursor: not-allowed !important;
+  
+}
 .main {
   background: url(../../assets/images/bgc.png) no-repeat;
   background-size: cover;
@@ -495,6 +522,10 @@ export default {
     color: #fff;
     font-weight: bold;
   }
+}
+.availabel{
+  font-size: 40px;
+  margin-top: 30px;
 }
 .Contracts {
   color: #fff;
@@ -529,7 +560,8 @@ a {
   width: 210px;
   // border: none;
   border: 2px solid #ffef40;
-  background: linear-gradient(180deg, #e8b805 0%, #b85803 100%);
+  // background: linear-gradient(180deg, #e8b805 0%, #b85803 100%);
+  background: #b9b2bbde;
   box-shadow: 0px 0px 7px 2px rgba(51, 5, 98, 0.8);
 
   border-radius: 10px;
@@ -543,7 +575,7 @@ a {
   font-weight: bold;
   // font-family: FZCuHei-B03T;
   margin: 10px auto;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 .tokenList {
   margin-bottom: 30px;
@@ -620,7 +652,7 @@ a {
 }
 .total_number {
   margin-bottom: 60px;
-  margin-top: 60px;
+  margin-top: 30px;
   // color: #ffffff;
   // padding: 28px 28px;
   // background: rgba(94, 149, 232, 0.1);
@@ -796,7 +828,13 @@ a {
       font-size: 20px;
     }
   }
-
+.availabel{
+  font-size: 20px;
+  margin-top: 10px;
+}
+.end{
+  font-size: 20px;
+}
   .w {
     width: 90%;
     margin: auto;
@@ -878,6 +916,7 @@ a {
     margin-bottom: -20px;
     h3 {
       font-size: 25 / @p;
+      align-items: unset;
     }
     h2 {
       font-size: 30 / @p;
