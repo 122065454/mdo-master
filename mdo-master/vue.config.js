@@ -5,23 +5,27 @@ module.exports = {
   publicPath: '/',
 
   chainWebpack: (config) => {
-    config.optimization.minimizer('terser').tap((args) => {
-      Object.assign(args[0].terserOptions.compress, {
-        // 生产模式 console.log 去除
-        // warnings: false , // 默认 false
-        // drop_console:  ,
-        // drop_debugger: true, // 默认也是true
-        pure_funcs: ['console.log'],
-      })
-      return args
-    })
+    // config.optimization.minimizer('terser').tap((args) => {
+    //   Object.assign(args[0].terserOptions.compress, {
+    //     // 生产模式 console.log 去除
+    //     // warnings: false , // 默认 false
+    //     // drop_console:  ,
+    //     // drop_debugger: true, // 默认也是true
+    //     pure_funcs: ['console.log'],
+    //   })
+    //   return args
+    // })
     config.module
       .rule('images')
       .use('url-loader')
       .loader('url-loader')
       .tap((options) => Object.assign(options, { limit: 10000 }))
   },
-
+  configureWebpack: (config) => {
+    if (process.env.NODE_ENV === 'production') {
+      config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
+    }
+  },
   // presets: ['@vue/cli-plugin-babel/preset'],
   chainWebpack: (config) => {
     if (process.env.use_analyzer) {
