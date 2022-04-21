@@ -54,7 +54,7 @@
         <p
           class="end"
           v-else
-        >Presale is in progress</p>
+        >Presale is completed</p>
 
         <!-- 1650182400000 -->
         <Time
