@@ -23,15 +23,15 @@
             alt=""
           > Sun 17th April 2022</p>
 
-        <div class="AppLication_btn" > 
+        <div class="AppLication_btn">
           <!-- <a
             href="https://form.jotform.com/221002321766443"
             target="_blank"
             rel="noopener noreferrer"
           ></a> -->
           Bonus Application
-          </div>
-         <h3 style="font-size: 18px;">Bonus Application: 08:00 on 12th Apr to 08:00 on 16th Apr 2022 (UTC)</h3> 
+        </div>
+        <h3 style="font-size: 18px;">Bonus Application: 08:00 on 12th Apr to 08:00 on 16th Apr 2022 (UTC)</h3>
       </div>
       <div class="introduce_time">
         <div
@@ -55,7 +55,7 @@
           class="end"
           v-else
         >Presale is in progress</p>
-        
+
         <!-- 1650182400000 -->
         <Time
           :type="4"
@@ -64,7 +64,7 @@
           :timeUnit="[':', ':', ':']"
           @timeUp='timeUp'
         ></Time>
-         <!-- <div class="progress">
+        <!-- <div class="progress">
             <span>Available:{{200-total}}</span>
             <a-progress
               :stroke-color="{
@@ -165,7 +165,10 @@
                 v-model="amount"
                 placeholder="BNB amount(0.2~20)"
               />
-              <div :class="['button']" @click='purchase'>Purchase Now</div>
+              <div
+                :class="['button']"
+                @click='purchase'
+              >Purchase Now</div>
             </div>
 
           </div>
@@ -264,7 +267,7 @@ import { message } from "ant-design-vue";
 import faq from "./faq.vue";
 import charts from "./chart.vue";
 import Time from "./time.vue";
-import md5 from 'md5'
+import md5 from "md5";
 import { sendTransaction } from "@/utils/publicErc20.js";
 export default {
   name: "presale",
@@ -276,12 +279,12 @@ export default {
   data() {
     return {
       amount: "",
-      extra:'',
-      bnbToal:0,
-      isend:false,
-      percent:50,
-      total:0,
-      isCanCliam:0
+      extra: "",
+      bnbToal: 0,
+      isend: false,
+      percent: 50,
+      total: 0,
+      isCanCliam: 0,
     };
   },
   computed: {
@@ -292,65 +295,68 @@ export default {
     // 额外奖励数量
   },
   watch: {
-    account(){
-      this.getTotalBnb()
-    }
+    account() {
+      this.getTotalBnb();
+    },
   },
   created() {
     this.getTotalBnb();
-    document.querySelector("body").removeAttribute("style");
+    // document.querySelector("body").removeAttribute("style");
 
-   var timeid= setInterval(()=>{
-
-     this.getTotalBnb()
-    },8000)
+    var timeid = setInterval(() => {
+      this.getTotalBnb();
+    }, 8000);
   },
   mounted() {
-  //  console.log('dasd',md5('a=MetaDao123456&address=0x0883245d96e9c56f56a69c52a0ad70edff1eb2bb&amount=1&userBalance=21600')); 
+    //  console.log('dasd',md5('a=MetaDao123456&address=0x0883245d96e9c56f56a69c52a0ad70edff1eb2bb&amount=1&userBalance=21600'));
   },
   methods: {
+    // 总销售BNB数量
+    getTotalBnb() {
+      this.$axios
+        .get(`api/total/get?address=${this.account}&time=${Date.now()}`)
+        .then((res) => {
+          this.percent = res.data.total / 2;
+          this.total = res.data.total;
+          this.isCanCliam = res.data.userBalance ?? 0;
+          console.log("res", res);
+        });
+    },
 
-      // 总销售BNB数量
-       getTotalBnb(){
-        this.$axios.get(`api/total/get?address=${this.account}&time=${Date.now()}`).then(res=>{
-         this.percent= res.data.total/2
-         this.total=res.data.total
-         this.isCanCliam=res.data.userBalance??0
-         console.log('res',res);
-
-        })},
-        
-      
     amount_extra(val) {
       let num = Number(val);
       // console.log('Number(val)',Number(val));
       if (num >= 0.2 && num <= 2) {
-        return Number(1600*this.amount)+Number(this.amount*20000);
+        return Number(1600 * this.amount) + Number(this.amount * 20000);
       } else if (num > 2 && num <= 5) {
-        return Number(2400*this.amount)+Number(this.amount*20000);
+        return Number(2400 * this.amount) + Number(this.amount * 20000);
       } else if (num > 5 && num <= 10) {
-        return Number(3200*this.amount)+Number(this.amount*20000);
+        return Number(3200 * this.amount) + Number(this.amount * 20000);
       } else if (num > 10 && num <= 20) {
-        return Number(4000*this.amount)+Number(this.amount*20000);
+        return Number(4000 * this.amount) + Number(this.amount * 20000);
       }
     },
-   
 
+    // 获取购买记录
+    getBuyList() {
+      this.$axios.post(
+        "api/address/commit",
+        this.$qs.stringify({
+          address: this.account,
+          amount: this.amount,
+          userBalance: this.amount_extra(this.amount),
+          sign: md5(
+            "a=MetaDao123456&address=" +
+              this.account +
+              "&amount=" +
+              this.amount +
+              "&userBalance=" +
+              this.amount_extra(this.amount)
+          ),
+        })
+      );
+    },
 
-         
-      // 获取购买记录
-       getBuyList(){
-        this.$axios.post('api/address/commit', this.$qs.stringify({
-              address: this.account,
-              amount: this.amount,
-              userBalance:this.amount_extra(this.amount),
-              sign: md5(
-                "a=MetaDao123456&address=" + this.account +"&amount=" +this.amount+'&userBalance='+this.amount_extra(this.amount)
-              ),
-            }))
-       },
-   
-   
     NumberCheck(num) {
       var str = num;
       var len1 = str.substr(0, 1);
@@ -402,7 +408,7 @@ export default {
     },
     async purchase() {
       const a = this.amount_extra(this.amount);
-      console.log('a',a);
+      console.log("a", a);
 
       if (this.amount) {
         try {
@@ -486,10 +492,9 @@ export default {
 .no-arrow::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-.isdisabel{
+.isdisabel {
   background: #b9b2bbde !important ;
   cursor: not-allowed !important;
-  
 }
 .main {
   background: url(../../assets/images/bgc.png) no-repeat;
@@ -523,7 +528,7 @@ export default {
     font-weight: bold;
   }
 }
-.availabel{
+.availabel {
   font-size: 40px;
   margin-top: 30px;
 }
@@ -828,13 +833,13 @@ a {
       font-size: 20px;
     }
   }
-.availabel{
-  font-size: 20px;
-  margin-top: 10px;
-}
-.end{
-  font-size: 20px;
-}
+  .availabel {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .end {
+    font-size: 20px;
+  }
   .w {
     width: 90%;
     margin: auto;

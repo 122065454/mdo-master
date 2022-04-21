@@ -37,7 +37,7 @@
           class="button_2"
           @click="Metaverse"
         >
-          <span class="Metaverse"> Enter Metaverse</span>
+          <span class="Metaverse"> Shopping</span>
           <div
             class="soon"
             v-show="soonShow"
@@ -78,7 +78,7 @@
           class="button_2"
           @click="Metaverse"
         >
-          <span class="Metaverse"> Enter Metaverse</span>
+          <span class="Metaverse"> Shopping</span>
           <div
             class="soon"
             v-show="soonShow"
