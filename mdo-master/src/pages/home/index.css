@@ -1,0 +1,75 @@
+.simeta_one {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.8rem 2rem;
+}
+.simeta_one .left_word {
+  font-family: Times New Roman;
+}
+.simeta_one .left_word h1 {
+  font-size: 90px;
+  font-weight: bold;
+}
+.simeta_one .left_word p {
+  font-size: 25px;
+  font-weight: 400;
+  color: #262626;
+}
+.simeta_one .left_word .one_btn {
+  display: flex;
+  margin-top: 30px;
+}
+.simeta_one .left_word .one_btn button {
+  background-color: #ffec1d;
+  font-size: 30px;
+  font-weight: bold;
+  border: 0;
+  width: 220px;
+  height: 60px;
+  color: #272727;
+}
+.simeta_one .left_word .one_btn button:first-child {
+  margin-right: 20px;
+}
+.simeta_one .right_img .border {
+  width: 450px;
+  height: 450px;
+  border: 10px solid linear-gradient(0deg, #6717CD 0%, #2871FA 100%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.simeta_one .right_img .border img {
+  width: 400px;
+  height: 400px;
+}
+.shop_to_earn {
+  margin: 0.8rem 2rem;
+}
+.shop_to_earn .title {
+  text-align: center;
+}
+.shop_to_earn .shop_one {
+  display: flex;
+  align-items: center;
+}
+.shop_to_earn .shop_one img {
+  width: 400px;
+  height: 300px;
+}
+.scenarios_smt {
+  margin: 0.8rem 2rem;
+}
+.scenarios_smt .title {
+  text-align: center;
+}
+.scenarios_smt .servies_one {
+  display: flex;
+  align-items: center;
+}
+.scenarios_smt .servies_one img {
+  width: 200px;
+  height: 200px;
+}
