@@ -2,6 +2,7 @@
   <div class="main">
     <!-- 头部 -->
     <!-- <v-header></v-header> -->
+    <diagleShow></diagleShow>
     <section1></section1>
     <section2></section2>
     <section3></section3>
@@ -34,12 +35,14 @@ import section2 from "../components/section2.vue";
 import section3 from "../components/section3.vue";
 import header from "../components/header.vue";
 import footer from "../components/footer.vue";
+import diagleShow from '../clock/index.vue'
 export default {
   name: "home",
   components: {
     section1,
     section2,
     section3,
+    diagleShow,
     "v-header": header,
     "v-footer": footer,
   },
