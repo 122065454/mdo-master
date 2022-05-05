@@ -54,11 +54,25 @@ img{
 .shop_to_earn{
   margin: 0.8rem 2rem;
   .title{
+    font-size: 50px;
     text-align: center;
+    font-family: Times New Roman;
+font-weight: bold;
   }
   .shop_one{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    .word{
+      h1{
+        font-size: 50px;
+        font-weight: bold;
+      }
+      p{
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
     img{
       width: 400px;
       height: 300px;
@@ -70,13 +84,66 @@ img{
   margin: 0.8rem 2rem;
   .title{
     text-align: center;
+    font-size: 50px;
+    font-weight: bold;
   }
   .servies_one{
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
+    .one{
+      background: #FFEC1D;
+      margin-left: 20px;
+    }
+    .two{
+      background: #6880E2;
+      margin-right: 20px;
+    }
+    .three{
+      background: #F4643C;
+      margin-left: 20px;
+    }
+    .services{
+      flex:1;
+      padding: 20px;
+      border-radius: 10px;
+      h1{
+        font-size: 25px;
+        font-weight: bold;
+      }
+      ul{
+        line-height: 40px;
+        li{
+          font-size: 20px;
+        }
+      }
+    }
     img{
       width: 200px;
       height: 200px;
+    }
+  }
+}
+
+.usage_fee{
+  margin: 0.8rem 2rem;
+  h1{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  .echartsAndword{
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    .echarts{
+      width: 500px;height: 500px;
+    }
+    ul{
+      line-height: 50px;
+      li{
+        font-size: 25px;
+      }
     }
   }
 }

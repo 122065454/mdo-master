@@ -55,13 +55,13 @@
           src="@/assets/images/shop_one.png"
           alt=""
         >
-        <div>
+        <div class="word">
           <h1>Sellers</h1>
           <p>Sellers can earn additional $SMT for every completed order on<br>top of high profit thanks to lower service fee and advertising<br>cost compared with traditional ecommerce platform</p>
         </div>
       </div>
       <div class="shop_one">
-        <div>
+        <div class="word">
           <h1>Buyers</h1>
           <p>Buyerss can earn additional $SMT for every completed<br>order at a reasonable price</p>
         </div>
@@ -78,13 +78,13 @@
           src="@/assets/images/shop_one.png"
           alt=""
         >
-        <div>
+        <div class="word">
           <h1>All ecology</h1>
           <p>All users in simeta ecology can get $SMT every day by clocking<br>in Simeta website or APP</p>
         </div>
       </div>
       <div class="shop_one">
-        <div>
+        <div class="word">
           <h1>Simeta team</h1>
           <p>Simeta will charge a service fee with a fixed ratio of 8% for every<br>completed order which is lower than that of traditional ecommerce<br>platforms (15-20%) of which 5% will be returned to simeta ecology<br>and 3% will be used for the develop Simeta </p>
         </div>
@@ -101,8 +101,8 @@
           src="@/assets/images/smt_one.png"
           alt=""
         >
-        <div>
-          <h2>Services and products</h2>
+        <div class="services one">
+          <h1>Services and products</h1>
           <ul>
             <li>1. Pay advertising campaigns with $SMT only </li>
             <li>2. Buy special discount items with $SMT</li>
@@ -111,8 +111,8 @@
         </div>
       </div>
       <div class="servies_one">
-        <div>
-          <h2>Land and associate NFT</h2>
+        <div class="services two">
+          <h1>Land and associate NFT</h1>
           <ul>
             <li>1. Buy land NFT with $SMT</li>
             <li>2. Buy rare accessories (including pets) for your avatars with $SMT</li>
@@ -120,17 +120,17 @@
           </ul>
         </div>
         <img
-          src=""
+          src="@/assets/images/smt_one.png"
           alt=""
         >
       </div>
       <div class="servies_one">
         <img
-          src=""
+          src="@/assets/images/smt_one.png"
           alt=""
         >
-        <div>
-          <h2>Farming</h2>
+        <div class="services three">
+          <h1>Farming</h1>
           <ul>
             <li>1. 2% out of 8% service fees will be rewarded to $SMT holders by farming</li>
             <li>2. Stake $SMT to mine other well-known tokens that collaborate with Simeta</li>
@@ -143,9 +143,8 @@
 
     <section class="usage_fee">
       <h1>Usage of 8% service fee</h1>
-      <div>
+      <div class="echartsAndword">
         <div
-          style="width: 500px;height: 500px;"
           class="echarts"
           ref="echarts"
         ></div>
@@ -154,6 +153,13 @@
           <li>2. 3% out 8% service fee will be used to buyback and detory $SMT from secondary market</li>
           <li>3. The balance will go to Simeta treasure</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="steps">
+      <h1>Roadmap</h1>
+      <div>
+
       </div>
     </section>
 
