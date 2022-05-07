@@ -8,7 +8,7 @@
       <img src="@/assets/images/clock/clock.png" alt="">
       <span>NEXT CHEST IN</span>
       <div class="time">
-        23:59:20
+        {{timestampToTime.h}}:{{timestampToTime.m}}:{{timestampToTime.s}}
       </div>
     </div>
     <!-- 打卡 -->
@@ -22,30 +22,7 @@
           <span>+{{item.nums}}</span>
         </div>
       </div>
-      <!-- <div class="punch_item punch_item-2">
-        <h1>DAY 2</h1>
-        <img src="@/assets/images/clock/price1.png" alt="">
-        <div class="award">
-          <img src="@/assets/images/clock/coin.png" alt="">
-          <span>+2</span>
-        </div>
-      </div>
-      <div class="punch_item punch_item-3">
-        <h1>DAY 3</h1>
-        <img src="@/assets/images/clock/price1.png" alt="">
-        <div class="award">
-          <img src="@/assets/images/clock/coin.png" alt="">
-          <span>+2</span>
-        </div>
-      </div>
-      <div class="punch_item punch_item-4">
-        <h1>DAY 3</h1>
-        <img src="@/assets/images/clock/price1.png" alt="">
-        <div class="award">
-          <img src="@/assets/images/clock/coin.png" alt="">
-          <span>+2</span>
-        </div>
-      </div> -->
+
     </div>
     <!-- day 5 -->
     <div class="day5">
@@ -77,6 +54,15 @@
   </section>
 </template>
 <script>
+/**
+倒计时为0 的时候消失 第一次默认为0
+
+打卡显示打卡图标 重置倒计时
+
+5天一个周期 打完第5天后倒计时为0 清空打卡图标
+
+接口返回累计打卡天数在上面显示
+*/
 export default {
   data() {
     return {
@@ -129,7 +115,55 @@ export default {
           name: '90 days',
         },
       ],
+      timestamp: 60 * 60 * 24,
+      timer: null,
     }
+  },
+  mounted() {
+    this.timer = setInterval(() => {
+      this.timestamp -= 1
+    }, 1000)
+  },
+
+  computed: {
+    timestampToTime() {
+      return this.formatSecondsToDate(this.timestamp)
+    },
+  },
+  methods: {
+    formatSecondsToDate(time) {
+      let hours = this.singleFormat(parseInt(time / 3600))
+      let minutes = this.singleFormat(parseInt((time % 3600) / 60))
+      let seconds = this.singleFormat(time % 60)
+      return {
+        hms: `${hours}:${minutes}:${seconds}`,
+        ms: `${minutes}:${seconds}`,
+        s: seconds,
+        m: minutes,
+        h: hours,
+      }
+    },
+    singleFormat(str) {
+      return str.toString().length === 1 ? '0' + str : str
+    },
+    //
+    // timestampToTime(res) {
+    //   var hours = parseInt((res % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    //   var minutes = parseInt((res % (1000 * 60 * 60)) / (1000 * 60))
+    //   var seconds = (res % (1000 * 60)) / 1000
+    //   hours = hours < 10 ? '0' + hours : hours
+    //   minutes = minutes < 10 ? '0' + minutes : minutes
+    //   seconds = seconds < 10 ? '0' + seconds : seconds
+    //   var miao = Number(seconds).toFixed(0)
+    //   if (miao < 10) {
+    //     miao = '0' + miao
+    //   }
+    //   if (hours <= 0 && minutes <= 0 && miao <= 0) {
+    //     clearTimeout(this.timer)
+    //   }
+    //   // return hours + ':' + minutes + ':' + miao
+    //   console.log(hours + ':' + minutes + ':' + miao)
+    // },
   },
 }
 </script>

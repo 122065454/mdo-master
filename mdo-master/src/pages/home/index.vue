@@ -2,7 +2,7 @@
   <div class="main">
     <!-- 头部 -->
     <!-- <v-header></v-header> -->
-    <!-- <diagleShow></diagleShow> -->
+    <diagleShow></diagleShow>
     <section1></section1>
     <section2></section2>
     <section3></section3>
