@@ -2,7 +2,7 @@
   <div class="main">
     <!-- 头部 -->
     <!-- <v-header></v-header> -->
-    <diagleShow></diagleShow>
+    <!-- <diagleShow></diagleShow> -->
     <section1></section1>
     <section2></section2>
     <section3></section3>
@@ -30,26 +30,26 @@
 </template>
 
 <script>
-import section1 from "../components/section1.vue";
-import section2 from "../components/section2.vue";
-import section3 from "../components/section3.vue";
-import header from "../components/header.vue";
-import footer from "../components/footer.vue";
+import section1 from '../components/section1.vue'
+import section2 from '../components/section2.vue'
+import section3 from '../components/section3.vue'
+import header from '../components/header.vue'
+import footer from '../components/footer.vue'
 import diagleShow from '../clock/index.vue'
 export default {
-  name: "home",
+  name: 'home',
   components: {
     section1,
     section2,
     section3,
     diagleShow,
-    "v-header": header,
-    "v-footer": footer,
+    'v-header': header,
+    'v-footer': footer,
   },
   data() {
-    return {};
+    return {}
   },
-};
+}
 </script>
 
 <style lang="less" scoped>

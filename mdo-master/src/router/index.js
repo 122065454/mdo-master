@@ -3,13 +3,18 @@ import preSale from '@/pages/presale/index.vue'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-const routes = [{
+const routes = [
+  {
     path: '/',
     component: home,
   },
   {
     path: '/preSale',
     component: preSale,
+  },
+  {
+    path: '/a',
+    component: () => import('@/pages/invitepage/index.vue'),
   },
   {
     path: '*',
