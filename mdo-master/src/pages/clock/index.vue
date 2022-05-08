@@ -7,16 +7,16 @@
     <div class="time_contant">
       <img src="@/assets/images/clock/clock.png" alt="">
       <span>NEXT CHEST IN</span>
-      <div class="time">
+      <div class="time" v-if="timestamp">
         {{timestampToTime.h}}:{{timestampToTime.m}}:{{timestampToTime.s}}
       </div>
     </div>
     <!-- 打卡 -->
     <div class="punch">
-      <div :class="['punch_item', `punch_item-${index+1}`]" v-for="(item,index) in dayList" :key="index">
+      <div :class="['punch_item', `punch_item-${index+1}`]" v-for="(item,index) in dayList" :key="index" @click="claimPrice(index)">
         <h1>{{item.name}}</h1>
         <img :src="item.url" alt="">
-        <img class="check" src="@/assets/images/clock/check.png" alt="">
+        <img class="check" src="@/assets/images/clock/check.png" alt="" v-if="indexList.includes(index)">
         <div class="award">
           <img src="@/assets/images/clock/coin.png" alt="">
           <span>+{{item.nums}}</span>
@@ -27,7 +27,7 @@
     <!-- day 5 -->
     <div class="day5">
       <h1>DAY 5</h1>
-      <div class="price5">
+      <div class="price5" >
         <img src="@/assets/images/clock/day5.jpg" alt="">
         <span>SURPRISE CHEST !</span>
       </div>
@@ -55,13 +55,19 @@
 </template>
 <script>
 /**
+打卡传时间搓 当前时间和上次打卡时间搓进行对比
 倒计时为0 的时候消失 第一次默认为0
 点击打卡那一时刻重新倒计时24小时页面刷新不修改
 打卡显示打卡图标 重置倒计时
 
-5天一个周期 打完第5天后倒计时为0 清空打卡图标
+5天一个周期 打完第5天后倒计时为0时 清空打卡图标
 
 接口返回累计打卡天数在上面显示
+
+打卡显示条件：
+1.点击完可以显示
+2.点击完重置倒计时
+3.未到当前打卡时间不可点击
 */
 export default {
   data() {
@@ -115,14 +121,19 @@ export default {
           name: '90 days',
         },
       ],
-      timestamp: 60 * 60 * 24,
+      timestamp: 0,
       timer: null,
+      indexList:[],
     }
   },
   mounted() {
-    this.timer = setInterval(() => {
-      this.timestamp -= 1
-    }, 1000)
+     this.countDown()
+    // 通过接口拿到当前天数 进行判断和清空操作
+  },
+  watch:{
+      timestamp(){
+        // if(this.timestamp==0)
+      }
   },
 
   computed: {
@@ -131,6 +142,17 @@ export default {
     },
   },
   methods: {
+    countDown(){
+     clearInterval(this.timer)
+     this.timer = setInterval(() => {
+      if(this.timestamp==0){
+          clearInterval(this.timer)
+          
+      }else{
+          this.timestamp -= 1
+      }
+    }, 1000)
+    },
     formatSecondsToDate(time) {
       let hours = this.singleFormat(parseInt(time / 3600))
       let minutes = this.singleFormat(parseInt((time % 3600) / 60))
@@ -146,6 +168,24 @@ export default {
     singleFormat(str) {
       return str.toString().length === 1 ? '0' + str : str
     },
+/* 1.点击完可以显示
+   2.点击完重置倒计时
+   3.未到当前打卡时间不可点击 
+   4.到第5天后清空  
+   5.当数组为0的时候只能点击第一个
+*/ 
+    claimPrice(i){
+    //   if(this.timestamp!==0) return
+    //   this.timestamp=10
+    //   this.countDown()
+      if(this.indexList.length==0&&i!==0) return
+
+      
+      this.indexList.push(i)
+      if(this.indexList.length==4){
+          this.indexList=[]
+      }
+    }
     //
     // timestampToTime(res) {
     //   var hours = parseInt((res % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
