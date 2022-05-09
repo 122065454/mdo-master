@@ -15,8 +15,10 @@
     <div class="punch">
       <div :class="['punch_item', `punch_item-${index+1}`]" v-for="(item,index) in dayList" :key="index" @click="claimPrice(index)">
         <h1>{{item.name}}</h1>
-        <img :src="item.url" alt="">
+        <img src="@/assets/images/clock/priceshow.jpg" alt="" v-if="indexList.includes(index)">
+        <img :src="item.url" alt="" v-else>
         <img class="check" src="@/assets/images/clock/check.png" alt="" v-if="indexList.includes(index)">
+
         <div class="award">
           <img src="@/assets/images/clock/coin.png" alt="">
           <span>+{{item.nums}}</span>
@@ -25,10 +27,12 @@
 
     </div>
     <!-- day 5 -->
-    <div class="day5">
+    <div class="day5" @click="claimPrice(4)">
       <h1>DAY 5</h1>
-      <div class="price5" >
-        <img src="@/assets/images/clock/day5.jpg" alt="">
+      <div class="price5">
+        <img src="@/assets/images/clock/priceshow.jpg" alt="" v-if="indexList.includes(4)">
+        <img src="@/assets/images/clock/day5.jpg" alt="" v-else>
+        <img class="check5" src="@/assets/images/clock/check.png" alt="" v-if="indexList.includes(4)">
         <span>SURPRISE CHEST !</span>
       </div>
     </div>
@@ -36,7 +40,7 @@
     <div class="gifts">
       <div class="gift_item" v-for="(item,index) in giftsList" :key="index">
         <img :src="item.url" alt="">
-        <img class="check2" src="@/assets/images/clock/check2.png" alt="">
+        <img class="check2" src="@/assets/images/clock/check2.png" alt="" v-if="['10','20','30','60','90'].includes(totalDays)">
         <h2>{{item.name}}</h2>
         <div class="award">
           <img src="@/assets/images/clock/coin.png" alt="">
@@ -46,6 +50,7 @@
       </div>
     </div>
     <div class="progress">
+      <img src="@/assets/images/clock/loading.jpg" alt="" :style="{width:percentage+'%'}">
       <span>30/90 days</span>
     </div>
     <div class="button">SET</div>
@@ -54,21 +59,6 @@
   </section>
 </template>
 <script>
-/**
-打卡传时间搓 当前时间和上次打卡时间搓进行对比
-倒计时为0 的时候消失 第一次默认为0
-点击打卡那一时刻重新倒计时24小时页面刷新不修改
-打卡显示打卡图标 重置倒计时
-
-5天一个周期 打完第5天后倒计时为0时 清空打卡图标
-
-接口返回累计打卡天数在上面显示
-
-打卡显示条件：
-1.点击完可以显示
-2.点击完重置倒计时
-3.未到当前打卡时间不可点击
-*/
 export default {
   data() {
     return {
@@ -123,17 +113,19 @@ export default {
       ],
       timestamp: 0,
       timer: null,
-      indexList:[],
+      indexList: [],
+      totalDays: '',
+      percentage: 20,
     }
   },
   mounted() {
-     this.countDown()
+    this.countDown()
     // 通过接口拿到当前天数 进行判断和清空操作
   },
-  watch:{
-      timestamp(){
-        // if(this.timestamp==0)
-      }
+  watch: {
+    timestamp() {
+      // if(this.timestamp==0)
+    },
   },
 
   computed: {
@@ -142,16 +134,20 @@ export default {
     },
   },
   methods: {
-    countDown(){
-     clearInterval(this.timer)
-     this.timer = setInterval(() => {
-      if(this.timestamp==0){
-          clearInterval(this.timer)
-          
-      }else{
-          this.timestamp -= 1
+    countDown() {
+      this.timestamp = parseInt(Date.now() / 1000 - 1651981435)
+      if (this.timestamp <= 60 * 60 * 24) {
+        clearInterval(this.timer)
+        this.timer = setInterval(() => {
+          if (this.timestamp == 0) {
+            clearInterval(this.timer)
+          } else {
+            this.timestamp -= 1
+          }
+        }, 1000)
+      } else {
+        this.timestamp = 0
       }
-    }, 1000)
     },
     formatSecondsToDate(time) {
       let hours = this.singleFormat(parseInt(time / 3600))
@@ -168,42 +164,24 @@ export default {
     singleFormat(str) {
       return str.toString().length === 1 ? '0' + str : str
     },
-/* 1.点击完可以显示
-   2.点击完重置倒计时
-   3.未到当前打卡时间不可点击 
-   4.到第5天后清空  
-   5.当数组为0的时候只能点击第一个
-*/ 
-    claimPrice(i){
-    //   if(this.timestamp!==0) return
-    //   this.timestamp=10
-    //   this.countDown()
-      if(this.indexList.length==0&&i!==0) return
+    /* 1.点击完可以显示
+       2.点击完重置倒计时
+       3.未到当前打卡时间不可点击 
+       4.到第5天后清空  
+       5.当数组为0的时候只能点击第一个
+       6.只能点击下一个
+   */
+    claimPrice(i) {
+      //   if(this.timestamp!==0) return
+      //   this.timestamp=10
+      //   this.countDown()
+      if (this.indexList.length == 0 && i !== 0) return
 
-      
       this.indexList.push(i)
-      if(this.indexList.length==4){
-          this.indexList=[]
+      if (this.indexList.length == 5 && this.timestamp == 0) {
+        this.indexList = []
       }
-    }
-    //
-    // timestampToTime(res) {
-    //   var hours = parseInt((res % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    //   var minutes = parseInt((res % (1000 * 60 * 60)) / (1000 * 60))
-    //   var seconds = (res % (1000 * 60)) / 1000
-    //   hours = hours < 10 ? '0' + hours : hours
-    //   minutes = minutes < 10 ? '0' + minutes : minutes
-    //   seconds = seconds < 10 ? '0' + seconds : seconds
-    //   var miao = Number(seconds).toFixed(0)
-    //   if (miao < 10) {
-    //     miao = '0' + miao
-    //   }
-    //   if (hours <= 0 && minutes <= 0 && miao <= 0) {
-    //     clearTimeout(this.timer)
-    //   }
-    //   // return hours + ':' + minutes + ':' + miao
-    //   console.log(hours + ':' + minutes + ':' + miao)
-    // },
+    },
   },
 }
 </script>
@@ -268,21 +246,21 @@ section {
   }
 }
 .punch_item-1 {
-  width: 137px;
+  width: 130 / @p;
   background: url('~@/assets/images/clock/bg1.jpg');
 }
 .punch_item-2 {
-  width: 150px;
+  width: 150 / @p;
   background: url('~@/assets/images/clock/bg2.jpg');
   background-size: cover;
 }
 .punch_item-3 {
-  width: 157px;
+  width: 157 / @p;
   background: url('~@/assets/images/clock/bg3.jpg');
   background-size: cover;
 }
 .punch_item-4 {
-  width: 160px;
+  width: 157 / @p;
   background-size: cover;
   background: url('~@/assets/images/clock/bg4.jpg');
 }
@@ -345,6 +323,14 @@ section {
   background: #e9e9e9;
   border-radius: 15 / @p;
   position: relative;
+  .check5 {
+    position: absolute;
+    z-index: 9;
+    right: 220 / @p;
+    top: 30 / @p;
+    width: 92 / @p;
+    height: 72 / @p;
+  }
   h1 {
     font-size: 22 / @p;
     font-family: Corporate S Extra;
@@ -371,10 +357,10 @@ section {
 }
 .gifts {
   display: flex;
-  margin-left: 102px;
+  margin-left: 102 / @p;
   margin-top: 18 / @p;
   .gift_item {
-    margin-right: 14px;
+    margin-right: 16 / @p;
     width: 90 / @p;
     height: 116 / @p;
     background: #e9e9e9;
@@ -434,11 +420,19 @@ section {
 }
 .progress {
   text-align: center;
-  width: 530px;
+  width: 530 / @p;
   height: 28 / @p;
   margin-top: 15 / @p;
   margin-left: 43 / @p;
   background: url('~@/assets/images/clock/progress.png');
+  background-size: cover;
+  position: relative;
+  img {
+    position: absolute;
+    left: 2 / @p;
+    height: 24 / @p;
+    margin-top: 2px;
+  }
   span {
     font-size: 13 / @p;
     font-family: Corporate S Extra;
@@ -505,7 +499,7 @@ h3 {
     }
   }
   .punch_item-1 {
-    width: 137 / @p;
+    width: 137 / @p !important;
   }
 
   .punch_item-2 {
@@ -523,6 +517,7 @@ h3 {
     height: 30 / @p;
     background-size: cover;
     margin-left: 10 / @p;
+
     span {
       font-size: 12 / @p;
       line-height: 30 / @p;
