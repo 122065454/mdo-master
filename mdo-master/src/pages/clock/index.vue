@@ -248,6 +248,7 @@ section {
 .punch_item-1 {
   width: 130 / @p;
   background: url('~@/assets/images/clock/bg1.jpg');
+  background-size: cover;
 }
 .punch_item-2 {
   width: 150 / @p;
@@ -258,11 +259,17 @@ section {
   width: 157 / @p;
   background: url('~@/assets/images/clock/bg3.jpg');
   background-size: cover;
+  .award {
+    margin-left: 20 / @p !important;
+  }
 }
 .punch_item-4 {
   width: 157 / @p;
-  background-size: cover;
   background: url('~@/assets/images/clock/bg4.jpg');
+  background-size: cover;
+  .award {
+    margin-left: 30 / @p !important;
+  }
 }
 .punch {
   display: flex;
