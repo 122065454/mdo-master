@@ -31,10 +31,15 @@
         </div>
       </li> -->
     </ul>
+    <clockDialog ref="clock"></clockDialog>
   </section>
 </template>
 <script>
+import clockDialog from '@/pages/clock/index.vue'
 export default {
+  components: {
+    clockDialog,
+  },
   data() {
     return {
       inviteList: [
@@ -66,6 +71,7 @@ export default {
     jump(index) {
       switch (index) {
         case 2:
+          this.$refs.clock.isShow = true
       }
     },
   },

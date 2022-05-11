@@ -1,11 +1,12 @@
 <template>
   <transition name='modelToggel'>
-    <div class="model" v-show="isShow">
+    <div class="model" v-show="isShow" @click='close'>
       <div class="modal-mask">
         <section>
           <div class="head">
             <div class="title">Reward 90 $SMT</div>
           </div>
+          <img src="@/assets/images/clock/close.svg" alt="" class="close" @click="close">
           <!-- 倒计时 -->
           <div class="time_contant">
             <img src="@/assets/images/clock/clock.png" alt="">
@@ -16,7 +17,7 @@
           </div>
           <!-- 打卡 -->
           <div class="punch">
-            <div :class="['punch_item', `punch_item-${index+1}`]" v-for="(item,index) in dayList" :key="index" @click="claimPrice(index)">
+            <div :class="['punch_item', `punch_item-${index+1}`]" v-for="(item,index) in dayList" :key="index" @click.stop="claimPrice(index)">
               <h1>{{item.name}}</h1>
               <img src="@/assets/images/clock/priceshow.jpg" alt="" v-if="indexList.includes(index)">
               <img :src="item.url" alt="" v-else>
@@ -141,6 +142,9 @@ export default {
     },
   },
   methods: {
+    close() {
+      this.isShow = false
+    },
     countDown() {
       this.timestamp = parseInt(Date.now() / 1000 - 1651981435)
       if (this.timestamp <= 60 * 60 * 24) {
@@ -194,6 +198,7 @@ export default {
 </script>
 <style lang="less" scoped>
 @p: 100rem;
+
 .model {
   position: fixed;
   top: 0;
@@ -227,11 +232,21 @@ export default {
 }
 section {
   width: 664 / @p;
-  height: 832 / @p;
+  height: 900 / @p;
   background: #ffffff;
   border: 4 / @p solid #1b1b1b;
   border-radius: 5 / @p;
-  margin-top: 100 / @p;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.close {
+  position: absolute;
+  top: -38px;
+  right: -38px;
+  width: 40px;
+  height: 40px;
 }
 .head {
   width: 572 / @p;
@@ -470,7 +485,7 @@ section {
   margin-top: 15 / @p;
   margin-left: 43 / @p;
   background: url('~@/assets/images/clock/progress.png');
-  background-size: cover;
+  background-size: contain;
   position: relative;
   img {
     position: absolute;
@@ -501,7 +516,7 @@ section {
   margin: 23 / @p auto 0;
 }
 h3 {
-  width: 156 / @p;
+  width: 170 / @p;
   height: 16 / @p;
   font-size: 16 / @p;
   font-family: Times New Roman;
@@ -509,6 +524,7 @@ h3 {
   text-decoration: underline;
   color: #242424;
   margin: 12 / @p auto 0;
+  text-align: center;
   // border-bottom: 1/@p solid #242424;
 }
 .button2 {
