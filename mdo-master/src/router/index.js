@@ -1,5 +1,6 @@
 import home from '@/pages/home/index.vue'
 import preSale from '@/pages/presale/index.vue'
+import invitationRecord from '@/pages/invitation_record/index.vue'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
@@ -13,8 +14,8 @@ const routes = [
     component: preSale,
   },
   {
-    path: '/a',
-    component: () => import('@/pages/invitepage/index.vue'),
+    path: '/invitation_record',
+    component: invitationRecord,
   },
   {
     path: '*',

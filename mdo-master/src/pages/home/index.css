@@ -1,0 +1,139 @@
+.simeta_one {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.8rem 2rem;
+}
+.simeta_one .left_word {
+  font-family: Times New Roman;
+}
+.simeta_one .left_word h1 {
+  font-size: 90px;
+  font-weight: bold;
+}
+.simeta_one .left_word p {
+  font-size: 25px;
+  font-weight: 400;
+  color: #262626;
+}
+.simeta_one .left_word .one_btn {
+  display: flex;
+  margin-top: 30px;
+}
+.simeta_one .left_word .one_btn button {
+  background-color: #ffec1d;
+  font-size: 30px;
+  font-weight: bold;
+  border: 0;
+  width: 220px;
+  height: 60px;
+  color: #272727;
+}
+.simeta_one .left_word .one_btn button:first-child {
+  margin-right: 20px;
+}
+.simeta_one .right_img .border {
+  width: 450px;
+  height: 450px;
+  border: 10px solid linear-gradient(0deg, #6717CD 0%, #2871FA 100%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.simeta_one .right_img .border img {
+  width: 400px;
+  height: 400px;
+}
+.shop_to_earn {
+  margin: 0.8rem 2rem;
+}
+.shop_to_earn .title {
+  font-size: 50px;
+  text-align: center;
+  font-family: Times New Roman;
+  font-weight: bold;
+}
+.shop_to_earn .shop_one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shop_to_earn .shop_one .word h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+.shop_to_earn .shop_one .word p {
+  font-size: 25px;
+  font-weight: bold;
+}
+.shop_to_earn .shop_one img {
+  width: 400px;
+  height: 300px;
+}
+.scenarios_smt {
+  margin: 0.8rem 2rem;
+}
+.scenarios_smt .title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+.scenarios_smt .servies_one {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.scenarios_smt .servies_one .one {
+  background: #FFEC1D;
+  margin-left: 20px;
+}
+.scenarios_smt .servies_one .two {
+  background: #6880E2;
+  margin-right: 20px;
+}
+.scenarios_smt .servies_one .three {
+  background: #F4643C;
+  margin-left: 20px;
+}
+.scenarios_smt .servies_one .services {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+}
+.scenarios_smt .servies_one .services h1 {
+  font-size: 25px;
+  font-weight: bold;
+}
+.scenarios_smt .servies_one .services ul {
+  line-height: 40px;
+}
+.scenarios_smt .servies_one .services ul li {
+  font-size: 20px;
+}
+.scenarios_smt .servies_one img {
+  width: 200px;
+  height: 200px;
+}
+.usage_fee {
+  margin: 0.8rem 2rem;
+}
+.usage_fee h1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+.usage_fee .echartsAndword {
+  display: flex;
+  align-items: center;
+}
+.usage_fee .echartsAndword .echarts {
+  width: 500px;
+  height: 500px;
+}
+.usage_fee .echartsAndword ul {
+  line-height: 50px;
+}
+.usage_fee .echartsAndword ul li {
+  font-size: 25px;
+}

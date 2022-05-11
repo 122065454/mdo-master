@@ -10,7 +10,7 @@ import {
   message,
   Progress,
   Select,
-  Tooltip,
+  Tooltip
 } from 'ant-design-vue'
 import axios from 'axios'
 import qs from 'qs'
