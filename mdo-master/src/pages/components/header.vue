@@ -4,40 +4,20 @@
       <ul>
         <li @mouseover='subMenuShow'>
           <span>About</span>
-          <ol
-            class="sbumenu"
-            v-show="subshow"
-            @mouseout='subMenuOut'
-          >
+          <ol class="sbumenu" v-show="subshow" @mouseout='subMenuOut'>
             <li>
-              <a
-                href="https://simeta.gitbook.io/about/whitepaper/our-team"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Team</a>
+              <a href="https://simeta.gitbook.io/about/whitepaper/our-team" target="_blank" rel="noopener noreferrer">Team</a>
             </li>
             <li>
-              <a
-                href="https://simeta.gitbook.io/about/whitepaper/our-roadmap"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Roadmap</a>
+              <a href="https://simeta.gitbook.io/about/whitepaper/our-roadmap" target="_blank" rel="noopener noreferrer">Roadmap</a>
             </li>
           </ol>
         </li>
         <li @mouseover='subMenuShow2'>
           <span>Merchant</span>
-          <ol
-            class="sbumenu2"
-            v-show="subshow2"
-            @mouseout='subMenuOut2'
-          >
+          <ol class="sbumenu2" v-show="subshow2" @mouseout='subMenuOut2'>
             <li>
-              <a
-                href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Seller Application</a>
+              <a href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db" target="_blank" rel="noopener noreferrer">Seller Application</a>
             </li>
             <li class="noneshow">
               Seller Center
@@ -53,75 +33,35 @@
       </ul>
 
     </div>
-    <div
-      class="logo"
-      @click="$router.push('/')"
-    >
-      <img
-        src="@/assets/images/h5/logo.png"
-        alt=""
-      >
-      <p
-        class=" wow  animate__animated animate__flipInX "
-        data-wow-duration="1s"
-      >Simeta</p>
+    <div class="logo" @click="$router.push('/')">
+      <img src="@/assets/images/h5/logo.png" alt="">
+      <p class=" wow  animate__animated animate__flipInX " data-wow-duration="1s">Simeta</p>
     </div>
     <div class="menu">
       <ul>
-        <li
-          class="btn_wallect2"
-          @mouseover="mouseOver"
-          @mouseleave="mouseLeave"
-        >
-          <span>Metaverse</span>
+        <li class="btn_wallect2">
+          <span>Clock-in</span>
         </li>
         <li>
-          <img
-            src="@/assets/images/icon4.png"
-            alt=""
-          >
+          <img src="@/assets/images/icon4.png" alt="">
           <span>Checkout</span>
         </li>
-        <li
-          @click="connectWallect"
-          class="btn_wallect"
-        >
+        <li @click="connectWallect" class="btn_wallect">
           <span>{{contract}}</span>
         </li>
       </ul>
     </div>
   </header>
   <header v-else>
-    <div
-      class="logo_h5"
-      @click="$router.push('/')"
-    >
-      <img
-        src="@/assets/images/h5/logo.png"
-        alt=""
-      >
+    <div class="logo_h5" @click="$router.push('/')">
+      <img src="@/assets/images/h5/logo.png" alt="">
       <span>Simeta</span>
     </div>
-    <div
-      class="logo_right"
-      @click="diagleShow"
-    >
-      <img
-        src="@/assets/images/h5/icon.png"
-        alt=""
-      >
+    <div class="logo_right" @click="diagleShow">
+      <img src="@/assets/images/h5/icon.png" alt="">
     </div>
-    <van-popup
-      v-model="show"
-      position="left"
-      :style="{ height: '100%',width:'60%' }"
-    >
-      <van-icon
-        name="cross"
-        @click="close"
-        class="icon"
-        size="30"
-      />
+    <van-popup v-model="show" position="left" :style="{ height: '100%',width:'60%' }">
+      <van-icon name="cross" @click="close" class="icon" size="30" />
       <ul>
         <li>
           <!-- <img src="@/assets/images/shopping.png"
@@ -132,27 +72,15 @@
           Wallet
         </li>
         <li>
-          <a
-            href="https://simeta.gitbook.io/about/whitepaper/our-team"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Team</a>
+          <a href="https://simeta.gitbook.io/about/whitepaper/our-team" target="_blank" rel="noopener noreferrer">Team</a>
 
         </li>
         <li>
-          <a
-            href="https://simeta.gitbook.io/about/whitepaper/our-roadmap"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Roadmap</a>
+          <a href="https://simeta.gitbook.io/about/whitepaper/our-roadmap" target="_blank" rel="noopener noreferrer">Roadmap</a>
 
         </li>
         <li>
-          <a
-            href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Seller Application</a>
+          <a href="https://form.nativeforms.com/wQlVlWv1jZmATYyUFMy0Db" target="_blank" rel="noopener noreferrer">Seller Application</a>
 
         </li>
         <!-- <li @click="$router.push('/presale')">
@@ -173,20 +101,20 @@
   </header>
 </template>
 <script>
-import { WOW } from "wowjs";
+import { WOW } from 'wowjs'
 
 export default {
-  name: "headers",
+  name: 'headers',
   data() {
     return {
       show: false,
       subshow: false,
       subshow2: false,
-      activeNames: ["1"],
-      contract: "Connect Wallet",
-      account: "",
-      title: "Metaverse",
-    };
+      activeNames: ['1'],
+      contract: 'Connect Wallet',
+      account: '',
+      title: 'Metaverse',
+    }
   },
   watch: {
     //  contract(){
@@ -196,76 +124,76 @@ export default {
   },
   computed: {},
   created() {
-    const { ethereum } = window;
-    this.connectWallect();
+    const { ethereum } = window
+    this.connectWallect()
     if (ethereum) {
-      ethereum.on("accountsChanged", (accounts) => {
+      ethereum.on('accountsChanged', (accounts) => {
         this.contract =
           accounts[0].slice(0, 6) +
-          "..." +
-          accounts[0].substring(accounts[0].length - 6);
-        window.sessionStorage.setItem("account", accounts[0]);
-        this.$store.commit("changeAccount", accounts[0]);
-        this.account = accounts[0];
-      });
+          '...' +
+          accounts[0].substring(accounts[0].length - 6)
+        window.sessionStorage.setItem('account', accounts[0])
+        this.$store.commit('changeAccount', accounts[0])
+        this.account = accounts[0]
+      })
     }
   },
   watch: {
     $route() {
-      this.show = false;
+      this.show = false
     },
   },
   methods: {
     mouseOver() {
-      let dom = document.querySelector(".btn_wallect2");
-      dom.innerHTML = "Stay tuned";
+      let dom = document.querySelector('.btn_wallect2')
+      dom.innerHTML = 'Stay tuned'
     },
     mouseLeave() {
-      let dom = document.querySelector(".btn_wallect2");
-      dom.innerHTML = "Metaverse";
+      let dom = document.querySelector('.btn_wallect2')
+      dom.innerHTML = 'Metaverse'
     },
     async connectWallect() {
-      if (typeof window.ethereum !== "undefined") {
-        let addr = await ethereum.request({ method: "eth_requestAccounts" });
-        console.log("address:", addr[0]);
-        this.$store.commit("changeAccount", addr[0]);
-        this.account = addr[0];
-        window.sessionStorage.setItem("account", addr[0]);
+      if (typeof window.ethereum !== 'undefined') {
+        let addr = await ethereum.request({ method: 'eth_requestAccounts' })
+        console.log('address:', addr[0])
+        this.$store.commit('changeAccount', addr[0])
+        this.account = addr[0]
+        window.sessionStorage.setItem('account', addr[0])
 
         this.contract =
-          addr[0].slice(0, 6) + "..." + addr[0].substring(addr[0].length - 6);
+          addr[0].slice(0, 6) + '...' + addr[0].substring(addr[0].length - 6)
       } else {
       }
     },
     diagleShow() {
-      this.show = !this.show;
+      this.show = !this.show
     },
     subMenuShow() {
-      this.subshow = true;
-      this.subshow2 = false;
+      this.subshow = true
+      this.subshow2 = false
     },
     subMenuOut() {
-      this.subshow = false;
+      this.subshow = false
     },
     subMenuShow2() {
-      this.subshow2 = true;
-      this.subshow = false;
+      this.subshow2 = true
+      this.subshow = false
     },
     subMenuOut2() {
-      this.subshow2 = false;
+      this.subshow2 = false
     },
     close() {
-      this.show = false;
+      this.show = false
     },
   },
   mounted() {
     var options = {
       //默认为true
       live: false,
-    };
-    new WOW(options).init();
+    }
+    new WOW(options).init()
   },
-};
+}
 </script>
 <style lang="less" scoped>
 @p: 100rem;
@@ -335,7 +263,7 @@ export default {
     margin-top: 10px;
   }
   li:last-child:hover::after {
-    content: "Stay tuned";
+    content: 'Stay tuned';
     position: absolute;
     top: 20 / @p;
     left: 60 / @p;
@@ -392,7 +320,7 @@ export default {
   }
 
   li:nth-child(n + 3):hover::after {
-    content: "Stay tuned";
+    content: 'Stay tuned';
     position: absolute;
     top: 20 / @p;
     left: 10 / @p;
@@ -433,7 +361,7 @@ export default {
     padding: 5px 20px;
     // border: 1px solid #ff9900;
     border-radius: 5px;
-    background: #ccc;
+    background: linear-gradient(-90deg, #ffa200 0%, #b85803 100%);
   }
 
   li:hover {

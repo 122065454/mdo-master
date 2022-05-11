@@ -2,7 +2,7 @@
   <section>
     <div class="title">Earn $SMT </div>
     <ul>
-      <li v-for="(item,index) in inviteList" :key="index">
+      <li v-for="(item,index) in inviteList" :key="index" @click='jump(index)'>
         <img :src="item.url" alt="" :class="`img${index}`">
         <div class="introduce">
           <h1>{{item.name1}}</h1>
@@ -61,6 +61,13 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    jump(index) {
+      switch (index) {
+        case 2:
+      }
+    },
   },
 }
 </script>

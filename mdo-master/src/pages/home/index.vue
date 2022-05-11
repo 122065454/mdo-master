@@ -32,7 +32,7 @@
           <p>The first virtual futuristic eCommerce marketplace where<br>users can buy and sell items in both the crypto field and the<br>physical world with cryptocurrencies worldwide</p>
           <div class="one_btn">
             <button>Whitepaper</button>
-            <button>Clock-in</button>
+            <button @click='clock'>Clock-in</button>
           </div>
         </div>
         <div class="right_img show">
@@ -204,7 +204,7 @@
             <p>The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide</p>
             <div class="btn_box">
               <button class="one">Whitepaper</button>
-              <button class="two">Clock-in</button>
+              <button class="two" @click='clock'>Clock-in</button>
             </div>
           </div>
         </div>
@@ -365,6 +365,7 @@ import * as echarts from 'echarts'
 // import section3 from "../components/section3.vue";
 import header from '../components/header.vue'
 import footer from '../components/footer.vue'
+
 export default {
   name: 'home',
   components: {
@@ -381,6 +382,9 @@ export default {
     this.initEachartsLeft()
   },
   methods: {
+    clock() {
+      this.$router.push('invitate')
+    },
     initEachartsLeft() {
       let myChart = echarts.init(this.$refs.echarts)
       console.log(myChart)

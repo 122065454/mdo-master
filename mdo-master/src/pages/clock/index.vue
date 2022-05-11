@@ -1,67 +1,74 @@
 <template>
-  <section>
-    <div class="head">
-      <div class="title">Reward 90 $SMT</div>
-    </div>
-    <!-- 倒计时 -->
-    <div class="time_contant">
-      <img src="@/assets/images/clock/clock.png" alt="">
-      <span>NEXT CHEST IN</span>
-      <div class="time" v-if="timestamp">
-        {{timestampToTime.h}}:{{timestampToTime.m}}:{{timestampToTime.s}}
-      </div>
-    </div>
-    <!-- 打卡 -->
-    <div class="punch">
-      <div :class="['punch_item', `punch_item-${index+1}`]" v-for="(item,index) in dayList" :key="index" @click="claimPrice(index)">
-        <h1>{{item.name}}</h1>
-        <img src="@/assets/images/clock/priceshow.jpg" alt="" v-if="indexList.includes(index)">
-        <img :src="item.url" alt="" v-else>
-        <img class="check" src="@/assets/images/clock/check.png" alt="" v-if="indexList.includes(index)">
+  <transition name='modelToggel'>
+    <div class="model" v-show="isShow">
+      <div class="modal-mask">
+        <section>
+          <div class="head">
+            <div class="title">Reward 90 $SMT</div>
+          </div>
+          <!-- 倒计时 -->
+          <div class="time_contant">
+            <img src="@/assets/images/clock/clock.png" alt="">
+            <span>NEXT CHEST IN</span>
+            <div class="time" v-if="timestamp">
+              {{timestampToTime.h}}:{{timestampToTime.m}}:{{timestampToTime.s}}
+            </div>
+          </div>
+          <!-- 打卡 -->
+          <div class="punch">
+            <div :class="['punch_item', `punch_item-${index+1}`]" v-for="(item,index) in dayList" :key="index" @click="claimPrice(index)">
+              <h1>{{item.name}}</h1>
+              <img src="@/assets/images/clock/priceshow.jpg" alt="" v-if="indexList.includes(index)">
+              <img :src="item.url" alt="" v-else>
+              <img class="check" src="@/assets/images/clock/check.png" alt="" v-if="indexList.includes(index)">
 
-        <div class="award">
-          <img src="@/assets/images/clock/coin.png" alt="">
-          <span>+{{item.nums}}</span>
-        </div>
-      </div>
+              <div class="award">
+                <img src="@/assets/images/clock/coin.png" alt="">
+                <span>+{{item.nums}}</span>
+              </div>
+            </div>
 
-    </div>
-    <!-- day 5 -->
-    <div class="day5" @click="claimPrice(4)">
-      <h1>DAY 5</h1>
-      <div class="price5">
-        <img src="@/assets/images/clock/priceshow.jpg" alt="" v-if="indexList.includes(4)">
-        <img src="@/assets/images/clock/day5.jpg" alt="" v-else>
-        <img class="check5" src="@/assets/images/clock/check.png" alt="" v-if="indexList.includes(4)">
-        <span>SURPRISE CHEST !</span>
+          </div>
+          <!-- day 5 -->
+          <div class="day5" @click="claimPrice(4)">
+            <h1>DAY 5</h1>
+            <div class="price5">
+              <img src="@/assets/images/clock/priceshow.jpg" alt="" v-if="indexList.includes(4)">
+              <img src="@/assets/images/clock/day5.jpg" alt="" v-else>
+              <img class="check5" src="@/assets/images/clock/check.png" alt="" v-if="indexList.includes(4)">
+              <span>SURPRISE CHEST !</span>
+            </div>
+          </div>
+          <!-- gift -->
+          <div class="gifts">
+            <div class="gift_item" v-for="(item,index) in giftsList" :key="index">
+              <img :src="item.url" alt="">
+              <img class="check2" src="@/assets/images/clock/check2.png" alt="" v-if="['10','20','30','60','90'].includes(totalDays)">
+              <h2>{{item.name}}</h2>
+              <div class="award">
+                <img src="@/assets/images/clock/coin.png" alt="">
+                <span>+{{item.nums}}</span>
+              </div>
+              <div class="trangle"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <img src="@/assets/images/clock/loading.jpg" alt="" :style="{width:percentage+'%'}">
+            <span>30/90 days</span>
+          </div>
+          <div class="button">SET</div>
+          <h3>Check the STE record</h3>
+          <div class="button2">Dismiss</div>
+        </section>
       </div>
     </div>
-    <!-- gift -->
-    <div class="gifts">
-      <div class="gift_item" v-for="(item,index) in giftsList" :key="index">
-        <img :src="item.url" alt="">
-        <img class="check2" src="@/assets/images/clock/check2.png" alt="" v-if="['10','20','30','60','90'].includes(totalDays)">
-        <h2>{{item.name}}</h2>
-        <div class="award">
-          <img src="@/assets/images/clock/coin.png" alt="">
-          <span>+{{item.nums}}</span>
-        </div>
-        <div class="trangle"></div>
-      </div>
-    </div>
-    <div class="progress">
-      <img src="@/assets/images/clock/loading.jpg" alt="" :style="{width:percentage+'%'}">
-      <span>30/90 days</span>
-    </div>
-    <div class="button">SET</div>
-    <h3>Check the STE record</h3>
-    <div class="button2">Dismiss</div>
-  </section>
+  </transition>
 </template>
 <script>
 export default {
   data() {
     return {
+      isShow: false,
       dayList: [
         {
           url: require('@/assets/images/clock/price1.png'),
@@ -187,6 +194,37 @@ export default {
 </script>
 <style lang="less" scoped>
 @p: 100rem;
+.model {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  z-index: 8;
+}
+.modal-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modelToggel-enter-active {
+  animation: modalToggle 0.5s;
+}
+.modelToggel-leave-active {
+  animation: modalToggle 0.5s reverse;
+}
+@keyframes modalToggle {
+  0% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 section {
   width: 664 / @p;
   height: 832 / @p;
