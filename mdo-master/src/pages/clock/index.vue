@@ -66,6 +66,7 @@
   </transition>
 </template>
 <script>
+import { loadSign, signDetail } from '@/utils/request.js'
 export default {
   data() {
     return {
@@ -237,7 +238,7 @@ section {
   border: 4 / @p solid #1b1b1b;
   border-radius: 5 / @p;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -545,6 +546,14 @@ h3 {
   section {
     height: 1016 / @p;
     margin: auto;
+    top: 55%;
+  }
+  .close {
+    position: absolute;
+    top: -26px;
+    right: -26px;
+    width: 30px;
+    height: 30px;
   }
   .gifts {
     margin-left: 66 / @p;

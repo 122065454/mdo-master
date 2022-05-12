@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const instance = axios.create({
   // baseURL: '/api',
-  baseURL: 'http://120.25.156.192:8089/',
+  baseURL: 'http://54.153.12.169:8787/simeta/',
 })
 
 function getToken() {
@@ -52,14 +52,19 @@ instance.interceptors.response.use(
   }
 )
 
-// 上架
-export const updateFoods = (payload) =>
-  instance.get('/item/status', {
-    params: payload,
-  })
-// 查询商品详情
-export const foodsInfo = (itemId) => instance.get(`/item/get/${itemId}`)
+// 用户签到接口
+export const loadSign = (payload) =>
+  instance.post(`/buyer/sign/record/loadSign`, payload)
+// 用户签到详情
+export const signDetail = (payload) =>
+  instance.post(`/buyer/sign/in/sign`, payload)
+// export const updateFoods = (payload) =>
+//   instance.get('/item/status', {
+//     params: payload,
+//   })
+// // 查询商品详情
+// export const foodsInfo = (itemId) => instance.get(`/item/get/${itemId}`)
 
-/*-- 上传图片 --*/
-export const uploadImage = (payload) =>
-  instance.post(`/common/file/upload`, payload)
+// /*-- 上传图片 --*/
+// export const uploadImage = (payload) =>
+//   instance.post(`/common/file/upload`, payload)

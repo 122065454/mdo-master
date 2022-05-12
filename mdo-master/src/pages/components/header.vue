@@ -40,7 +40,7 @@
     <div class="menu">
       <ul>
         <li class="btn_wallect2">
-          <span>Clock-in</span>
+          <span @click="clock">Clock-in</span>
         </li>
         <li>
           <img src="@/assets/images/icon4.png" alt="">
@@ -144,6 +144,9 @@ export default {
     },
   },
   methods: {
+    clock() {
+      this.$router.push('invitate')
+    },
     mouseOver() {
       let dom = document.querySelector('.btn_wallect2')
       dom.innerHTML = 'Stay tuned'
