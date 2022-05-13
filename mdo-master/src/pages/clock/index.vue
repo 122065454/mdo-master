@@ -6,7 +6,7 @@
           <div class="head">
             <div class="title">Reward 90 $SMT</div>
           </div>
-          <img src="@/assets/images/clock/close.svg" alt="" class="close" @click="close">
+          <!-- <img src="@/assets/images/clock/close.svg" alt="" class="close" @click="close"> -->
           <!-- 倒计时 -->
           <div class="time_contant">
             <img src="@/assets/images/clock/clock.png" alt="">
@@ -44,7 +44,7 @@
           <div class="gifts">
             <div class="gift_item" v-for="(item,index) in giftsList" :key="index">
               <img :src="item.url" alt="">
-              <img class="check2" src="@/assets/images/clock/check2.png" alt="" v-if="['10','20','30','60','90'].includes(totalDays)">
+              <img class="check2" src="@/assets/images/clock/check2.png" alt="" v-if="parseInt(totalDays)>=item.num">
               <h2>{{item.name}}</h2>
               <div class="award">
                 <img src="@/assets/images/clock/coin.png" alt="">
@@ -55,11 +55,11 @@
           </div>
           <div class="progress">
             <img src="@/assets/images/clock/loading.jpg" alt="" :style="{width:percentage+'%'}">
-            <span>30/90 days</span>
+            <span>{{totalDays}}/90 days</span>
           </div>
           <div class="button">SET</div>
           <h3>Check the STE record</h3>
-          <div class="button2">Dismiss</div>
+          <div class="button2" @click="close">Dismiss</div>
         </section>
       </div>
     </div>
@@ -75,7 +75,7 @@ export default {
         {
           url: require('@/assets/images/clock/price1.png'),
           nums: 2,
-          name: 'Today',
+          name: 'DAY 1',
         },
         {
           url: require('@/assets/images/clock/price1.png'),
@@ -96,35 +96,42 @@ export default {
       giftsList: [
         {
           url: require('@/assets/images/clock/gift.png'),
-          nums: '2',
+          nums: 2,
           name: '10 days',
+          num: 10,
         },
         {
           url: require('@/assets/images/clock/gift2.png'),
           nums: 15,
           name: '20 days',
+          num: 20,
         },
         {
           url: require('@/assets/images/clock/gift3.png'),
           nums: 20,
           name: '30 days',
+          num: 30,
         },
         {
           url: require('@/assets/images/clock/gift4.png'),
           nums: 30,
           name: '60 days',
+          num: 60,
         },
         {
           url: require('@/assets/images/clock/gift5.png'),
           nums: 40,
           name: '90 days',
+          num: 90,
         },
       ],
       timestamp: 0,
       timer: null,
       indexList: [],
-      totalDays: '',
-      percentage: 20,
+      totalDays: 0,
+      percentage: 0,
+      daysList: [],
+      timestampReceived: '', // 前一天打卡的时间搓
     }
   },
   mounted() {
@@ -136,7 +143,18 @@ export default {
       // if(this.timestamp==0)
     },
   },
-
+  created() {
+    // 获取详情
+    loadSign({}).then((res) => {
+      // this.totalDays=res.
+      if (res.code == 200) {
+        this.totalDays = res.data.count
+        this.percentage = parseInt((this.totalDays * 100) / 90)
+        this.indexList = this.greatList(res.data.count)
+        this.daysList = this.greatList(res.data.count)
+      }
+    })
+  },
   computed: {
     timestampToTime() {
       return this.formatSecondsToDate(this.timestamp)
@@ -188,11 +206,17 @@ export default {
       //   this.timestamp=10
       //   this.countDown()
       if (this.indexList.length == 0 && i !== 0) return
-
-      this.indexList.push(i)
+      // 只能点击下一个
+      const lastNum = this.daysList.slice(-1)[0]
+      if (i == lastNum || i > lastNum + 1) return
       if (this.indexList.length == 5 && this.timestamp == 0) {
         this.indexList = []
       }
+      this.indexList.push(i)
+    },
+    // 生成数组方法
+    greatList(str) {
+      return [...new Array(Number(str) % 5).keys()]
     },
   },
 }
@@ -486,7 +510,7 @@ section {
   margin-top: 15 / @p;
   margin-left: 43 / @p;
   background: url('~@/assets/images/clock/progress.png');
-  background-size: contain;
+  background-size: cover;
   position: relative;
   img {
     position: absolute;
