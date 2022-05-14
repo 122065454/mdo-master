@@ -19,7 +19,9 @@ module.exports = {
       .rule('images')
       .use('url-loader')
       .loader('url-loader')
-      .tap((options) => Object.assign(options, { limit: 10000 }))
+      .tap((options) => Object.assign(options, {
+        limit: 10000
+      }))
   },
   configureWebpack: (config) => {
     if (process.env.NODE_ENV === 'production') {
@@ -63,7 +65,7 @@ module.exports = {
     proxy: {
       //配置跨域
       '/api': {
-        target: 'http://54.67.81.90:8080/', //这里后台的地址模拟的;
+        target: 'http://5i01j19762.zicp.vip/simeta/', //这里后台的地址模拟的;
 
         changOrigin: true, //允许跨域
         pathRewrite: {
