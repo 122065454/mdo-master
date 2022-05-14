@@ -10,20 +10,14 @@
           <h2>Invited Friends</h2>
 
           <div class="img_span">
-            <img
-              src="@/assets/images/user@2x.png"
-              alt=""
-            >
+            <img src="@/assets/images/user@2x.png" alt="">
             <span>20</span>
           </div>
         </div>
         <div class="left_top">
           <h2>Total $SMT</h2>
           <div class="img_span">
-            <img
-              src="@/assets/images/record_img.png"
-              alt=""
-            >
+            <img src="@/assets/images/record_img.png" alt="">
             <span>500</span>
           </div>
 
@@ -56,39 +50,24 @@
         <div class="icon_input hide">
           <ul>
             <li>
-              <img
-                src="@/assets/images/message.png"
-                alt=""
-              >
+              <img src="@/assets/images/message.png" alt="">
               <p>message</p>
             </li>
             <li>
-              <img
-                src="@/assets/images/message.png"
-                alt=""
-              >
+              <img src="@/assets/images/message.png" alt="">
               <p>WhatsApp</p>
             </li>
             <li>
-              <img
-                src="@/assets/images/message.png"
-                alt=""
-              >
+              <img src="@/assets/images/message.png" alt="">
               <p>twitter</p>
             </li>
             <li>
-              <img
-                src="@/assets/images/message.png"
-                alt=""
-              >
+              <img src="@/assets/images/message.png" alt="">
               <p>more...</p>
             </li>
           </ul>
           <div class="input_btn">
-            <input
-              type="text"
-              placeholder="simeta.io/i/Jessie"
-            >
+            <input type="text" placeholder="simeta.io/i/Jessie">
             <button>Copy</button>
           </div>
         </div>
@@ -114,47 +93,29 @@
             <li>...</li>
             <li>...</li>
           </ul>
-          <img
-            src="@/assets/images/xia.svg"
-            alt=""
-          >
+          <img src="@/assets/images/xia.svg" alt="">
         </div>
         <div class="icon_input show">
           <ul>
             <li>
-              <img
-                src="@/assets/images/message.png"
-                alt=""
-              >
+              <img src="@/assets/images/message.png" alt="">
               <p>message</p>
             </li>
             <li>
-              <img
-                src="@/assets/images/message.png"
-                alt=""
-              >
+              <img src="@/assets/images/message.png" alt="">
               <p>WhatsApp</p>
             </li>
             <li>
-              <img
-                src="@/assets/images/message.png"
-                alt=""
-              >
+              <img src="@/assets/images/message.png" alt="">
               <p>twitter</p>
             </li>
             <li>
-              <img
-                src="@/assets/images/message.png"
-                alt=""
-              >
+              <img src="@/assets/images/message.png" alt="">
               <p>more...</p>
             </li>
           </ul>
           <div class="input_btn">
-            <input
-              type="text"
-              placeholder="simeta.io/i/Jessie"
-            >
+            <input type="text" placeholder="simeta.io/i/Jessie">
             <button>Copy</button>
           </div>
         </div>
@@ -164,9 +125,9 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style lang="less" scoped>
-@import "./index.css";
+@import './index.css';
 </style>

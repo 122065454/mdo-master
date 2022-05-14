@@ -31,7 +31,7 @@
 
           </div>
           <!-- day 5 -->
-          <div class="day5" @click="claimPrice(4)">
+          <div class="day5" @click.stop="claimPrice(4)">
             <h1>DAY 5</h1>
             <div class="price5">
               <img src="@/assets/images/clock/priceshow.jpg" alt="" v-if="indexList.includes(4)">
@@ -132,6 +132,8 @@ export default {
       percentage: 0,
       daysList: [],
       timestampReceived: '', // 前一天打卡的时间搓
+      recordList: [], // 连续打卡记录
+      isflag: true,
     }
   },
   mounted() {
@@ -145,15 +147,7 @@ export default {
   },
   created() {
     // 获取详情
-    loadSign({}).then((res) => {
-      // this.totalDays=res.
-      if (res.code == 200) {
-        this.totalDays = res.data.count
-        this.percentage = parseInt((this.totalDays * 100) / 90)
-        this.indexList = this.greatList(res.data.count)
-        this.daysList = this.greatList(res.data.count)
-      }
-    })
+    this.getdetail()
   },
   computed: {
     timestampToTime() {
@@ -161,6 +155,20 @@ export default {
     },
   },
   methods: {
+    // 获取详情
+    getdetail() {
+      loadSign({}).then((res) => {
+        // this.totalDays=res.
+        if (res.code == 200) {
+          this.totalDays = res.data.count
+          this.percentage = parseInt((this.totalDays * 100) / 50)
+          this.indexList = this.greatList(res.data.userSignInRecordList.length)
+          this.daysList = this.greatList(res.data.userSignInRecordList.length)
+          this.recordList = res.data.userSignInRecordList
+        }
+      })
+    },
+
     close() {
       this.isShow = false
     },
@@ -197,22 +205,23 @@ export default {
     /* 1.点击完可以显示
        2.点击完重置倒计时
        3.未到当前打卡时间不可点击 
-       4.到第5天后清空  
+       4.连续打卡判断数组大于6就清空
        5.当数组为0的时候只能点击第一个
        6.只能点击下一个
    */
-    claimPrice(i) {
-      //   if(this.timestamp!==0) return
-      //   this.timestamp=10
-      //   this.countDown()
-      if (this.indexList.length == 0 && i !== 0) return
-      // 只能点击下一个
-      const lastNum = this.daysList.slice(-1)[0]
-      if (i == lastNum || i > lastNum + 1) return
-      if (this.indexList.length == 5 && this.timestamp == 0) {
-        this.indexList = []
+    async claimPrice(i) {
+      if (this.isflag) {
+        if (this.indexList.length == 0 && i !== 0) return
+        // 只能点击下一个
+        const lastNum = this.daysList.slice(-1)[0]
+        if (i == lastNum || i > lastNum + 1) return
+
+        console.log('点击')
+        this.indexList.push(i)
+        this.isflag = false
+        // await signDetail({})
+        // this.getdetail()
       }
-      this.indexList.push(i)
     },
     // 生成数组方法
     greatList(str) {

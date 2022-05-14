@@ -72,6 +72,10 @@ export default {
       switch (index) {
         case 2:
           this.$refs.clock.isShow = true
+          break
+        case 1:
+          this.$router.push('invitation_record')
+          break
       }
     },
   },
