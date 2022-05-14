@@ -128,7 +128,7 @@ export default {
       timestamp: 0,
       timer: null,
       indexList: [],
-      totalDays: 0,
+      totalDays: 0, // 累计签到
       percentage: 0,
       daysList: [],
       timestampReceived: '', // 前一天打卡的时间搓
