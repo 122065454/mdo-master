@@ -137,3 +137,243 @@
 .usage_fee .echartsAndword ul li {
   font-size: 25px;
 }
+.steps {
+  text-align: center;
+}
+.steps h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+.steps .box {
+  position: relative;
+  margin-bottom: 50px;
+}
+.steps .box img {
+  width: 100px;
+}
+.steps .box .one {
+  position: absolute;
+  top: 0;
+  left: 500px;
+  width: 380px;
+}
+.steps .box .two {
+  position: absolute;
+  top: 300px;
+  left: 500px;
+  width: 380px;
+}
+.steps .box .three {
+  position: absolute;
+  top: 60px;
+  right: 500px;
+  width: 380px;
+}
+.steps .box .four {
+  position: absolute;
+  top: 430px;
+  right: 500px;
+  width: 380px;
+}
+.steps .box .five {
+  position: absolute;
+  bottom: 140px;
+  left: 500px;
+  width: 380px;
+}
+.steps .box .phase h2 {
+  text-align: right;
+  font-size: 30px;
+  font-weight: bold;
+  color: #DF1920;
+}
+.steps .box .phase h3 {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 400;
+  color: #203383;
+}
+.steps .box .phase ul {
+  padding: 15px;
+  border: 6px solid #6880E2;
+  border-radius: 10px;
+}
+.steps .box .phase ul li {
+  font-size: 20px;
+  text-align: left;
+}
+.steps .box .phase_bottom {
+  width: 600px;
+  margin: 0 auto;
+}
+.steps .box .phase_bottom ul {
+  padding: 15px;
+  border: 6px solid #6880E2;
+  border-radius: 10px;
+}
+.steps .box .phase_bottom ul li {
+  font-size: 20px;
+  text-align: left;
+}
+@media screen and (max-width: 1450px) {
+  .steps .one {
+    left: 280px !important;
+  }
+  .steps .two {
+    left: 280px !important;
+  }
+  .steps .three {
+    right: 280px !important;
+  }
+  .steps .four {
+    right: 280px !important;
+  }
+  .steps .five {
+    left: 280px !important;
+  }
+}
+.sj {
+  padding: 60px 20px;
+}
+.sj .top_box .img_box .word {
+  text-align: center;
+}
+.sj .top_box .img_box .word h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.sj .top_box .img_box .word p {
+  font-size: 15px;
+}
+.sj .top_box .img_box .word .btn_box {
+  margin-top: 20px;
+}
+.sj .top_box .img_box .word .btn_box button {
+  background-color: #FFEC1D;
+  color: #000;
+  font-weight: bold;
+  border: 0;
+  width: 100px;
+  height: 30px;
+}
+.sj .top_box .img_box .word .btn_box .one {
+  margin-right: 5px;
+}
+.sj .top_box .img_box .word .btn_box .two {
+  margin-left: 5px;
+}
+.sj .shop_earn {
+  padding: 30px 10px;
+}
+.sj .shop_earn h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+.sj .shop_earn .box {
+  margin-top: 30px;
+}
+.sj .shop_earn .box .word {
+  margin-top: 10px;
+}
+.sj .shop_earn .box .word h2 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.sj .shop_earn .box .word p {
+  font-size: 13px;
+}
+.sj .scenarios_smt_sj {
+  padding: 30px 10px;
+  text-align: center;
+}
+.sj .scenarios_smt_sj h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.sj .scenarios_smt_sj .word {
+  margin-top: 20px;
+}
+.sj .scenarios_smt_sj .word img {
+  width: 150px;
+  height: 150px;
+}
+.sj .scenarios_smt_sj .word .one {
+  background: #FFEC1D;
+}
+.sj .scenarios_smt_sj .word .two {
+  background: #6880E2;
+}
+.sj .scenarios_smt_sj .word .three {
+  background: #F4643C;
+}
+.sj .scenarios_smt_sj .word .word_and {
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.sj .scenarios_smt_sj .word .word_and h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.sj .scenarios_smt_sj .word .word_and ul {
+  text-align: left;
+  line-height: 30px;
+}
+.sj .echarts_sj {
+  text-align: center;
+  padding: 30px 10px;
+}
+.sj .echarts_sj h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.sj .echarts_sj .echarts {
+  width: 400px;
+  height: 400px;
+}
+.sj .echarts_sj ul {
+  text-align: left;
+}
+.sj .echarts_sj ul li {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+.sj .steps_sj {
+  padding: 30px 10px;
+}
+.sj .steps_sj h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.sj .steps_sj .ha {
+  margin-top: 20px;
+  display: flex;
+}
+.sj .steps_sj .ha img {
+  width: 50px;
+}
+.sj .steps_sj .ha .phase_box {
+  margin-left: 20px;
+}
+.sj .steps_sj .ha .phase_box .phase h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #DF1920;
+}
+.sj .steps_sj .ha .phase_box .phase h3 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #203383;
+}
+.sj .steps_sj .ha .phase_box .phase ul {
+  padding: 10px;
+  border: 2px solid #6880E2;
+  border-radius: 10px;
+}
+.sj .steps_sj .ha .phase_box .phase ul li {
+  font-size: 14px;
+  text-align: left;
+}

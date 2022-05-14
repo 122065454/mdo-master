@@ -125,7 +125,21 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {};
+  },
+  created() {
+    this.$axios
+      .get(
+        "http://5i01j19762.zicp.vip/simeta/buyer/awardRecord/pageAwardRecord"
+      )
+      .then((res) => {
+        console.log(res);
+      });
+  },
+  methods: {},
+};
 </script>
 
 <style lang="less" scoped>
