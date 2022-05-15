@@ -5,7 +5,7 @@ import mixin from '@/mixin/index.js'
 import router from '@/router'
 import store from '@/store'
 import animate from 'animate.css'
-import myPlugin from './utils/islogin'
+import myPlugin from '@/utils/islogin'
 Vue.use(myPlugin)
 import {
   Collapse,

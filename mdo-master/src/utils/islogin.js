@@ -14,15 +14,13 @@ let myPlugin = {
         //判断有没有token
         //有token代表登录了
         if (localStorage.getItem('token')) {
-
             return true;
 
         } else {
             //弹出提示
-
+            window.open.herf('http://54.153.12.169:8091/shop/login')
             //跳回登录页
-            router.push("/checklogin");
-
+            // router.push("/checklogin");
             return false;
         }
     },

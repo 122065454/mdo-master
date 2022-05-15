@@ -11,6 +11,7 @@
           <div class="time_contant">
             <img src="@/assets/images/clock/clock.png" alt="">
             <span>NEXT CHEST IN</span>
+            <!-- <span></span> -->
             <div class="time" v-if="timestamp">
               {{timestampToTime.h}}:{{timestampToTime.m}}:{{timestampToTime.s}}
             </div>
@@ -134,6 +135,7 @@ export default {
       timestampReceived: '', // 前一天打卡的时间搓
       recordList: [], // 连续打卡记录
       isflag: true,
+      signFlag:'' // 是否签到
     }
   },
   mounted() {
@@ -160,6 +162,7 @@ export default {
       loadSign({}).then((res) => {
         // this.totalDays=res.
         if (res.code == 200) {
+          this.signFlag=res.data.signFlag
           this.totalDays = res.data.count
           this.percentage = parseInt((this.totalDays * 100) / 50)
           this.indexList = this.greatList(res.data.userSignInRecordList.length)
@@ -210,7 +213,7 @@ export default {
        6.只能点击下一个
    */
     async claimPrice(i) {
-      if (this.isflag) {
+      if (this.isflag&&this.signFlag==0) {
         if (this.indexList.length == 0 && i !== 0) return
         // 只能点击下一个
         const lastNum = this.daysList.slice(-1)[0]
@@ -219,8 +222,8 @@ export default {
         console.log('点击')
         this.indexList.push(i)
         this.isflag = false
-        // await signDetail({})
-        // this.getdetail()
+        await signDetail({})
+        this.getdetail()
       }
     },
     // 生成数组方法

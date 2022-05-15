@@ -145,7 +145,12 @@ export default {
   },
   methods: {
     clock() {
-      this.$router.push('invitate')
+      if(window.localStorage.getItem('token')){
+        this.$router.push('invitate')
+        
+      }else{
+        window.location.href='http://54.153.12.169:8091/shop/login'
+      }
     },
     mouseOver() {
       let dom = document.querySelector('.btn_wallect2')
