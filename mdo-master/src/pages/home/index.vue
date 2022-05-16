@@ -49,50 +49,60 @@
       </section>
 
       <section class="shop_to_earn">
-        <h1 class="title">Shop -to-Earn</h1>
-        <div class="shop_one">
-          <img
-            src="@/assets/images/shop_one.png"
-            alt=""
-          >
-          <div class="word">
-            <h1>Sellers</h1>
-            <p>Sellers can earn additional $SMT for every completed order on<br>top of high profit thanks to lower service fee and advertising<br>cost compared with traditional ecommerce platform</p>
+        <div class="shop_box">
+          <h1 class="title">Shop -to-Earn</h1>
+          <div class="shop_one">
+            <img
+              src="@/assets/images/shop_one.png"
+              alt=""
+            >
+            <div class="word">
+              <h1>Sellers</h1>
+              <p>Sellers can earn additional $SMT for every completed order on<br>top of high profit thanks to lower service fee and advertising<br>cost compared with traditional ecommerce platform</p>
+            </div>
+          </div>
+          <div class="shop_one">
+            <div class="word">
+              <h1>Buyers</h1>
+              <p>Buyerss can earn additional $SMT for every completed<br>order at a reasonable price</p>
+            </div>
+            <img
+              src="@/assets/images/shop_two.png"
+              alt=""
+            >
           </div>
         </div>
-        <div class="shop_one">
-          <div class="word">
-            <h1>Buyers</h1>
-            <p>Buyerss can earn additional $SMT for every completed<br>order at a reasonable price</p>
-          </div>
-          <img
-            src="@/assets/images/shop_two.png"
-            alt=""
-          >
-        </div>
+
       </section>
 
-      <section class="shop_to_earn">
-        <div class="shop_one">
-          <img
-            src="@/assets/images/shop_one.png"
-            alt=""
-          >
-          <div class="word">
-            <h1>All ecology</h1>
-            <p>All users in simeta ecology can get $SMT every day by clocking<br>in Simeta website or APP</p>
+      <section
+        class="shop_to_earn"
+        style="margin-top:10px;"
+      >
+        <div class="shop_box">
+          <div class="shop_one">
+            <img
+              src="@/assets/images/shop_three.png"
+              alt=""
+            >
+            <div class="word">
+              <h1>All ecology</h1>
+              <p>All users in simeta ecology can get $SMT every day by clocking<br>in Simeta website or APP</p>
+            </div>
           </div>
-        </div>
-        <div class="shop_one">
-          <div class="word">
-            <h1>Simeta team</h1>
-            <p>Simeta will charge a service fee with a fixed ratio of 8% for every<br>completed order which is lower than that of traditional ecommerce<br>platforms (15-20%) of which 5% will be returned to simeta ecology<br>and 3% will be used for the develop Simeta </p>
+          <div class="shop_one">
+            <div class="word">
+              <h1>Simeta team</h1>
+              <p>Simeta will charge a service fee with a fixed ratio of 8% for every<br>completed order which is lower than that of traditional ecommerce<br>platforms (15-20%) of which 5% will be returned to simeta ecology<br>and 3% will be used for the develop Simeta </p>
+            </div>
+            <img
+              src="@/assets/images/shop_four.png"
+              alt=""
+            >
           </div>
-          <img
-            src="@/assets/images/shop_two.png"
-            alt=""
-          >
+
         </div>
+
       </section>
       <section class="scenarios_smt">
         <h1 class="title">Scenarios of $SMT</h1>
@@ -120,13 +130,13 @@
             </ul>
           </div>
           <img
-            src="@/assets/images/smt_one.png"
+            src="@/assets/images/smt_two.png"
             alt=""
           >
         </div>
         <div class="servies_one">
           <img
-            src="@/assets/images/smt_one.png"
+            src="@/assets/images/smt_three.png"
             alt=""
           >
           <div class="services three">
@@ -490,8 +500,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.main {
-  scroll-behavior: smooth;
-}
 @import "./index.less";
 </style>
