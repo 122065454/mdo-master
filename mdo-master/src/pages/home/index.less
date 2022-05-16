@@ -70,6 +70,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-top: .5rem;
         .word{
           h1{
             font-size: .5rem;
@@ -152,7 +153,7 @@
       // justify-content: space-between;
       align-items: center;
       .echarts{
-        width: 5rem;height: 5rem;
+        width: 500px;height: 500px;
       }
       ul{
         line-height: .5rem;
@@ -172,94 +173,25 @@
       font-weight: bold;
       margin-bottom: .5rem;
     }
-    .box{
-      position: relative;
-      margin-bottom: 50px;
-      img{
-        width: 100px;
-      }
-      .one{
-        position: absolute;
-        top: 0;
-        left: 2.1rem;
-        width: 3.8rem;
-      }
-      .two{
-        position: absolute;
-        top: 300px;
-        left: 2.1rem;
-        width: 3.8rem;
-      }
-      .three{
-        position: absolute;
-        top: 60px;
-        right: 2.1rem;
-        width: 3.8rem;
-      }
-      .four{
-        position: absolute;
-        top: 4.3rem;
-        right: 2.1rem;
-        width: 3.8rem;
-      }
-      .five{
-        position: absolute;
-        bottom: 1.4rem;
-        left: 2.1rem;
-        width: 3.8rem;
-      }
-      .phase{
-        h2{
-          text-align: right;
-          font-size: 30px;
-          font-weight: bold;
-  color: #DF1920;
-        }
-        h3{
-          text-align: right;
-          font-size: 20px;
-          font-weight: 400;
-  color: #203383;
-        }
-        ul{
-          padding: 15px;
-          border: 6px solid #6880E2;
-          border-radius: 10px;
-          li{
-            font-size: 20px;
-            text-align: left;
-          }
-        }
-      }
-      .phase_bottom{
-        width: 600px;
-        margin: 0 auto;
-        ul{
-          padding: 15px;
-          border: 6px solid #6880E2;
-          border-radius: 10px;
-          li{
-            font-size: 20px;
-            text-align: left;
-          }
-        }
-      }
+    img{
+      // width: 10rem;
     }
+  
     @media screen and (max-width: 1450px) {
       .one{
-        left: 280px !important;
+        left: 1.5rem !important;
       }
       .two{
-        left: 280px !important;
+        left: 1.5rem !important;
       }
       .three{
-        right: 280px !important;
+        right: 1.5rem !important;
       }
       .four{
-        right: 280px !important;
+        right: 1.5rem !important;
       }
       .five{
-        left: 280px !important;
+        left: 1.5rem !important;
       }
     }
   }
@@ -267,21 +199,24 @@
 
 @media screen and (max-width: 736px) {
   .main{
-      padding: 60px 20px;
+      padding: 0px;
+      background-color: #f6f6f6;
   }
 }
 
 .sj{
   .top_box{
+    padding: 70px 20px;
     .img_box{
       .word{
         text-align: center;
         h1{
-          font-size: 30px;
+          font-size: 50px;
           font-weight: bold;
         }
         p{
           font-size: 15px;
+          text-align: left;
         }
         .btn_box{
           margin-top: 20px;
@@ -305,34 +240,38 @@
   }
 
   .shop_earn{
-    padding: 30px 10px;
+    background: url('~@/assets/images/background_sj_one.png') no-repeat;
+    background-size: cover;
+    padding: 30px 30px;
     h1{
       text-align: center;
-      font-size: 30px;
+      font-size: 35px;
       font-weight: bold;
     }
     .box{
       margin-top: 30px;
       .word{
-        margin-top: 10px;
+        margin: 30px 0px;
         h2{
           text-align: center;
-          font-size: 20px;
+          font-size: 25px;
           font-weight: bold;
+          margin-top: 20px;
         }
         p{
-          font-size: 13px;
+          font-size: 15px;
         }
       }
     }
   }
 
   .scenarios_smt_sj{
-    padding: 30px 10px;
+    padding: 30px;
     text-align: center;
+    background: url('~@/assets/images/background_sj_three.png') no-repeat;
     h1{
       
-      font-size: 30px;
+      font-size: 35px;
       font-weight: bold;
     }
     .word{
@@ -342,13 +281,13 @@
         height: 150px;
       }
       .one{
-        background: #FFEC1D;
+        background: #f4efb7;
       }
       .two{
-        background: #6880E2;
+        background: #c7cde7;
       }
       .three{
-        background: #F4643C;
+        background: #eac7ba;
       }
       .word_and{
        
@@ -369,14 +308,16 @@
 
   .echarts_sj{
     text-align: center;
-    padding: 30px 10px;
+    padding: 30px 30px;
+    background: url('~@/assets/images/background_sj_four.png') no-repeat;
     h1{
       font-size: 30px;
       font-weight: bold;
     }
     .echarts{
-      width: 400px;
-      height: 400px;
+      width: 350px;
+      height: 350px;
+      margin-top: 20px;
     }
     ul{
       text-align: left;
@@ -389,7 +330,8 @@
 
 
   .steps_sj{
-    padding: 30px 10px;
+    background: url('~@/assets/images/background_sj_five.png') no-repeat;
+    padding: 30px 30px;
     h1{
       font-size: 30px;
       font-weight: bold;
