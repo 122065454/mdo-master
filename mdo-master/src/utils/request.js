@@ -1,22 +1,20 @@
 import axios from 'axios'
-import {getCookie} from './index'
+import { getToken } from './index'
 export const instance = axios.create({
   // baseURL: '/api',
   baseURL: 'http://54.153.12.169:8787/simeta/',
 })
 
-
-
+const token = getToken()
 instance.interceptors.request.use(
   (config) => {
-    if(getCookie('simetaToken')){
-    config.headers['Authorization'] = getCookie('simetaToken')
-     
-    }
-    // if (token) {
-    //   config.headers['Authorization'] = `${token}`
-    //   config.headers['content-type'] = 'application/json'
+    // if(getCookie('simetaToken')){
+    // config.headers['Authorization'] = getCookie('simetaToken')
+
     // }
+    if (token) {
+      config.headers['Authorization'] = token
+    }
     config.headers['content-type'] = 'application/json'
 
     // if (config.method === 'get') {

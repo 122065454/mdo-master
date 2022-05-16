@@ -4,7 +4,7 @@
       <div class="modal-mask">
         <section>
           <div class="head">
-            <div class="title">Reward 90 $SMT</div>
+            <div class="title">Reward {{totalNums}} $SMT</div>
           </div>
           <!-- <img src="@/assets/images/clock/close.svg" alt="" class="close" @click="close"> -->
           <!-- 倒计时 -->
@@ -12,7 +12,7 @@
             <img src="@/assets/images/clock/clock.png" alt="">
             <span>NEXT CHEST IN</span>
             <!-- <span></span> -->
-            <div class="time" v-if="timestamp">
+            <div class="time" v-if="signFlag==1">
               {{timestampToTime.h}}:{{timestampToTime.m}}:{{timestampToTime.s}}
             </div>
           </div>
@@ -135,7 +135,8 @@ export default {
       timestampReceived: '', // 前一天打卡的时间搓
       recordList: [], // 连续打卡记录
       isflag: true,
-      signFlag:'' // 是否签到
+      signFlag: '', // 是否签到
+      totalNums: 0,
     }
   },
   mounted() {
@@ -144,7 +145,9 @@ export default {
   },
   watch: {
     timestamp() {
-      // if(this.timestamp==0)
+      if (this.timestamp !== 0) {
+        this.countDown()
+      }
     },
   },
   created() {
@@ -162,12 +165,16 @@ export default {
       loadSign({}).then((res) => {
         // this.totalDays=res.
         if (res.code == 200) {
-          this.signFlag=res.data.signFlag
+          this.signFlag = res.data.signFlag
           this.totalDays = res.data.count
           this.percentage = parseInt((this.totalDays * 100) / 50)
           this.indexList = this.greatList(res.data.userSignInRecordList.length)
           this.daysList = this.greatList(res.data.userSignInRecordList.length)
           this.recordList = res.data.userSignInRecordList
+          this.totalNums = res.data.userSignInTotalRecordList[0].coinNumber
+          this.timestampReceived = new Date(
+            res.data.userSignInTotalRecordList[0].signTime
+          ).getTime()
         }
       })
     },
@@ -176,30 +183,47 @@ export default {
       this.isShow = false
     },
     countDown() {
-      this.timestamp = parseInt(Date.now() / 1000 - 1651981435)
-      if (this.timestamp <= 60 * 60 * 24) {
-        clearInterval(this.timer)
-        this.timer = setInterval(() => {
-          if (this.timestamp == 0) {
-            clearInterval(this.timer)
-          } else {
-            this.timestamp -= 1
-          }
-        }, 1000)
-      } else {
-        this.timestamp = 0
-      }
+      this.timestamp = parseInt(new Date().setHours(23, 59, 59, 0) - Date.now())
+
+      // if (this.timestamp <= 60 * 60 * 24) {
+      //   clearInterval(this.timer)
+      //   this.timer = setInterval(() => {
+      //     if (this.timestamp == 0) {
+      //       clearInterval(this.timer)
+      //     } else {
+      //       this.timestamp -= 1
+      //     }
+      //   }, 1000)
+      // } else {
+      //   this.timestamp = 0
+      // }
+      this.timer = setInterval(() => {
+        if (this.timestamp == 0) {
+          clearInterval(this.timer)
+        } else {
+          this.timestamp -= 1
+          this.formatSecondsToDate(this.timestamp)
+        }
+      }, 1000)
     },
-    formatSecondsToDate(time) {
-      let hours = this.singleFormat(parseInt(time / 3600))
-      let minutes = this.singleFormat(parseInt((time % 3600) / 60))
-      let seconds = this.singleFormat(time % 60)
+    formatSecondsToDate(interval) {
+      // 求 相差的天数/小时数/分钟数/秒数
+      var day, setHours, minutes, seconds
+
+      // 两个日期对象，相差的秒数
+      // interval = interval / 1000;
+      interval /= 1000
+
+      day = parseInt(interval / 60 / 60 / 24)
+      setHours = this.singleFormat(parseInt((interval / 60 / 60) % 24))
+      minutes = this.singleFormat(parseInt((interval / 60) % 60))
+      seconds = this.singleFormat(parseInt(interval % 60))
       return {
-        hms: `${hours}:${minutes}:${seconds}`,
+        hms: `${setHours}:${minutes}:${seconds}`,
         ms: `${minutes}:${seconds}`,
         s: seconds,
         m: minutes,
-        h: hours,
+        h: setHours,
       }
     },
     singleFormat(str) {
@@ -211,9 +235,10 @@ export default {
        4.连续打卡判断数组大于6就清空
        5.当数组为0的时候只能点击第一个
        6.只能点击下一个
+       7. 倒计时 返回的时间和当前时间12点 不能打卡才显示倒计时
    */
     async claimPrice(i) {
-      if (this.isflag&&this.signFlag==0) {
+      if (this.isflag && this.signFlag == 0) {
         if (this.indexList.length == 0 && i !== 0) return
         // 只能点击下一个
         const lastNum = this.daysList.slice(-1)[0]

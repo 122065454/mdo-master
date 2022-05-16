@@ -365,7 +365,7 @@ import * as echarts from 'echarts'
 // import section3 from "../components/section3.vue";
 import header from '../components/header.vue'
 import footer from '../components/footer.vue'
-
+import { getToken } from '@/utils'
 export default {
   name: 'home',
   components: {
@@ -383,7 +383,13 @@ export default {
   },
   methods: {
     clock() {
-      this.$router.push('invitate')
+      // this.$router.push('invitate')
+      // console.log('getToken', getToken)
+      if (getToken()) {
+        this.$router.push('invitate')
+      } else {
+        window.location.href = 'http://54.153.12.169:8091/shop/login'
+      }
     },
     initEachartsLeft() {
       let myChart = echarts.init(this.$refs.echarts)

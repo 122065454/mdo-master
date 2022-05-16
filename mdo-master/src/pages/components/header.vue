@@ -102,7 +102,7 @@
 </template>
 <script>
 import { WOW } from 'wowjs'
-
+import { getToken } from '@/utils'
 export default {
   name: 'headers',
   data() {
@@ -145,11 +145,12 @@ export default {
   },
   methods: {
     clock() {
-      if(window.localStorage.getItem('token')){
+      // this.$router.push('invitate')
+      // console.log('getToken', getToken)
+      if (getToken()) {
         this.$router.push('invitate')
-        
-      }else{
-        window.location.href='http://54.153.12.169:8091/shop/login'
+      } else {
+        window.location.href = 'http://54.153.12.169:8091/shop/login'
       }
     },
     mouseOver() {
