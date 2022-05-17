@@ -72,7 +72,7 @@
               >
               <p>WhatsApp</p>
             </li>
-            <li>
+            <li @click="shareTwitter">
               <img
                 src="@/assets/images/twitter_three.png"
                 alt=""
@@ -125,11 +125,13 @@
         <div class="icon_input show">
           <ul>
             <li>
+
               <img
                 src="@/assets/images/message.png"
                 alt=""
               >
               <p>message</p>
+
             </li>
             <li>
               <img
@@ -138,7 +140,7 @@
               >
               <p>WhatsApp</p>
             </li>
-            <li>
+            <li @click="shareTwitter">
               <img
                 src="@/assets/images/twitter_three.png"
                 alt=""
@@ -169,9 +171,12 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      share_url: "",
+    };
   },
   created() {
+    this.share_url = document.location.href;
     this.$axios
       .get(
         "http://5i01j19762.zicp.vip/simeta/buyer/awardRecord/pageAwardRecord"
@@ -180,7 +185,22 @@ export default {
         console.log(res);
       });
   },
-  methods: {},
+  methods: {
+    // 分享到twitter
+    shareTwitter() {
+      function popupwindow(url, title) {
+        return window.open(
+          "https://twitter.com/intent/tweet?url=" +
+            encodeURIComponent(url) +
+            "&text=" +
+            encodeURIComponent(title),
+          "_blank",
+          "toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350"
+        );
+      }
+      popupwindow(this.share_url, this.share_title);
+    },
+  },
 };
 </script>
 
