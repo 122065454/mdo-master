@@ -280,7 +280,7 @@ export default {
     // margin-top: 50 / @p;
     z-index: 100;
 
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 1);
   }
   .noneshow {
     color: #cdc2c2;
@@ -320,7 +320,7 @@ export default {
   height: 100 / @p;
   font-size: 16 / @p;
   position: absolute;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 1);
   //  background: #ffffff;
   // opacity: 0.6;
   border-radius: 5 / @p;

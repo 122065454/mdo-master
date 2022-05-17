@@ -61,7 +61,10 @@
               <p>Sellers can earn additional $SMT for every completed order on<br>top of high profit thanks to lower service fee and advertising<br>cost compared with traditional ecommerce platform</p>
             </div>
           </div>
-          <div class="shop_one">
+          <div
+            class="shop_one"
+            style="margin-top: 2rem;"
+          >
             <div class="word">
               <h1>Buyers</h1>
               <p>Buyerss can earn additional $SMT for every completed<br>order at a reasonable price</p>
@@ -90,7 +93,10 @@
               <p>All users in simeta ecology can get $SMT every day by clocking<br>in Simeta website or APP</p>
             </div>
           </div>
-          <div class="shop_one">
+          <div
+            class="shop_one"
+            style="margin-top: 2rem;"
+          >
             <div class="word">
               <h1>Simeta team</h1>
               <p>Simeta will charge a service fee with a fixed ratio of 8% for every<br>completed order which is lower than that of traditional ecommerce<br>platforms (15-20%) of which 5% will be returned to simeta ecology<br>and 3% will be used for the develop Simeta </p>

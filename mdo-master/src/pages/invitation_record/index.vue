@@ -3,7 +3,7 @@
     <div class="top_background">
       <h1>Invite friends to gain $SMT</h1>
     </div>
-    <div class="content">
+    <div class="content inner">
       <div class="top">
 
         <div class="left_top">
@@ -11,7 +11,7 @@
 
           <div class="img_span">
             <img
-              src="@/assets/images/user@2x.png"
+              src="@/assets/images/invited_one.png"
               alt=""
             >
             <span>20</span>
@@ -21,7 +21,10 @@
           <h2>Total $SMT</h2>
           <div class="img_span">
             <img
-              src="@/assets/images/record_img.png"
+              style="
+                width: 20px;
+    height: 15px;"
+              src="@/assets/images/invited_two.png"
               alt=""
             >
             <span>500</span>
@@ -64,21 +67,21 @@
             </li>
             <li>
               <img
-                src="@/assets/images/message.png"
+                src="@/assets/images/phone_two.png"
                 alt=""
               >
               <p>WhatsApp</p>
             </li>
             <li>
               <img
-                src="@/assets/images/message.png"
+                src="@/assets/images/twitter_three.png"
                 alt=""
               >
               <p>twitter</p>
             </li>
             <li>
               <img
-                src="@/assets/images/message.png"
+                src="@/assets/images/more_four.png"
                 alt=""
               >
               <p>more...</p>
@@ -130,21 +133,21 @@
             </li>
             <li>
               <img
-                src="@/assets/images/message.png"
+                src="@/assets/images/phone_two.png"
                 alt=""
               >
               <p>WhatsApp</p>
             </li>
             <li>
               <img
-                src="@/assets/images/message.png"
+                src="@/assets/images/twitter_three.png"
                 alt=""
               >
               <p>twitter</p>
             </li>
             <li>
               <img
-                src="@/assets/images/message.png"
+                src="@/assets/images/more_four.png"
                 alt=""
               >
               <p>more...</p>
@@ -182,5 +185,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "./index.css";
+@import "./index.less";
 </style>
