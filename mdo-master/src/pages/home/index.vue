@@ -32,7 +32,7 @@
           <p>The first virtual futuristic eCommerce marketplace where<br>users can buy and sell items in both the crypto field and the<br>physical world with cryptocurrencies worldwide</p>
           <div class="one_btn">
             <button>Whitepaper</button>
-            <button @click="clock">Clock-in</button>
+            <button>Clock-in</button>
           </div>
         </div>
         <div class="right_img show">
@@ -140,66 +140,6 @@
 
       <section class="steps">
         <h1>Roadmap</h1>
-        <div class="box">
-          <img src="@/assets/images/red_roadmap.png" alt="">
-          <div class="phase one">
-            <h2>Phase 1</h2>
-            <h3>Q1 2022</h3>
-            <ul>
-              <li>1. Market research, feasibility analysis & team formation.</li>
-              <li>2. Business model design and simulation. </li>
-              <li>3. Whitepaper and website establish. </li>
-              <li>4. Social media accounts registration and marketing.</li>
-            </ul>
-          </div>
-          <div class="phase two">
-            <h2>Phase 3</h2>
-            <h3>Q3 2022</h3>
-            <ul>
-              <li>1. Optimization of Crypto eCommerce System.</li>
-              <li>2. Expand to the Europe & Asia market.</li>
-              <li>3. APP development.</li>
-              <li>4. Invite the 2nd batch of sellers & achieve a 20 million USDT turnover</li>
-            </ul>
-          </div>
-
-          <div class="phase three">
-            <h2 style="text-align:left;">Phase 2</h2>
-            <h3 style="text-align:left;">Q2 2022</h3>
-            <ul>
-              <li>1. Crypto eCommerce platform development.</li>
-              <li>2. Issuance of utility tokens $SMT.</li>
-              <li>3. Issuance of Land NFT. </li>
-              <li>4. Seed & Private round sale.</li>
-              <li>5. Releasing of Land NFT.</li>
-              <li>6. Invite the first batch of sellers.</li>
-              <li>7. Launch SMT on the first exchange.</li>
-            </ul>
-          </div>
-
-          <div class="phase four">
-            <h2 style="text-align:left;">Phase 4</h2>
-            <h3 style="text-align:left;">Q4 2022</h3>
-            <ul>
-              <li>1. Simeta metaverse ecommerce development.</li>
-              <li>2. Promote for merchants to complete sales of $200 million. </li>
-              <li>3. List the utility tokens on CEX.</li>
-            </ul>
-          </div>
-
-          <div class="phase five">
-            <h2>Phase 5</h2>
-            <h3>Q1-Q4 2023</h3>
-          </div>
-          <div class="phase_bottom">
-            <ul>
-              <li>1. Combine Crypto eCommerce platform and Simeta metaverse.</li>
-              <li>2. Optimization of the whole system and inviting more merchants. </li>
-              <li>3. Promote for merchants to complete sales of $2 billion.</li>
-            </ul>
-          </div>
-        </div>
-
         <img src="@/assets/images/roadmap.svg" alt="">
       </section>
     </div>
@@ -374,7 +314,6 @@ import * as echarts from 'echarts'
 // import section3 from "../components/section3.vue";
 import header from '../components/header.vue'
 import footer from '../components/footer.vue'
-import { getToken } from '@/utils'
 export default {
   name: 'home',
   components: {
@@ -391,15 +330,6 @@ export default {
     this.initEachartsLeft()
   },
   methods: {
-    clock() {
-      // this.$router.push('invitate')
-      // console.log('getToken', getToken)
-      if (getToken()) {
-        this.$router.push('invitate')
-      } else {
-        window.location.href = 'http://54.153.12.169:8091/shop/login'
-      }
-    },
     initEachartsLeft() {
       let myChart = echarts.init(this.$refs.echarts)
       console.log(myChart)
@@ -421,11 +351,6 @@ export default {
             type: 'pie',
             radius: '50%',
             data: [
-              { value: 1048, name: 'Search Engine' },
-              { value: 735, name: 'Direct' },
-              { value: 580, name: 'Email' },
-              { value: 484, name: 'Union Ads' },
-              { value: 300, name: 'Video Ads' },
               { value: 1048, name: 'Farming' },
               { value: 735, name: 'Buyback and detory' },
               { value: 580, name: 'Simeta treasure' },
