@@ -12,7 +12,7 @@
             <img src="@/assets/images/clock/clock.png" alt="">
             <span>NEXT CHEST IN</span>
             <!-- <span></span> -->
-            <div class="time" v-if="signFlag==1">
+            <div class="time" v-if="signFlag==0">
               {{timestampToTime.h}}:{{timestampToTime.m}}:{{timestampToTime.s}}
             </div>
           </div>
@@ -20,9 +20,9 @@
           <div class="punch">
             <div :class="['punch_item', `punch_item-${index+1}`]" v-for="(item,index) in dayList" :key="index" @click.stop="claimPrice(index)">
               <h1>{{item.name}}</h1>
-              <img src="@/assets/images/clock/priceshow.jpg" alt="" v-if="indexList.includes(index)">
+              <img src="@/assets/images/clock/priceshow.png" alt="" v-if="indexList.includes(index)">
               <img :src="item.url" alt="" v-else>
-              <img class="check" src="@/assets/images/clock/check.png" alt="" v-if="indexList.includes(index)">
+              <img class="check" src="@/assets/images/clock/check2.png" alt="" v-if="indexList.includes(index)">
 
               <div class="award">
                 <img src="@/assets/images/clock/coin.png" alt="">
@@ -35,14 +35,15 @@
           <div class="day5" @click.stop="claimPrice(4)">
             <h1>DAY 5</h1>
             <div class="price5">
-              <img src="@/assets/images/clock/priceshow.jpg" alt="" v-if="indexList.includes(4)">
-              <img src="@/assets/images/clock/day5.jpg" alt="" v-else>
-              <img class="check5" src="@/assets/images/clock/check.png" alt="" v-if="indexList.includes(4)">
+              <img src="@/assets/images/clock/price5.png" alt="" v-if="indexList.includes(4)">
+              <img src="@/assets/images/clock/day5.png" alt="" v-else>
+              <!-- <img class="check5" src="@/assets/images/clock/check2.png" alt="" v-if="indexList.includes(4)"> -->
+              <div class="day-5price" v-if="indexList.includes(4)">+{{day5nums}}</div>
               <span>SURPRISE CHEST !</span>
             </div>
           </div>
           <!-- gift -->
-          <div class="gifts">
+          <div class=" gifts">
             <div class="gift_item" v-for="(item,index) in giftsList" :key="index">
               <img :src="item.url" alt="">
               <img class="check2" src="@/assets/images/clock/check2.png" alt="" v-if="parseInt(totalDays)>=item.num">
@@ -56,7 +57,7 @@
           </div>
           <div class="progress">
             <img src="@/assets/images/clock/loading.jpg" alt="" :style="{width:percentage+'%'}">
-            <span>{{totalDays}}/90 days</span>
+            <span>{{totalDays}}/90 <b v-if="isPC">days</b></span>
           </div>
           <div class="button">SET</div>
           <h3>Check the STE record</h3>
@@ -84,12 +85,12 @@ export default {
           name: 'DAY 2',
         },
         {
-          url: require('@/assets/images/clock/price2.png'),
+          url: require('@/assets/images/clock/price1.png'),
           nums: 3,
           name: 'DAY 3',
         },
         {
-          url: require('@/assets/images/clock/price2.png'),
+          url: require('@/assets/images/clock/price1.png'),
           nums: 3,
           name: 'DAY 4',
         },
@@ -137,6 +138,7 @@ export default {
       isflag: true,
       signFlag: '', // 是否签到
       totalNums: 0,
+      day5nums: 0,
     }
   },
   mounted() {
@@ -154,6 +156,9 @@ export default {
     // 获取详情
     this.getdetail()
   },
+  beforeDestroy() {
+    clearInterval(this.timer)
+  },
   computed: {
     timestampToTime() {
       return this.formatSecondsToDate(this.timestamp)
@@ -168,13 +173,44 @@ export default {
           this.signFlag = res.data.signFlag
           this.totalDays = res.data.count
           this.percentage = parseInt((this.totalDays * 100) / 50)
+
           this.indexList = this.greatList(res.data.userSignInRecordList.length)
           this.daysList = this.greatList(res.data.userSignInRecordList.length)
+          // 判断第5天
+          if (
+            this.indexList.length == 0 &&
+            res.data.userSignInRecordList.length
+          ) {
+            // 可打卡
+            if (this.signFlag == 0) {
+              // this.indexList = this.greatList(
+              //   res.data.userSignInRecordList.length
+              // )
+              // this.daysList = this.greatList(
+              //   res.data.userSignInRecordList.length
+              // )
+              this.indexList = [0, 1, 2, 3, 4]
+              this.daysList = [0, 1, 2, 3, 4]
+              this.day5nums =
+                res.data.userSignInRecordList.slice(-1)[0].coinNumber
+            } else {
+              // 不可打卡 且为第5天
+              // this.indexList = [0, 1, 2, 3, 4]
+              // this.daysList = [0, 1, 2, 3, 4]
+              // this.day5nums =
+              //   res.data.userSignInRecordList.slice(-1)[0].coinNumber
+            }
+          }
           this.recordList = res.data.userSignInRecordList
-          this.totalNums = res.data.userSignInTotalRecordList[0].coinNumber
-          this.timestampReceived = new Date(
-            res.data.userSignInTotalRecordList[0].signTime
-          ).getTime()
+          this.totalNums = res.data?.coinAllNumber || 0
+          // this.timestampReceived = new Date(
+          //   res.data.userSignInTotalRecordList[0].signTime
+          // ).getTime()
+
+          console.log(
+            ' res.data.userSignInRecordList.slice(-1)',
+            res.data.userSignInRecordList.slice(-1)
+          )
         }
       })
     },
@@ -197,6 +233,7 @@ export default {
       // } else {
       //   this.timestamp = 0
       // }
+      clearInterval(this.timer)
       this.timer = setInterval(() => {
         if (this.timestamp == 0) {
           clearInterval(this.timer)
@@ -234,11 +271,11 @@ export default {
        3.未到当前打卡时间不可点击 
        4.连续打卡判断数组大于6就清空
        5.当数组为0的时候只能点击第一个
-       6.只能点击下一个
-       7. 倒计时 返回的时间和当前时间12点 不能打卡才显示倒计时
+       6.只能点击下一个 
+       7. 倒计时 返回的时间和当前时间12点 不能打卡才显示倒计时 0已打卡 1可打卡
    */
     async claimPrice(i) {
-      if (this.isflag && this.signFlag == 0) {
+      if (this.isflag && this.signFlag == 1) {
         if (this.indexList.length == 0 && i !== 0) return
         // 只能点击下一个
         const lastNum = this.daysList.slice(-1)[0]
@@ -295,13 +332,14 @@ export default {
 section {
   width: 664 / @p;
   height: 900 / @p;
-  background: #ffffff;
-  border: 4 / @p solid #1b1b1b;
+  // border: 4 / @p solid #1b1b1b;
   border-radius: 5 / @p;
   position: absolute;
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: #ffffff;
+  box-shadow: 0px 5px 28px 1px rgba(57, 118, 186, 0.47);
 }
 .close {
   position: absolute;
@@ -323,7 +361,7 @@ section {
   font-size: 26 / @p;
   font-family: Times New Roman;
   font-weight: bold;
-  color: #272727;
+  color: #ff8706;
   line-height: 32 / @p;
   position: absolute;
   bottom: 0;
@@ -334,7 +372,7 @@ section {
   display: flex;
   width: 505 / @p;
   height: 44 / @p;
-  border: 2 / @p solid #000000;
+  background: linear-gradient(0deg, #64ccee 0%, #7de0fe 100%);
   // background: linear-gradient(-90deg, #fd55ff 0%, #fff600 100%);
   border-radius: 10 / @p;
   margin: 78 / @p auto 0 / @p;
@@ -349,15 +387,15 @@ section {
     font-size: 18 / @p;
     font-family: Times New Roman;
     font-weight: bold;
-    color: #272727;
+    color: #ffffff;
     line-height: 23 / @p;
     margin-right: 21 / @p;
   }
   .time {
     font-size: 26 / @p;
     font-family: CTCuYuanSF;
-    font-weight: 400;
-    color: #272727;
+    font-weight: 800;
+    color: #ffffff;
   }
 }
 .punch_item-1 {
@@ -398,27 +436,27 @@ section {
       font-size: 22 / @p;
       font-family: Corporate S Extra;
       font-weight: bold;
-      color: #272727;
+      color: #ff8f16;
       text-align: center;
     }
     .check {
       position: absolute;
       z-index: 9;
-      right: 0;
-      top: 68 / @p;
-      width: 92 / @p;
-      height: 72 / @p;
+      right: 28 / @p;
+      bottom: 51 / @p;
+      width: 29 / @p;
+      height: 29 / @p;
     }
     img {
-      width: 124 / @p;
-      height: 116 / @p;
+      width: 92 / @p;
+      height: 98 / @p;
     }
     .award {
       width: 95 / @p;
       height: 30 / @p;
       margin-left: 15 / @p;
-      background: #bdbdbd;
-      border: 4 / @p solid #272727;
+      margin-top: 10 / @p;
+      background: linear-gradient(0deg, #64ccee 0%, #7de0fe 100%);
       border-radius: 5 / @p;
       display: flex;
       align-items: center;
@@ -432,7 +470,7 @@ section {
         font-size: 22 / @p;
         font-family: Corporate S Extra;
         font-weight: bold;
-        color: #000000;
+        color: #ffffff;
         line-height: 14 / @p;
       }
     }
@@ -445,6 +483,8 @@ section {
   background: #e9e9e9;
   border-radius: 15 / @p;
   position: relative;
+  overflow: hidden;
+  margin-top: 22 / @p;
   .check5 {
     position: absolute;
     z-index: 9;
@@ -457,23 +497,37 @@ section {
     font-size: 22 / @p;
     font-family: Corporate S Extra;
     font-weight: bold;
-    color: #272727;
+    color: #ff8f16;
     position: absolute;
     top: 16 / @p;
     left: 30 / @p;
   }
   .price5 {
     margin-left: 247 / @p;
-    margin-top: 10 / @p;
+    margin-top: 20 / @p;
+    position: relative;
+  }
+  .day-5price {
+    width: 77 / @p;
+    height: 46 / @p;
+    font-size: 69 / @p;
+    font-family: Corporate S Extra;
+    font-weight: bold;
+    color: #fff06a;
+    -webkit-text-stroke: 4 / @p #cc6908;
+    text-stroke: 4 / @p #cc6908;
+    position: absolute;
+    top: 0;
   }
   img {
-    width: 127 / @p;
+    width: 89 / @p;
+    height: 100 / @p;
   }
   span {
     font-size: 22 / @p;
     font-family: Corporate S Extra;
     font-weight: bold;
-    color: #272727;
+    color: #ff8f16;
     margin-left: 17 / @p;
   }
 }
@@ -506,13 +560,13 @@ section {
       font-size: 14 / @p;
       font-family: Corporate S Extra;
       font-weight: bold;
-      color: #272727;
+      color: #ff8f16;
     }
     .award {
       width: 74 / @p;
       height: 24 / @p;
-      background-color: #bdbdbd;
-      border: 2 / @p solid #272727;
+      background: linear-gradient(0deg, #64ccee 0%, #7de0fe 100%);
+
       border-radius: 5 / @p;
       display: flex;
       align-items: center;
@@ -526,7 +580,7 @@ section {
         font-size: 17 / @p;
         font-family: Corporate S Extra;
         font-weight: bold;
-        color: #000000;
+        color: #ffffff;
         margin-left: 5 / @p;
       }
     }
@@ -648,7 +702,11 @@ h3 {
     height: 30 / @p;
     background-size: cover;
     margin-left: 10 / @p;
-
+    margin-top: 3px;
+    img {
+      margin-top: 1px;
+      height: 26 / @p;
+    }
     span {
       font-size: 12 / @p;
       line-height: 30 / @p;

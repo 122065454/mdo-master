@@ -15,6 +15,8 @@ instance.interceptors.request.use(
     if (token) {
       config.headers['Authorization'] = token
     }
+    // config.headers['Authorization'] = '1f4e05e9-d039-435d-a1bc-ffe3a2dea305'
+
     config.headers['content-type'] = 'application/json'
 
     // if (config.method === 'get') {
@@ -56,6 +58,7 @@ export const loadSign = (payload) =>
 // 用户签到详情
 export const signDetail = (payload) =>
   instance.post(`/buyer/sign/in/sign`, payload)
+
 // export const updateFoods = (payload) =>
 //   instance.get('/item/status', {
 //     params: payload,
