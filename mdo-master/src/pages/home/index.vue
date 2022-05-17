@@ -56,7 +56,7 @@
               </p>
             </div>
           </div>
-          <div class="shop_one">
+          <div class="shop_one" style="margin-top: 2rem;">
             <div class="word">
               <h1>Buyers</h1>
               <p>Buyerss can earn additional $SMT for every completed<br>order at a reasonable price</p>
@@ -76,7 +76,7 @@
               <p>All users in simeta ecology can get $SMT every day by clocking<br>in Simeta website or APP</p>
             </div>
           </div>
-          <div class="shop_one">
+          <div class="shop_one" style="margin-top: 2rem;">
             <div class="word">
               <h1>Simeta team</h1>
               <p>Simeta will charge a service fee with a fixed ratio of 8% for every<br>completed order which is lower than that of traditional ecommerce<br>platforms (15-20%) of which 5% will be
@@ -200,6 +200,7 @@
           </div>
         </div>
 
+        <img src="@/assets/images/roadmap.svg" alt="">
       </section>
     </div>
 
@@ -404,8 +405,7 @@ export default {
       console.log(myChart)
       var option = {
         title: {
-          text: 'Referer of a Website',
-          subtext: 'Fake Data',
+          text: '  ',
           left: 'center',
         },
         tooltip: {
@@ -426,6 +426,9 @@ export default {
               { value: 580, name: 'Email' },
               { value: 484, name: 'Union Ads' },
               { value: 300, name: 'Video Ads' },
+              { value: 1048, name: 'Farming' },
+              { value: 735, name: 'Buyback and detory' },
+              { value: 580, name: 'Simeta treasure' },
             ],
             emphasis: {
               itemStyle: {

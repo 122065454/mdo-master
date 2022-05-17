@@ -3,14 +3,14 @@
     <div class="top_background">
       <h1>Invite friends to gain $SMT</h1>
     </div>
-    <div class="content">
+    <div class="content inner">
       <div class="top">
 
         <div class="left_top">
           <h2>Invited Friends</h2>
 
           <div class="img_span">
-            <img src="@/assets/images/user@2x.png" alt="">
+            <img src="@/assets/images/invited_one.png" alt="">
             <span>20</span>
           </div>
         </div>
@@ -18,6 +18,9 @@
           <h2>Total $SMT</h2>
           <div class="img_span">
             <img src="@/assets/images/record_img.png" alt="">
+            <img style="
+                width: 20px;
+    height: 15px;" src="@/assets/images/invited_two.png" alt="">
             <span>500</span>
           </div>
 
@@ -54,15 +57,15 @@
               <p>message</p>
             </li>
             <li>
-              <img src="@/assets/images/message.png" alt="">
+              <img src="@/assets/images/phone_two.png" alt="">
               <p>WhatsApp</p>
             </li>
             <li>
-              <img src="@/assets/images/message.png" alt="">
+              <img src="@/assets/images/twitter_three.png" alt="">
               <p>twitter</p>
             </li>
             <li>
-              <img src="@/assets/images/message.png" alt="">
+              <img src="@/assets/images/more_four.png" alt="">
               <p>more...</p>
             </li>
           </ul>
@@ -102,15 +105,15 @@
               <p>message</p>
             </li>
             <li>
-              <img src="@/assets/images/message.png" alt="">
+              <img src="@/assets/images/phone_two.png" alt="">
               <p>WhatsApp</p>
             </li>
             <li>
-              <img src="@/assets/images/message.png" alt="">
+              <img src="@/assets/images/twitter_three.png" alt="">
               <p>twitter</p>
             </li>
             <li>
-              <img src="@/assets/images/message.png" alt="">
+              <img src="@/assets/images/more_four.png" alt="">
               <p>more...</p>
             </li>
           </ul>
@@ -127,21 +130,21 @@
 <script>
 export default {
   data() {
-    return {};
+    return {}
   },
   created() {
     this.$axios
       .get(
-        "http://5i01j19762.zicp.vip/simeta/buyer/awardRecord/pageAwardRecord"
+        'http://5i01j19762.zicp.vip/simeta/buyer/awardRecord/pageAwardRecord'
       )
       .then((res) => {
-        console.log(res);
-      });
+        console.log(res)
+      })
   },
   methods: {},
-};
+}
 </script>
 
 <style lang="less" scoped>
-@import './index.css';
+@import './index.less';
 </style>
