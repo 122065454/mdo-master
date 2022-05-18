@@ -5,32 +5,56 @@
     </div>
     <div class="content inner">
       <div class="top">
-
-        <div class="left_top">
+        <div class="left">
           <h2>Invited Friends</h2>
-
-          <div class="img_span">
+          <div class="left_box">
             <img
               src="@/assets/images/invited_one.png"
               alt=""
             >
-            <span>20</span>
+            <span>20000</span>
           </div>
         </div>
-        <div class="left_top">
-          <h2>Total $SMT</h2>
-          <div class="img_span">
-            <img
-              style="
+        <div class="right">
+          <h2>Total </h2>
+          <div class="right_box">
+            <p>
+              <span>$SMT</span>
+              <span style="margin-left:.2rem">500</span>
+            </p>
+
+            <button>GO Rewards</button>
+          </div>
+        </div>
+
+        <div class="sp_block hide">
+          <div class="left_top">
+            <h2>Invited Friends</h2>
+
+            <div class="img_span">
+              <img
+                src="@/assets/images/invited_one.png"
+                alt=""
+              >
+              <span>20000</span>
+            </div>
+          </div>
+          <div class="left_top">
+            <h2>Total $SMT</h2>
+            <div class="img_span">
+              <img
+                style="
                 width: 20px;
     height: 15px;"
-              src="@/assets/images/invited_two.png"
-              alt=""
-            >
-            <span>500</span>
-          </div>
+                src="@/assets/images/invited_two.png"
+                alt=""
+              >
+              <span>500</span>
+            </div>
 
+          </div>
         </div>
+
       </div>
       <div class="center">
         <div class="box">
@@ -58,14 +82,14 @@
 
         <div class="icon_input hide">
           <ul>
-            <li>
+            <li @click="doAction">
               <img
                 src="@/assets/images/message.png"
                 alt=""
               >
               <p>message</p>
             </li>
-            <li>
+            <li @click="gowhatsapp">
               <img
                 src="@/assets/images/phone_two.png"
                 alt=""
@@ -105,12 +129,22 @@
           <ul class="list">
             <li>05-04 12:12</li>
             <li>Je...@gmail.com</li>
-            <li>Je...@gmail.com</li>
+            <li>+50 $SMT</li>
           </ul>
           <ul class="list">
             <li>05-04 12:12</li>
             <li>Je...@gmail.com</li>
+            <li>+50 $SMT</li>
+          </ul>
+          <ul class="list">
+            <li>05-04 12:12</li>
             <li>Je...@gmail.com</li>
+            <li>+50 $SMT</li>
+          </ul>
+          <ul class="list">
+            <li>05-04 12:12</li>
+            <li>Je...@gmail.com</li>
+            <li>+50 $SMT</li>
           </ul>
           <ul class="list">
             <li>...</li>
@@ -124,7 +158,7 @@
         </div>
         <div class="icon_input show">
           <ul>
-            <li>
+            <li @click="doAction">
 
               <img
                 src="@/assets/images/message.png"
@@ -133,7 +167,7 @@
               <p>message</p>
 
             </li>
-            <li>
+            <li @click="gowhatsapp">
               <img
                 src="@/assets/images/phone_two.png"
                 alt=""
@@ -198,7 +232,37 @@ export default {
           "toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350"
         );
       }
-      popupwindow(this.share_url, this.share_title);
+      popupwindow(
+        this.share_url,
+        "Check out the amazing Web3.0 crypto ecommerce platform and get rewards every day"
+      );
+    },
+
+    // 分享message
+    doAction() {
+      var u = navigator.userAgent;
+      //判断是否为android终端
+      // var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+      //判断是否为ios终端
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+      //这里填写要分享的内容
+      var des = `Check out the amazing Web3.0 crypto ecommerce platform and get rewards every day ${this.share_url}`;
+      //ios终端
+      if (isiOS) {
+        window.location.href = "sms:" + "&body=" + des;
+        //安卓终端
+      } else {
+        window.location.href = "sms:" + "?body=" + des;
+      }
+    },
+
+    // 分享whatsapp
+    gowhatsapp() {
+      let _href = "https://api.whatsapp.com/send?";
+      const text = `Check out the amazing Web3.0 crypto ecommerce platform and get rewards every day`;
+      _href += "&text=" + text; //标题
+      _href += "&url=" + encodeURIComponent(this.share_url); //链接
+      window.open(_href);
     },
   },
 };
