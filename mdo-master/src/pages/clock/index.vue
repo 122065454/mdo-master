@@ -19,7 +19,7 @@
           <!-- 打卡 -->
           <div class="punch">
             <div :class="['punch_item', `punch_item-${index+1}`]" v-for="(item,index) in dayList" :key="index" @click.stop="claimPrice(index)">
-              <h1>{{item.name}}</h1>
+              <h1>{{item.name}} <span class="daynums">{{index+1}}</span></h1>
               <img src="@/assets/images/clock/priceshow.png" alt="" v-if="indexList.includes(index)">
               <img :src="item.url" alt="" v-else>
               <img class="check" src="@/assets/images/clock/check2.png" alt="" v-if="indexList.includes(index)">
@@ -33,7 +33,7 @@
           </div>
           <!-- day 5 -->
           <div class="day5" @click.stop="claimPrice(4)">
-            <h1>DAY 5</h1>
+            <h1>DAY <b class="daynums">5</b></h1>
             <div class="price5">
               <img src="@/assets/images/clock/price5.png" alt="" v-if="indexList.includes(4)">
               <img src="@/assets/images/clock/day5.png" alt="" v-else>
@@ -59,7 +59,7 @@
             <img src="@/assets/images/clock/loading.jpg" alt="" :style="{width:percentage+'%'}">
             <span>{{totalDays}}/90 <b v-if="isPC">days</b></span>
           </div>
-          <div class="button">SET</div>
+          <!-- <div class="button">SET</div> -->
           <h3>Check the STE record</h3>
           <div class="button2" @click="close">Dismiss</div>
         </section>
@@ -77,22 +77,22 @@ export default {
         {
           url: require('@/assets/images/clock/price1.png'),
           nums: 2,
-          name: 'DAY 1',
+          name: 'DAY',
         },
         {
           url: require('@/assets/images/clock/price1.png'),
           nums: 2,
-          name: 'DAY 2',
+          name: 'DAY',
         },
         {
           url: require('@/assets/images/clock/price1.png'),
           nums: 3,
-          name: 'DAY 3',
+          name: 'DAY',
         },
         {
           url: require('@/assets/images/clock/price1.png'),
           nums: 3,
-          name: 'DAY 4',
+          name: 'DAY',
         },
       ],
       giftsList: [
@@ -181,7 +181,7 @@ export default {
             this.indexList.length == 0 &&
             res.data.userSignInRecordList.length
           ) {
-            // 可打卡
+            // 不可打卡
             if (this.signFlag == 0) {
               // this.indexList = this.greatList(
               //   res.data.userSignInRecordList.length
@@ -329,6 +329,9 @@ export default {
     opacity: 1;
   }
 }
+.daynums {
+  font-size: 30 / @p;
+}
 section {
   width: 664 / @p;
   height: 900 / @p;
@@ -341,6 +344,7 @@ section {
   background: #ffffff;
   box-shadow: 0px 5px 28px 1px rgba(57, 118, 186, 0.47);
 }
+
 .close {
   position: absolute;
   top: -38px;
@@ -424,6 +428,7 @@ section {
     margin-left: 30 / @p !important;
   }
 }
+
 .punch {
   display: flex;
   margin-left: 31 / @p;
@@ -432,6 +437,7 @@ section {
     height: 182 / @p;
     text-align: center;
     position: relative;
+
     h1 {
       font-size: 22 / @p;
       font-family: Corporate S Extra;
@@ -439,6 +445,7 @@ section {
       color: #ff8f16;
       text-align: center;
     }
+
     .check {
       position: absolute;
       z-index: 9;
