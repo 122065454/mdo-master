@@ -121,40 +121,36 @@
         </div>
         <div class="records">
           <h1>Records</h1>
-          <ul class="list">
-            <li>Date</li>
-            <li>Account</li>
-            <li>Rewards</li>
-          </ul>
-          <ul class="list">
-            <li>05-04 12:12</li>
-            <li>Je...@gmail.com</li>
-            <li>+50 $SMT</li>
-          </ul>
-          <ul class="list">
-            <li>05-04 12:12</li>
-            <li>Je...@gmail.com</li>
-            <li>+50 $SMT</li>
-          </ul>
-          <ul class="list">
-            <li>05-04 12:12</li>
-            <li>Je...@gmail.com</li>
-            <li>+50 $SMT</li>
-          </ul>
-          <ul class="list">
-            <li>05-04 12:12</li>
-            <li>Je...@gmail.com</li>
-            <li>+50 $SMT</li>
-          </ul>
-          <ul class="list">
-            <li>...</li>
-            <li>...</li>
-            <li>...</li>
-          </ul>
-          <img
-            src="@/assets/images/xia.svg"
-            alt=""
+          <el-table
+            :data="tableData"
+            style="width: 100%"
           >
+            <el-table-column
+              prop="date"
+              label="Date"
+              width="180"
+              align="center"
+            >
+            </el-table-column>
+            <el-table-column
+              prop="name"
+              label="Account"
+              width="180"
+              align="center"
+            >
+            </el-table-column>
+            <el-table-column
+              prop="address"
+              label="Rewards"
+              align="center"
+            >
+            </el-table-column>
+          </el-table>
+          <el-pagination
+            layout="prev, pager, next"
+            :total="1000"
+          >
+          </el-pagination>
         </div>
         <div class="icon_input show">
           <ul>
@@ -207,6 +203,28 @@ export default {
   data() {
     return {
       share_url: "",
+      tableData: [
+        {
+          date: "05-04 12",
+          name: "Je...@gmail.com",
+          address: "+50 $SMT",
+        },
+        {
+          date: "05-04 12",
+          name: "Je...@gmail.com",
+          address: "+50 $SMT",
+        },
+        {
+          date: "05-04 12",
+          name: "Je...@gmail.com",
+          address: "+50 $SMT",
+        },
+        {
+          date: "05-04 12",
+          name: "Je...@gmail.com",
+          address: "+50 $SMT",
+        },
+      ],
     };
   },
   created() {
@@ -270,4 +288,24 @@ export default {
 
 <style lang="less" scoped>
 @import "./index.less";
+/deep/ .el-table tr {
+  background: #e9e9e9;
+  color: #868686;
+  font-size: 0.2rem;
+}
+/deep/ .el-table th.el-table__cell {
+  background: #e9e9e9;
+}
+.el-pagination {
+  text-align: center;
+}
+/deep/ .el-pagination button {
+  background: #e9e9e9;
+}
+/deep/ .el-pager li {
+  background: #e9e9e9;
+}
+/deep/ .el-pagination button:disabled {
+  background: #e9e9e9;
+}
 </style>

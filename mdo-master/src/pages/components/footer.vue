@@ -239,12 +239,12 @@ export default {
   name: "footers",
   data() {
     return {
-      value1: "EngList",
+      value1: "Englist",
       value2: "United States",
       langList: [
         {
           value: 1,
-          label: "EngLish",
+          label: "English",
         },
       ],
       addressList: [

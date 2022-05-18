@@ -12,8 +12,10 @@ import {
   message,
   Progress,
   Select,
-  Tooltip
-} from 'ant-design-vue'
+  Tooltip,
+  Table
+} from 'ant-design-vue';
+
 import axios from 'axios'
 import qs from 'qs'
 import {
@@ -22,13 +24,16 @@ import {
   Popup
 } from 'vant'
 import 'vant/lib/index.css'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import Vue from 'vue'
 import App from './App.vue'
 Vue.prototype.$axios = axios
 Vue.prototype.$qs = qs
 Vue.prototype.$message = message
-
+Vue.use(ElementUI);
 Vue.use(Icon)
+Vue.use(Table)
 // 全局注册
 Vue.use(Notify)
 Vue.use(Popup)
