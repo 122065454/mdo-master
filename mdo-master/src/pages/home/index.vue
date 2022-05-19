@@ -214,7 +214,9 @@
             <p>The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide</p>
             <div class="btn_box">
               <button class="one">Whitepaper</button>
-              <button class="two">Clock-in</button>
+              <router-link to="/invitate">
+                <button class="two">Clock-in</button>
+              </router-link>
             </div>
           </div>
         </div>

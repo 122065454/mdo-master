@@ -15,10 +15,10 @@
         </div>
         <div class="right_box">
           <ul class="one">
-            <li>All time</li>
-            <li>Today</li>
-            <li>This week</li>
-            <li>Last month</li>
+            <li @click="tabclick(1)">All time</li>
+            <li @click="tabclick(2)">Today</li>
+            <li @click="tabclick(3)">This week</li>
+            <li @click="tabclick(4)">Last month</li>
           </ul>
           <div class="box">
             <ul class="two">
@@ -27,28 +27,27 @@
               <li>invite</li>
             </ul>
             <div class="table_list">
+              <ul
+                class="box_list"
+                v-if="records.length > 0"
+              >
+                <li
+                  v-for="(item,index) in records"
+                  :key="index"
+                >
+                  <span class="one_box">{{item.award}}</span>
+                  <span class="two_box">{{item.createTime}}</span>
+                </li>
+              </ul>
               <ul class="box_list">
-                <li>
-                  <span class="one_box">+10</span>
-                  <span class="two_box">12:00 2th may 2022</span>
-                </li>
-                <li>
-                  <span class="one_box">+10</span>
-                  <span class="two_box">12:00 2th may 2022</span>
-                </li>
-                <li>
-                  <span class="one_box">+10</span>
-                  <span class="two_box">12:00 2th may 2022</span>
-                </li>
-                <li>
-                  <span class="one_box">+10</span>
-                  <span class="two_box">12:00 2th may 2022</span>
-                </li>
+                No data
               </ul>
             </div>
             <el-pagination
               layout="prev, pager, next"
-              :total="1000"
+              :total="total"
+              hide-on-single-page
+              @current-change="handleCurrentChange"
             >
             </el-pagination>
           </div>
@@ -61,9 +60,38 @@
 </template>
 
 <script>
+import { pageAwardRecord } from "@/utils/request.js";
 export default {
   data() {
-    return {};
+    return {
+      records: [],
+      params: {
+        currPage: 1,
+        pageSize: 5,
+        dateType: 1,
+      },
+      total: 0,
+    };
+  },
+  created() {
+    this.getdatalist();
+  },
+  methods: {
+    getdatalist() {
+      pageAwardRecord(this.params).then((res) => {
+        this.records = res.data.records;
+        this.total = res.data.total;
+      });
+    },
+    tabclick(dateType) {
+      this.params.dateType = dateType;
+      this.getdatalist();
+    },
+    // 分页
+    handleCurrentChange(e) {
+      this.params.currPage = e;
+      this.getdatalist();
+    },
   },
 };
 </script>
