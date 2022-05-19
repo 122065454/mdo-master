@@ -2,7 +2,7 @@
   <section>
     <div class="title">Earn $SMT </div>
     <ul>
-      <li v-for="(item,index) in inviteList" :key="index" @click='jump(index)'>
+      <li v-for="(item,index) in inviteList" :key="index" @click='jump(index)' :class="`li${index}`">
         <img :src="item.url" alt="" :class="`img${index}`">
         <div class="introduce">
           <h1>{{item.name1}}</h1>
@@ -110,6 +110,18 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+.li0 {
+  background: linear-gradient(0deg, #cde4ff, #eef5ff);
+}
+.li1 {
+  background: linear-gradient(0deg, #cdfff0, #eefeff);
+}
+.li2 {
+  background: linear-gradient(0deg, #fffbcd, #feffee);
+}
+.li3 {
+  background: linear-gradient(0deg, #e0cdff, #faeeff);
 }
 .img0 {
   width: 206 / @p;
