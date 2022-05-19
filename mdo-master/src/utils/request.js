@@ -1,11 +1,13 @@
 import axios from 'axios'
-import { getToken } from './index'
+import {
+  getToken
+} from './index'
 export const instance = axios.create({
   // baseURL: '/api',
   baseURL: 'http://54.153.12.169:8787/simeta/',
 })
 
-const token = getToken()
+const token = getToken() || 'f4f28109-f7f7-449c-ad2c-58e0dea30a62'
 instance.interceptors.request.use(
   (config) => {
     // if(getCookie('simetaToken')){
@@ -13,7 +15,7 @@ instance.interceptors.request.use(
 
     // }
     if (token) {
-      config.headers['Authorization'] = token
+      config.headers['Authorization'] = token;
     }
     // config.headers['Authorization'] = '1f4e05e9-d039-435d-a1bc-ffe3a2dea305'
 
@@ -59,6 +61,16 @@ export const loadSign = (payload) =>
 export const signDetail = (payload) =>
   instance.post(`/buyer/sign/in/sign`, payload)
 
+// 邀请用户(获取邀请码)
+export const inviteUser = (payload) => instance.get(`/buyer/inviteUser`, payload)
+
+// 获奖记录
+export const pageAwardRecord = ({
+  currPage,
+  pageSize,
+  dateType
+}) => instance.get(`/buyer/awardRecord/pageAwardRecord?currPage=${currPage}&pageSize=${pageSize}&dateType=${dateType}`)
+// 
 // export const updateFoods = (payload) =>
 //   instance.get('/item/status', {
 //     params: payload,

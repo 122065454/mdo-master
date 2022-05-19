@@ -42,6 +42,7 @@ color: #272727;
             color: #000;
           }
           .btn{
+            border-radius: .1rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -131,14 +132,53 @@ padding: 0.2rem 0.6rem 0rem .6rem;
       flex-direction: column;
       .left_box{
         width: 100%;
+        .text{
+          font-size: .5rem;
+        }
+        .Withdraw{
+          padding-bottom: .4rem;
+          p{
+            font-size: .5rem;
+          }
+          .btn{
+            font-size: .3rem;
+          }
+        }
       }
       .right_box{
         width: 100%;
-        margin-top: 1rem;
+        margin-top: .5rem;
+        .one{
+          height: 1rem;
+          li{
+            font-size: .25rem;
+          }
+        }
+        .box{
+          padding: 0.4rem;
+          .two{
+            li{
+              font-size: .3rem;
+            }
+          }
+          .table_list{
+            .box_list{
+              li{
+                .one_box{
+                  font-size: .5rem;
+                }
+                .two_box{
+                  font-size: .3rem;
+                  margin-left: .3rem;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
   /deep/ .el-pager li{
-    min-width: 27.5px;
+    min-width: 25.5px;
   }
 }

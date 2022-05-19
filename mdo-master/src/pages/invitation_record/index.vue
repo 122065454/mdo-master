@@ -22,35 +22,9 @@
               <span>$SMT</span>
               <span style="margin-left:.2rem">500</span>
             </p>
-
-            <button>GO Rewards</button>
-          </div>
-        </div>
-
-        <div class="sp_block hide">
-          <div class="left_top">
-            <h2>Invited Friends</h2>
-
-            <div class="img_span">
-              <img
-                src="@/assets/images/invited_one.png"
-                alt=""
-              >
-              <span>20000</span>
-            </div>
-          </div>
-          <div class="left_top">
-            <h2>Total $SMT</h2>
-            <div class="img_span">
-              <img
-                style="
-                width: 20px;
-    height: 15px;"
-                src="@/assets/images/invited_two.png"
-                alt=""
-              >
-              <span>500</span>
-            </div>
+            <router-link to="/reward">
+              <button>GO Rewards</button>
+            </router-link>
 
           </div>
         </div>
@@ -122,25 +96,23 @@
         <div class="records">
           <h1>Records</h1>
           <el-table
-            :data="tableData"
+            :data="records"
             style="width: 100%"
           >
             <el-table-column
-              prop="date"
+              prop="createTime"
               label="Date"
-              width="180"
               align="center"
             >
             </el-table-column>
             <el-table-column
-              prop="name"
+              prop="userId"
               label="Account"
-              width="180"
               align="center"
             >
             </el-table-column>
             <el-table-column
-              prop="address"
+              prop="award"
               label="Rewards"
               align="center"
             >
@@ -148,7 +120,9 @@
           </el-table>
           <el-pagination
             layout="prev, pager, next"
-            :total="1000"
+            :total="total"
+            hide-on-single-page
+            @current-change="handleCurrentChange"
           >
           </el-pagination>
         </div>
@@ -199,45 +173,67 @@
 </template>
 
 <script>
+import { inviteUser, pageAwardRecord } from "@/utils/request.js";
 export default {
   data() {
     return {
-      share_url: "",
-      tableData: [
+      total: 100,
+      share_url: "http://54.153.12.169:8091/shop/register",
+      params: {
+        currPage: 1,
+        pageSize: 5,
+        dateType: 1,
+      },
+      records: [
         {
-          date: "05-04 12",
-          name: "Je...@gmail.com",
-          address: "+50 $SMT",
+          createTime: "05-04 12",
+          userId: "Je...@gmail.com",
+          award: "+50 $SMT",
         },
         {
-          date: "05-04 12",
-          name: "Je...@gmail.com",
-          address: "+50 $SMT",
+          createTime: "05-04 12",
+          userId: "Je...@gmail.com",
+          award: "+50 $SMT",
         },
         {
-          date: "05-04 12",
-          name: "Je...@gmail.com",
-          address: "+50 $SMT",
+          createTime: "05-04 12",
+          userId: "Je...@gmail.com",
+          award: "+50 $SMT",
         },
         {
-          date: "05-04 12",
-          name: "Je...@gmail.com",
-          address: "+50 $SMT",
+          createTime: "05-04 12",
+          userId: "Je...@gmail.com",
+          award: "+50 $SMT",
+        },
+        {
+          createTime: "05-04 12",
+          userId: "Je...@gmail.com",
+          award: "+50 $SMT",
         },
       ],
     };
   },
   created() {
-    this.share_url = document.location.href;
-    this.$axios
-      .get(
-        "http://5i01j19762.zicp.vip/simeta/buyer/awardRecord/pageAwardRecord"
-      )
-      .then((res) => {
-        console.log(res);
-      });
+    inviteUser().then((res) => {
+      if (res.code == 200) {
+        this.share_url = `${this.share_url}?inviteCode=${res.data}`;
+      }
+    });
+
+    this.getdatalist();
   },
   methods: {
+    getdatalist() {
+      pageAwardRecord(this.params).then((res) => {
+        this.records = res.data.records;
+        this.total = res.data.total;
+      });
+    },
+    // 分页
+    handleCurrentChange(e) {
+      this.params.currPage = e;
+      this.getdatalist();
+    },
     // 分享到twitter
     shareTwitter() {
       function popupwindow(url, title) {
@@ -304,8 +300,12 @@ export default {
 }
 /deep/ .el-pager li {
   background: #e9e9e9;
+  min-width: 25.5px;
 }
 /deep/ .el-pagination button:disabled {
   background: #e9e9e9;
+}
+/deep/ .el-table .el-table__cell {
+  padding: 0;
 }
 </style>

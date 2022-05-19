@@ -472,7 +472,7 @@ export default {
     // margin-top: 50 / @p;
     padding: 23 / @p 61 / @p 23 / @p 59 / @p;
     z-index: 999;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 1);
     display: flex;
     justify-content: space-between;
   }

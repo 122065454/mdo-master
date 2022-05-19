@@ -170,15 +170,23 @@
       <section class="usage_fee">
         <h1>Usage of 8% service fee</h1>
         <div class="echartsAndword">
-          <div
-            class="echarts"
-            ref="echarts"
-          ></div>
-          <ul>
-            <li>1. 2% out 8% service fee will be rewarded to $SMT holders by farming</li>
-            <li>2. 3% out 8% service fee will be used to buyback and detory $SMT from secondary market</li>
-            <li>3. The balance will go to Simeta treasure</li>
-          </ul>
+          <img
+            src="@/assets/images/tuxong.svg"
+            alt=""
+          >
+          <div class="word_box">
+            <ul>
+              <li>1. 2% out 8% service fee will be rewarded to $SMT holders by farming</li>
+              <li>2. 3% out 8% service fee will be used to buyback and detory $SMT from secondary market</li>
+              <li>3. The balance will go to Simeta treasure</li>
+            </ul>
+            <div class="btn_list">
+              <div class="one"><span>Farming</span><span class="num">2%</span></div>
+              <div class="two"><span>Buyback and detory</span><span class="num">3%</span></div>
+              <div class="three"><span>Simeta treasure</span><span class="num">3%</span></div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -306,10 +314,15 @@
 
       <section class="echarts_sj">
         <h1>Usage of 8% service fee</h1>
-        <div
-          class="echarts"
-          ref="echarts"
-        ></div>
+        <img
+          src="@/assets/images/tuxong.svg"
+          alt=""
+        >
+        <div class="btn_box">
+          <div class="one"><span>Farming</span><span class="text">2%</span></div>
+          <div class="two"><span>Simeta treasure</span><span class="text">3%</span></div>
+          <div class="three"><span>Buyback and detory</span><span class="text">3%</span></div>
+        </div>
         <ul>
           <li>1. 2% out 8% service fee will be rewarded to $SMT holders by farming</li>
           <li>2. 3% out 8% service fee will be used to buyback and detory $SMT from secondary market</li>
