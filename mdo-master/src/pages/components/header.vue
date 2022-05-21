@@ -2,12 +2,12 @@
   <header v-if="isPC">
     <div class="menu_left">
       <ul>
-        <li @mouseover='subMenuShow'>
+        <li @mouseenter='subMenuShow'>
           <span>About</span>
           <ol
             class="sbumenu"
             v-show="subshow"
-            @mouseout='subMenuOut'
+            @mouseleave='subMenuOut'
           >
             <li>
               <a
@@ -205,6 +205,10 @@ export default {
         this.account = accounts[0];
       });
     }
+    this.$bus.$on('overPage',()=>{
+         this.subshow2 = false;
+      this.subshow = false;
+    })
   },
   watch: {
     $route() {
@@ -263,6 +267,11 @@ export default {
     close() {
       this.show = false;
     },
+    over(){
+      // this.subshow2 = false;
+      // this.subshow = false;
+      
+    }
   },
   mounted() {
     var options = {
