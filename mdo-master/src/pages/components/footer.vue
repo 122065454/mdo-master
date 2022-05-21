@@ -239,7 +239,7 @@ export default {
   name: "footers",
   data() {
     return {
-      value1: "Englist",
+      value1: "English",
       value2: "United States",
       langList: [
         {

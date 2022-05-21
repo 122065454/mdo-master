@@ -9,10 +9,10 @@
           <h2>Invited Friends</h2>
           <div class="left_box">
             <img
-              src="@/assets/images/invited_one.png"
+              src="@/assets/images/user_@2x.png"
               alt=""
             >
-            <span>20000</span>
+            <span>{{firends}}</span>
           </div>
         </div>
         <div class="right">
@@ -20,7 +20,7 @@
           <div class="right_box">
             <p>
               <span>$SMT</span>
-              <span style="margin-left:.2rem">500</span>
+              <span style="margin-left:.2rem">{{smt}}</span>
             </p>
             <router-link to="/reward">
               <button>GO Rewards</button>
@@ -95,7 +95,9 @@
         </div>
         <div class="records">
           <h1>Records</h1>
+
           <el-table
+            v-if="records.length > 0"
             :data="records"
             style="width: 100%"
           >
@@ -118,6 +120,21 @@
             >
             </el-table-column>
           </el-table>
+          <div
+            v-else
+            style="
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    height: 1.5rem;
+    border-radius: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+"
+          >
+            No data
+          </div>
           <el-pagination
             layout="prev, pager, next"
             :total="total"
@@ -163,6 +180,7 @@
             <input
               type="text"
               placeholder="simeta.io/i/Jessie"
+              v-model="share_url"
             >
             <button>Copy</button>
           </div>
@@ -173,10 +191,17 @@
 </template>
 
 <script>
-import { inviteUser, pageAwardRecord } from "@/utils/request.js";
+import {
+  inviteUser,
+  pageAwardRecord,
+  getInviteUserSum,
+  getUserIntegral,
+} from "@/utils/request.js";
 export default {
   data() {
     return {
+      firends: 0,
+      smt: 0,
       total: 100,
       share_url: "http://54.153.12.169:8091/shop/register",
       params: {
@@ -219,7 +244,16 @@ export default {
         this.share_url = `${this.share_url}?inviteCode=${res.data}`;
       }
     });
-
+    getInviteUserSum().then((res) => {
+      if (res.code == 200) {
+        this.firends = res.data;
+      }
+    });
+    getUserIntegral().then((res) => {
+      if (res.code == 200) {
+        this.smt = res.data;
+      }
+    });
     this.getdatalist();
   },
   methods: {

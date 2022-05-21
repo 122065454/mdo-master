@@ -15,10 +15,18 @@
         </div>
         <div class="right_box">
           <ul class="one">
-            <li @click="tabclick(1)">All time</li>
-            <li @click="tabclick(2)">Today</li>
-            <li @click="tabclick(3)">This week</li>
-            <li @click="tabclick(4)">Last month</li>
+            <li @click="tabclick(1)">
+              <div :class="{'active_box': params.dateType == 1}">All time</div>
+            </li>
+            <li @click="tabclick(2)">
+              <div :class="{'active_box': params.dateType == 2}">Today</div>
+            </li>
+            <li @click="tabclick(3)">
+              <div :class="{'active_box': params.dateType == 3}">This week</div>
+            </li>
+            <li @click="tabclick(4)">
+              <div :class="{'active_box': params.dateType == 4}">Last month</div>
+            </li>
           </ul>
           <div class="box">
             <ul class="two">
@@ -39,7 +47,7 @@
                   <span class="two_box">{{item.createTime}}</span>
                 </li>
               </ul>
-              <ul class="box_list">
+              <ul style="text-align: center;">
                 No data
               </ul>
             </div>

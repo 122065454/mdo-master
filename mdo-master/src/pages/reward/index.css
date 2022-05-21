@@ -44,6 +44,7 @@
   color: #000;
 }
 .reward .box .left_box .Withdraw .btn {
+  border-radius: 0.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,6 +77,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.reward .box .right_box .one li div {
+  padding: 0.05rem 0.1rem;
+}
+.reward .box .right_box .one li .active_box {
+  border: 0px solid #6385E7;
+  background: linear-gradient(0deg, #0BBAFB 0%, #4285EC 100%);
+  border-radius: 0.05rem;
 }
 .reward .box .right_box .box {
   background: #e9e9e9;
@@ -130,11 +139,42 @@
   .reward .box .left_box {
     width: 100%;
   }
+  .reward .box .left_box .text {
+    font-size: 0.5rem;
+  }
+  .reward .box .left_box .Withdraw {
+    padding-bottom: 0.4rem;
+  }
+  .reward .box .left_box .Withdraw p {
+    font-size: 0.5rem;
+  }
+  .reward .box .left_box .Withdraw .btn {
+    font-size: 0.3rem;
+  }
   .reward .box .right_box {
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
+  }
+  .reward .box .right_box .one {
+    height: 1rem;
+  }
+  .reward .box .right_box .one li {
+    font-size: 0.25rem;
+  }
+  .reward .box .right_box .box {
+    padding: 0.4rem;
+  }
+  .reward .box .right_box .box .two li {
+    font-size: 0.3rem;
+  }
+  .reward .box .right_box .box .table_list .box_list li .one_box {
+    font-size: 0.5rem;
+  }
+  .reward .box .right_box .box .table_list .box_list li .two_box {
+    font-size: 0.3rem;
+    margin-left: 0.3rem;
   }
    /deep/ .el-pager li {
-    min-width: 27.5px;
+    min-width: 25.5px;
   }
 }

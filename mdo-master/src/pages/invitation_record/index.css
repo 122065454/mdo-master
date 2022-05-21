@@ -36,7 +36,7 @@
   background: linear-gradient(0deg, #6717CD 0%, #2871FA 100%);
 }
 .invitation_record .content .top .left h2 {
-  font-size: 40px;
+  font-size: 0.5rem;
   font-weight: bold;
   color: #FFFFFF;
   text-shadow: 0px 0px 7px rgba(52, 255, 204, 0.1);
@@ -49,12 +49,12 @@
   align-items: center;
 }
 .invitation_record .content .top .left .left_box img {
-  width: 20px;
-  height: 25px;
+  width: 0.2rem;
+  height: 0.25rem;
 }
 .invitation_record .content .top .left .left_box span {
   margin-left: 0.2rem;
-  font-size: 40px;
+  font-size: 0.4rem;
   font-weight: bold;
   color: #FFFFFF;
   text-shadow: 0px 0px 7px rgba(52, 255, 204, 0.1);
@@ -69,7 +69,7 @@
   background: linear-gradient(0deg, #6717CD 0%, #2871FA 100%);
 }
 .invitation_record .content .top .right h2 {
-  font-size: 40px;
+  font-size: 0.5rem;
   font-weight: bold;
   color: #FFFFFF;
   text-shadow: 0px 0px 7px rgba(52, 255, 204, 0.1);
@@ -83,7 +83,7 @@
   justify-content: space-between;
 }
 .invitation_record .content .top .right .right_box span {
-  font-size: 40px;
+  font-size: 0.5rem;
   font-weight: bold;
   color: #FFFFFF;
   text-shadow: 0px 0px 7px rgba(52, 255, 204, 0.1);
@@ -103,8 +103,8 @@
   display: none;
 }
 .invitation_record .content .center {
-  background: url('~@/assets/images/3351088-02@2x.png') no-repeat;
-  background-size: 100%;
+  background: url('~@/assets/images/record_back.png') no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,15 +147,6 @@
 .invitation_record .content .bottom .records h1 {
   text-align: center;
   font-size: 30px;
-  font-weight: bold;
-}
-.invitation_record .content .bottom .records .list {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.invitation_record .content .bottom .records .list li {
-  font-size: 20px;
   font-weight: bold;
 }
 .invitation_record .content .bottom .records img {
@@ -202,7 +193,7 @@
   width: 85%;
   background-color: transparent;
   padding-left: 10px;
-  font-size: 20px;
+  font-size: 0.15rem;
   font-weight: bold;
 }
 .invitation_record .content .bottom .icon_input .input_btn button {
@@ -220,53 +211,40 @@
     padding: 20px 20px 40px 20px;
   }
   .invitation_record .content .top {
-    height: 65px;
-  }
-  .invitation_record .content .top .left_top {
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
-  .invitation_record .content .top .left_top h2 {
-    font-size: 20px;
-    margin-right: 0;
+  .invitation_record .content .top .left {
+    width: 100%;
+    margin-bottom: 0.2rem;
   }
-  .invitation_record .content .top .left_top .img_span {
-    display: flex;
-    align-items: center;
-  }
-  .invitation_record .content .top .left_top .img_span img {
-    width: 15px;
-    height: 15px;
-  }
-  .invitation_record .content .top .left_top .img_span span {
-    font-size: 15px;
-    margin-left: 10px;
+  .invitation_record .content .top .right {
+    width: 100%;
   }
   .invitation_record .content .center {
-    background: url('~@/assets/images/back_sj.png') no-repeat;
-    height: 110px;
+    background: url('~@/assets/images/record_back.png') no-repeat;
     background-size: 100%;
+    padding: 0.4rem;
   }
   .invitation_record .content .center .box h1 {
-    font-size: 18px;
+    font-size: 0.3rem;
   }
   .invitation_record .content .center .box .smt {
     display: block;
     margin-bottom: 0px;
   }
   .invitation_record .content .center .box .smt span {
-    font-size: 10px;
+    font-size: 0.25rem;
   }
   .invitation_record .content .center .box ul {
     display: none;
   }
   .invitation_record .content .hide {
     display: block;
-    line-height: 30px;
   }
   .invitation_record .content .hide li {
-    font-size: 14px;
+    font-size: 0.3rem;
+    margin-top: 0.2rem;
   }
   .invitation_record .content .bottom {
     display: block;
@@ -279,30 +257,31 @@
     padding: 20px;
   }
   .invitation_record .content .bottom .icon_input ul li img {
-    width: 35px;
-    height: 35px;
+    width: 0.8rem;
+    height: 0.8rem;
   }
   .invitation_record .content .bottom .icon_input ul li p {
-    font-size: 15px;
+    font-size: 0.25rem;
   }
   .invitation_record .content .bottom .icon_input .input_btn {
-    height: 40px;
+    height: 1rem;
   }
   .invitation_record .content .bottom .icon_input .input_btn button {
     width: 80px;
-    padding: 0;
-    font-size: 10px;
+    padding: 0.1rem;
+    font-size: 0.3rem;
     margin-right: 10px;
+    border: 0.03rem solid #000;
   }
   .invitation_record .content .bottom .records {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 0.5rem;
   }
   .invitation_record .content .bottom .records h1 {
     font-size: 20px;
   }
-  .invitation_record .content .bottom .records .list li {
-    font-size: 15px;
+  .invitation_record .content .bottom .records .el-table tr {
+    font-size: 0.3rem;
   }
   .invitation_record .content .bottom .show {
     display: none;

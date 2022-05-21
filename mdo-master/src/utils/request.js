@@ -7,7 +7,7 @@ export const instance = axios.create({
   baseURL: 'http://54.153.12.169:8787/simeta/',
 })
 
-const token = getToken() || 'f4f28109-f7f7-449c-ad2c-58e0dea30a62'
+const token = getToken() || '4c2a77ed-07b6-46cb-ab83-e8720adad35f'
 instance.interceptors.request.use(
   (config) => {
     // if(getCookie('simetaToken')){
@@ -70,6 +70,14 @@ export const pageAwardRecord = ({
   pageSize,
   dateType
 }) => instance.get(`/buyer/awardRecord/pageAwardRecord?currPage=${currPage}&pageSize=${pageSize}&dateType=${dateType}`)
+
+
+// 获取用户邀请总人数
+export const getInviteUserSum = (payload) => instance.get(`
+/buyer/getInviteUserSum`, payload)
+
+// 获取用户的积分数量
+export const getUserIntegral = (payload) => instance.get(`/buyer/getUserIntegral`, payload);
 // 
 // export const updateFoods = (payload) =>
 //   instance.get('/item/status', {

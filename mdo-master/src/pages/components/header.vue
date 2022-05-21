@@ -25,7 +25,7 @@
             </li>
           </ol>
         </li>
-        <li @mouseover='subMenuShow2'>
+        <li @mouseenter='subMenuShow2'>
           <span>Merchant</span>
           <ol
             class="sbumenu2"
