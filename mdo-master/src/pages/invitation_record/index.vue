@@ -182,7 +182,7 @@
               placeholder="simeta.io/i/Jessie"
               v-model="share_url"
             >
-            <button>Copy</button>
+            <button @click="copystring">Copy</button>
           </div>
         </div>
       </div>
@@ -257,6 +257,20 @@ export default {
     this.getdatalist();
   },
   methods: {
+    copystring() {
+      let oInput = document.createElement("input");
+      //这边为链接地址this.liveLink='www.baidu.com'
+      oInput.value = this.share_url;
+      document.body.appendChild(oInput);
+      oInput.select();
+      console.log(oInput.value);
+      document.execCommand("Copy");
+      oInput.remove();
+      this.$message({
+        message: "复制成功",
+        type: "Copy successful",
+      });
+    },
     getdatalist() {
       pageAwardRecord(this.params).then((res) => {
         this.records = res.data.records;
