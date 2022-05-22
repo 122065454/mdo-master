@@ -31,7 +31,10 @@
           <h1>Simeta</h1>
           <p>The first virtual futuristic eCommerce marketplace where<br>users can buy and sell items in both the crypto field and the<br>physical world with cryptocurrencies worldwide</p>
           <div class="one_btn">
-            <a href="https://simeta.gitbook.io/about/" target="_blank">
+            <a
+              href="https://simeta.gitbook.io/about/"
+              target="_blank"
+            >
               <button>Whitepaper</button>
             </a>
 
@@ -41,7 +44,10 @@
         </div>
         <div class="right_img show">
           <div class="border">
-            <img src="@/assets/images/33@2x.png" alt="">
+            <img
+              src="@/assets/images/WechatIMG103.png"
+              alt=""
+            >
             <div></div>
             <div></div>
             <div></div>
@@ -53,40 +59,61 @@
         <div class="shop_box">
           <h1 class="title">Shop -to-Earn</h1>
           <div class="shop_one">
-            <img src="@/assets/images/shop_one.png" alt="">
+            <img
+              src="@/assets/images/shop_one.png"
+              alt=""
+            >
             <div class="word">
               <h1>Sellers</h1>
               <p>Sellers can earn additional $SMT for every completed order on<br>top of high profit thanks to lower service fee and advertising<br>cost compared with traditional ecommerce platform
               </p>
             </div>
           </div>
-          <div class="shop_one" style="margin-top: 2rem;">
+          <div
+            class="shop_one"
+            style="margin-top: 2rem;"
+          >
             <div class="word">
               <h1>Buyers</h1>
               <p>Buyerss can earn additional $SMT for every completed<br>order at a reasonable price</p>
             </div>
-            <img src="@/assets/images/shop_two.png" alt="">
+            <img
+              src="@/assets/images/shop_two.png"
+              alt=""
+            >
           </div>
         </div>
 
       </section>
 
-      <section class="shop_to_earn" style="margin-top:10px;">
+      <section
+        class="shop_to_earn"
+        style="margin-top:10px;"
+      >
         <div class="shop_box">
           <div class="shop_one">
-            <img src="@/assets/images/shop_three.png" alt="">
+            <img
+              src="@/assets/images/shop_three.png"
+              alt=""
+            >
             <div class="word">
               <h1>All ecology</h1>
               <p>All users in simeta ecology can get $SMT every day by clocking<br>in Simeta website or APP</p>
             </div>
           </div>
-          <div class="shop_one" style="margin-top: 2rem;">
+          <div
+            class="shop_one"
+            style="margin-top: 2rem;"
+          >
             <div class="word">
               <h1>Simeta team</h1>
               <p>Simeta will charge a service fee with a fixed ratio of 8% for every<br>completed order which is lower than that of traditional ecommerce<br>platforms (15-20%) of which 5% will be
                 returned to simeta ecology<br>and 3% will be used for the develop Simeta </p>
             </div>
-            <img src="@/assets/images/shop_four.png" alt="">
+            <img
+              src="@/assets/images/shop_four.png"
+              alt=""
+            >
           </div>
 
         </div>
@@ -95,7 +122,10 @@
       <section class="scenarios_smt">
         <h1 class="title">Scenarios of $SMT</h1>
         <div class="servies_one">
-          <img src="@/assets/images/smt_one.png" alt="">
+          <img
+            src="@/assets/images/smt_one.png"
+            alt=""
+          >
           <div class="services one">
             <h1>Services and products</h1>
             <ul>
@@ -114,10 +144,16 @@
               <li>3. Pay for tickets for selected scenes in Simeta metaverse</li>
             </ul>
           </div>
-          <img src="@/assets/images/smt_two.png" alt="">
+          <img
+            src="@/assets/images/smt_two.png"
+            alt=""
+          >
         </div>
         <div class="servies_one">
-          <img src="@/assets/images/smt_three.png" alt="">
+          <img
+            src="@/assets/images/smt_three.png"
+            alt=""
+          >
           <div class="services three">
             <h1>Farming</h1>
             <ul>
@@ -133,7 +169,10 @@
       <section class="usage_fee">
         <h1>Usage of 8% service fee</h1>
         <div class="echartsAndword">
-          <img src="@/assets/images/tuxong.svg" alt="">
+          <img
+            src="@/assets/images/tuxong.svg"
+            alt=""
+          >
           <div class="word_box">
             <ul>
               <li>1. 2% out 8% service fee will be rewarded to $SMT holders by farming</li>
@@ -152,19 +191,34 @@
 
       <section class="steps">
         <h1>Roadmap</h1>
-        <img src="@/assets/images/roadmap.svg" alt="">
+        <img
+          src="@/assets/images/roadmap.svg"
+          alt=""
+        >
       </section>
     </div>
 
-    <div v-else class="sj">
+    <div
+      v-else
+      class="sj"
+    >
       <section class="top_box">
         <div class="img_box">
-          <img src="@/assets/images/33@2x.png" alt="">
+          <img
+            src="@/assets/images/WechatIMG103.png"
+            alt=""
+          >
           <div class="word">
             <h1>Simeta</h1>
             <p>The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide</p>
             <div class="btn_box">
-              <button class="one">Whitepaper</button>
+              <a
+                href="https://simeta.gitbook.io/about/"
+                target="_blank"
+              >
+                <button>Whitepaper</button>
+              </a>
+              <!-- <button class="one">Whitepaper</button> -->
               <router-link to="/invitate">
                 <button class="two">Clock-in</button>
               </router-link>
@@ -175,28 +229,40 @@
       <section class="shop_earn">
         <h1>Shop -to-Earn</h1>
         <div class="box">
-          <img src="@/assets/images/shop_one.png" alt="">
+          <img
+            src="@/assets/images/shop_one.png"
+            alt=""
+          >
           <div class="word">
             <h2>Sellers</h2>
             <p>Sellers can earn additional $SMT for every completed order on top of high profit thanks to lower service fee and advertising cost compared with traditional ecommerce platform</p>
           </div>
         </div>
         <div class="box">
-          <img src="@/assets/images/shop_two.png" alt="">
+          <img
+            src="@/assets/images/shop_two.png"
+            alt=""
+          >
           <div class="word">
             <h2>Buyers</h2>
             <p>Buyerss can earn additional $SMT for every completed order at a reasonable price</p>
           </div>
         </div>
         <div class="box">
-          <img src="@/assets/images/shop_three.png" alt="">
+          <img
+            src="@/assets/images/shop_three.png"
+            alt=""
+          >
           <div class="word">
             <h2>All ecology</h2>
             <p>All users in simeta ecology can get $SMT every day by clocking in Simeta website or APP</p>
           </div>
         </div>
         <div class="box">
-          <img src="@/assets/images/shop_four.png" alt="">
+          <img
+            src="@/assets/images/shop_four.png"
+            alt=""
+          >
           <div class="word">
             <h2>Simeta team</h2>
             <p>Simeta will charge a service fee with a fixed ratio of 8% for every completed order which is lower than that of traditional ecommerce platforms (15-20%) of which 5% will be returned to
@@ -208,7 +274,10 @@
       <section class="scenarios_smt_sj">
         <h1>Scenarios of $SMT</h1>
         <div class="word ">
-          <img src="@/assets/images/smt_one.png" alt="">
+          <img
+            src="@/assets/images/smt_one.png"
+            alt=""
+          >
           <div class="word_and one">
             <h2>Services and products</h2>
             <ul>
@@ -219,7 +288,10 @@
           </div>
         </div>
         <div class="word">
-          <img src="@/assets/images/smt_two.png" alt="">
+          <img
+            src="@/assets/images/smt_two.png"
+            alt=""
+          >
           <div class="word_and two">
             <h2>Land and associate NFT</h2>
             <ul>
@@ -230,7 +302,10 @@
           </div>
         </div>
         <div class="word">
-          <img src="@/assets/images/smt_three.png" alt="">
+          <img
+            src="@/assets/images/smt_three.png"
+            alt=""
+          >
           <div class="word_and three">
             <h2>Farming</h2>
             <ul>
@@ -246,7 +321,10 @@
 
       <section class="echarts_sj">
         <h1>Usage of 8% service fee</h1>
-        <img src="@/assets/images/tuxong.svg" alt="">
+        <img
+          src="@/assets/images/tuxong.svg"
+          alt=""
+        >
         <div class="btn_box">
           <div class="one"><span>Farming</span><span class="text">2%</span></div>
           <div class="two"><span>Simeta treasure</span><span class="text">3%</span></div>
@@ -262,7 +340,10 @@
       <section class="steps_sj">
         <h1>Roadmap</h1>
         <div class="ha">
-          <img src="@/assets/images/speps_sj.png" alt="">
+          <img
+            src="@/assets/images/speps_sj.png"
+            alt=""
+          >
           <div class="phase_box">
             <div class="phase">
               <h2>Phase 1</h2>
@@ -289,7 +370,10 @@
               </ul>
             </div>
 
-            <div class="phase" style="margin-top:35px;">
+            <div
+              class="phase"
+              style="margin-top:35px;"
+            >
               <h2>Phase 3</h2>
               <h3>Q3 2022</h3>
               <ul>
@@ -327,78 +411,78 @@
 </template>
 
 <script>
-import * as echarts from 'echarts'
+import * as echarts from "echarts";
 // import section1 from "../components/section1.vue";
 // import section2 from "../components/section2.vue";
 // import section3 from "../components/section3.vue";
-import header from '../components/header.vue'
-import footer from '../components/footer.vue'
-import { getToken } from '@/utils'
+import header from "../components/header.vue";
+import footer from "../components/footer.vue";
+import { getToken } from "@/utils";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     // section1,
     // section2,
     // section3,
-    'v-header': header,
-    'v-footer': footer,
+    "v-header": header,
+    "v-footer": footer,
   },
   data() {
-    return {}
+    return {};
   },
   mounted() {
-    this.initEachartsLeft()
+    this.initEachartsLeft();
   },
   methods: {
     clock() {
       if (getToken()) {
-        this.$router.push('invitate')
+        this.$router.push("invitate");
       } else {
-        window.location.href = 'http://54.153.12.169:8091/shop/login'
+        window.location.href = "http://54.153.12.169:8091/shop/login";
       }
     },
     initEachartsLeft() {
-      let myChart = echarts.init(this.$refs.echarts)
-      console.log(myChart)
+      let myChart = echarts.init(this.$refs.echarts);
+      console.log(myChart);
       var option = {
         title: {
-          text: '  ',
-          left: 'center',
+          text: "  ",
+          left: "center",
         },
         tooltip: {
-          trigger: 'item',
+          trigger: "item",
         },
         legend: {
-          orient: 'vertical',
-          left: 'left',
+          orient: "vertical",
+          left: "left",
         },
         series: [
           {
-            name: 'Access From',
-            type: 'pie',
-            radius: '50%',
+            name: "Access From",
+            type: "pie",
+            radius: "50%",
             data: [
-              { value: 1048, name: 'Farming' },
-              { value: 735, name: 'Buyback and detory' },
-              { value: 580, name: 'Simeta treasure' },
+              { value: 1048, name: "Farming" },
+              { value: 735, name: "Buyback and detory" },
+              { value: 580, name: "Simeta treasure" },
             ],
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
                 shadowOffsetX: 0,
-                shadowColor: 'rgba(0, 0, 0, 0.5)',
+                shadowColor: "rgba(0, 0, 0, 0.5)",
               },
             },
           },
         ],
-      }
-      myChart.setOption(option)
+      };
+      myChart.setOption(option);
     },
   },
-}
+};
 </script>
 
 <style lang="less" scoped>
-@import './index.less';
+@import "./index.less";
 </style>
