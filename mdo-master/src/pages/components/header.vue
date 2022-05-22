@@ -30,7 +30,7 @@
           <ol
             class="sbumenu2"
             v-show="subshow2"
-            @mouseout='subMenuOut2'
+            @mouseleave='subMenuOut2'
           >
             <li>
               <a
@@ -170,7 +170,7 @@
 </template>
 <script>
 import { WOW } from "wowjs";
-import { getToken } from "@/utils";
+import { getChainId } from "@/utils/publicErc20";
 export default {
   name: "headers",
   data() {
@@ -191,7 +191,7 @@ export default {
     //  }
   },
   computed: {},
-  created() {
+  async created() {
     const { ethereum } = window;
     this.connectWallect();
     if (ethereum) {
@@ -206,7 +206,7 @@ export default {
       });
     }
     this.$bus.$on('overPage',()=>{
-         this.subshow2 = false;
+      this.subshow2 = false;
       this.subshow = false;
     })
   },
@@ -236,6 +236,8 @@ export default {
     },
     async connectWallect() {
       if (typeof window.ethereum !== "undefined") {
+        const chainid = await getChainId()
+        console.log('chainid',chainid);
         let addr = await ethereum.request({ method: "eth_requestAccounts" });
         console.log("address:", addr[0]);
         this.$store.commit("changeAccount", addr[0]);
@@ -345,6 +347,7 @@ export default {
   text-align: center;
   top: 50 / @p;
   left: -50 / @p;
+
   li {
     margin-left: unset !important;
     margin-top: 10px;

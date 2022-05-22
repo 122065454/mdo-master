@@ -45,7 +45,7 @@ export default {
       inviteList: [
         {
           url: require('@/assets/images/invite/ste.png'),
-          name1: 'Shop-to-Earn',
+          name1: 'Shop-to-Earn(Stay tuned)',
           name2: 'Earn by every completed order',
         },
         {

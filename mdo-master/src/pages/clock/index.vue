@@ -60,7 +60,7 @@
             <span>{{totalDays}}/90 <b v-if="isPC">days</b></span>
           </div>
           <!-- <div class="button">SET</div> -->
-          <h3>Check the STE record</h3>
+          <h3 @click="$router.push('reward')">Check the STE record</h3>
           <div class="button2" @click="close">Dismiss</div>
         </section>
       </div>
@@ -536,6 +536,7 @@ section {
     font-weight: bold;
     color: #ff8f16;
     margin-left: 17 / @p;
+    vertical-align:top
   }
 }
 .gifts {
@@ -648,6 +649,7 @@ h3 {
   color: #242424;
   margin: 12 / @p auto 0;
   text-align: center;
+  cursor: pointer;
   // border-bottom: 1/@p solid #242424;
 }
 .button2 {
