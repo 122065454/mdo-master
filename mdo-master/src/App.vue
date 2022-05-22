@@ -4,7 +4,7 @@
          src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <v-header></v-header>
-    <router-view></router-view>
+    <router-view @mouseenter.native="over"></router-view>
     <v-footer></v-footer>
   </div>
 </template>
@@ -18,6 +18,11 @@ export default {
     'v-header': vheader,
     'v-footer': vfooter,
   },
+  methods:{
+    over(){
+      this.$bus.$emit('overPage')
+    }
+  }
 }
 </script>
 
