@@ -7,7 +7,7 @@ export const instance = axios.create({
   baseURL: 'http://54.153.12.169:8787/simeta/',
 })
 
-const token = getToken() || 'c44b067c-78cc-430a-975c-25d136c0f353'
+const token = getToken() || window.localStorage.getItem('token');
 instance.interceptors.request.use(
   (config) => {
     // if(getCookie('simetaToken')){

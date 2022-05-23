@@ -67,7 +67,10 @@
                   <span class="two_box">{{item.createTime}}</span>
                 </li>
               </ul>
-              <ul style="text-align: center;height:2.2rem;">
+              <ul
+                style="text-align: center;height:2.2rem;"
+                v-else
+              >
                 No data
               </ul>
             </div>
