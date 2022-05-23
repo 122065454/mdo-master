@@ -52,8 +52,12 @@
   font-size: 0.2rem;
   font-weight: bold;
   color: #000;
-  background: #EEEA38;
+  background: #ccc;
   box-shadow: 0px 2px 19px 1px rgba(76, 109, 216, 0.47);
+}
+.reward .box .left_box .Withdraw .tips {
+  width: 0.2rem;
+  height: 0.2rem;
 }
 .reward .box .right_box {
   display: flex;
@@ -102,6 +106,14 @@
 .reward .box .right_box .box .two li {
   font-size: 0.2rem;
   font-weight: bold;
+  padding: 0.05rem 0.1rem;
+}
+.reward .box .right_box .box .two .active_li {
+  background: #FFE956;
+  border: 0px solid #6385E7;
+  box-shadow: 0px 5px 9px 1px rgba(76, 109, 216, 0.4);
+  border-radius: 0.05rem;
+  color: #000;
 }
 .reward .box .right_box .box .table_list {
   background: #FFFFFF;

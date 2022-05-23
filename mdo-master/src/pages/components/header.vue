@@ -44,11 +44,29 @@
             </li>
           </ol>
         </li>
-        <li class="noshow">
+        <li @mouseenter='subMenuShow3'>
           <span>DeBank</span>
+          <ol
+            class="sbumenu2"
+            v-show="subshow3"
+            @mouseleave='subMenuOut3'
+          >
+            <li class="noneshow">
+              stay tuned
+            </li>
+          </ol>
         </li>
-        <li class="noshow">
+        <li @mouseenter='subMenuShow4'>
           <span>Land</span>
+          <ol
+            class="sbumenu2"
+            v-show="subshow4"
+            @mouseleave='subMenuOut4'
+          >
+            <li class="noneshow">
+              stay tuned
+            </li>
+          </ol>
         </li>
       </ul>
 
@@ -178,6 +196,8 @@ export default {
       show: false,
       subshow: false,
       subshow2: false,
+      subshow3: false,
+      subshow4: false,
       activeNames: ["1"],
       contract: "Connect Wallet",
       account: "",
@@ -205,10 +225,10 @@ export default {
         this.account = accounts[0];
       });
     }
-    this.$bus.$on('overPage',()=>{
+    this.$bus.$on("overPage", () => {
       this.subshow2 = false;
       this.subshow = false;
-    })
+    });
   },
   watch: {
     $route() {
@@ -236,8 +256,8 @@ export default {
     },
     async connectWallect() {
       if (typeof window.ethereum !== "undefined") {
-        const chainid = await getChainId()
-        console.log('chainid',chainid);
+        const chainid = await getChainId();
+        console.log("chainid", chainid);
         let addr = await ethereum.request({ method: "eth_requestAccounts" });
         console.log("address:", addr[0]);
         this.$store.commit("changeAccount", addr[0]);
@@ -246,7 +266,6 @@ export default {
 
         this.contract =
           addr[0].slice(0, 6) + "..." + addr[0].substring(addr[0].length - 6);
-      } else {
       }
     },
     diagleShow() {
@@ -262,18 +281,36 @@ export default {
     subMenuShow2() {
       this.subshow2 = true;
       this.subshow = false;
+      this.subshow3 = false;
     },
     subMenuOut2() {
       this.subshow2 = false;
     },
+    subMenuShow3() {
+      this.subshow3 = true;
+      this.subshow2 = false;
+      this.subshow = false;
+      this.subshow4 = false;
+    },
+    subMenuOut3() {
+      this.subshow3 = false;
+    },
+    subMenuShow4() {
+      this.subshow4 = true;
+      this.subshow2 = false;
+      this.subshow3 = false;
+      this.subshow = false;
+    },
+    subMenuOut4() {
+      this.subshow4 = false;
+    },
     close() {
       this.show = false;
     },
-    over(){
+    over() {
       // this.subshow2 = false;
       // this.subshow = false;
-      
-    }
+    },
   },
   mounted() {
     var options = {
@@ -352,13 +389,13 @@ export default {
     margin-left: unset !important;
     margin-top: 10px;
   }
-  li:last-child:hover::after {
-    content: "Stay tuned";
-    position: absolute;
-    top: 20 / @p;
-    left: 60 / @p;
-    font-size: 12 / @p;
-  }
+  // li:last-child:hover::after {
+  //   content: "Stay tuned";
+  //   position: absolute;
+  //   top: 20 / @p;
+  //   left: 60 / @p;
+  //   font-size: 12 / @p;
+  // }
   a {
     color: #fff;
   }
@@ -409,13 +446,13 @@ export default {
     cursor: not-allowed;
   }
 
-  li:nth-child(n + 3):hover::after {
-    content: "Stay tuned";
-    position: absolute;
-    top: 20 / @p;
-    left: 10 / @p;
-    font-size: 12 / @p;
-  }
+  // li:nth-child(n + 3):hover::after {
+  //   content: "Stay tuned";
+  //   position: absolute;
+  //   top: 20 / @p;
+  //   left: 10 / @p;
+  //   font-size: 12 / @p;
+  // }
 }
 .menu {
   font-size: 20 / @p;

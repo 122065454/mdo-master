@@ -9,8 +9,19 @@
               src="@/assets/images/400@2x.png"
               alt=""
             >
-            <p><span style="margin-right: .1rem;">500</span><span style="margin-left: .1rem;">SMT</span></p>
+            <p><span style="margin-right: .1rem;">{{totalPrice}}</span><span style="margin-left: .1rem;">SMT</span></p>
             <div class="btn">Withdraw</div>
+            <!-- <a-tooltip>
+              <template #title>
+              </template>
+              <img
+                src="@/assets/images/tist.png"
+                class="tips"
+                alt=""
+                srcset=""
+              >
+            </a-tooltip> -->
+
           </div>
         </div>
         <div class="right_box">
@@ -30,9 +41,18 @@
           </ul>
           <div class="box">
             <ul class="two">
-              <li>S2E</li>
-              <li>Clock-in</li>
-              <li>invite</li>
+              <li
+                :class="{'active_li': params.type == 1}"
+                @click="tabclick2(1)"
+              >S2E</li>
+              <li
+                @click="tabclick2(2)"
+                :class="{'active_li': params.type == 2}"
+              >Clock-in</li>
+              <li
+                @click="tabclick2(3)"
+                :class="{'active_li': params.type == 3}"
+              >invite</li>
             </ul>
             <div class="table_list">
               <ul
@@ -47,7 +67,7 @@
                   <span class="two_box">{{item.createTime}}</span>
                 </li>
               </ul>
-              <ul style="text-align: center;">
+              <ul style="text-align: center;height:2.2rem;">
                 No data
               </ul>
             </div>
@@ -68,31 +88,41 @@
 </template>
 
 <script>
-import { pageAwardRecord } from "@/utils/request.js";
+import { pageAwardRecord, getUserIntegral } from "@/utils/request.js";
 export default {
   data() {
     return {
+      totalPrice: 0,
       records: [],
       params: {
         currPage: 1,
         pageSize: 5,
         dateType: 1,
+        type: 2,
       },
       total: 0,
     };
   },
   created() {
     this.getdatalist();
+    getUserIntegral().then((res) => {
+      this.totalPrice = res.data || 0;
+    });
   },
   methods: {
     getdatalist() {
       pageAwardRecord(this.params).then((res) => {
+        console.log(res);
         this.records = res.data.records;
         this.total = res.data.total;
       });
     },
     tabclick(dateType) {
       this.params.dateType = dateType;
+      this.getdatalist();
+    },
+    tabclick2(type) {
+      this.params.type = type;
       this.getdatalist();
     },
     // 分页

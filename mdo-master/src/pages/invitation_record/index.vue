@@ -131,6 +131,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 "
           >
             No data
@@ -202,40 +203,14 @@ export default {
     return {
       firends: 0,
       smt: 0,
-      total: 100,
+      total: 0,
       share_url: "http://54.153.12.169:8091/shop/register",
       params: {
         currPage: 1,
         pageSize: 5,
         dateType: 1,
       },
-      records: [
-        {
-          createTime: "05-04 12",
-          userId: "Je...@gmail.com",
-          award: "+50 $SMT",
-        },
-        {
-          createTime: "05-04 12",
-          userId: "Je...@gmail.com",
-          award: "+50 $SMT",
-        },
-        {
-          createTime: "05-04 12",
-          userId: "Je...@gmail.com",
-          award: "+50 $SMT",
-        },
-        {
-          createTime: "05-04 12",
-          userId: "Je...@gmail.com",
-          award: "+50 $SMT",
-        },
-        {
-          createTime: "05-04 12",
-          userId: "Je...@gmail.com",
-          award: "+50 $SMT",
-        },
-      ],
+      records: [],
     };
   },
   created() {
@@ -267,8 +242,8 @@ export default {
       document.execCommand("Copy");
       oInput.remove();
       this.$message({
-        message: "复制成功",
-        type: "Copy successful",
+        message: "Copy successful",
+        type: "success",
       });
     },
     getdatalist() {
