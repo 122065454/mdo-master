@@ -98,7 +98,7 @@ export default {
       giftsList: [
         {
           url: require('@/assets/images/clock/gift.png'),
-          nums: 2,
+          nums: 10,
           name: '10 days',
           num: 10,
         },
