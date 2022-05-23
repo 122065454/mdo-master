@@ -1,9 +1,15 @@
+const isProduction = process.env.NODE_ENV === 'production'
+const CompressionPlugin = require('compression-webpack-plugin')
 module.exports = {
   // 选项...
   lintOnSave: false, // 关闭掉eslint的检查
   productionSourceMap: false,
   publicPath: '/',
-
+  // 关闭 souremap
+  productionSourceMap: !isProduction, //关闭生产环境下的SourceMap映射文件
+  css: {
+    sourceMap: !isProduction, // css sourceMap 配置
+  },
   chainWebpack: (config) => {
     // config.optimization.minimizer('terser').tap((args) => {
     //   Object.assign(args[0].terserOptions.compress, {
@@ -15,13 +21,25 @@ module.exports = {
     //   })
     //   return args
     // })
+    if (isProduction) {
+      config.plugin('compressionPlugin').use(
+        new CompressionPlugin({
+          test: /\.(js)$/, // 匹配文件名
+          threshold: 10240, // 对超过10k的数据压缩
+          minRatio: 0.8,
+          deleteOriginalAssets: true, // 删除源文件
+        })
+      )
+    }
     config.module
       .rule('images')
       .use('url-loader')
       .loader('url-loader')
-      .tap((options) => Object.assign(options, {
-        limit: 10000
-      }))
+      .tap((options) =>
+        Object.assign(options, {
+          limit: 10000,
+        })
+      )
   },
   configureWebpack: (config) => {
     if (process.env.NODE_ENV === 'production') {
@@ -46,16 +64,7 @@ module.exports = {
       },
     },
   },
-  // configureWebpack: {
-  //   css: {
-  //     requireModuleExtension: true,
-  //     loaderOptions: {
-  //       less: {
-  //         javascriptEnabled: true,
-  //       },
-  //     },
-  //   },
-  // },
+
   devServer: {
     open: true,
     host: '0.0.0.0',
