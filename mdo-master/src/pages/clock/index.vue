@@ -98,7 +98,7 @@ export default {
       giftsList: [
         {
           url: require('@/assets/images/clock/gift.png'),
-          nums: 2,
+          nums: 10,
           name: '10 days',
           num: 10,
         },
@@ -334,7 +334,7 @@ export default {
 }
 section {
   width: 664 / @p;
-  height: 900 / @p;
+  height: 800 / @p;
   // border: 4 / @p solid #1b1b1b;
   border-radius: 5 / @p;
   position: absolute;
@@ -536,7 +536,7 @@ section {
     font-weight: bold;
     color: #ff8f16;
     margin-left: 17 / @p;
-    vertical-align:top
+    vertical-align: top;
   }
 }
 .gifts {
