@@ -68,8 +68,9 @@ export const inviteUser = (payload) => instance.get(`/buyer/inviteUser`, payload
 export const pageAwardRecord = ({
   currPage,
   pageSize,
-  dateType
-}) => instance.get(`/buyer/awardRecord/pageAwardRecord?currPage=${currPage}&pageSize=${pageSize}&dateType=${dateType}`)
+  dateType,
+  type
+}) => instance.get(`/buyer/awardRecord/pageAwardRecord?currPage=${currPage}&pageSize=${pageSize}&dateType=${dateType}&type=${type}`)
 
 
 // 获取用户邀请总人数
@@ -78,6 +79,13 @@ export const getInviteUserSum = (payload) => instance.get(`
 
 // 获取用户的积分数量
 export const getUserIntegral = (payload) => instance.get(`/buyer/getUserIntegral`, payload);
+
+// buyer/awardRecord/pageAwardRecordForInvite
+export const pageAwardRecordForInvite = ({
+  currPage,
+  pageSize,
+}) => instance.get(`/buyer/awardRecord/pageAwardRecordForInvite?currPage=${currPage}&pageSize=${pageSize}`)
+
 // 
 // export const updateFoods = (payload) =>
 //   instance.get('/item/status', {

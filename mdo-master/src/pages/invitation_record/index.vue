@@ -108,7 +108,7 @@
             >
             </el-table-column>
             <el-table-column
-              prop="userId"
+              prop="email"
               label="Account"
               align="center"
             >
@@ -194,7 +194,7 @@
 <script>
 import {
   inviteUser,
-  pageAwardRecord,
+  pageAwardRecordForInvite,
   getInviteUserSum,
   getUserIntegral,
 } from "@/utils/request.js";
@@ -208,7 +208,6 @@ export default {
       params: {
         currPage: 1,
         pageSize: 5,
-        dateType: 1,
       },
       records: [],
     };
@@ -247,7 +246,7 @@ export default {
       });
     },
     getdatalist() {
-      pageAwardRecord(this.params).then((res) => {
+      pageAwardRecordForInvite(this.params).then((res) => {
         this.records = res.data.records;
         this.total = res.data.total;
       });
