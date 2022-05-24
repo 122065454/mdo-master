@@ -18,11 +18,17 @@ export default {
     'v-header': vheader,
     'v-footer': vfooter,
   },
-  methods:{
-    over(){
+  methods: {
+    over() {
       this.$bus.$emit('overPage')
+    },
+  },
+  mounted() {
+    window.onbeforeunload = function (e) {
+      var storage = window.localStorage
+      storage.clear()
     }
-  }
+  },
 }
 </script>
 
