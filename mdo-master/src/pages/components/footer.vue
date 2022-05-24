@@ -3,11 +3,7 @@
     <div class="content">
       <div class="logo">
         <div class="logo_top">
-          <img
-            src="@/assets/images/logo1.png"
-            class="img1"
-            alt=""
-          >
+          <img src="@/assets/images/logo1.png" class="img1" alt="">
           <!-- <img
             src="@/assets/images/h5/Simeta.png"
             class="img2"
@@ -15,37 +11,15 @@
           > -->
           <div class="logo_bottom">
             <div class="select_item">
-              <img
-                style="width: 20px;"
-                src="@/assets/images/icon1.png"
-                alt=""
-              >
-              <a-select
-                style="width: 120px;"
-                v-model="value1"
-              >
-                <a-select-option
-                  v-for="(item, index) in langList"
-                  :key="index"
-                  :value="item.value"
-                >{{item.label}}</a-select-option>
+              <img style="width: 20px;" src="@/assets/images/icon1.png" alt="">
+              <a-select style="width: 120px;" v-model="value1">
+                <a-select-option v-for="(item, index) in langList" :key="index" :value="item.value">{{item.label}}</a-select-option>
               </a-select>
             </div>
             <div class="select_item">
-              <img
-                style="width: 20px;"
-                src="@/assets/images/1200px-Flag_of_the_United_States_(Pantone).svg.png"
-                alt=""
-              >
-              <a-select
-                style="width: 120px;"
-                v-model="value2"
-              >
-                <a-select-option
-                  v-for="(item, index) in addressList"
-                  :key="index"
-                  :value="item.value"
-                >{{item.label}}</a-select-option>
+              <img style="width: 20px;" src="@/assets/images/1200px-Flag_of_the_United_States_(Pantone).svg.png" alt="">
+              <a-select style="width: 120px;" v-model="value2">
+                <a-select-option v-for="(item, index) in addressList" :key="index" :value="item.value">{{item.label}}</a-select-option>
               </a-select>
             </div>
 
@@ -56,15 +30,8 @@
       <div class="contrat">
         <ol>
           <li>Infomation </li>
-          <li
-            v-for="(item,index) in infomationList"
-            :key="index"
-          >
-            <a
-              :href="item.herf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >{{item.name}}</a>
+          <li v-for="(item,index) in infomationList" :key="index">
+            <a :href="item.herf" target="_blank" rel="noopener noreferrer">{{item.name}}</a>
           </li>
         </ol>
         <!-- <ol>
@@ -94,15 +61,8 @@
             Community
           </h2>
           <div class="a_item">
-            <a
-              :href="item.herf"
-              v-for="(item,index) in communityList"
-              :key="index"
-            >
-              <img
-                :src="item.icon"
-                alt=""
-              >
+            <a :href="item.herf" v-for="(item,index) in communityList" :key="index">
+              <img :src="item.icon" alt="">
             </a>
           </div>
 
@@ -111,22 +71,10 @@
       <div class="mail">
         <p>Subscribe to our newsletter: stay in touch with latest updates with Simeta</p>
         <div class="input">
-          <input
-            type="text"
-            v-model="email"
-            placeholder="Your Email"
-            class="input1"
-          >
-          <input
-            type="text"
-            v-model="name"
-            placeholder="Your Name"
-          >
+          <input type="text" v-model="email" placeholder="Your Email" class="input1">
+          <input type="text" v-model="name" placeholder="Your Name">
         </div>
-        <div
-          class="button"
-          @click="sumbit"
-        >Subscribe</div>
+        <div class="button" @click="sumbit">Subscribe</div>
       </div>
 
     </div>
@@ -148,16 +96,8 @@
   </footer>
   <footer v-else>
     <div class="title">
-      <img
-        src="@/assets/images/h5/logo.png"
-        class="footer_logo"
-        alt=""
-      >
-      <img
-        src="@/assets/images/h5/Simeta.png"
-        class="simeta"
-        alt=""
-      >
+      <img src="@/assets/images/h5/logo.png" class="footer_logo" alt="">
+      <img src="@/assets/images/h5/Simeta.png" class="simeta" alt="">
     </div>
     <div class="introduce">
       The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide
@@ -165,28 +105,14 @@
     <div class="h5_contact">
       <ol>
         <li>Infomation </li>
-        <li
-          v-for="(item,index) in infomationList"
-          :key="index"
-        >
-          <a
-            :href="item.herf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >{{item.name}}</a>
+        <li v-for="(item,index) in infomationList" :key="index">
+          <a :href="item.herf" target="_blank" rel="noopener noreferrer">{{item.name}}</a>
         </li>
       </ol>
       <ol class="Community">
         <li>Community </li>
-        <li
-          v-for="(item,index) in communityList"
-          :key='index'
-        >
-          <a
-            :href="item.herf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >{{item.name}}</a>
+        <li v-for="(item,index) in communityList" :key='index'>
+          <a :href="item.herf" target="_blank" rel="noopener noreferrer">{{item.name}}</a>
         </li>
         <!-- <li> Telegram </li>
           <li>Discord</li>
@@ -196,163 +122,129 @@
     <div class="h5_input">
       <h1>Subscribe to our newsletter, stay in touch </h1>
       <h2> with latest updates with Simeta</h2>
-      <input
-        type="text"
-        placeholder="Your Email"
-        v-model="email"
-        name=""
-        id=""
-      >
-      <input
-        type="text"
-        name=""
-        v-model="name"
-        placeholder="Your Name"
-        id=""
-      >
-      <div
-        class="h5_button"
-        @click="sumbit"
-      >Subscribe</div>
+      <input type="text" placeholder="Your Email" v-model="email" name="" id="">
+      <input type="text" name="" v-model="name" placeholder="Your Name" id="">
+      <div class="h5_button" @click="sumbit">Subscribe</div>
     </div>
     <div class="h5_sociality">
-      <a
-        v-for="(item,index) in socialist"
-        :key="index"
-        :href="item.herf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          :src="item.imgUrl"
-          alt=""
-        >
+      <a v-for="(item,index) in socialist" :key="index" :href="item.herf" target="_blank" rel="noopener noreferrer">
+        <img :src="item.imgUrl" alt="">
       </a>
     </div>
   </footer>
 </template>
 <script>
-import { Select } from "ant-design-vue";
-import { Notify } from "vant";
-import md5 from "md5";
+import { Select } from 'ant-design-vue'
+import { Notify } from 'vant'
+import md5 from 'md5'
+import { subscribe } from '@/utils/request.js'
 export default {
-  name: "footers",
+  name: 'footers',
   data() {
     return {
-      value1: "English",
-      value2: "United States",
+      value1: 'English',
+      value2: 'United States',
       langList: [
         {
           value: 1,
-          label: "English",
+          label: 'English',
         },
       ],
       addressList: [
         {
           value: 1,
-          label: "United States",
+          label: 'United States',
         },
       ],
-      email: "",
-      name: "",
+      email: '',
+      name: '',
       socialist: [
         {
-          imgUrl: require("@/assets/images/twiter.png"),
-          herf: "https://twitter.com/simeta_io",
+          imgUrl: require('@/assets/images/twiter.png'),
+          herf: 'https://twitter.com/simeta_io',
         },
         {
-          imgUrl: require("@/assets/images/tg.png"),
-          herf: "https://t.me/SimetaOfficial",
+          imgUrl: require('@/assets/images/tg.png'),
+          herf: 'https://t.me/SimetaOfficial',
         },
         {
-          imgUrl: require("@/assets/images/discord.png"),
-          herf: "https://discord.gg/b58T5CP8Ky",
+          imgUrl: require('@/assets/images/discord.png'),
+          herf: 'https://discord.gg/b58T5CP8Ky',
         },
         {
-          imgUrl: require("@/assets/images/faceBook.png"),
-          herf: "https://www.facebook.com/Simeta-105637975451314",
+          imgUrl: require('@/assets/images/faceBook.png'),
+          herf: 'https://www.facebook.com/Simeta-105637975451314',
         },
       ],
       infomationList: [
         {
-          name: "Doc",
-          herf: "https://simeta.gitbook.io/about/",
+          name: 'Doc',
+          herf: 'https://simeta.gitbook.io/about/',
         },
         {
-          name: "Whitepaper",
-          herf: "https://www.simeta.io/whitepaper.pdf",
+          name: 'Whitepaper',
+          herf: 'https://www.simeta.io/whitepaper.pdf',
         },
         {
-          name: "Tokenomics",
-          herf: "https://simeta.gitbook.io/about/whitepaper/our-tokenomics",
+          name: 'Tokenomics',
+          herf: 'https://simeta.gitbook.io/about/whitepaper/our-tokenomics',
         },
         {
-          name: "Contact us",
-          herf: "https://simeta.gitbook.io/about/contact-us",
+          name: 'Contact us',
+          herf: 'https://simeta.gitbook.io/about/contact-us',
         },
       ],
       communityList: [
         {
-          icon: require("@/assets/images/icon16.png"),
-          herf: "https://twitter.com/simeta_io",
-          name: "twitter",
+          icon: require('@/assets/images/icon16.png'),
+          herf: 'https://twitter.com/simeta_io',
+          name: 'twitter',
         },
         {
-          icon: require("@/assets/images/icon15.png"),
-          herf: "https://t.me/SimetaOfficial",
-          name: "Telegram",
+          icon: require('@/assets/images/icon15.png'),
+          herf: 'https://t.me/SimetaOfficial',
+          name: 'Telegram',
         },
         {
-          icon: require("@/assets/images/icon14.png"),
-          herf: "https://discord.gg/b58T5CP8Ky",
-          name: "discord",
+          icon: require('@/assets/images/icon14.png'),
+          herf: 'https://discord.gg/b58T5CP8Ky',
+          name: 'discord',
         },
         {
-          icon: require("@/assets/images/icon13.png"),
-          herf: "https://www.facebook.com/Simeta-105637975451314",
-          name: "facebook",
+          icon: require('@/assets/images/icon13.png'),
+          herf: 'https://www.facebook.com/Simeta-105637975451314',
+          name: 'facebook',
         },
         {
-          icon: require("@/assets/images/icon2.png"),
-          herf: "https://medium.com/@Simeta",
-          name: "medium",
+          icon: require('@/assets/images/icon2.png'),
+          herf: 'https://medium.com/@Simeta',
+          name: 'medium',
         },
       ],
-    };
+    }
   },
   methods: {
     sumbit() {
       if (this.email && this.name) {
-        this.$axios
-          .post(
-            "/api/commit",
-            this.$qs.stringify({
-              email: this.email,
-              name: this.name,
-              sign: md5(
-                "a=MetaDao123456&email=" + this.email + "&name=" + this.name
-              ),
-            })
-          )
-
+        subscribe({ email: this.email, username: this.name })
           .then(function (response) {
-            if (response.data.code == 0) {
-              Notify({ type: "success", message: "Submitted successfully" });
+            if (response.code == 200) {
+              Notify({ type: 'success', message: 'Submitted successfully' })
             } else {
-              Notify({ type: "danger", message: response.data.msg });
+              Notify({ type: 'danger', message: response.data.msg })
             }
 
-            console.log(response);
+            console.log(response)
           })
           .catch(function (error) {
-            Notify({ type: "danger", message: "Submission Failed" });
+            Notify({ type: 'danger', message: 'Submission Failed' })
 
-            console.log(error);
-          });
+            console.log(error)
+          })
       }
     },
   },
-};
+}
 </script>
 <style lang="less" scoped>
 @p: 100rem;
@@ -360,7 +252,7 @@ export default {
   footer {
     width: 100%;
     height: 375 / @p;
-    background: url("../../assets/images/bgc2.png") center no-repeat;
+    background: url('../../assets/images/bgc2.png') center no-repeat;
     background-size: cover;
   }
   input {

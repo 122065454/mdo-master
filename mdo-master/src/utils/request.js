@@ -78,7 +78,8 @@ export const pageAwardRecordForInvite = ({ currPage, pageSize }) =>
   instance.get(
     `/buyer/awardRecord/pageAwardRecordForInvite?currPage=${currPage}&pageSize=${pageSize}`
   )
-
+// 邮件发送
+export const subscribe = (payload) => instance.post(`/subscribe/add`, payload)
 //
 // export const updateFoods = (payload) =>
 //   instance.get('/item/status', {
