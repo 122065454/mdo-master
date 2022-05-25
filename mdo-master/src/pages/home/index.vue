@@ -330,7 +330,7 @@
 </template>
 
 <script>
-import * as echarts from 'echarts'
+// import * as echarts from 'echarts'
 // import section1 from "../components/section1.vue";
 // import section2 from "../components/section2.vue";
 // import section3 from "../components/section3.vue";
@@ -355,52 +355,49 @@ export default {
   },
   methods: {
     clock() {
-      if (
-        getToken() ||
-        window.localStorage.getItem('S-token') !== 'undefined'
-      ) {
+      if (getToken() || window.localStorage.getItem('S-token')) {
         this.$router.push('invitate')
       } else {
         window.location.href = 'http://54.153.12.169:8091/shop/login'
       }
     },
-    initEachartsLeft() {
-      let myChart = echarts.init(this.$refs.echarts)
-      console.log(myChart)
-      var option = {
-        title: {
-          text: '  ',
-          left: 'center',
-        },
-        tooltip: {
-          trigger: 'item',
-        },
-        legend: {
-          orient: 'vertical',
-          left: 'left',
-        },
-        series: [
-          {
-            name: 'Access From',
-            type: 'pie',
-            radius: '50%',
-            data: [
-              { value: 1048, name: 'Farming' },
-              { value: 735, name: 'Buyback and detory' },
-              { value: 580, name: 'Simeta treasure' },
-            ],
-            emphasis: {
-              itemStyle: {
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowColor: 'rgba(0, 0, 0, 0.5)',
-              },
-            },
-          },
-        ],
-      }
-      myChart.setOption(option)
-    },
+    // initEachartsLeft() {
+    //   let myChart = echarts.init(this.$refs.echarts)
+    //   console.log(myChart)
+    //   var option = {
+    //     title: {
+    //       text: '  ',
+    //       left: 'center',
+    //     },
+    //     tooltip: {
+    //       trigger: 'item',
+    //     },
+    //     legend: {
+    //       orient: 'vertical',
+    //       left: 'left',
+    //     },
+    //     series: [
+    //       {
+    //         name: 'Access From',
+    //         type: 'pie',
+    //         radius: '50%',
+    //         data: [
+    //           { value: 1048, name: 'Farming' },
+    //           { value: 735, name: 'Buyback and detory' },
+    //           { value: 580, name: 'Simeta treasure' },
+    //         ],
+    //         emphasis: {
+    //           itemStyle: {
+    //             shadowBlur: 10,
+    //             shadowOffsetX: 0,
+    //             shadowColor: 'rgba(0, 0, 0, 0.5)',
+    //           },
+    //         },
+    //       },
+    //     ],
+    //   }
+    //   myChart.setOption(option)
+    // },
   },
 }
 </script>
