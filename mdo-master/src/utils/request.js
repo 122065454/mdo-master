@@ -34,6 +34,7 @@ instance.interceptors.response.use(
     if (err.response) {
       if (err.response.status === 403) {
         // window.location.href = '/admin/auth/login'
+        window.location.href = 'http://54.153.12.169:8091/shop/login'
       }
       if (err.response.data) {
         return Promise.reject(err.response.data)
