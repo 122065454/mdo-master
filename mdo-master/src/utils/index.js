@@ -9,6 +9,8 @@ export function getCookie(name) {
 }
 
 export const getToken = () => {
-  window.localStorage.setItem('S-token', window.location.href.split('=')[1])
+  if (window.localStorage.getItem('S-token') == null) {
+    window.localStorage.setItem('S-token', window.location.href.split('=')[1])
+  }
   return window.location.href.split('=')[1]
 }
