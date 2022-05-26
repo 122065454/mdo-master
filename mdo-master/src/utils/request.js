@@ -28,6 +28,11 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   (res) => {
+    console.log('res.data.code', res.data.code)
+    if (res.data.code == 403) {
+      // window.location.href = '/admin/auth/login'
+      window.location.href = 'http://54.153.12.169:8091/shop/login'
+    }
     return res.data
   },
   (err) => {
