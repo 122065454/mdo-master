@@ -10,17 +10,13 @@ module.exports = {
   css: {
     sourceMap: !isProduction, // css sourceMap 配置
   },
+
   chainWebpack: (config) => {
-    // config.optimization.minimizer('terser').tap((args) => {
-    //   Object.assign(args[0].terserOptions.compress, {
-    //     // 生产模式 console.log 去除
-    //     // warnings: false , // 默认 false
-    //     // drop_console:  ,
-    //     // drop_debugger: true, // 默认也是true
-    //     pure_funcs: ['console.log'],
-    //   })
-    //   return args
-    // })
+    if (process.env.use_analyzer) {
+      config
+        .plugin('webpack-bundle-analyzer')
+        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+    }
     if (isProduction) {
       config.plugin('compressionPlugin').use(
         new CompressionPlugin({
@@ -45,6 +41,13 @@ module.exports = {
     if (process.env.NODE_ENV === 'production') {
       config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
     }
+  },
+  configureWebpack: {
+    externals: {
+      'element-ui': 'ELEMENT',
+      vue: 'Vue',
+      echarts: 'echarts',
+    },
   },
   // presets: ['@vue/cli-plugin-babel/preset'],
   chainWebpack: (config) => {

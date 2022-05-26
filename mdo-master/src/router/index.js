@@ -1,17 +1,15 @@
 import home from '@/pages/home/index.vue'
-import invitationRecord from '@/pages/invitation_record/index.vue'
-import preSale from '@/pages/presale/index.vue'
-import reward from '@/pages/reward/index.vue'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-const routes = [{
+const routes = [
+  {
     path: '/',
     component: home,
   },
   {
     path: '/preSale',
-    component: preSale,
+    component: () => import('@/pages/presale/index.vue'),
   },
   {
     path: '/invitate',
@@ -19,15 +17,15 @@ const routes = [{
   },
   {
     path: '/invitation_record',
-    component: invitationRecord,
+    component: () => import('@/pages/invitation_record/index.vue'),
   },
   {
     path: '/reward',
-    component: reward
+    component: () => import('@/pages/reward/index.vue'),
   },
   {
     path: '*',
-    component: home,
+    component: () => import('@/pages/home/index.vue'),
   },
 ]
 const router = new VueRouter({
