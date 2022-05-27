@@ -1,5 +1,7 @@
 import axios from 'axios'
-import { getToken } from './index'
+import {
+  getToken
+} from './index'
 export const instance = axios.create({
   // baseURL: '/api',
   baseURL: 'http://54.153.12.169:8787/simeta/',
@@ -62,7 +64,12 @@ export const inviteUser = (payload) =>
   instance.get(`/buyer/inviteUser`, payload)
 
 // 获奖记录
-export const pageAwardRecord = ({ currPage, pageSize, dateType, type }) =>
+export const pageAwardRecord = ({
+    currPage,
+    pageSize,
+    dateType,
+    type
+  }) =>
   instance.get(
     `/buyer/awardRecord/pageAwardRecord?currPage=${currPage}&pageSize=${pageSize}&dateType=${dateType}&type=${type}`
   )
@@ -80,7 +87,10 @@ export const getUserIntegral = (payload) =>
   instance.get(`/buyer/getUserIntegral`, payload)
 
 // buyer/awardRecord/pageAwardRecordForInvite
-export const pageAwardRecordForInvite = ({ currPage, pageSize }) =>
+export const pageAwardRecordForInvite = ({
+    currPage,
+    pageSize
+  }) =>
   instance.get(
     `/buyer/awardRecord/pageAwardRecordForInvite?currPage=${currPage}&pageSize=${pageSize}`
   )

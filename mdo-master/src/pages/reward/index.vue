@@ -79,6 +79,7 @@
               :total="total"
               hide-on-single-page
               @current-change="handleCurrentChange"
+              :page-size="params.pageSize"
             >
             </el-pagination>
           </div>
@@ -109,15 +110,16 @@ export default {
   created() {
     this.getdatalist();
     getUserIntegral().then((res) => {
-      this.totalPrice = res.data || 0;
+      if (res.data.code == 200) {
+        this.totalPrice = res.data.data || 0;
+      }
     });
   },
   methods: {
     getdatalist() {
       pageAwardRecord(this.params).then((res) => {
-        console.log(res);
-        this.records = res.data.records;
-        this.total = res.data.total;
+        this.records = res.data.data.records;
+        this.total = res.data.data.total;
       });
     },
     tabclick(dateType) {

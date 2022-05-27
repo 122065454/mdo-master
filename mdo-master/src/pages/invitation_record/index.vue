@@ -42,7 +42,7 @@
           <ul>
             <li>Step 1 : Click button to share the invite link</li>
             <li>Step 1 : Your friends take invitation, complete the registration</li>
-            <li>Step 3 : Both of you get $SMT rewards </li>
+            <li>Step 3 : Both of you and your friend get $SMT rewards </li>
           </ul>
         </div>
 
@@ -50,7 +50,7 @@
       <ul class="hide">
         <li>Step 1 : Click button to share the invite link</li>
         <li>Step 1 : Your friends take invitation, complete the registration</li>
-        <li>Step 3 : Both of you get $SMT rewards </li>
+        <li>Step 3 : Both of you and your friend get $SMT rewards </li>
       </ul>
       <div class="bottom">
 
@@ -105,12 +105,14 @@
               prop="createTime"
               label="Date"
               align="center"
+              show-overflow-tooltip
             >
             </el-table-column>
             <el-table-column
               prop="email"
               label="Account"
               align="center"
+              show-overflow-tooltip
             >
             </el-table-column>
             <el-table-column
@@ -141,6 +143,7 @@
             :total="total"
             hide-on-single-page
             @current-change="handleCurrentChange"
+            :page-size="params.pageSize"
           >
           </el-pagination>
         </div>
@@ -214,8 +217,8 @@ export default {
   },
   created() {
     inviteUser().then((res) => {
-      if (res.code == 200) {
-        this.share_url = `${this.share_url}?inviteCode=${res.data}`;
+      if (res.data.code == 200) {
+        this.share_url = `${this.share_url}?inviteCode=${res.data.data}`;
       }
     });
     getInviteUserSum().then((res) => {
@@ -224,8 +227,8 @@ export default {
       }
     });
     getUserIntegral().then((res) => {
-      if (res.code == 200) {
-        this.smt = res.data;
+      if (res.data.code == 200) {
+        this.smt = res.data.data;
       }
     });
     this.getdatalist();
@@ -237,7 +240,6 @@ export default {
       oInput.value = this.share_url;
       document.body.appendChild(oInput);
       oInput.select();
-      console.log(oInput.value);
       document.execCommand("Copy");
       oInput.remove();
       this.$message({
@@ -247,8 +249,8 @@ export default {
     },
     getdatalist() {
       pageAwardRecordForInvite(this.params).then((res) => {
-        this.records = res.data.records;
-        this.total = res.data.total;
+        this.records = res.data.data.records;
+        this.total = res.data.data.total;
       });
     },
     // 分页
@@ -310,6 +312,10 @@ export default {
   background: #e9e9e9;
   color: #868686;
   font-size: 0.2rem;
+}
+
+/deep/ .el-table .cell {
+  text-align: center;
 }
 /deep/ .el-table th.el-table__cell {
   background: #e9e9e9;
