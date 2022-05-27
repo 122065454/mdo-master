@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "analyzer":"use_analyzer=true vue-cli-service serve"
+    "analyzer": "use_analyzer=true vue-cli-service serve"
   },
   "dependencies": {
     "@metamask/detect-provider": "^1.2.0",
