@@ -45,7 +45,7 @@
         <div class="right_img show">
           <div class="border">
             <img
-              src="@/assets/images/home_gif.gif"
+              src="@/assets/images/WechatIMG103.png"
               alt=""
             >
             <div></div>
@@ -75,7 +75,7 @@
           >
             <div class="word">
               <h1>Buyers</h1>
-              <p>Buyerss can earn additional $SMT for every completed<br>order at a reasonable price</p>
+              <p>Buyers can buy physical products with their crypto assets and earn additional $SMT for every completed order at a competitive price</p>
             </div>
             <img
               src="@/assets/images/shop_two.png"
@@ -98,7 +98,7 @@
             >
             <div class="word">
               <h1>All ecology</h1>
-              <p>All users in simeta ecology can get $SMT every day by clocking<br>in Simeta website or APP</p>
+              <p>All users in simeta ecology can get $SMT every day by clocking-in, invating and other scenes on Simeta website or APP</p>
             </div>
           </div>
           <div
