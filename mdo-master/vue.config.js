@@ -1,14 +1,7 @@
 const isProduction = process.env.NODE_ENV === 'production'
 const CompressionPlugin = require('compression-webpack-plugin')
-const plugins = ['@vue/babel-plugin-transform-vue-jsx']
-// 生产环境移除console
-if (process.env.NODE_ENV === 'production') {
-  plugins.push('transform-remove-console')
-}
 
 module.exports = {
-  // plugins: plugins,
-  // presets: ['@vue/cli-plugin-babel/preset'],
   // 选项...
   lintOnSave: false, // 关闭掉eslint的检查
   productionSourceMap: false,
