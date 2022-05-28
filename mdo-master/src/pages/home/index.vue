@@ -358,7 +358,7 @@ export default {
       if (getToken() || window.localStorage.getItem('S-token')) {
         this.$router.push('invitate')
       } else {
-        window.location.href = 'http://tc.simeta.io/shop/login'
+        window.location.href = 'http://simeta.io/shop/login'
       }
     },
     // initEachartsLeft() {

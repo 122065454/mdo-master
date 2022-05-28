@@ -161,13 +161,13 @@ export default {
   },
   methods: {
     clock() {
-      window.location.href = 'http://tc.simeta.io/shop/account'
+      window.location.href = 'http://simeta.io/shop/account'
       // this.$router.push('invitate')
       // console.log('getToken', getToken)
       // if (getToken()) {
       //   this.$router.push("invitate");
       // } else {
-      //   window.location.href = "http://tc.simeta.io//shop/login";
+      //   window.location.href = "http://simeta.io//shop/login";
       // }
     },
     mouseOver() {

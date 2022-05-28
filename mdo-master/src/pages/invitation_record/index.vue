@@ -146,7 +146,7 @@ export default {
       firends: 0,
       smt: 0,
       total: 0,
-      share_url: 'http://tc.simeta.io/shop/register',
+      share_url: 'http://simeta.io/shop/register',
       params: {
         currPage: 1,
         pageSize: 5,
