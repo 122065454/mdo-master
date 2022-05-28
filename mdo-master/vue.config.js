@@ -7,8 +7,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 module.exports = {
-  plugins: plugins,
-  presets: ['@vue/cli-plugin-babel/preset'],
+  // plugins: plugins,
+  // presets: ['@vue/cli-plugin-babel/preset'],
   // 选项...
   lintOnSave: false, // 关闭掉eslint的检查
   productionSourceMap: false,
@@ -45,6 +45,7 @@ module.exports = {
         })
       )
   },
+
   configureWebpack: (config) => {
     if (process.env.NODE_ENV === 'production') {
       config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
@@ -64,6 +65,16 @@ module.exports = {
         .plugin('webpack-bundle-analyzer')
         .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
     }
+    config.optimization.minimizer('terser').tap((args) => {
+      Object.assign(args[0].terserOptions.compress, {
+        // 生产模式 console.log 去除
+        // warnings: false , // 默认 false
+        // drop_console:  ,
+        // drop_debugger: true, // 默认也是true
+        pure_funcs: ['console.log'],
+      })
+      return args
+    })
   },
   css: {
     requireModuleExtension: true,

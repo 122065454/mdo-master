@@ -8,10 +8,7 @@
         <div class="left">
           <h2>Invited Friends</h2>
           <div class="left_box">
-            <img
-              src="@/assets/images/user_@2x.png"
-              alt=""
-            >
+            <img src="@/assets/images/user_@2x.png" alt="">
             <span>{{firends}}</span>
           </div>
         </div>
@@ -57,74 +54,39 @@
         <div class="icon_input hide">
           <ul>
             <li @click="doAction">
-              <img
-                src="@/assets/images/message.png"
-                alt=""
-              >
+              <img src="@/assets/images/message.png" alt="">
               <p>message</p>
             </li>
             <li @click="gowhatsapp">
-              <img
-                src="@/assets/images/phone_two.png"
-                alt=""
-              >
+              <img src="@/assets/images/phone_two.png" alt="">
               <p>WhatsApp</p>
             </li>
             <li @click="shareTwitter">
-              <img
-                src="@/assets/images/twitter_three.png"
-                alt=""
-              >
+              <img src="@/assets/images/twitter_three.png" alt="">
               <p>twitter</p>
             </li>
             <li>
-              <img
-                src="@/assets/images/more_four.png"
-                alt=""
-              >
+              <img src="@/assets/images/more_four.png" alt="">
               <p>more...</p>
             </li>
           </ul>
           <div class="input_btn">
-            <input
-              type="text"
-              placeholder="simeta.io/i/Jessie"
-            >
+            <input type="text" placeholder="simeta.io/i/Jessie">
             <button>Copy</button>
           </div>
         </div>
         <div class="records">
           <h1>Records</h1>
 
-          <el-table
-            v-if="records.length > 0"
-            :data="records"
-            style="width: 100%"
-          >
-            <el-table-column
-              prop="createTime"
-              label="Date"
-              align="center"
-              show-overflow-tooltip
-            >
+          <el-table v-if="records.length > 0" :data="records" style="width: 100%">
+            <el-table-column prop="createTime" label="Date" align="center" show-overflow-tooltip>
             </el-table-column>
-            <el-table-column
-              prop="email"
-              label="Account"
-              align="center"
-              show-overflow-tooltip
-            >
+            <el-table-column prop="email" label="Account" align="center" show-overflow-tooltip>
             </el-table-column>
-            <el-table-column
-              prop="award"
-              label="Rewards"
-              align="center"
-            >
+            <el-table-column prop="award" label="Rewards" align="center">
             </el-table-column>
           </el-table>
-          <div
-            v-else
-            style="
+          <div v-else style="
     width: 100%;
     background: #fff;
     box-sizing: border-box;
@@ -134,58 +96,35 @@
     justify-content: center;
     align-items: center;
     
-"
-          >
+">
             No data
           </div>
-          <el-pagination
-            layout="prev, pager, next"
-            :total="total"
-            hide-on-single-page
-            @current-change="handleCurrentChange"
-            :page-size="params.pageSize"
-          >
+          <el-pagination layout="prev, pager, next" :total="total" hide-on-single-page @current-change="handleCurrentChange" :page-size="params.pageSize">
           </el-pagination>
         </div>
         <div class="icon_input show">
           <ul>
             <li @click="doAction">
 
-              <img
-                src="@/assets/images/message.png"
-                alt=""
-              >
+              <img src="@/assets/images/message.png" alt="">
               <p>message</p>
 
             </li>
             <li @click="gowhatsapp">
-              <img
-                src="@/assets/images/phone_two.png"
-                alt=""
-              >
+              <img src="@/assets/images/phone_two.png" alt="">
               <p>WhatsApp</p>
             </li>
             <li @click="shareTwitter">
-              <img
-                src="@/assets/images/twitter_three.png"
-                alt=""
-              >
+              <img src="@/assets/images/twitter_three.png" alt="">
               <p>twitter</p>
             </li>
             <li>
-              <img
-                src="@/assets/images/more_four.png"
-                alt=""
-              >
+              <img src="@/assets/images/more_four.png" alt="">
               <p>more...</p>
             </li>
           </ul>
           <div class="input_btn">
-            <input
-              type="text"
-              placeholder="simeta.io/i/Jessie"
-              v-model="share_url"
-            >
+            <input type="text" placeholder="simeta.io/i/Jessie" v-model="share_url">
             <button @click="copystring">Copy</button>
           </div>
         </div>
@@ -200,114 +139,114 @@ import {
   pageAwardRecordForInvite,
   getInviteUserSum,
   getUserIntegral,
-} from "@/utils/request.js";
+} from '@/utils/request.js'
 export default {
   data() {
     return {
       firends: 0,
       smt: 0,
       total: 0,
-      share_url: "http://54.153.12.169:8091/shop/register",
+      share_url: 'http://tc.simeta.io/shop/register',
       params: {
         currPage: 1,
         pageSize: 5,
       },
       records: [],
-    };
+    }
   },
   created() {
     inviteUser().then((res) => {
       if (res.data.code == 200) {
-        this.share_url = `${this.share_url}?inviteCode=${res.data.data}`;
+        this.share_url = `${this.share_url}?inviteCode=${res.data.data}`
       }
-    });
+    })
     getInviteUserSum().then((res) => {
       if (res.code == 200) {
-        this.firends = res.data;
+        this.firends = res.data
       }
-    });
+    })
     getUserIntegral().then((res) => {
       if (res.data.code == 200) {
-        this.smt = res.data.data;
+        this.smt = res.data.data
       }
-    });
-    this.getdatalist();
+    })
+    this.getdatalist()
   },
   methods: {
     copystring() {
-      let oInput = document.createElement("input");
+      let oInput = document.createElement('input')
       //这边为链接地址this.liveLink='www.baidu.com'
-      oInput.value = this.share_url;
-      document.body.appendChild(oInput);
-      oInput.select();
-      document.execCommand("Copy");
-      oInput.remove();
+      oInput.value = this.share_url
+      document.body.appendChild(oInput)
+      oInput.select()
+      document.execCommand('Copy')
+      oInput.remove()
       this.$message({
-        message: "Copy successful",
-        type: "success",
-      });
+        message: 'Copy successful',
+        type: 'success',
+      })
     },
     getdatalist() {
       pageAwardRecordForInvite(this.params).then((res) => {
-        this.records = res.data.data.records;
-        this.total = res.data.data.total;
-      });
+        this.records = res.data.data.records
+        this.total = res.data.data.total
+      })
     },
     // 分页
     handleCurrentChange(e) {
-      this.params.currPage = e;
-      this.getdatalist();
+      this.params.currPage = e
+      this.getdatalist()
     },
     // 分享到twitter
     shareTwitter() {
       function popupwindow(url, title) {
         return window.open(
-          "https://twitter.com/intent/tweet?url=" +
+          'https://twitter.com/intent/tweet?url=' +
             encodeURIComponent(url) +
-            "&text=" +
+            '&text=' +
             encodeURIComponent(title),
-          "_blank",
-          "toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350"
-        );
+          '_blank',
+          'toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350'
+        )
       }
       popupwindow(
         this.share_url,
-        "Check out the amazing Web3.0 crypto ecommerce platform and get rewards every day"
-      );
+        'Check out the amazing Web3.0 crypto ecommerce platform and get rewards every day'
+      )
     },
 
     // 分享message
     doAction() {
-      var u = navigator.userAgent;
+      var u = navigator.userAgent
       //判断是否为android终端
       // var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
       //判断是否为ios终端
-      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
       //这里填写要分享的内容
-      var des = `Check out the amazing Web3.0 crypto ecommerce platform and get rewards every day ${this.share_url}`;
+      var des = `Check out the amazing Web3.0 crypto ecommerce platform and get rewards every day ${this.share_url}`
       //ios终端
       if (isiOS) {
-        window.location.href = "sms:" + "&body=" + des;
+        window.location.href = 'sms:' + '&body=' + des
         //安卓终端
       } else {
-        window.location.href = "sms:" + "?body=" + des;
+        window.location.href = 'sms:' + '?body=' + des
       }
     },
 
     // 分享whatsapp
     gowhatsapp() {
-      let _href = "https://api.whatsapp.com/send?";
-      const text = `Check out the amazing Web3.0 crypto ecommerce platform and get rewards every day`;
-      _href += "&text=" + text; //标题
-      _href += "&url=" + encodeURIComponent(this.share_url); //链接
-      window.open(_href);
+      let _href = 'https://api.whatsapp.com/send?'
+      const text = `Check out the amazing Web3.0 crypto ecommerce platform and get rewards every day`
+      _href += '&text=' + text //标题
+      _href += '&url=' + encodeURIComponent(this.share_url) //链接
+      window.open(_href)
     },
   },
-};
+}
 </script>
 
 <style lang="less" scoped>
-@import "./index.less";
+@import './index.less';
 /deep/ .el-table tr {
   background: #e9e9e9;
   color: #868686;
