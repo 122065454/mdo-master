@@ -2,7 +2,7 @@ import axios from 'axios'
 import { getToken } from './index'
 export const instance = axios.create({
   // baseURL: '/api',
-  baseURL: 'http://simeta.io/simeta/',
+  baseURL: 'http://simeta.io/simeta',
 })
 
 const token = getToken() || window.localStorage.getItem('S-token')
