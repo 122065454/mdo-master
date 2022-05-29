@@ -447,7 +447,7 @@ export default {
       const symbol = "SMT";
       const addressToken =
         "0xa363F972DBaEA97624E4B5FAAAcC5964c7F9745f".toLowerCase();
-      const image = "http://simeta.io/logo.png";
+      const image = "https://simeta.io/logo.png";
       ethereum.request({
         method: "wallet_watchAsset",
         params: {

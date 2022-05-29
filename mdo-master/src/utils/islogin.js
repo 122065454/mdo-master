@@ -8,7 +8,7 @@ let myPlugin = {
       return true
     } else {
       //弹出提示
-      window.open.herf('http://simeta.io/shop/login')
+      window.open.herf('https://simeta.io/shop/login')
       //跳回登录页
       // router.push("/checklogin");
       return false

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { getToken } from './index'
 export const instance = axios.create({
   // baseURL: '/api',
-  baseURL: 'http://simeta.io/simeta',
+  baseURL: 'https://simeta.io/simeta',
 })
 
 const token = getToken() || window.localStorage.getItem('S-token')
@@ -31,7 +31,7 @@ instance.interceptors.response.use(
     console.log('res.data.code', res.data.code)
     if (res.data.code == 403) {
       // window.location.href = '/admin/auth/login'
-      window.location.href = 'http://simeta.io/shop/login'
+      window.location.href = 'https://simeta.io/shop/login'
     }
     return res.data
   },
@@ -39,7 +39,7 @@ instance.interceptors.response.use(
     if (err.response) {
       if (err.response.code == 403) {
         // window.location.href = '/admin/auth/login'
-        window.location.href = 'http://simeta.io/shop/login'
+        window.location.href = 'https://simeta.io/shop/login'
       }
       if (err.response.data) {
         return Promise.reject(err.response.data)
