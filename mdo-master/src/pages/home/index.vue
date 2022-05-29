@@ -41,7 +41,7 @@
         </div>
         <div class="right_img show">
           <div class="border">
-            <img src="@/assets/images/hc.gif" alt="">
+            <img src="@/assets/images/banner1.png" alt="">
             <div></div>
             <div></div>
             <div></div>
@@ -159,7 +159,7 @@
     <div v-else class="sj">
       <section class="top_box">
         <div class="img_box">
-          <img src="@/assets/images/hc.gif" alt="">
+          <img src="@/assets/images/banner1.png" alt="">
           <div class="word">
             <h1>Simeta</h1>
             <p>The first virtual futuristic eCommerce marketplace where users can buy and sell items in both the crypto field and the physical world with cryptocurrencies worldwide</p>
