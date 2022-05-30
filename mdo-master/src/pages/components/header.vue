@@ -237,7 +237,7 @@ export default {
   },
   methods: {
     clock() {
-      window.location.href = "https://simeta.io/shop/account";
+      window.location.href = "https://simeta.io/tc/shop/account";
       // this.$router.push('invitate')
       // console.log('getToken', getToken)
       // if (getToken()) {
