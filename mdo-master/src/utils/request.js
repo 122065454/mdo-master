@@ -28,29 +28,29 @@ instance.interceptors.request.use(
   }
 )
 
-// instance.interceptors.response.use(
-//   (res) => {
-//     console.log('res.data.code', res.data.code)
-//     if (res.data.code == 403) {
-//       // window.location.href = '/admin/auth/login'
-//       window.location.href = 'https://simeta.io/shop/login'
-//     }
-//     return res.data
-//   },
-//   (err) => {
-//     if (err.response) {
-//       if (err.response.code == 403) {
-//         // window.location.href = '/admin/auth/login'
-//         window.location.href = 'https://simeta.io/shop/login'
-//       }
-//       if (err.response.data) {
-//         return Promise.reject(err.response.data)
-//       }
-//       return Promise.reject(err.response)
-//     }
-//     return Promise.reject(err)
-//   }
-// )
+instance.interceptors.response.use(
+  (res) => {
+    console.log('res.data.code', res.data.code)
+    if (res.data.code == 403) {
+      // window.location.href = '/admin/auth/login'
+      window.location.href = 'https://simeta.io/shop/login'
+    }
+    return res.data
+  },
+  (err) => {
+    if (err.response) {
+      if (err.response.code == 403) {
+        // window.location.href = '/admin/auth/login'
+        window.location.href = 'https://simeta.io/shop/login'
+      }
+      if (err.response.data) {
+        return Promise.reject(err.response.data)
+      }
+      return Promise.reject(err.response)
+    }
+    return Promise.reject(err)
+  }
+)
 
 // 用户签到接口
 export const loadSign = (payload) =>
