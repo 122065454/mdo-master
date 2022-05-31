@@ -1,7 +1,5 @@
 import axios from 'axios'
-import {
-  getToken
-} from './index'
+import { getToken } from './index'
 export const instance = axios.create({
   // baseURL: '/api',
   baseURL: 'https://simeta.io/simeta',
@@ -33,7 +31,7 @@ instance.interceptors.response.use(
     console.log('res.data.code', res.data.code)
     if (res.data.code == 403) {
       // window.location.href = '/admin/auth/login'
-      window.location.href = 'https://simeta.io/tc/shop/login'
+      window.location.href = 'http://simeta.io/shop/login'
     }
     return res.data
   },
@@ -41,7 +39,7 @@ instance.interceptors.response.use(
     if (err.response) {
       if (err.response.code == 403) {
         // window.location.href = '/admin/auth/login'
-        window.location.href = 'https://simeta.io/tc/shop/login'
+        window.location.href = 'http://simeta.io/shop/login'
       }
       if (err.response.data) {
         return Promise.reject(err.response.data)
@@ -64,12 +62,7 @@ export const inviteUser = (payload) =>
   instance.get(`/buyer/inviteUser`, payload)
 
 // 获奖记录
-export const pageAwardRecord = ({
-    currPage,
-    pageSize,
-    dateType,
-    type
-  }) =>
+export const pageAwardRecord = ({ currPage, pageSize, dateType, type }) =>
   instance.get(
     `/buyer/awardRecord/pageAwardRecord?currPage=${currPage}&pageSize=${pageSize}&dateType=${dateType}&type=${type}`
   )
@@ -87,10 +80,7 @@ export const getUserIntegral = (payload) =>
   instance.get(`/buyer/getUserIntegral`, payload)
 
 // buyer/awardRecord/pageAwardRecordForInvite
-export const pageAwardRecordForInvite = ({
-    currPage,
-    pageSize
-  }) =>
+export const pageAwardRecordForInvite = ({ currPage, pageSize }) =>
   instance.get(
     `/buyer/awardRecord/pageAwardRecordForInvite?currPage=${currPage}&pageSize=${pageSize}`
   )
