@@ -23,13 +23,14 @@ const routes = [
     path: '/reward',
     component: () => import('@/pages/reward/index.vue'),
   },
-  // {
-  //   path: '*',
-  //   component: () => import('@/pages/home/index.vue'),
-  // },
+  {
+    path: '*',
+    component: () => import('@/pages/home/index.vue'),
+  },
 ]
 const router = new VueRouter({
   mode: 'history',
+  base: '/main',
   routes,
 })
 // 全局后置钩子

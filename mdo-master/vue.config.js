@@ -5,6 +5,7 @@ module.exports = {
   // 选项...
   lintOnSave: false, // 关闭掉eslint的检查
   productionSourceMap: false,
+  assetsDir: 'main_static',
   publicPath: '/',
   // 关闭 souremap
   productionSourceMap: !isProduction, //关闭生产环境下的SourceMap映射文件
